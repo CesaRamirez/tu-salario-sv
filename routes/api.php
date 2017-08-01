@@ -22,7 +22,9 @@ $router->namespace('API\V1\Admin')
        ->prefix('v1/admin')
        ->group(function ($router) {
            $router->middleware('jwt.auth')->group(function ($router) {
-               $router->resource('rents', 'RentsController');
+               $router->resource('rents',
+                                 'RentsController',
+                                 ['except' => ['create', 'store', 'edit',   'destroy']]);
                $router->resource('settings', 'SettingsController');
            });
        });

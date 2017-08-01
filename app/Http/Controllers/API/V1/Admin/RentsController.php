@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\API\V1\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\RentsRequest;
 use App\Transformers\RentTransformer;
 use App\TuSalarioSV\Rent;
-use Illuminate\Http\Request;
 
 /**
  * Rents Controller.
@@ -13,24 +13,24 @@ use Illuminate\Http\Request;
 class RentsController extends Controller
 {
     /**
-     * [protected description].
+     * rent variable.
      *
-     * @var [type]
+     * @var \App\TuSalarioSV\Rent
      */
     protected $rent;
 
     /**
-     * [protected description].
+     * rent transformer variable.
      *
-     * @var [type]
+     * @var \App\Transformers\RentTransformer
      */
     protected $rentTransformer;
 
     /**
-     * [__construct description].
+     * RentsController Constructor.
      *
-     * @param Rent            $rent            [description]
-     * @param RentTransformer $rentTransformer [description]
+     * @param \App\TuSalarioSV\Rent             $rent
+     * @param \App\Transformers\RentTransformer $rentTransformer
      */
     public function __construct(Rent $rent, RentTransformer $rentTransformer)
     {
@@ -53,26 +53,6 @@ class RentsController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-    }
-
-    /**
      * Display the specified resource.
      *
      * @param \App\TuSalarioSV\Rent $rent
@@ -81,39 +61,29 @@ class RentsController extends Controller
      */
     public function show(Rent $rent)
     {
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param \App\TuSalarioSV\Rent $rent
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Rent $rent)
-    {
+        return fractal()->item($rent)
+                        ->transformWith($this->rentTransformer)
+                        ->toArray();
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @param \App\TuSalarioSV\Rent    $rent
+     * @param \App\Http\Requests\RentsRequest $request
+     * @param \App\TuSalarioSV\Rent           $rent
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function update(Request $request, Rent $rent)
+    public function update(RentsRequest $request, Rent $rent)
     {
-    }
+        $rent->fill($request->all());
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param \App\TuSalarioSV\Rent $rent
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Rent $rent)
-    {
+        if ($rent->save()) {
+            return fractal()->item($rent)
+                            ->transformWith($this->rentTransformer)
+                            ->toArray();
+        }
+
+        return response()->json(['error' => 'Could not update'], 422);
     }
 }
