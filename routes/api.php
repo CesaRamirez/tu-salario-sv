@@ -28,3 +28,14 @@ $router->namespace('API\V1\Admin')
                                  ['except' => ['create', 'edit', 'destroy']]);
            });
        });
+
+/*
+ * Public routes
+ */
+
+$router->namespace('API\V1')
+       ->prefix('v1')
+       ->group(function ($router) {
+           $router->post('salary', 'TransactionsController@salary')
+                  ->name('salary');
+       });

@@ -40,7 +40,6 @@ class Rent extends Model
 
     /**
      * Return Section Name.
-     *     *.
      *
      * @return string
      */
@@ -62,5 +61,25 @@ class Rent extends Model
                 return 'Tramo IV';
                 break;
         }
+    }
+
+    /**
+     * Rent Table Calculation.
+     *
+     * @param float $mount
+     * @param int   $type
+     *
+     * @return float
+     */
+    public function calculation(float $mount, int $type)
+    {
+        $rent = $this->where('since', '<=', $mount)
+                     ->where('until', '>=', $mount)
+                     ->where('type', $type)->first();
+        $excess     = $mount - $rent->excess;
+        $percentage = $excess * $rent->percentage / 100;
+        $total      = $percentage + $rent->fee;
+
+        return round($total, 2, PHP_ROUND_HALF_DOWN);
     }
 }
