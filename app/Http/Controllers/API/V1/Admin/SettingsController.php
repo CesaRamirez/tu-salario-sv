@@ -3,24 +3,23 @@
 namespace App\Http\Controllers\API\V1\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\SettingsRequest;
 use App\Transformers\SettingTransformer;
 use App\TuSalarioSV\Setting;
-use App\TuSalarioSV\Settings;
-use Illuminate\Http\Request;
 
 class SettingsController extends Controller
 {
     /**
-     * [protected description].
+     * setting variable.
      *
-     * @var [type]
+     * @var \App\TuSalarioSV\Setting
      */
     protected $setting;
 
     /**
-     * [protected description].
+     * Setting Transformer Variable.
      *
-     * @var [type]
+     * @var \App\Transformers\SettingTransformer
      */
     protected $settingTransformer;
 
@@ -53,67 +52,57 @@ class SettingsController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Store a newly created resource in storage..
      *
-     * @return \Illuminate\Http\Response
+     * @param \App\Http\Requests\SettingsRequest $request
+     *
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function create()
+    public function store(SettingsRequest $request)
     {
-    }
+        $this->setting->fill($request->all());
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
+        if ($this->setting->save()) {
+            return fractal()->item($this->setting)
+                            ->transformWith($this->settingTransformer)
+                            ->toArray();
+        }
+
+        return response()->json(['error' => 'Could not save'], 422);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param \App\TuSalarioSV\Settings $settings
+     * @param \App\TuSalarioSV\Setting $setting
      *
      * @return \Illuminate\Http\Response
      */
-    public function show(Settings $settings)
+    public function show(Setting $setting)
     {
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param \App\TuSalarioSV\Settings $settings
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Settings $settings)
-    {
+        return fractal()->item($setting)
+                        ->transformWith($this->settingTransformer)
+                        ->toArray();
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request  $request
-     * @param \App\TuSalarioSV\Settings $settings
+     * @param \App\Http\Requests\SettingsRequest $request
+     * @param \App\TuSalarioSV\Setting           $setting
      *
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Settings $settings)
+    public function update(SettingsRequest $request, Setting $setting)
     {
-    }
+        $setting->fill($request->all());
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param \App\TuSalarioSV\Settings $settings
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Settings $settings)
-    {
+        if ($setting->save()) {
+            return fractal()->item($setting)
+                            ->transformWith($this->settingTransformer)
+                            ->toArray();
+        }
+
+        return response()->json(['error' => 'Could not update'], 422);
     }
 }
