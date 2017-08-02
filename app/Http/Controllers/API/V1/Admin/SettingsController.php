@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\API\V1\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\SettingsRequest;
+use App\Http\Requests\Admin\SettingsRequest;
 use App\Transformers\SettingTransformer;
 use App\TuSalarioSV\Setting;
 
@@ -54,7 +54,7 @@ class SettingsController extends Controller
     /**
      * Store a newly created resource in storage..
      *
-     * @param \App\Http\Requests\SettingsRequest $request
+     * @param \App\Http\Requests\Admin\SettingsRequest $request
      *
      * @return \Illuminate\Http\JsonResponse
      */
@@ -88,8 +88,8 @@ class SettingsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param \App\Http\Requests\SettingsRequest $request
-     * @param \App\TuSalarioSV\Setting           $setting
+     * @param \App\Http\Requests\Admin\SettingsRequest $request
+     * @param \App\TuSalarioSV\Setting                 $setting
      *
      * @return \Illuminate\Http\Response
      */

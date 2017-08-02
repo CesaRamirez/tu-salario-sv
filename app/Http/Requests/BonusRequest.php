@@ -2,7 +2,7 @@
 
 namespace App\Http\Requests;
 
-class RentsRequest extends FormRequest
+class BonusRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,11 +22,8 @@ class RentsRequest extends FormRequest
     public function rules()
     {
         return [
-            'since'      => ['required', 'numeric', 'min:0'],
-            'until'      => ['required', 'numeric', 'min:'.$this->since],
-            'percentage' => ['required', 'numeric'],
-            'excess'     => ['required', 'numeric'],
-            'fee'        => ['required', 'numeric'],
+            'mount' => 'required',
+            'type'  => 'required',
         ];
     }
 }

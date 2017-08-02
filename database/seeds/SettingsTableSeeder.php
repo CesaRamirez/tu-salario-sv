@@ -22,6 +22,14 @@ class SettingsTableSeeder extends Seeder
                 'key'   => 'SALARIO_MINIMO',
                 'value' => 300.00,
             ],
+            [
+                'key'   => 'VACACION',
+                'value' => 30,
+            ],
+            [
+                'key'   => 'DIAS_VACACION',
+                'value' => 15,
+            ],
         ];
 
         DB::table('settings')->insert($settings);

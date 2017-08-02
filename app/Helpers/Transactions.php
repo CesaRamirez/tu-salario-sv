@@ -2,6 +2,7 @@
 
 namespace App\Helpers;
 
+use App\TuSalarioSV\Bonus;
 use App\TuSalarioSV\Rent;
 use App\TuSalarioSV\Setting;
 
@@ -22,26 +23,35 @@ class Transactions
     protected $rent;
 
     /**
+     * Bonus variable.
+     *
+     * @var \App\TuSalarioSV\Bonus
+     */
+    protected $bonus;
+
+    /**
      * Transaction helper constructor.
      *
      * @param \App\TuSalarioSV\Setting $setting
      * @param \App\TuSalarioSV\Rent    $rent
+     * @param \App\TuSalarioSV\Bonus   $bonus
      */
-    public function __construct(Setting $setting, Rent $rent)
+    public function __construct(Setting $setting, Rent $rent, Bonus $bonus)
     {
         $this->setting = $setting;
         $this->rent    = $rent;
+        $this->bonus   = $bonus;
     }
 
     /**
-     * Calcualte Salary.
+     * Calculate Salary.
      *
      * @param float $mount
      * @param int   $type
      *
      * @return array
      */
-    public function salary(float $mount, int $type)
+    public function salary(float $mount, int $type): array
     {
         $salary      = $type == 1 ? $mount : $mount / 2;
         $AFP         = $this->deduction('AFP', $salary);
@@ -63,7 +73,14 @@ class Transactions
         ];
     }
 
-    public function vacation(float $mount)
+    /**
+     * Calculate Vacation.
+     *
+     * @param float $mount
+     *
+     * @return array
+     */
+    public function vacation(float $mount): array
     {
         $days        = ($mount / 30) * $this->setting->value('DIAS_VACACION');
         $vacation    = $this->deduction('VACACION', $days);
@@ -89,6 +106,30 @@ class Transactions
     }
 
     /**
+     * Calculate Vacation.
+     *
+     * @param float $mount
+     * @param int   $type
+     *
+     * @return array
+     */
+    public function bonus(float $mount, int $type): array
+    {
+        $days       = $this->bonus->days($type);
+        $bonus      = round(($mount / 30) * $days, 2);
+        $limmit     = $this->setting->value('SALARIO_MINIMO') * 2;
+        if ($bonus > $limmit) {
+            $bonus = $bonus - $this->substraction($bonus, $limmit);
+        }
+
+        return [
+            'salary' => $mount,
+            'days'   => $days,
+            'bonus'  => $bonus,
+        ];
+    }
+
+    /**
      * Get value deduction.
      *
      * @param string $key
@@ -96,7 +137,7 @@ class Transactions
      *
      * @return float
      */
-    public function deduction($key, $value)
+    public function deduction($key, $value): float
     {
         $percentage = $this->setting->value($key) / 100;
 
@@ -110,7 +151,7 @@ class Transactions
      *
      * @return float
      */
-    public function sum(...$values)
+    public function sum(...$values): float
     {
         $sum = 0;
         foreach ($values as $value) {
@@ -127,7 +168,7 @@ class Transactions
      *
      * @return float
      */
-    public function substraction(...$values)
+    public function substraction(...$values): float
     {
         $substraction = 0;
         foreach ($values as $value) {

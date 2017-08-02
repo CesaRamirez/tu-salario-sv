@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\API\V1\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\RentsRequest;
+use App\Http\Requests\Admin\RentsRequest;
 use App\Transformers\RentTransformer;
 use App\TuSalarioSV\Rent;
 
@@ -69,8 +69,8 @@ class RentsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param \App\Http\Requests\RentsRequest $request
-     * @param \App\TuSalarioSV\Rent           $rent
+     * @param \App\Http\Requests\Admin\RentsRequest $request
+     * @param \App\TuSalarioSV\Rent                 $rent
      *
      * @return \Illuminate\Http\JsonResponse
      */

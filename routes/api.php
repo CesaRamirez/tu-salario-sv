@@ -26,6 +26,8 @@ $router->namespace('API\V1\Admin')
                                  ['except' => ['create', 'store', 'edit',   'destroy']]);
                $router->resource('settings', 'SettingsController',
                                  ['except' => ['create', 'edit', 'destroy']]);
+               $router->resource('bonus', 'BonusController',
+                                 ['except' => ['create', 'store', 'edit', 'show', 'destroy']]);
            });
        });
 
@@ -40,4 +42,6 @@ $router->namespace('API\V1')
                   ->name('salary');
            $router->post('vacation', 'TransactionsController@vacation')
                   ->name('vacation');
+           $router->post('bonus', 'TransactionsController@bonus')
+                  ->name('bonus');
        });

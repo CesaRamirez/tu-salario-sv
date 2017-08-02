@@ -1,8 +1,10 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Admin;
 
-class SettingsRequest extends FormRequest
+use App\Http\Requests\FormRequest;
+
+class BonusRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,8 +24,9 @@ class SettingsRequest extends FormRequest
     public function rules()
     {
         return [
-            'key'   => ['required'],
-            'value' => ['required'],
+            'days'   => 'required',
+            'start'  => 'required',
+            'end'    => 'required',
         ];
     }
 }
