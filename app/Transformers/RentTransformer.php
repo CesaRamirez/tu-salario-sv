@@ -14,7 +14,7 @@ class RentTransformer extends TransformerAbstract
      *
      * @return array
      */
-    public function transform(Rent $rent)
+    public function transform(Rent $rent): array
     {
         return [
             'id'         => $rent->id,

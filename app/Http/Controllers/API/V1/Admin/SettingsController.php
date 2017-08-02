@@ -76,7 +76,7 @@ class SettingsController extends Controller
      *
      * @param \App\TuSalarioSV\Setting $setting
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function show(Setting $setting)
     {
@@ -91,7 +91,7 @@ class SettingsController extends Controller
      * @param \App\Http\Requests\Admin\SettingsRequest $request
      * @param \App\TuSalarioSV\Setting                 $setting
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function update(SettingsRequest $request, Setting $setting)
     {

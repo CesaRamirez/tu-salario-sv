@@ -7,9 +7,6 @@ use App\Http\Requests\Admin\RentsRequest;
 use App\Transformers\RentTransformer;
 use App\TuSalarioSV\Rent;
 
-/**
- * Rents Controller.
- */
 class RentsController extends Controller
 {
     /**
@@ -41,7 +38,7 @@ class RentsController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function index()
     {
@@ -57,7 +54,7 @@ class RentsController extends Controller
      *
      * @param \App\TuSalarioSV\Rent $rent
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function show(Rent $rent)
     {

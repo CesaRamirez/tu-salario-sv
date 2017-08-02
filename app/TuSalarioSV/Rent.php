@@ -71,7 +71,7 @@ class Rent extends Model
      *
      * @return float
      */
-    public function calculation(float $mount, int $type)
+    public function calculation(float $mount, int $type): float
     {
         $rent = $this->where('since', '<=', $mount)
                      ->where('until', '>=', $mount)

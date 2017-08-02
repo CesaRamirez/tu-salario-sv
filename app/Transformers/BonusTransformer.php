@@ -14,7 +14,7 @@ class BonusTransformer extends TransformerAbstract
      *
      * @return array
      */
-    public function transform(Bonus $bonus)
+    public function transform(Bonus $bonus): array
     {
         return [
             'id'   => $bonus->id,

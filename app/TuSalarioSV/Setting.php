@@ -20,7 +20,7 @@ class Setting extends Model
      *
      * @return float
      */
-    public function value(string $key)
+    public function value(string $key): float
     {
         return $this->key($key)->first()->value;
     }

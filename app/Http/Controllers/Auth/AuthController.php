@@ -8,15 +8,12 @@ use Illuminate\Http\Request;
 use Tymon\JWTAuth\Exceptions\JWTException;
 use Tymon\JWTAuth\JWTAuth;
 
-/**
- * [AuthController description].
- */
 class AuthController extends Controller
 {
     /**
-     * [protected description].
+     * $auth variable.
      *
-     * @var [type]
+     * @var \Tymon\JWTAuth\JWTAuth
      */
     protected $auth;
 

@@ -14,7 +14,7 @@ class SettingTransformer extends TransformerAbstract
      *
      * @return array
      */
-    public function transform(Setting $setting)
+    public function transform(Setting $setting): array
     {
         return [
             'id'            => $setting->id,

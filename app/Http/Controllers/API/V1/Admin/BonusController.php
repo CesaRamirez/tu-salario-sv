@@ -9,7 +9,18 @@ use App\TuSalarioSV\Bonus;
 
 class BonusController extends Controller
 {
+    /**
+     * bonus variable.
+     *
+     * @var \App\TuSalarioSV\Bonus
+     */
     protected $bonus;
+
+    /**
+     * bonus transformer variable.
+     *
+     * @var \App\Transformers\BonusTransformer
+     */
     protected $bonusTransformer;
 
     public function __construct(
@@ -23,7 +34,7 @@ class BonusController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function index()
     {
@@ -40,7 +51,7 @@ class BonusController extends Controller
      * @param \App\Http\Requests\Admin\BonusRequest $request
      * @param \App\TuSalarioSV\Bonus                $bonus
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function update(BonusRequest $request, Bonus $bonus)
     {
