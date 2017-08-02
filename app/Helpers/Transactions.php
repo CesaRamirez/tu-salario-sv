@@ -63,6 +63,31 @@ class Transactions
         ];
     }
 
+    public function vacation(float $mount)
+    {
+        $days        = ($mount / 30) * $this->setting->value('DIAS_VACACION');
+        $vacation    = $this->deduction('VACACION', $days);
+        $salary      = $this->sum($vacation, $days);
+        $AFP         = $this->deduction('AFP', $salary);
+        $ISSS        = $this->deduction('ISSS', $salary);
+        $deductions  = $this->sum($AFP, $ISSS);
+        $neto        = $this->substraction($salary, $deductions);
+        $rent        = $this->rent->calculation($neto, 2);
+        $neto_total  = $this->substraction($neto, $rent);
+
+        return [
+            'mount'       => floatval($mount),
+            'salary'      => floatval($salary),
+            'AFP'         => $AFP,
+            'ISSS'        => $ISSS,
+            'deductions'  => $deductions,
+            'rent'        => $rent,
+            'neto'        => $neto,
+            'total'       => $neto_total,
+            'vacation'    => $vacation,
+        ];
+    }
+
     /**
      * Get value deduction.
      *
@@ -73,7 +98,7 @@ class Transactions
      */
     public function deduction($key, $value)
     {
-        $percentage = $this->setting->value($key);
+        $percentage = $this->setting->value($key) / 100;
 
         return round($value * $percentage, 2);
     }

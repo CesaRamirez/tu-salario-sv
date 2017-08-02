@@ -38,4 +38,6 @@ $router->namespace('API\V1')
        ->group(function ($router) {
            $router->post('salary', 'TransactionsController@salary')
                   ->name('salary');
+           $router->post('vacation', 'TransactionsController@vacation')
+                  ->name('vacation');
        });

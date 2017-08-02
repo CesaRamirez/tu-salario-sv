@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API\V1;
 use App\Helpers\Transactions;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\SalaryRequest;
+use App\Http\Requests\VacationRequest;
 
 class TransactionsController extends Controller
 {
@@ -37,5 +38,12 @@ class TransactionsController extends Controller
         $salary = $this->transaction->salary($request->mount, $request->type);
 
         return response()->json(['data' => $salary], 200);
+    }
+
+    public function vacation(VacationRequest $request)
+    {
+        $vacation = $this->transaction->vacation($request->mount);
+
+        return response()->json(['data' => $vacation], 200);
     }
 }

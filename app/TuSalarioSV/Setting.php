@@ -22,7 +22,7 @@ class Setting extends Model
      */
     public function value(string $key)
     {
-        return $this->key($key)->first()->value / 100;
+        return $this->key($key)->first()->value;
     }
 
     /**
