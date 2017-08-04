@@ -62,6 +62,18 @@ class AuthController extends Controller
     }
 
     /**
+     * Logout from session and invalidate JWT Token.
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function logout()
+    {
+        $this->auth->invalidate($this->auth->getToken());
+
+        return response(null, 200);
+    }
+
+    /**
      * Return data user.
      *
      * @param \Illuminate\Http\Request $request

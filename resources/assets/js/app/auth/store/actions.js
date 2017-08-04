@@ -5,7 +5,8 @@ import localforage from 'localforage'
 export const login = ({ dispatch }, { payload, context }) => {
     return new Promise( (resolve, reject) => {
         axios.post('/api/v1/login', payload).then((response) => {
-            dispatch('setToken', response.data.data.token).then(() => {
+            console.log(response.data.meta);
+            dispatch('setToken', response.data.meta.token).then(() => {
                 dispatch('fetchUser');
                 resolve(response.data)
             })
@@ -26,7 +27,6 @@ export const fetchUser = ({ commit }) => {
     return axios.get('/api/v1/me').then((response) => {
         commit('setAuthenticated', true);
         commit('setUserData', response.data.data)
-        commit('setUserRole', response.data.data)
     })
 };
 

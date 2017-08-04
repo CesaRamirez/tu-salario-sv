@@ -4,9 +4,6 @@ namespace App\Http\Requests\Auth;
 
 use App\Http\Requests\FormRequest;
 
-/**
- * Login Request.
- */
 class LoginRequest extends FormRequest
 {
     /**

@@ -16,7 +16,3 @@ export const setAuthenticated = (state, boolean) => {
 export const setUserData = (state, data) => {
     state.user.data = data
 }
-
-export const setUserRole = (state, data) => {
-    state.user.role = data.user.role
-}

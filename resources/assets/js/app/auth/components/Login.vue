@@ -2,37 +2,46 @@
         <v-layout align-center justify-center style="height: 100vh">
             <v-flex xs12 md4>
                 <v-card>
-                    <v-card-title class="blue darken-4">
-                        <span class="white--text headline">Iniciar Sesión</span>
-                        <v-spacer></v-spacer>
-                    </v-card-title>
+                    <v-card-media
+                      class="white--text"
+                      height="200px"
+                      src="../images/sweet-ice-cream.jpg"
+                    >
+                      <v-container fill-height fluid>
+                        <v-layout fill-height>
+                          <v-flex xs12 align-end flexbox>
+                            <span class="headline">Iniciar Sesión</span>
+                          </v-flex>
+                        </v-layout>
+                      </v-container>
+                    </v-card-media>
                     <form @submit.prevent="submit">
                         <v-card-text>
                             <v-text-field label="Correo Electronico"
                                           v-model="email"
                                           @keyup.native="cleanFields('email')"
-                                          :errors="errors.email"
+                                          :error-messages="errors.email"
                                           prepend-icon="mail">
                             </v-text-field>
                             <v-text-field label="Contraseña"
                                           v-model="password"
                                           @keyup.native="cleanFields('password')"
-                                          :errors="errors.password"
+                                          :error-messages="errors.password"
                                           type="password"
                                           prepend-icon="vpn_key">
                             </v-text-field>
                        </v-card-text>
                        <v-card-actions>
-                           <v-btn type="submit" flat>
+                           <v-btn type="submit" block primary>
                                Iniciar
-                               <v-icon right >cloud_upload</v-icon>
+                               <v-icon right dark>send</v-icon>
                            </v-btn>
                        </v-card-actions>
                        <v-snackbar
                        :timeout="10000"
                        error
                        multi-line
-                       v-model="errors.root">
+                       v-model="errors.root" class="text-lg-center">
                        Credenciales Invalidas
                      </v-snackbar>
                    </form>
@@ -71,6 +80,7 @@ export default {
                 },
                 context: this
             }).then(() => {
+                console.log(this.errors);
                 localforage.getItem('intended').then((name) => {
                     if (isEmpty(name)) {
                         this.$router.replace({
@@ -82,7 +92,7 @@ export default {
                         name: name
                     })
                 })
-            }).catch((err) => {})
+            }).catch((err) => {console.log(this.errors);})
         },
         cleanFields(field) {
             return this.errors[field] = []
@@ -90,14 +100,3 @@ export default {
     }
 }
 </script>
-<style lang="css" scoped>
-.login-card {
-    max-width: 400px;
-    position: absolute !important;
-    margin: auto !important;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-}
-</style>

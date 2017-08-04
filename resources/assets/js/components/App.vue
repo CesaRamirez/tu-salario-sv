@@ -1,9 +1,9 @@
 <template>
-    <v-app>
-        <navigation v-if="user.authenticated"></navigation>
-            <main>
-                <router-view></router-view>
-            </main>
+    <v-app dark>
+        <navigation></navigation>
+        <main>
+            <router-view></router-view>
+        </main>
     </v-app>
 </template>
 
