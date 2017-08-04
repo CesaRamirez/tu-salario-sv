@@ -63,6 +63,20 @@ class Rent extends Model
         }
     }
 
+    public function getUntilStringAttribute()
+    {
+        $fee = $this->attributes['until'];
+
+        return $fee > 99999 ? 'En Adelante' : $fee;
+    }
+
+    public function getPercentageStringAttribute()
+    {
+        $percentage = $this->attributes['percentage'];
+
+        return $percentage > 0 ? $percentage.'%' : 'Sin Retención';
+    }
+
     /**
      * Rent Table Calculation.
      *

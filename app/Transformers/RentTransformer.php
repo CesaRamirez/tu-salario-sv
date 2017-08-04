@@ -17,14 +17,18 @@ class RentTransformer extends TransformerAbstract
     public function transform(Rent $rent): array
     {
         return [
-            'id'         => $rent->id,
-            'section'    => $rent->section_name,
-            'since'      => $rent->since,
-            'until'      => $rent->until,
-            'percentage' => $rent->percentage,
-            'excess'     => $rent->excess,
-            'fee'        => $rent->fee,
-            'type'       => $rent->type_rent,
+            'id'                   => $rent->id,
+            'section'              => $rent->section,
+            'since'                => $rent->since,
+            'until'                => $rent->until,
+            'percentage'           => $rent->percentage,
+            'excess'               => $rent->excess,
+            'fee'                  => $rent->fee,
+            'type'                 => $rent->type,
+            'until_for_humans'     => $rent->until_string,
+            'percentage_for_humans'=> $rent->percentage_string,
+            'type_for_humans'      => $rent->type_rent,
+            'section_for_humans'   => $rent->section_name,
         ];
     }
 }

@@ -40,9 +40,9 @@ class RentsController extends Controller
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function index()
+    public function index($type)
     {
-        $rents = $this->rent->all();
+        $rents = $this->rent->where('type', $type)->get();
 
         return fractal()->collection($rents)
                         ->transformWith($this->rentTransformer)

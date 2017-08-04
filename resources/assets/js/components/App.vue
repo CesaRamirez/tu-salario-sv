@@ -2,7 +2,9 @@
     <v-app dark>
         <navigation></navigation>
         <main>
-            <router-view></router-view>
+            <v-container>
+                <router-view></router-view>
+            </v-container>
         </main>
     </v-app>
 </template>
