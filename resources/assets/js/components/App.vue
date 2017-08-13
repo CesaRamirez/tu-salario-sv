@@ -17,5 +17,4 @@
             user: 'auth/user'
         }),
     }
-
     </script>

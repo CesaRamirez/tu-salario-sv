@@ -1,6 +1,5 @@
 import router from './router'
 import store from './store'
-import 'vuetify/dist/vuetify.min.css'
 import './bootstrap';
 import './components'
 

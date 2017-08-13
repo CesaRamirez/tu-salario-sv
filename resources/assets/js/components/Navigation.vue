@@ -34,7 +34,7 @@
         </v-list>
         </v-navigation-drawer>
         <v-toolbar dark>
-            <v-toolbar-side-icon @click.native.stop="drawer = !drawer"></v-toolbar-side-icon>
+            <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
             <v-toolbar-title class="white--text">Tu Salario SV</v-toolbar-title>
             <v-spacer></v-spacer>
             <v-btn v-if="user.authenticated" flat>
