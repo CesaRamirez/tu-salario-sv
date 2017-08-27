@@ -1,2 +1,2 @@
-Vue.component('app', require('./components/App.vue'));
-Vue.component('navigation', require('./components/Navigation.vue'));
+Vue.component('app', require('./app/App.vue'));
+Vue.component('navigation', require('./app/Navigation.vue'));
