@@ -23,7 +23,7 @@
              </v-list>
       <v-list class="pt-0" dense>
         <v-divider></v-divider>
-        <v-list-tile v-for="item in items" :key="item.title">
+        <v-list-tile v-for="item in items" :key="item.title" :to="{ name: item.to }">
             <v-list-tile-action>
               <v-icon>{{ item.icon }}</v-icon>
             </v-list-tile-action>
@@ -56,8 +56,8 @@
          return {
            drawer: null,
            items: [
-             { title: 'Home', icon: 'dashboard' },
-             { title: 'About', icon: 'question_answer' }
+             { title: 'Inicio', icon: 'dashboard', to: 'home' },
+             { title: 'Tablas de Renta', icon: 'question_answer', to: 'browse-rent' }
            ],
            mini: false,
            right: null

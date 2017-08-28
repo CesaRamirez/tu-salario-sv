@@ -6,7 +6,7 @@
           <v-spacer></v-spacer>
           <v-text-field
             append-icon="search"
-            label="Search"
+            label="Buscar"
             single-line
             hide-details
             v-model="search_mensual"
@@ -16,6 +16,8 @@
               :headers="headers_x"
               :items="items_mensual"
               :search="search_mensual"
+              rows-per-page-text="Registros por Página"
+              no-data-text="No se encontraron resultados"
               class="elevation-2">
             <template slot="items" scope="props">
               <td>{{ props.item.section_for_humans }}</td>
@@ -27,14 +29,13 @@
             </template>
           </v-data-table>
     </v-card>
-
     <v-card class="mt-4">
         <v-card-title>
           Tabla de Renta Quincenal
           <v-spacer></v-spacer>
           <v-text-field
             append-icon="search"
-            label="Search"
+            label="Buscar"
             single-line
             hide-details
             v-model="search_quincenal"
@@ -44,6 +45,8 @@
               :headers="headers_x"
               :items="items_quincenal"
               :search="search_quincenal"
+              rows-per-page-text="Registros por Página"
+              no-data-text="No se encontraron resultados"
               class="elevation-2">
               <template slot="items" scope="props">
                 <td>{{ props.item.section_for_humans }}</td>
@@ -101,6 +104,3 @@
         }
      }
 </script>
-
-<style lang="css">
-</style>
