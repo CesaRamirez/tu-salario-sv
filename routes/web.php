@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('layouts.app');
-});
+$router->view('/', 'app');
 
 $router->get('/{vue_capture?}', function () {
     return view('layouts.app');
