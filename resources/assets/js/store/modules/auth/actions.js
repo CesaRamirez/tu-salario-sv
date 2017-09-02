@@ -5,7 +5,6 @@ import localforage from 'localforage'
 export const login = ({ dispatch }, { payload, context }) => {
     return new Promise( (resolve, reject) => {
         axios.post('/api/v1/login', payload).then((response) => {
-            console.log(response.data.meta);
             dispatch('setToken', response.data.meta.token).then(() => {
                 dispatch('fetchUser');
                 resolve(response.data)
