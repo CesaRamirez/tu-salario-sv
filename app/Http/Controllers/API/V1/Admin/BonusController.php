@@ -4,7 +4,7 @@ namespace App\Http\Controllers\API\V1\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\BonusRequest;
-use App\Transformers\BonusTransformer;
+use App\Http\Resources\BonusResource;
 use App\TuSalarioSV\Bonus;
 
 class BonusController extends Controller
@@ -16,19 +16,9 @@ class BonusController extends Controller
      */
     protected $bonus;
 
-    /**
-     * bonus transformer variable.
-     *
-     * @var \App\Transformers\BonusTransformer
-     */
-    protected $bonusTransformer;
-
-    public function __construct(
-        Bonus $bonus,
-        BonusTransformer $bonusTransformer
-        ) {
-        $this->bonus            = $bonus;
-        $this->bonusTransformer = $bonusTransformer;
+    public function __construct(Bonus $bonus)
+    {
+        $this->bonus = $bonus;
     }
 
     /**
@@ -40,9 +30,7 @@ class BonusController extends Controller
     {
         $bonus = $this->bonus->all();
 
-        return fractal()->collection($bonus)
-                        ->transformWith($this->bonusTransformer)
-                        ->toArray();
+        return BonusResource::collection($bonus);
     }
 
     /**
@@ -58,9 +46,7 @@ class BonusController extends Controller
         $bonus->fill($request->all());
 
         if ($bonus->save()) {
-            return fractal()->item($bonus)
-                            ->transformWith($this->bonusTransformer)
-                            ->toArray();
+            return new BonusResource($bonus);
         }
 
         return response()->json(['error' => 'Could not update'], 422);

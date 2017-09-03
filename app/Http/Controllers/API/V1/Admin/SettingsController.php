@@ -4,7 +4,7 @@ namespace App\Http\Controllers\API\V1\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\SettingsRequest;
-use App\Transformers\SettingTransformer;
+use App\Http\Resources\SettingResource;
 use App\TuSalarioSV\Setting;
 
 class SettingsController extends Controller
@@ -17,24 +17,13 @@ class SettingsController extends Controller
     protected $setting;
 
     /**
-     * Setting Transformer Variable.
-     *
-     * @var \App\Transformers\SettingTransformer
-     */
-    protected $settingTransformer;
-
-    /**
      * SettingsController constructor.
      *
-     * @param \App\TuSalarioSV\Setting             $setting
-     * @param \App\Transformers\SettingTransformer $settingTransformer
+     * @param \App\TuSalarioSV\Setting $setting
      */
-    public function __construct(
-        Setting $setting,
-        SettingTransformer $settingTransformer)
+    public function __construct(Setting $setting)
     {
         $this->setting            = $setting;
-        $this->settingTransformer = $settingTransformer;
     }
 
     /**
@@ -46,9 +35,7 @@ class SettingsController extends Controller
     {
         $settings = $this->setting->all();
 
-        return fractal()->collection($settings)
-                        ->transformWith($this->settingTransformer)
-                        ->toArray();
+        return SettingResource::collection($settings);
     }
 
     /**
@@ -63,9 +50,7 @@ class SettingsController extends Controller
         $this->setting->fill($request->all());
 
         if ($this->setting->save()) {
-            return fractal()->item($this->setting)
-                            ->transformWith($this->settingTransformer)
-                            ->toArray();
+            return new SettingResource($setting);
         }
 
         return response()->json(['error' => 'Could not save'], 422);
@@ -80,9 +65,7 @@ class SettingsController extends Controller
      */
     public function show(Setting $setting)
     {
-        return fractal()->item($setting)
-                        ->transformWith($this->settingTransformer)
-                        ->toArray();
+        return new SettingResource($setting);
     }
 
     /**
@@ -98,9 +81,7 @@ class SettingsController extends Controller
         $setting->fill($request->all());
 
         if ($setting->save()) {
-            return fractal()->item($setting)
-                            ->transformWith($this->settingTransformer)
-                            ->toArray();
+            return new SettingResource($setting);
         }
 
         return response()->json(['error' => 'Could not update'], 422);
