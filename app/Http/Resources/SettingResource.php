@@ -16,9 +16,10 @@ class SettingResource extends Resource
     public function toArray($request)
     {
         return [
-            'id'    => $this->id,
-            'key'   => $this->key,
-            'value' => $this->value,
+            'id'          => $this->id,
+            'key'         => $this->key,
+            'description' => $this->description,
+            'value'       => $this->value,
         ];
     }
 }

@@ -11,24 +11,29 @@ class SettingsTableSeeder extends Seeder
     {
         $settings = [
             [
-                'key'   => 'AFP',
-                'value' => 6.25,
+                'key'         => 'AFP',
+                'description' => 'Porcentaje de AFP',
+                'value'       => 6.25,
             ],
             [
-                'key'   => 'ISSS',
-                'value' => 3.0,
+                'key'         => 'ISSS',
+                'description' => 'Porcentaje de Seguro Social',
+                'value'       => 3.0,
             ],
             [
-                'key'   => 'SALARIO_MINIMO',
-                'value' => 300.00,
+                'key'         => 'SALARIO_MINIMO',
+                'description' => 'Valor de Salario Minimo',
+                'value'       => 300.00,
             ],
             [
-                'key'   => 'VACACION',
-                'value' => 30,
+                'key'         => 'VACACION',
+                'description' => 'Porcentaje de pago de Vacación',
+                'value'       => 30,
             ],
             [
-                'key'   => 'DIAS_VACACION',
-                'value' => 15,
+                'key'         => 'DIAS_VACACION',
+                'description' => 'Dias de pago de Vacación',
+                'value'       => 15,
             ],
         ];
 

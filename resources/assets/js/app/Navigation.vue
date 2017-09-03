@@ -54,7 +54,8 @@
            drawer: null,
            items: [
              { title: 'Inicio', icon: 'dashboard', to: 'home' },
-             { title: 'Tablas de Renta', icon: 'question_answer', to: 'browse-rent' }
+             { title: 'Tablas de Renta', icon: 'question_answer', to: 'browse-rent' },
+             { title: 'Configuraciones', icon: 'question_answer', to: 'browse-settings' }
            ],
            mini: false,
            right: null

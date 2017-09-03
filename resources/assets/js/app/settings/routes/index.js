@@ -2,18 +2,18 @@ import { Browse, Edit } from '../components'
 
 export default [
     {
-        path: '/admin/rent',
+        path: '/settings',
         component: Browse,
-        name: 'browse-rent',
+        name: 'browse-settings',
         meta: {
             guest: false,
             needsAuth: true
         }
     },
     {
-        path: '/admin/rent/:id',
+        path: '/setting/:id',
         component: Edit,
-        name: 'edit-rent',
+        name: 'edit-setting',
         meta: {
             guest: false,
             needsAuth: true

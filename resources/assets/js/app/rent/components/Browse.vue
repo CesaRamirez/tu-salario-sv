@@ -16,10 +16,20 @@
               :headers="headers_x"
               :items="items_mensual"
               :search="search_mensual"
+              v-model="selected"
+              selected-key="id"
+              select-all
               rows-per-page-text="Registros por Página"
               no-data-text="No se encontraron resultados"
               class="elevation-2">
             <template slot="items" scope="props">
+                <td>
+                  <v-checkbox
+                    primary
+                    hide-details
+                    v-model="props.selected"
+                  ></v-checkbox>
+                </td>
               <td>{{ props.item.section_for_humans }}</td>
               <td class="text-xs-right">{{ props.item.since }}</td>
               <td class="text-xs-right">{{ props.item.until_for_humans }}</td>
@@ -45,10 +55,20 @@
               :headers="headers_x"
               :items="items_quincenal"
               :search="search_quincenal"
+              v-model="selected"
+              selected-key="id"
+              select-all
               rows-per-page-text="Registros por Página"
               no-data-text="No se encontraron resultados"
               class="elevation-2">
               <template slot="items" scope="props">
+                    <td>
+                      <v-checkbox
+                        primary
+                        hide-details
+                        v-model="props.selected"
+                      ></v-checkbox>
+                    </td>
                 <td>{{ props.item.section_for_humans }}</td>
                 <td class="text-xs-right">{{ props.item.since }}</td>
                 <td class="text-xs-right">{{ props.item.until_for_humans }}</td>
@@ -83,6 +103,7 @@
                 ],
                 items_mensual: [],
                 items_quincenal: [],
+                selected: []
             }
       },
         mounted() {
