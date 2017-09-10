@@ -1,17 +1,26 @@
 <template lang="html">
     <div>
-    <v-card>
-        <v-card-title>
-          Días de pago de Aguinaldo
-          <v-spacer></v-spacer>
-          <v-text-field
-            append-icon="search"
-            label="Buscar"
-            single-line
-            hide-details
-            v-model="search"
-          ></v-text-field>
-        </v-card-title>
+        <v-card>
+            <v-card-title v-if="selected.length === 0">
+              <span class="subheading ml-5 my-3">Días de pago de Aguinaldo</span>
+              <v-spacer></v-spacer>
+              <v-text-field
+                append-icon="search"
+                label="Buscar"
+                single-line
+                hide-details
+                v-model="search"
+              ></v-text-field>
+            </v-card-title>
+            <v-card-title v-else class="blue">
+              <span class="subheading ml-5 my-3">
+                  {{ selected.length }} {{ selected.length | pluralize('Seleccionado')}}
+              </span>
+              <v-spacer></v-spacer>
+              <v-btn icon v-tooltip:left="{ html: 'Editar' }" v-show="selected.length === 1" @click="edit">
+                  <v-icon>create</v-icon>
+              </v-btn>
+            </v-card-title>
             <v-data-table
               :headers="headers"
               :items="items"
@@ -22,26 +31,27 @@
               rows-per-page-text="Registros por Página"
               no-data-text="No se encontraron resultados"
               class="elevation-2">
-            <template slot="items" scope="props">
-                <td>
-                  <v-checkbox
-                    primary
-                    hide-details
-                    v-model="props.selected"
-                  ></v-checkbox>
-                </td>
-              <td class="text-xs-left">{{ props.item.days }}</td>
-              <td class="text-xs-left">{{ props.item.start }}</td>
-              <td class="text-xs-left">{{ props.item.end }}</td>
-            </template>
-          </v-data-table>
-    </v-card>
+                <template slot="items" scope="props">
+                    <td>
+                      <v-checkbox
+                        primary
+                        hide-details
+                        v-model="props.selected"
+                      ></v-checkbox>
+                    </td>
+                  <td class="text-xs-left">{{ props.item.days }}</td>
+                  <td class="text-xs-left">{{ props.item.start }}</td>
+                  <td class="text-xs-left">{{ props.item.end }}</td>
+                </template>
+            </v-data-table>
+        </v-card>
     </div>
 </template>
 
 <script>
     import { mapActions, mapGetters } from 'vuex'
-      export default {
+
+    export default {
         data () {
             return {
                 search: '',
@@ -52,7 +62,7 @@
                 ],
                 selected: [],
             }
-      },
+        },
         mounted() {
             this.getBonuses()
         },
@@ -65,6 +75,10 @@
             ...mapActions({
                 getBonuses : 'bonus/getBonuses'
             }),
+            edit() {
+                this.$router.push({ name: 'edit-bonus', params: { id: this.selected[0].id }})
+                return
+            }
         }
-     }
+    }
 </script>

@@ -2,6 +2,9 @@ import Vue from 'vue'
 import lodash from 'lodash'
 import axios from 'axios'
 import Vuetify from 'vuetify'
+import Vue2Filters from 'vue2-filters'
+
+Vue.use(Vue2Filters)
 
 Vue.use(Vuetify)
 

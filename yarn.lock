@@ -6472,6 +6472,10 @@ vue-template-es2015-compiler@^1.2.2:
   version "1.5.3"
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.5.3.tgz#22787de4e37ebd9339b74223bc467d1adee30545"
 
+vue2-filters@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/vue2-filters/-/vue2-filters-0.2.1.tgz#f0c79df41a8c396134d1983110879b19fd0e27c8"
+
 vue@^2.1.10:
   version "2.4.2"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.4.2.tgz#a9855261f191c978cc0dc1150531b8d08149b58c"
