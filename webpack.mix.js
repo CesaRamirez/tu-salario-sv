@@ -17,6 +17,7 @@ mix.js('resources/assets/js/app.js', 'public/js')
 
 if (mix.inProduction()) {
     mix.version();
+    mix.sourceMaps();
 }
 
 mix.browserSync('http://tu-salario-sv.dev');

@@ -54,8 +54,9 @@
            drawer: null,
            items: [
              { title: 'Inicio', icon: 'dashboard', to: 'home' },
-             { title: 'Tablas de Renta', icon: 'question_answer', to: 'browse-rent' },
-             { title: 'Configuraciones', icon: 'question_answer', to: 'browse-settings' }
+             { title: 'Tablas de Renta', icon: 'list', to: 'browse-rent' },
+             { title: 'Configuraciones', icon: 'build', to: 'browse-settings' },
+             { title: 'Aguinaldo', icon: 'event', to: 'browse-bonus' }
            ],
            mini: false,
            right: null
