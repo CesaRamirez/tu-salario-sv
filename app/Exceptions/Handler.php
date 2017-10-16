@@ -4,7 +4,9 @@ namespace App\Exceptions;
 
 use Exception;
 use Illuminate\Auth\AuthenticationException;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class Handler extends ExceptionHandler
 {
@@ -27,8 +29,7 @@ class Handler extends ExceptionHandler
      *
      * This is a great spot to send exceptions to Sentry, Bugsnag, etc.
      *
-     * @param  \Exception  $exception
-     * @return void
+     * @param \Exception $exception
      */
     public function report(Exception $exception)
     {
@@ -38,20 +39,54 @@ class Handler extends ExceptionHandler
     /**
      * Render an exception into an HTTP response.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Exception  $exception
+     * @param \Illuminate\Http\Request $request
+     * @param \Exception               $exception
+     *
      * @return \Illuminate\Http\Response
      */
     public function render($request, Exception $exception)
     {
+        if ($request->expectsJson()) {
+            if ($exception instanceof NotFoundHttpException) {
+                return response()->json([
+                        'error' => 'Model Not Found.',
+                ], 404);
+            }
+
+            if ($exception instanceof ModelNotFoundException) {
+                return response()->json([
+                        'error' => 'Model Not Found.',
+                ], 404);
+            }
+
+            if ($exception instanceof AuthorizationException) {
+                return response()->json([
+                        'error' => 'This action is Unauthorized.',
+                ], 403);
+            }
+
+            if ($exception instanceof TokenExpiredException) {
+                return response()->json(['token_expired'], $exception->getStatusCode());
+            }
+
+            if ($exception instanceof TokenInvalidException) {
+                return response()->json(['token_invalid'], $exception->getStatusCode());
+            }
+        }
+
+        if ($exception instanceof NotFoundHttpException) {
+            return response(null, 404);
+        }
+
         return parent::render($request, $exception);
     }
 
     /**
      * Convert an authentication exception into an unauthenticated response.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Illuminate\Auth\AuthenticationException  $exception
+     * @param \Illuminate\Http\Request                 $request
+     * @param \Illuminate\Auth\AuthenticationException $exception
+     *
      * @return \Illuminate\Http\Response
      */
     protected function unauthenticated($request, AuthenticationException $exception)

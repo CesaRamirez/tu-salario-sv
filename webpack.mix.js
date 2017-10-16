@@ -12,4 +12,12 @@ let mix = require('laravel-mix');
  */
 
 mix.js('resources/assets/js/app.js', 'public/js')
+   .extract(['vue', 'axios', 'vuetify'])
    .sass('resources/assets/sass/app.scss', 'public/css');
+
+if (mix.inProduction()) {
+    mix.version();
+    mix.sourceMaps();
+}
+
+mix.browserSync('http://tu-salario-sv.dev');
