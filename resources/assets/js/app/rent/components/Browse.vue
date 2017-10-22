@@ -22,7 +22,7 @@
               rows-per-page-text="Registros por Página"
               no-data-text="No se encontraron resultados"
               class="elevation-2">
-            <template slot="items" scope="props">
+            <template slot="items" slote-scope="props">
                 <td>
                   <v-checkbox
                     primary
@@ -61,7 +61,7 @@
               rows-per-page-text="Registros por Página"
               no-data-text="No se encontraron resultados"
               class="elevation-2">
-              <template slot="items" scope="props">
+              <template slot="items" slote-scope="props">
                     <td>
                       <v-checkbox
                         primary

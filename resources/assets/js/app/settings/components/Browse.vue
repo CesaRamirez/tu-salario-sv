@@ -23,12 +23,12 @@
                   rows-per-page-text="Registros por Página"
                   no-data-text="No se encontraron resultados"
                   class="elevation-2">
-                    <template slot="headerCell" scope="props">
+                    <template slot="headerCell" slote-scope="props">
                       <span v-tooltip:bottom="{ 'html': props.header.tooltip }">
                         {{ props.header.text }}
                       </span>
                     </template>
-                <template slot="items" scope="props">
+                <template slot="items" slote-scope="props">
                     <td>
                         <v-checkbox
                         class="text-left"
