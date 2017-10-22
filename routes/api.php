@@ -28,10 +28,10 @@ $router->namespace('API\V1\Admin')
                $router->get('rents/{rent}', 'RentsController@show')->name('rents.show');
 
 
-               $router->resource('settings', 'SettingsController',
-                                 ['except' => ['create', 'edit', 'destroy']]);
-               $router->resource('bonus', 'BonusController',
-                                 ['except' => ['create', 'store', 'edit', 'show', 'destroy']]);
+               $router->resource('settings', 'SettingsController')
+                      ->except('create', 'edit', 'destroy');
+               $router->resource('bonus', 'BonusController')
+                      ->only('index', 'update', 'show');
            });
        });
 
