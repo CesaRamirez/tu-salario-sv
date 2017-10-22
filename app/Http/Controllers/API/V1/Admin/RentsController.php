@@ -23,11 +23,13 @@ class RentsController extends Controller
      */
     public function __construct(Rent $rent)
     {
-        $this->rent            = $rent;
+        $this->rent = $rent;
     }
 
     /**
      * Display a listing of the resource.
+     *
+     * @param int $type
      *
      * @return \Illuminate\Http\JsonResponse
      */

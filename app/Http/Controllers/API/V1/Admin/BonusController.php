@@ -51,4 +51,9 @@ class BonusController extends Controller
 
         return response()->json(['error' => 'Could not update'], 422);
     }
+
+    public function show(Bonus $bonus)
+    {
+        return new BonusResource($bonus);
+    }
 }
