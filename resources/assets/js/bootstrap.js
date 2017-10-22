@@ -3,9 +3,12 @@ import lodash from 'lodash'
 import axios from 'axios'
 import Vuetify from 'vuetify'
 import Vue2Filters from 'vue2-filters'
+import VeeValidate from 'vee-validate';
 
+Vue.use(VeeValidate, {
+  locale: 'es'
+});
 Vue.use(Vue2Filters)
-
 Vue.use(Vuetify)
 
 window.Vue = Vue

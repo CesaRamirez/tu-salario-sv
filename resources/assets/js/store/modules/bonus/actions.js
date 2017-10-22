@@ -7,9 +7,11 @@ export const getBonuses = ({
     })
 
 export const getBonus = ({
+        commit
+    }, {
         id
     }) => axios
-    .get('/api/v1/admin/bonus' + id)
+    .get('/api/v1/admin/bonus/' + id)
     .then((response) => {
       commit('setBonus', response.data.data)
     })

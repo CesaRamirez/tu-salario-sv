@@ -32,7 +32,7 @@
                             </v-text-field>
                        </v-card-text>
                        <v-card-actions>
-                           <v-btn type="submit" block primary :loading="loading" ripple>
+                           <v-btn type="submit" color="primary" block :loading="loading" ripple>
                                Iniciar
                                <v-icon right dark>send</v-icon>
                            </v-btn>
