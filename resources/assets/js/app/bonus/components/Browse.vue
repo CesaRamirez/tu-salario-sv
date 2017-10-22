@@ -31,7 +31,7 @@
               rows-per-page-text="Registros por Página"
               no-data-text="No se encontraron resultados"
               class="elevation-2">
-                <template slot="items" scope="props">
+                <template slot="items" slot-scope="props">
                     <td>
                       <v-checkbox
                         primary
@@ -68,16 +68,20 @@
         },
         computed: {
             ...mapGetters({
-                items: 'bonus/bonuses'
+                items: 'bonus/bonuses',
+                bonus: 'bonus/bonus'
             })
         },
         methods: {
             ...mapActions({
-                getBonuses : 'bonus/getBonuses'
+                getBonuses : 'bonus/getBonuses',
+                getBonus : 'bonus/getBonus',
+                updateBonus: 'bonus/updateBonus'
             }),
             edit() {
-                this.$router.push({ name: 'edit-bonus', params: { id: this.selected[0].id }})
-                return
+              this.getBonus({
+                  id: this.selected[0].id
+              }).then(() => {})
             }
         }
     }
