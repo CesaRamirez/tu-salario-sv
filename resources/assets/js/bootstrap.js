@@ -3,11 +3,14 @@ import lodash from 'lodash'
 import axios from 'axios'
 import Vuetify from 'vuetify'
 import Vue2Filters from 'vue2-filters'
-import VeeValidate, { Validator } from 'vee-validate';
+import VeeValidate, {
+  Validator
+} from 'vee-validate';
 import es from 'vee-validate/dist/locale/es';
 
 Validator.localize('es', es);
 Vue.use(VeeValidate, {
+  errorBagName: '_errors',
   locale: 'es',
 });
 
@@ -27,7 +30,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 let token = document.head.querySelector('meta[name="csrf-token"]');
 
 if (token) {
-    window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
+  window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
 } else {
-    console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
+  console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
 }

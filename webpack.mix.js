@@ -1,5 +1,5 @@
 let mix = require('laravel-mix');
-
+require('dotenv').config();
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -12,12 +12,11 @@ let mix = require('laravel-mix');
  */
 
 mix.js('resources/assets/js/app.js', 'public/js')
-   .extract(['vue', 'axios', 'vuetify'])
-   .sass('resources/assets/sass/app.scss', 'public/css');
+  .extract(['vue', 'axios', 'vuetify'])
+  .sass('resources/assets/sass/app.scss', 'public/css');
 
 if (mix.inProduction()) {
-    mix.version();
-    mix.sourceMaps();
+  mix.version();
 }
 
-mix.browserSync('http://tu-salario-sv.dev');
+mix.browserSync(process.env.APP_URL);

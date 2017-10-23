@@ -1,22 +1,13 @@
-import { Browse, Edit } from '../components'
+import {
+  Browse
+} from '../components'
 
-export default [
-    {
-        path: '/admin/bonus',
-        component: Browse,
-        name: 'browse-bonus',
-        meta: {
-            guest: false,
-            needsAuth: true
-        }
-    },
-    {
-        path: '/admin/bonus/:id',
-        component: Edit,
-        name: 'edit-bonus',
-        meta: {
-            guest: false,
-            needsAuth: true
-        }
-    }
-]
+export default [{
+  path: '/admin/bonus',
+  component: Browse,
+  name: 'browse-bonus',
+  meta: {
+    guest: false,
+    needsAuth: true
+  }
+}]
