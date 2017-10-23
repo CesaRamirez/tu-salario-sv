@@ -1,6 +1,10 @@
 <template lang="html">
   <div>
-      Home
+    <v-container>
+      <v-layout align-content-start>
+        Home
+      </v-layout>
+    </v-container>
   </div>
 </template>
 

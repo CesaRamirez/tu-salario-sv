@@ -3,11 +3,9 @@
 <v-app dark>
     <navigation></navigation>
     <main>
+        <notification></notification>
         <v-content>
-            <notification></notification>
-            <v-container fill-height>
-                <router-view></router-view>
-            </v-container>
+            <router-view></router-view>
         </v-content>
     </main>
 </v-app>

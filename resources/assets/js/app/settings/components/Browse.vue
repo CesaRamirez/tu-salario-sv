@@ -1,60 +1,58 @@
 <template lang="html">
-    <div>
+
+<div>
+    <v-container>
         <v-card>
             <v-card-title>
-              <p class="subheading ml-5">Configuraciones</p>
-              <v-spacer></v-spacer>
-              <v-text-field
-                append-icon="search"
-                label="Buscar"
-                single-line
-                hide-details
-                v-model="search"
-              ></v-text-field>
+                <p class="subheading ml-5">Configuraciones</p>
+                <v-spacer></v-spacer>
+                <v-text-field append-icon="search" label="Buscar" single-line hide-details v-model="search"></v-text-field>
             </v-card-title>
-                <v-data-table
-                  :headers="headers"
-                  :items="items"
-                  :search="search"
-                  :loading="loading"
-                  v-model="selected"
-                  selected-key="id"
-                  select-all
-                  rows-per-page-text="Registros por Página"
-                  no-data-text="No se encontraron resultados"
-                  class="elevation-2">
+            <v-data-table :headers="headers" :items="items" :search="search" :loading="loading" v-model="selected" selected-key="id" select-all rows-per-page-text="Registros por Página" no-data-text="No se encontraron resultados" class="elevation-2">
                 <template slot="items" slot-scope="props">
                     <td>
-                        <v-checkbox
-                        class="text-left"
-                        primary
-                        hide-details
-                        v-model="props.selected"
-                        ></v-checkbox>
+                        <v-checkbox class="text-left" primary hide-details v-model="props.selected"></v-checkbox>
                     </td>
                     <td class="text-xs-left">{{ props.item.key }}</td>
                     <td class="text-xs-left">{{ props.item.description }}</td>
                     <td class="text-xs-left">{{ props.item.value }}</td>
                 </template>
-              </v-data-table>
+            </v-data-table>
         </v-card>
-    </div>
+    </v-container>
+</div>
+
 </template>
 
 <script>
-    import { mapActions, mapGetters } from 'vuex'
 
-    export default {
-        data () {
+import {
+    mapActions, mapGetters
+}
+from 'vuex'
+
+export default {
+    data() {
             return {
                 search: '',
-                headers: [
-                  { text: 'Llave', value: 'key', align: 'left', tooltip: 'Llave identificadora' },
-                  { text: 'Descripción', value: 'description', align: 'left', tooltip: 'Descripción de Llave' },
-                  { text: 'Valor', value: 'value', align: 'left', tooltip: 'Valor de Llave' },
-              ],
-              loading: true,
-              selected: []
+                headers: [{
+                    text: 'Llave',
+                    value: 'key',
+                    align: 'left',
+                    tooltip: 'Llave identificadora'
+                }, {
+                    text: 'Descripción',
+                    value: 'description',
+                    align: 'left',
+                    tooltip: 'Descripción de Llave'
+                }, {
+                    text: 'Valor',
+                    value: 'value',
+                    align: 'left',
+                    tooltip: 'Valor de Llave'
+                }, ],
+                loading: true,
+                selected: []
             }
         },
         mounted() {
@@ -67,13 +65,14 @@
         },
         methods: {
             ...mapActions({
-                getSettings : 'settings/getSettings'
-            }),
-            get() {
-                this.loading = true
-                this.getSettings()
-                this.loading = false
-            }
+                    getSettings: 'settings/getSettings'
+                }),
+                get() {
+                    this.loading = true
+                    this.getSettings()
+                    this.loading = false
+                }
         }
-     }
+}
+
 </script>

@@ -1,7 +1,7 @@
 <template>
 
 <div v-if="user.authenticated">
-    <v-navigation-drawer temporary v-model="drawer" :mini-variant.sync="mini" dark overflow absolute>
+    <v-navigation-drawer temporary v-model="drawer" :mini-variant.sync="mini" dark overflow absolute app>
         <v-list class="pa-0">
             <v-list-tile avatar tag="div">
                 <v-list-tile-content>
@@ -26,7 +26,7 @@
             </v-list-tile>
         </v-list>
     </v-navigation-drawer>
-    <v-toolbar dark>
+    <v-toolbar dark app>
         <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
         <v-toolbar-title class="white--text">Tu Salario SV</v-toolbar-title>
         <v-spacer></v-spacer>
