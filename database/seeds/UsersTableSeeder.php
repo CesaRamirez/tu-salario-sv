@@ -12,7 +12,7 @@ class UsersTableSeeder extends Seeder
     {
         $user = [
           'name'       => 'César Ramírez',
-          'email'      => 'cesar@email.com',
+          'email'      => 'i@ces.ar',
           'password'   => bcrypt('secret'),
           'created_at' => Carbon::now(),
           'updated_at' => Carbon::now(),

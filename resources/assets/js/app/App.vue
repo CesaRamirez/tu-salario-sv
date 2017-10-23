@@ -1,22 +1,34 @@
 <template>
-    <v-app dark>
-      <navigation></navigation>
-      <main>
+
+<v-app dark>
+    <navigation></navigation>
+    <main>
         <v-content>
-          <v-container>
-              <router-view></router-view>
-          </v-container>
+            <notification></notification>
+            <v-container>
+                <router-view></router-view>
+            </v-container>
         </v-content>
-      </main>
-    </v-app>
+    </main>
+</v-app>
+
 </template>
 
 <script>
-    import { mapGetters, mapActions } from 'vuex'
 
-    export default {
-        computed: mapGetters({
-            user: 'auth/user'
-        }),
-    }
-    </script>
+import {
+    mapGetters, mapActions
+}
+from 'vuex'
+import notification from './Notification'
+
+export default {
+    components: {
+        notification
+    },
+    computed: mapGetters({
+        user: 'auth/user'
+    }),
+}
+
+</script>

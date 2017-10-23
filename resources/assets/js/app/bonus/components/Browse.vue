@@ -1,4 +1,5 @@
 <template lang="html">
+
 <div>
     <v-card>
         <v-card-title v-if="selected.length === 0">
@@ -31,43 +32,37 @@
     </v-card>
     <v-layout row justify-center>
         <v-dialog v-model="dialog" persistent max-width="500px">
-            <v-form v-model="valid" value lazy-validation>
-                <v-card>
-                    <v-card-title>
-                        <span class="headline">Editar Opciones de Aguinaldo</span>
-                    </v-card-title>
-                    <v-card-text>
-                        <v-container grid-list-md>
-                            <v-layout wrap>
-                                <v-flex xs12 sm6 md4>
-                                    <v-text-field label="Días" required v-model="bonus.days" type="number" :error-messages="_errors.collect('days')" v-validate="'required|numeric'" data-vv-name="days" hint="Días de Aguinaldo" persistent-hint>
-                                    </v-text-field>
-                                </v-flex>
-                                <v-flex xs12 sm6 md4>
-                                    <v-text-field label="Inicio (Años)" required type="number" :max="bonus.end" v-model="bonus.start" :error-messages="_errors.collect('start')" v-validate="`required|numeric|max_value:${this.bonus.end}`" data-vv-name="start" hint="Año de Inicio" persistent-hint>
-                                    </v-text-field>
-                                </v-flex>
-                                <v-flex xs12 sm6 md4>
-                                    <v-text-field label="Fin (Años)" required type="number" :min="bonus.start" v-model="bonus.end" :error-messages="_errors.collect('end')" v-validate="`required|numeric|min_value:${this.bonus.start}`" data-vv-name="end" hint="Año de Finalización" persistent-hint>
-                                    </v-text-field>
-                                </v-flex>
-                            </v-layout>
-                        </v-container>
-                        <small>*Indica campos obligatorios</small>
-                    </v-card-text>
-                    <v-card-actions>
-                        <v-spacer></v-spacer>
-                        <v-btn color="blue darken-1" flat @click="clear">Cerrar</v-btn>
-                        <v-btn color="blue darken-1" flat @click="update" :disabled="!valid">Guardar</v-btn>
-                    </v-card-actions>
-                </v-card>
-            </v-form>
+            <v-card>
+                <v-card-title>
+                    <span class="headline">Editar Opciones de Aguinaldo</span>
+                </v-card-title>
+                <v-card-text>
+                    <v-container grid-list-md>
+                        <v-layout wrap>
+                            <v-flex xs12 sm6 md4>
+                                <v-text-field label="Días" required v-model="bonus.days" type="number" :error-messages="_errors.collect('days')" v-validate="'required|numeric'" data-vv-name="days" hint="Días de Aguinaldo" persistent-hint>
+                                </v-text-field>
+                            </v-flex>
+                            <v-flex xs12 sm6 md4>
+                                <v-text-field label="Inicio (Años)" required type="number" :max="bonus.end" v-model="bonus.start" :error-messages="_errors.collect('start')" v-validate="`required|numeric|max_value:${this.bonus.end}`" data-vv-name="start" hint="Año de Inicio" persistent-hint>
+                                </v-text-field>
+                            </v-flex>
+                            <v-flex xs12 sm6 md4>
+                                <v-text-field label="Fin (Años)" required type="number" :min="bonus.start" v-model="bonus.end" :error-messages="_errors.collect('end')" v-validate="`required|numeric|min_value:${this.bonus.start}`" data-vv-name="end" hint="Año de Finalización" persistent-hint>
+                                </v-text-field>
+                            </v-flex>
+                        </v-layout>
+                    </v-container>
+                    <small>*Indica campos obligatorios</small>
+                </v-card-text>
+                <v-card-actions>
+                    <v-spacer></v-spacer>
+                    <v-btn color="blue darken-1" flat @click="clear">Cerrar</v-btn>
+                    <v-btn color="blue darken-1" flat @click="update">Guardar</v-btn>
+                </v-card-actions>
+            </v-card>
         </v-dialog>
     </v-layout>
-    <v-snackbar :timeout="6000" color="success" :multi-line="true" v-model="snackbar">
-        ¡Los Datos se han actualizado con Exito!
-        <v-btn dark flat @click="snackbar = false">Cerrar</v-btn>
-    </v-snackbar>
 </div>
 
 </template>
@@ -100,9 +95,7 @@ export default {
                 dialog: false,
                 days: null,
                 start: null,
-                end: null,
-                valid: false,
-                snackbar: false
+                end: null
             }
         },
         mounted() {
@@ -154,4 +147,5 @@ export default {
                 }
         }
 }
+
 </script>

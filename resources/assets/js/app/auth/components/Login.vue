@@ -22,12 +22,8 @@
                 <v-card-actions>
                     <v-btn type="submit" color="purple darken-2" block :loading="loading" ripple>
                         Iniciar
-                        <v-icon right dark>send</v-icon>
                     </v-btn>
                 </v-card-actions>
-                <v-snackbar :timeout="10000" error multi-line v-model="errors.root" class="text-lg-center">
-                    Credenciales Invalidas
-                </v-snackbar>
             </form>
         </v-card>
     </v-flex>
@@ -53,7 +49,6 @@ export default {
                 email: null,
                 password: null,
                 errors: [],
-                snackbar: false,
                 loading: false
             }
         },
@@ -71,6 +66,7 @@ export default {
                     }).then(() => {
                         this.loading = true
                         localforage.getItem('intended').then((name) => {
+                          this.$emit('update:v-model', true)
                             if (isEmpty(name)) {
                                 this.$router.replace({
                                     name: 'home'
