@@ -2,7 +2,7 @@
     <div>
     <v-card>
         <v-card-title>
-          Tabla de Renta Mensual
+          <p class="subheading ml-4">Tabla de Renta Mensual</p>
           <v-spacer></v-spacer>
           <v-text-field
             append-icon="search"
@@ -22,7 +22,7 @@
               rows-per-page-text="Registros por Página"
               no-data-text="No se encontraron resultados"
               class="elevation-2">
-            <template slot="items" slote-scope="props">
+            <template slot="items" slot-scope="props">
                 <td>
                   <v-checkbox
                     primary
@@ -41,7 +41,7 @@
     </v-card>
     <v-card class="mt-4">
         <v-card-title>
-          Tabla de Renta Quincenal
+          <p class="subheading ml-4">Tabla de Renta Quincenal</p>
           <v-spacer></v-spacer>
           <v-text-field
             append-icon="search"
@@ -61,7 +61,7 @@
               rows-per-page-text="Registros por Página"
               no-data-text="No se encontraron resultados"
               class="elevation-2">
-              <template slot="items" slote-scope="props">
+              <template slot="items" slot-scope="props">
                     <td>
                       <v-checkbox
                         primary

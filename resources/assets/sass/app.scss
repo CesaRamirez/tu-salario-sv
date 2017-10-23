@@ -3,6 +3,12 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons");
 @import "~vuetify/dist/vuetify.min.css";
 
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 html {
     font-family: 'Roboto', sans-serif;
+    overflow-y: auto;
 }

@@ -5,7 +5,7 @@
     <main>
         <v-content>
             <notification></notification>
-            <v-container>
+            <v-container fill-height>
                 <router-view></router-view>
             </v-container>
         </v-content>

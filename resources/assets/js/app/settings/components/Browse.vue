@@ -2,7 +2,7 @@
     <div>
         <v-card>
             <v-card-title>
-              <span class="title">Configuraciones</span>
+              <p class="subheading ml-5">Configuraciones</p>
               <v-spacer></v-spacer>
               <v-text-field
                 append-icon="search"
@@ -23,12 +23,7 @@
                   rows-per-page-text="Registros por Página"
                   no-data-text="No se encontraron resultados"
                   class="elevation-2">
-                    <template slot="headerCell" slote-scope="props">
-                      <span v-tooltip:bottom="{ 'html': props.header.tooltip }">
-                        {{ props.header.text }}
-                      </span>
-                    </template>
-                <template slot="items" slote-scope="props">
+                <template slot="items" slot-scope="props">
                     <td>
                         <v-checkbox
                         class="text-left"

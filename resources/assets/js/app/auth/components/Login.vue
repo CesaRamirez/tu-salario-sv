@@ -1,7 +1,7 @@
 <template lang="html">
 
-<v-layout align-center justify-center style="height: 100vh">
-    <v-flex xs12 md4>
+<v-layout align-center justify-center>
+    <v-flex xs12 sm12 md4>
         <v-card light>
             <v-card-media class="white--text" height="200px" src="../images/material.jpg">
                 <v-container fill-height fluid>
