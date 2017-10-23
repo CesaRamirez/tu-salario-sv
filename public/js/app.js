@@ -24923,46 +24923,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
 
 
 
@@ -24970,13 +24931,26 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     data: function data() {
         return {
             search: '',
-            headers: [{ text: 'Días', value: 'days', align: 'left' }, { text: 'Inicio (Años)', value: 'start', align: 'left' }, { text: 'Fin (Años)', value: 'end', align: 'left' }],
+            headers: [{
+                text: 'Días',
+                value: 'days',
+                align: 'left'
+            }, {
+                text: 'Inicio (Años)',
+                value: 'start',
+                align: 'left'
+            }, {
+                text: 'Fin (Años)',
+                value: 'end',
+                align: 'left'
+            }],
             selected: [],
             dialog: false,
             days: null,
             start: null,
             end: null,
-            valid: false
+            valid: false,
+            snackbar: false
         };
     },
     mounted: function mounted() {
@@ -25002,13 +24976,30 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             });
         },
         update: function update() {
-            if (this.$validator.validateAll()) {
+            var _this2 = this;
+
+            this.$validator.validateAll().then(function (result) {
+                if (result) {
+                    _this2.updateBonus({
+                        payload: {
+                            days: _this2.bonus.days,
+                            start: _this2.bonus.start,
+                            end: _this2.bonus.end
+                        },
+                        context: _this2,
+                        id: _this2.bonus.id
+                    }).then(function () {
+                        _this2.getBonuses();
+                        _this2.dialog = false;
+                        _this2.snackbar = true;
+                    }).catch(function (err) {});
+                }
+
                 return;
-            }
-            this.dialog = false;
+            });
         },
         clear: function clear() {
-            this.$validator.clean();
+            this.$validator.reset();
             this.dialog = false;
         }
     })
@@ -25062,7 +25053,7 @@ var render = function() {
                 [
                   _c("span", { staticClass: "subheading ml-5 my-3" }, [
                     _vm._v(
-                      "\n              " +
+                      "\n                  " +
                         _vm._s(_vm.selected.length) +
                         " " +
                         _vm._s(
@@ -25071,7 +25062,7 @@ var render = function() {
                             "Seleccionado"
                           )
                         ) +
-                        "\n          "
+                        "\n              "
                     )
                   ]),
                   _vm._v(" "),
@@ -25382,6 +25373,38 @@ var render = function() {
               )
             ],
             1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-snackbar",
+        {
+          attrs: { timeout: 6000, color: "success", "multi-line": true },
+          model: {
+            value: _vm.snackbar,
+            callback: function($$v) {
+              _vm.snackbar = $$v
+            },
+            expression: "snackbar"
+          }
+        },
+        [
+          _vm._v(
+            "\n        ¡Los Datos se han actualizado con Exito!\n        "
+          ),
+          _c(
+            "v-btn",
+            {
+              attrs: { dark: "", flat: "" },
+              on: {
+                click: function($event) {
+                  _vm.snackbar = false
+                }
+              }
+            },
+            [_vm._v("Cerrar")]
           )
         ],
         1
@@ -26363,8 +26386,8 @@ var settings = function settings(state) {
 
 "use strict";
 /* harmony default export */ __webpack_exports__["a"] = ({
-    bonuses: [],
-    bonus: {}
+  bonuses: [],
+  bonus: {}
 });
 
 /***/ }),
@@ -26392,26 +26415,34 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getBonus", function() { return getBonus; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateBonus", function() { return updateBonus; });
 var getBonuses = function getBonuses(_ref) {
-    var commit = _ref.commit;
-    return axios.get('/api/v1/admin/bonus').then(function (response) {
-        commit('setBonuses', response.data.data);
-    });
+  var commit = _ref.commit;
+  return axios.get('/api/v1/admin/bonus').then(function (response) {
+    commit('setBonuses', response.data.data);
+  });
 };
 
 var getBonus = function getBonus(_ref2, _ref3) {
-    var commit = _ref2.commit;
-    var id = _ref3.id;
-    return axios.get('/api/v1/admin/bonus/' + id).then(function (response) {
-        commit('setBonus', response.data.data);
-    });
+  var commit = _ref2.commit;
+  var id = _ref3.id;
+  return axios.get('/api/v1/admin/bonus/' + id).then(function (response) {
+    commit('setBonus', response.data.data);
+  });
 };
 
-var updateBonus = function updateBonus(_ref4) {
-    var id = _ref4.id,
-        payload = _ref4.payload;
-    return axios.put('/api/v1/admin/bonus' + id, payload).then(function (response) {
-        commit('setBonus', response.data.data);
+var updateBonus = function updateBonus(_ref4, _ref5) {
+  var dispatch = _ref4.dispatch;
+  var payload = _ref5.payload,
+      context = _ref5.context,
+      id = _ref5.id;
+
+  return new Promise(function (resolve, reject) {
+    axios.put('/api/v1/admin/bonus/' + id, payload).then(function (response) {
+      resolve(response.data);
+    }).catch(function (error) {
+      context.errors = error.response.data.errors;
+      reject(error.response.data.errors);
     });
+  });
 };
 
 /***/ }),
@@ -26423,10 +26454,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "bonuses", function() { return bonuses; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "bonus", function() { return bonus; });
 var bonuses = function bonuses(state) {
-    return state.bonuses;
+  return state.bonuses;
 };
 var bonus = function bonus(state) {
-    return state.bonus;
+  return state.bonus;
 };
 
 /***/ }),
@@ -26445,6 +26476,9 @@ var bonus = function bonus(state) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vue2_filters__ = __webpack_require__(106);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vue2_filters___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_vue2_filters__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_vee_validate__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_vee_validate_dist_locale_es__ = __webpack_require__(121);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_vee_validate_dist_locale_es___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_vee_validate_dist_locale_es__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__locale_es__ = __webpack_require__(123);
 
 
 
@@ -26452,9 +26486,14 @@ var bonus = function bonus(state) {
 
 
 
-__WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_5_vee_validate__["a" /* default */], {
+
+__WEBPACK_IMPORTED_MODULE_5_vee_validate__["a" /* Validator */].localize('es', __WEBPACK_IMPORTED_MODULE_6_vee_validate_dist_locale_es___default.a);
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_5_vee_validate__["b" /* default */], {
     locale: 'es'
 });
+
+
+
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_4_vue2_filters___default.a);
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_3_vuetify___default.a);
 
@@ -27617,7 +27656,7 @@ if (false) {
 /* unused harmony export install */
 /* unused harmony export use */
 /* unused harmony export mapFields */
-/* unused harmony export Validator */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Validator; });
 /* unused harmony export ErrorBag */
 /* unused harmony export Rules */
 /* unused harmony export version */
@@ -34363,8 +34402,34 @@ var index_esm = {
 };
 
 
-/* harmony default export */ __webpack_exports__["a"] = (index_esm);
+/* harmony default export */ __webpack_exports__["b"] = (index_esm);
 
+
+/***/ }),
+/* 121 */
+/***/ (function(module, exports, __webpack_require__) {
+
+!function(e,n){ true?module.exports=n():"function"==typeof define&&define.amd?define(n):(e.__vee_validate_locale__es=e.__vee_validate_locale__es||{},e.__vee_validate_locale__es.js=n())}(this,function(){"use strict";var e=function(e){var n=["Byte","KB","MB","GB","TB","PB","EB","ZB","YB"],o=0===(e=1024*Number(e))?0:Math.floor(Math.log(e)/Math.log(1024));return 1*(e/Math.pow(1024,o)).toFixed(2)+" "+n[o]},n={name:"es",messages:{_default:function(e){return"El campo "+e+" no es válido."},after:function(e,n){var o=n[0];return"El campo "+e+" debe ser posterior "+(n[1]?"o igual ":"")+"a "+o+"."},alpha_dash:function(e){return"El campo "+e+" solo debe contener letras, números y guiones."},alpha_num:function(e){return"El campo "+e+" solo debe contener letras y números."},alpha_spaces:function(e){return"El campo "+e+" solo debe contener letras y espacios."},alpha:function(e){return"El campo "+e+" solo debe contener letras."},before:function(e,n){var o=n[0];return"El campo "+e+" debe ser anterior "+(n[1]?"o igual ":"")+"a "+o+"."},between:function(e,n){return"El campo "+e+" debe estar entre "+n[0]+" y "+n[1]+"."},confirmed:function(e){return"El campo "+e+" no coincide."},credit_card:function(e){return"El campo "+e+" es inválido."},date_between:function(e,n){return"El campo "+e+" debe estar entre "+n[0]+" y "+n[1]+"."},date_format:function(e,n){return"El campo "+e+" debe tener formato formato "+n[0]+"."},decimal:function(e,n){void 0===n&&(n=["*"]);var o=n[0];return"El campo "+e+" debe ser númerico y contener "+("*"===o?"":o)+" puntos decimales."},digits:function(e,n){return"El campo "+e+" debe ser númerico y contener exactamente "+n[0]+" dígitos."},dimensions:function(e,n){return"El campo "+e+" debe ser de "+n[0]+" pixeles por "+n[1]+" pixeles."},email:function(e){return"El campo "+e+" debe ser un correo electrónico válido."},ext:function(e){return"El campo "+e+" debe ser un archivo válido."},image:function(e){return"El campo "+e+" debe ser una imagen."},in:function(e){return"El campo "+e+" debe ser un valor válido."},integer:function(e){return"El campo "+e+" debe ser un entero."},ip:function(e){return"El campo "+e+" debe ser una dirección ip válida."},length:function(e,n){var o=n[0],r=n[1];return r?"El largo del campo "+e+" debe estar entre "+o+" y "+r+".":"El largo del campo "+e+" debe ser "+o+"."},max:function(e,n){return"El campo "+e+" no debe ser mayor a "+n[0]+" caracteres."},max_value:function(e,n){return"El campo "+e+" debe de ser "+n[0]+" o menor."},mimes:function(e){return"El campo "+e+" debe ser un tipo de archivo válido."},min:function(e,n){return"El campo "+e+" debe tener al menos "+n[0]+" caracteres."},min_value:function(e,n){return"El campo "+e+" debe ser "+n[0]+" o superior."},not_in:function(e){return"El campo "+e+" debe ser un valor válido."},numeric:function(e){return"El campo "+e+" debe contener solo caracteres númericos."},regex:function(e){return"El formato del campo "+e+" no es válido."},required:function(e){return"El campo "+e+" es obligatorio."},size:function(n,o){var r=o[0];return"El campo "+n+" debe ser menor a "+e(r)+"."},url:function(e){return"El campo "+e+" no es una URL válida."}},attributes:{}};return"undefined"!=typeof VeeValidate&&VeeValidate.Validator.addLocale(n),n});
+
+/***/ }),
+/* 122 */,
+/* 123 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vee_validate__ = __webpack_require__(120);
+
+var dictionary = {
+  es: {
+    attributes: {
+      days: 'días',
+      start: 'inicio',
+      end: 'fin'
+    }
+  }
+};
+
+__WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* Validator */].updateDictionary(dictionary);
 
 /***/ })
 ],[17]);

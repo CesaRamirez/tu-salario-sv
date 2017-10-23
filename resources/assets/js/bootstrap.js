@@ -3,11 +3,16 @@ import lodash from 'lodash'
 import axios from 'axios'
 import Vuetify from 'vuetify'
 import Vue2Filters from 'vue2-filters'
-import VeeValidate from 'vee-validate';
+import VeeValidate, { Validator } from 'vee-validate';
+import es from 'vee-validate/dist/locale/es';
 
+Validator.localize('es', es);
 Vue.use(VeeValidate, {
-  locale: 'es'
+  locale: 'es',
 });
+
+import './locale/es'
+
 Vue.use(Vue2Filters)
 Vue.use(Vuetify)
 
