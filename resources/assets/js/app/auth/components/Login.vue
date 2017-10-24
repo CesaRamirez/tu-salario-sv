@@ -1,4 +1,5 @@
 <template lang="html">
+
 <v-container fill-height>
     <v-layout align-center justify-center>
         <v-flex xs12 sm12 md4>
@@ -27,8 +28,8 @@
                 </form>
             </v-card>
         </v-flex>
-      </v-layout>
-    </v-container>
+    </v-layout>
+</v-container>
 
 </template>
 
@@ -67,7 +68,7 @@ export default {
                     }).then(() => {
                         this.loading = true
                         localforage.getItem('intended').then((name) => {
-                          this.$emit('update:v-model', true)
+                            this.$emit('update:v-model', true)
                             if (isEmpty(name)) {
                                 this.$router.replace({
                                     name: 'home'
