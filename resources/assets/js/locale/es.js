@@ -1,4 +1,6 @@
-import { Validator } from 'vee-validate';
+import {
+  Validator
+} from 'vee-validate';
 const dictionary = {
   es: {
     attributes: {
