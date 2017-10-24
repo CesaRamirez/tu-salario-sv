@@ -1,8 +1,8 @@
-import { NotFound } from '../components'
+import {
+  NotFound
+} from '../components'
 
-export default [
-    {
-        path: '*',
-        component: NotFound
-    }
-]
+export default [{
+  path: '*',
+  component: NotFound
+}]
