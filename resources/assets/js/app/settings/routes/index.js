@@ -1,6 +1,5 @@
 import {
-  Browse,
-  Edit
+  Browse
 } from '../components'
 
 export default [{
