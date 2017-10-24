@@ -1,3 +1,3 @@
 export const rent = (state) => {
-    return state.rent;
+  return state.rent;
 }

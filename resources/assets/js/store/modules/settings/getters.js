@@ -1,3 +1,3 @@
 export const settings = (state) => {
-    return state.settings;
+  return state.settings;
 }
