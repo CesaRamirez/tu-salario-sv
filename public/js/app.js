@@ -31352,7 +31352,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     })),
     methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])({
         getSettings: 'settings/getSettings',
-        getSetting: 'settings/getSetting'
+        getSetting: 'settings/getSetting',
+        updateSetting: 'settings/updateSetting'
     }), {
         edit: function edit() {
             var _this = this;
@@ -31368,18 +31369,19 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
             this.$validator.validateAll().then(function (result) {
                 if (result) {
-                    _this2.updateBonus({
+                    _this2.updateSetting({
                         payload: {
-                            days: _this2.bonus.days,
-                            start: _this2.bonus.start,
-                            end: _this2.bonus.end
+                            key: _this2.setting.key,
+                            description: _this2.setting.description,
+                            value: _this2.setting.value
                         },
                         context: _this2,
-                        id: _this2.bonus.id
+                        id: _this2.setting.id
                     }).then(function () {
-                        _this2.getBonuses();
+                        _this2.loading = true;
+                        _this2.getSettings();
+                        _this2.loading = false;
                         _this2.dialog = false;
-                        _this2.snackbar = true;
                     }).catch(function (err) {});
                 }
 
@@ -31983,7 +31985,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                     }).then(function () {
                         _this2.getBonuses();
                         _this2.dialog = false;
-                        _this2.snackbar = true;
                     }).catch(function (err) {});
                 }
 
@@ -32729,6 +32730,7 @@ var setSetting = function setSetting(state, setting) {
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getSettings", function() { return getSettings; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getSetting", function() { return getSetting; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateSetting", function() { return updateSetting; });
 var getSettings = function getSettings(_ref) {
   var commit = _ref.commit;
   return axios.get('/api/v1/admin/settings').then(function (response) {
@@ -32741,6 +32743,28 @@ var getSetting = function getSetting(_ref2, _ref3) {
   var id = _ref3.id;
   return axios.get('/api/v1/admin/settings/' + id).then(function (response) {
     commit('setSetting', response.data.data);
+  });
+};
+
+var updateSetting = function updateSetting(_ref4, _ref5) {
+  var dispatch = _ref4.dispatch;
+  var payload = _ref5.payload,
+      context = _ref5.context,
+      id = _ref5.id;
+
+  return new Promise(function (resolve, reject) {
+    axios.put('/api/v1/admin/settings/' + id, payload).then(function (response) {
+      resolve(response.data);
+      dispatch('noti', {
+        message: '¡Los Datos se han actualizado con Exito!',
+        type: 'success'
+      }, {
+        root: true
+      });
+    }).catch(function (error) {
+      context.errors = error.response.data.errors;
+      reject(error.response.data.errors);
+    });
   });
 };
 

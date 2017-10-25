@@ -116,6 +116,7 @@ export default {
             ...mapActions({
                     getSettings: 'settings/getSettings',
                     getSetting: 'settings/getSetting',
+                    updateSetting: 'settings/updateSetting'
                 }),
                 edit() {
                     this.getSetting({
@@ -127,18 +128,19 @@ export default {
                 update() {
                     this.$validator.validateAll().then((result) => {
                         if (result) {
-                            this.updateBonus({
+                            this.updateSetting({
                                 payload: {
-                                    days: this.bonus.days,
-                                    start: this.bonus.start,
-                                    end: this.bonus.end
+                                    key: this.setting.key,
+                                    description: this.setting.description,
+                                    value: this.setting.value
                                 },
                                 context: this,
-                                id: this.bonus.id
+                                id: this.setting.id
                             }).then(() => {
-                                this.getBonuses()
+                                this.loading = true
+                                this.getSettings()
+                                this.loading = false
                                 this.dialog = false
-                                this.snackbar = true
                             }).catch((err) => {})
                         }
 

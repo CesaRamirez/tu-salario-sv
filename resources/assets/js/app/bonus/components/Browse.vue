@@ -136,7 +136,6 @@ export default {
                             }).then(() => {
                                 this.getBonuses()
                                 this.dialog = false
-                                this.snackbar = true
                             }).catch((err) => {})
                         }
 
