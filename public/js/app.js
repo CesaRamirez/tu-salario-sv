@@ -32441,7 +32441,8 @@ var rent = function rent(state) {
 
 "use strict";
 /* harmony default export */ __webpack_exports__["a"] = ({
-  settings: []
+  settings: [],
+  setting: {}
 });
 
 /***/ }),
@@ -32451,8 +32452,12 @@ var rent = function rent(state) {
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setSettings", function() { return setSettings; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setSetting", function() { return setSetting; });
 var setSettings = function setSettings(state, settings) {
   return state.settings = settings;
+};
+var setSetting = function setSetting(state, setting) {
+  return state.setting = setting;
 };
 
 /***/ }),
@@ -32462,10 +32467,19 @@ var setSettings = function setSettings(state, settings) {
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getSettings", function() { return getSettings; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getBonus", function() { return getBonus; });
 var getSettings = function getSettings(_ref) {
   var commit = _ref.commit;
   return axios.get('/api/v1/admin/settings').then(function (response) {
     commit('setSettings', response.data.data);
+  });
+};
+
+var getBonus = function getBonus(_ref2, _ref3) {
+  var commit = _ref2.commit;
+  var id = _ref3.id;
+  return axios.get('/api/v1/admin/settings/' + id).then(function (response) {
+    commit('setSetting', response.data.data);
   });
 };
 
@@ -32476,8 +32490,12 @@ var getSettings = function getSettings(_ref) {
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "settings", function() { return settings; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setting", function() { return setting; });
 var settings = function settings(state) {
   return state.settings;
+};
+var setting = function setting(state) {
+  return state.setting;
 };
 
 /***/ }),

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\BonusRequest;
 use App\Http\Resources\BonusResource;
 use App\TuSalarioSV\Bonus;
+use Illuminate\Http\JsonResponse;
 
 class BonusController extends Controller
 {
@@ -52,6 +53,13 @@ class BonusController extends Controller
         return response()->json(['error' => 'Could not update'], 422);
     }
 
+    /**
+     * Show Detail Bonus.
+     *
+     * @param \App\TuSalarioSV\Bonus $bonus
+     *
+     * @return JsonResponse
+     */
     public function show(Bonus $bonus)
     {
         return new BonusResource($bonus);
