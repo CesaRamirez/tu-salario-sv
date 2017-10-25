@@ -6,7 +6,7 @@ export const getSettings = ({
     commit('setSettings', response.data.data)
   })
 
-export const getBonus = ({
+export const getSetting = ({
     commit
   }, {
     id

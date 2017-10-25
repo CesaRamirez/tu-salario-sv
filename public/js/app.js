@@ -31278,6 +31278,39 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -31303,23 +31336,59 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                 tooltip: 'Valor de Llave'
             }],
             loading: true,
-            selected: []
+            selected: [],
+            dialog: false
         };
     },
     mounted: function mounted() {
-        this.get();
+        this.loading = true;
+        this.getSettings();
+        this.loading = false;
     },
 
     computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])({
-        items: 'settings/settings'
+        items: 'settings/settings',
+        setting: 'settings/setting'
     })),
     methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])({
-        getSettings: 'settings/getSettings'
+        getSettings: 'settings/getSettings',
+        getSetting: 'settings/getSetting'
     }), {
-        get: function get() {
-            this.loading = true;
-            this.getSettings();
-            this.loading = false;
+        edit: function edit() {
+            var _this = this;
+
+            this.getSetting({
+                id: this.selected[0].id
+            }).then(function (response) {
+                _this.dialog = true;
+            });
+        },
+        update: function update() {
+            var _this2 = this;
+
+            this.$validator.validateAll().then(function (result) {
+                if (result) {
+                    _this2.updateBonus({
+                        payload: {
+                            days: _this2.bonus.days,
+                            start: _this2.bonus.start,
+                            end: _this2.bonus.end
+                        },
+                        context: _this2,
+                        id: _this2.bonus.id
+                    }).then(function () {
+                        _this2.getBonuses();
+                        _this2.dialog = false;
+                        _this2.snackbar = true;
+                    }).catch(function (err) {});
+                }
+
+                return;
+            });
+        },
+        clear: function clear() {
+            this.$validator.reset();
+            this.dialog = false;
         }
     })
 });
@@ -31480,6 +31549,198 @@ var render = function() {
                   expression: "selected"
                 }
               })
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-layout",
+            { attrs: { row: "", "justify-center": "" } },
+            [
+              _c(
+                "v-dialog",
+                {
+                  attrs: { persistent: "", "max-width": "500px" },
+                  model: {
+                    value: _vm.dialog,
+                    callback: function($$v) {
+                      _vm.dialog = $$v
+                    },
+                    expression: "dialog"
+                  }
+                },
+                [
+                  _c(
+                    "v-card",
+                    [
+                      _c("v-card-title", [
+                        _c("span", { staticClass: "headline" }, [
+                          _vm._v("Editar Opciones de Configuración")
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "v-card-text",
+                        [
+                          _c(
+                            "v-container",
+                            { attrs: { "grid-list-md": "" } },
+                            [
+                              _c(
+                                "v-layout",
+                                { attrs: { wrap: "" } },
+                                [
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs12: "", sm12: "", md12: "" } },
+                                    [
+                                      _c("v-text-field", {
+                                        directives: [
+                                          {
+                                            name: "validate",
+                                            rawName: "v-validate",
+                                            value: "required",
+                                            expression: "'required'"
+                                          }
+                                        ],
+                                        attrs: {
+                                          label: "Llave",
+                                          required: "",
+                                          "error-messages": _vm._errors.collect(
+                                            "key"
+                                          ),
+                                          "data-vv-name": "keys",
+                                          hint: "Llave de Configuración",
+                                          "persistent-hint": ""
+                                        },
+                                        model: {
+                                          value: _vm.setting.key,
+                                          callback: function($$v) {
+                                            _vm.$set(_vm.setting, "key", $$v)
+                                          },
+                                          expression: "setting.key"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs12: "", sm12: "", md12: "" } },
+                                    [
+                                      _c("v-text-field", {
+                                        directives: [
+                                          {
+                                            name: "validate",
+                                            rawName: "v-validate",
+                                            value: "required",
+                                            expression: "`required`"
+                                          }
+                                        ],
+                                        attrs: {
+                                          label: "Descripción",
+                                          required: "",
+                                          "error-messages": _vm._errors.collect(
+                                            "description"
+                                          ),
+                                          "data-vv-name": "description",
+                                          hint: "Descripción",
+                                          "persistent-hint": ""
+                                        },
+                                        model: {
+                                          value: _vm.setting.description,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.setting,
+                                              "description",
+                                              $$v
+                                            )
+                                          },
+                                          expression: "setting.description"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs12: "", sm12: "", md12: "" } },
+                                    [
+                                      _c("v-text-field", {
+                                        directives: [
+                                          {
+                                            name: "validate",
+                                            rawName: "v-validate",
+                                            value: "required",
+                                            expression: "`required`"
+                                          }
+                                        ],
+                                        attrs: {
+                                          label: "Valor",
+                                          required: "",
+                                          "error-messages": _vm._errors.collect(
+                                            "value"
+                                          ),
+                                          "data-vv-name": "value",
+                                          hint: "Valor",
+                                          "persistent-hint": ""
+                                        },
+                                        model: {
+                                          value: _vm.setting.value,
+                                          callback: function($$v) {
+                                            _vm.$set(_vm.setting, "value", $$v)
+                                          },
+                                          expression: "setting.value"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c("small", [_vm._v("*Indica campos obligatorios")])
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-card-actions",
+                        [
+                          _c("v-spacer"),
+                          _vm._v(" "),
+                          _c(
+                            "v-btn",
+                            {
+                              attrs: { color: "blue darken-1", flat: "" },
+                              on: { click: _vm.clear }
+                            },
+                            [_vm._v("Cerrar")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-btn",
+                            {
+                              attrs: { color: "blue darken-1", flat: "" },
+                              on: { click: _vm.update }
+                            },
+                            [_vm._v("Guardar")]
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
             ],
             1
           )
@@ -32467,7 +32728,7 @@ var setSetting = function setSetting(state, setting) {
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getSettings", function() { return getSettings; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getBonus", function() { return getBonus; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getSetting", function() { return getSetting; });
 var getSettings = function getSettings(_ref) {
   var commit = _ref.commit;
   return axios.get('/api/v1/admin/settings').then(function (response) {
@@ -32475,7 +32736,7 @@ var getSettings = function getSettings(_ref) {
   });
 };
 
-var getBonus = function getBonus(_ref2, _ref3) {
+var getSetting = function getSetting(_ref2, _ref3) {
   var commit = _ref2.commit;
   var id = _ref3.id;
   return axios.get('/api/v1/admin/settings/' + id).then(function (response) {

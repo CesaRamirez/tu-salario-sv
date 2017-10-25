@@ -31,6 +31,39 @@
                 </template>
             </v-data-table>
         </v-card>
+        <v-layout row justify-center>
+            <v-dialog v-model="dialog" persistent max-width="500px">
+                <v-card>
+                    <v-card-title>
+                        <span class="headline">Editar Opciones de Configuración</span>
+                    </v-card-title>
+                    <v-card-text>
+                        <v-container grid-list-md>
+                            <v-layout wrap>
+                                <v-flex xs12 sm12 md12>
+                                    <v-text-field label="Llave" required v-model="setting.key" :error-messages="_errors.collect('key')" v-validate="'required'" data-vv-name="keys" hint="Llave de Configuración" persistent-hint>
+                                    </v-text-field>
+                                </v-flex>
+                                <v-flex xs12 sm12 md12>
+                                    <v-text-field label="Descripción" required  v-model="setting.description" :error-messages="_errors.collect('description')" v-validate="`required`" data-vv-name="description" hint="Descripción" persistent-hint>
+                                    </v-text-field>
+                                </v-flex>
+                                <v-flex xs12 sm12 md12>
+                                    <v-text-field label="Valor" required  v-model="setting.value" :error-messages="_errors.collect('value')" v-validate="`required`" data-vv-name="value" hint="Valor" persistent-hint>
+                                    </v-text-field>
+                                </v-flex>
+                            </v-layout>
+                        </v-container>
+                        <small>*Indica campos obligatorios</small>
+                    </v-card-text>
+                    <v-card-actions>
+                        <v-spacer></v-spacer>
+                        <v-btn color="blue darken-1" flat @click="clear">Cerrar</v-btn>
+                        <v-btn color="blue darken-1" flat @click="update">Guardar</v-btn>
+                    </v-card-actions>
+                </v-card>
+            </v-dialog>
+        </v-layout>
     </v-container>
 </div>
 
@@ -64,25 +97,57 @@ export default {
                     tooltip: 'Valor de Llave'
                 }, ],
                 loading: true,
-                selected: []
+                selected: [],
+                dialog: false
             }
         },
         mounted() {
-            this.get()
+            this.loading = true
+            this.getSettings()
+            this.loading = false
         },
         computed: {
             ...mapGetters({
-                items: 'settings/settings'
+                items: 'settings/settings',
+                setting: 'settings/setting'
             })
         },
         methods: {
             ...mapActions({
-                    getSettings: 'settings/getSettings'
+                    getSettings: 'settings/getSettings',
+                    getSetting: 'settings/getSetting',
                 }),
-                get() {
-                    this.loading = true
-                    this.getSettings()
-                    this.loading = false
+                edit() {
+                    this.getSetting({
+                        id: this.selected[0].id
+                    }).then((response) => {
+                        this.dialog = true
+                    })
+                },
+                update() {
+                    this.$validator.validateAll().then((result) => {
+                        if (result) {
+                            this.updateBonus({
+                                payload: {
+                                    days: this.bonus.days,
+                                    start: this.bonus.start,
+                                    end: this.bonus.end
+                                },
+                                context: this,
+                                id: this.bonus.id
+                            }).then(() => {
+                                this.getBonuses()
+                                this.dialog = false
+                                this.snackbar = true
+                            }).catch((err) => {})
+                        }
+
+                        return
+                    });
+                },
+                clear() {
+                    this.$validator.reset()
+                    this.dialog = false
                 }
         }
 }
