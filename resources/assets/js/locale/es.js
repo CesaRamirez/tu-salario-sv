@@ -7,6 +7,9 @@ const dictionary = {
       days: 'días',
       start: 'inicio',
       end: 'fin',
+      key: 'llave',
+      description: 'descripción',
+      value: 'valor',
     }
   }
 };

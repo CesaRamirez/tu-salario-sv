@@ -31611,7 +31611,7 @@ var render = function() {
                                           "error-messages": _vm._errors.collect(
                                             "key"
                                           ),
-                                          "data-vv-name": "keys",
+                                          "data-vv-name": "key",
                                           hint: "Llave de Configuración",
                                           "persistent-hint": ""
                                         },
@@ -31647,7 +31647,7 @@ var render = function() {
                                             "description"
                                           ),
                                           "data-vv-name": "description",
-                                          hint: "Descripción",
+                                          hint: "Descripción de Configuración",
                                           "persistent-hint": ""
                                         },
                                         model: {
@@ -31686,7 +31686,7 @@ var render = function() {
                                             "value"
                                           ),
                                           "data-vv-name": "value",
-                                          hint: "Valor",
+                                          hint: "Valor de Configuración",
                                           "persistent-hint": ""
                                         },
                                         model: {
@@ -33705,7 +33705,10 @@ var dictionary = {
     attributes: {
       days: 'días',
       start: 'inicio',
-      end: 'fin'
+      end: 'fin',
+      key: 'llave',
+      description: 'descripción',
+      value: 'valor'
     }
   }
 };

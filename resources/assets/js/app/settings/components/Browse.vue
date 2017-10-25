@@ -41,15 +41,15 @@
                         <v-container grid-list-md>
                             <v-layout wrap>
                                 <v-flex xs12 sm12 md12>
-                                    <v-text-field label="Llave" required v-model="setting.key" :error-messages="_errors.collect('key')" v-validate="'required'" data-vv-name="keys" hint="Llave de Configuración" persistent-hint>
+                                    <v-text-field label="Llave" required v-model="setting.key" :error-messages="_errors.collect('key')" v-validate="'required'" data-vv-name="key" hint="Llave de Configuración" persistent-hint>
                                     </v-text-field>
                                 </v-flex>
                                 <v-flex xs12 sm12 md12>
-                                    <v-text-field label="Descripción" required  v-model="setting.description" :error-messages="_errors.collect('description')" v-validate="`required`" data-vv-name="description" hint="Descripción" persistent-hint>
+                                    <v-text-field label="Descripción" required  v-model="setting.description" :error-messages="_errors.collect('description')" v-validate="`required`" data-vv-name="description" hint="Descripción de Configuración" persistent-hint>
                                     </v-text-field>
                                 </v-flex>
                                 <v-flex xs12 sm12 md12>
-                                    <v-text-field label="Valor" required  v-model="setting.value" :error-messages="_errors.collect('value')" v-validate="`required`" data-vv-name="value" hint="Valor" persistent-hint>
+                                    <v-text-field label="Valor" required  v-model="setting.value" :error-messages="_errors.collect('value')" v-validate="`required`" data-vv-name="value" hint="Valor de Configuración" persistent-hint>
                                     </v-text-field>
                                 </v-flex>
                             </v-layout>
