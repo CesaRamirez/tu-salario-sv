@@ -1,3 +1,4 @@
 export default {
-  rent: []
+  rentM: [],
+  rentQ: []
 }

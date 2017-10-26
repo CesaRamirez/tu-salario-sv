@@ -75,7 +75,7 @@
 <script>
 
 import {
-    mapActions
+    mapActions, mapGetters
 }
 from 'vuex'
 export default {
@@ -104,26 +104,31 @@ export default {
                     text: 'Mas Cuota Fija de',
                     value: 'fee'
                 }, ],
-                items_mensual: [],
-                items_quincenal: [],
                 selected: []
             }
         },
         mounted() {
-            this.getRentTable(1)
-            this.getRentTable(2)
+            this.get(1)
+            this.get(2)
+        },
+        computed: {
+            ...mapGetters({
+                items_quincenal: 'rent/rentQ',
+                items_mensual: 'rent/rentM'
+            })
         },
         methods: {
-            getRentTable(type) {
-                axios.get('/api/v1/admin/rents/' + type + '/type')
-                    .then((response) => {
-                        if (type == 1) {
-                            this.items_mensual = response.data.data
-                        } else if (type == 2) {
-                            this.items_quincenal = response.data.data
-                        }
-                    })
-            }
+          ...mapActions({
+                  getRentTable: 'rent/getRentTable'
+              }),
+              get(_type) {
+                  this.getRentTable({
+                      type: _type
+                  }).then((response) => {})
+              },
+              edit(){
+                
+              }
         }
 }
 

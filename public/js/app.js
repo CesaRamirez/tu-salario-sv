@@ -30815,6 +30815,8 @@ module.exports = Component.exports
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(3);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 //
 //
 //
@@ -30918,29 +30920,28 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 text: 'Mas Cuota Fija de',
                 value: 'fee'
             }],
-            items_mensual: [],
-            items_quincenal: [],
             selected: []
         };
     },
     mounted: function mounted() {
-        this.getRentTable(1);
-        this.getRentTable(2);
+        this.get(1);
+        this.get(2);
     },
 
-    methods: {
-        getRentTable: function getRentTable(type) {
-            var _this = this;
-
-            axios.get('/api/v1/admin/rents/' + type + '/type').then(function (response) {
-                if (type == 1) {
-                    _this.items_mensual = response.data.data;
-                } else if (type == 2) {
-                    _this.items_quincenal = response.data.data;
-                }
-            });
-        }
-    }
+    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])({
+        items_quincenal: 'rent/rentQ',
+        items_mensual: 'rent/rentM'
+    })),
+    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])({
+        getRentTable: 'rent/getRentTable'
+    }), {
+        get: function get(_type) {
+            this.getRentTable({
+                type: _type
+            }).then(function (response) {});
+        },
+        edit: function edit() {}
+    })
 });
 
 /***/ }),
@@ -32765,7 +32766,8 @@ var user = function user(state) {
 
 "use strict";
 /* harmony default export */ __webpack_exports__["a"] = ({
-  rent: []
+  rentM: [],
+  rentQ: []
 });
 
 /***/ }),
@@ -32774,9 +32776,13 @@ var user = function user(state) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setRent", function() { return setRent; });
-var setRent = function setRent(state, rent) {
-  return state.rent = rent;
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setRentQ", function() { return setRentQ; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setRentM", function() { return setRentM; });
+var setRentQ = function setRentQ(state, rentQ) {
+  return state.rentQ = rentQ;
+};
+var setRentM = function setRentM(state, rentM) {
+  return state.rentM = rentM;
 };
 
 /***/ }),
@@ -32790,7 +32796,11 @@ var getRentTable = function getRentTable(_ref, _ref2) {
   var commit = _ref.commit;
   var type = _ref2.type;
   return axios.get('/api/v1/admin/rents/' + type + '/type').then(function (response) {
-    commit('setRent', response.data);
+    if (type == 1) {
+      commit('setRentM', response.data.data);
+    } else if (type === 2) {
+      commit('setRentQ', response.data.data);
+    }
   });
 };
 
@@ -32800,9 +32810,13 @@ var getRentTable = function getRentTable(_ref, _ref2) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "rent", function() { return rent; });
-var rent = function rent(state) {
-  return state.rent;
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "rentQ", function() { return rentQ; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "rentM", function() { return rentM; });
+var rentQ = function rentQ(state) {
+  return state.rentQ;
+};
+var rentM = function rentM(state) {
+  return state.rentM;
 };
 
 /***/ }),
