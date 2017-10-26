@@ -2,11 +2,23 @@
 
 <div>
     <v-container>
-        <v-card>
-            <v-card-title>
+        <v-card class="elevation-9">
+            <v-card-title v-if="selected.length === 0">
                 <p class="subheading ml-4">Tabla de Renta Mensual</p>
                 <v-spacer></v-spacer>
                 <v-text-field append-icon="search" label="Buscar" single-line hide-details v-model="search_mensual"></v-text-field>
+            </v-card-title>
+            <v-card-title v-else class="blue">
+                <span class="subheading ml-5 my-3">
+                  {{ selected.length }} {{ selected.length | pluralize('Seleccionado')}}
+              </span>
+                <v-spacer></v-spacer>
+                <v-tooltip top>
+                    <v-btn icon slot="activator" v-show="selected.length === 1" @click="edit">
+                        <v-icon>create</v-icon>
+                    </v-btn>
+                    <span>Editar</span>
+                </v-tooltip>
             </v-card-title>
             <v-data-table :headers="headers_x" :items="items_mensual" :search="search_mensual" v-model="selected" selected-key="id" select-all rows-per-page-text="Registros por Página" no-data-text="No se encontraron resultados" class="elevation-2">
                 <template slot="items" slot-scope="props">
@@ -22,11 +34,24 @@
                 </template>
             </v-data-table>
         </v-card>
-        <v-card class="mt-4">
-            <v-card-title>
+
+        <v-card class="mt-4 elevation-9">
+            <v-card-title v-if="selected.length === 0">
                 <p class="subheading ml-4">Tabla de Renta Quincenal</p>
                 <v-spacer></v-spacer>
                 <v-text-field append-icon="search" label="Buscar" single-line hide-details v-model="search_quincenal"></v-text-field>
+            </v-card-title>
+            <v-card-title v-else class="blue">
+                <span class="subheading ml-5 my-3">
+                  {{ selected.length }} {{ selected.length | pluralize('Seleccionado')}}
+              </span>
+                <v-spacer></v-spacer>
+                <v-tooltip top>
+                    <v-btn icon slot="activator" v-show="selected.length === 1" @click="edit">
+                        <v-icon>create</v-icon>
+                    </v-btn>
+                    <span>Editar</span>
+                </v-tooltip>
             </v-card-title>
             <v-data-table :headers="headers_x" :items="items_quincenal" :search="search_quincenal" v-model="selected" selected-key="id" select-all rows-per-page-text="Registros por Página" no-data-text="No se encontraron resultados" class="elevation-2">
                 <template slot="items" slot-scope="props">
