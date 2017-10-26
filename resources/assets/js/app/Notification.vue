@@ -10,17 +10,15 @@
 </template>
 
 <script>
-
 import {
-    mapGetters
+  mapGetters
 }
 from 'vuex'
 export default {
-    computed: {
-        ...mapGetters({
-            noti: 'noti'
-        })
-    },
-  }
-
+  computed: {
+    ...mapGetters({
+      noti: 'noti'
+    })
+  },
+}
 </script>

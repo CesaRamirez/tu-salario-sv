@@ -70,88 +70,87 @@
 </template>
 
 <script>
-
 import {
-    mapActions, mapGetters
+  mapActions,
+  mapGetters
 }
 from 'vuex'
 
 export default {
-    data() {
-            return {
-                search: '',
-                headers: [{
-                    text: 'Llave',
-                    value: 'key',
-                    align: 'left',
-                    tooltip: 'Llave identificadora'
-                }, {
-                    text: 'Descripción',
-                    value: 'description',
-                    align: 'left',
-                    tooltip: 'Descripción de Llave'
-                }, {
-                    text: 'Valor',
-                    value: 'value',
-                    align: 'left',
-                    tooltip: 'Valor de Llave'
-                }, ],
-                loading: true,
-                selected: [],
-                dialog: false
-            }
-        },
-        mounted() {
+  data() {
+    return {
+      search: '',
+      headers: [{
+        text: 'Llave',
+        value: 'key',
+        align: 'left',
+        tooltip: 'Llave identificadora'
+      }, {
+        text: 'Descripción',
+        value: 'description',
+        align: 'left',
+        tooltip: 'Descripción de Llave'
+      }, {
+        text: 'Valor',
+        value: 'value',
+        align: 'left',
+        tooltip: 'Valor de Llave'
+      }, ],
+      loading: true,
+      selected: [],
+      dialog: false
+    }
+  },
+  mounted() {
+    this.loading = true
+    this.getSettings()
+    this.loading = false
+  },
+  computed: {
+    ...mapGetters({
+      items: 'settings/settings',
+      setting: 'settings/setting'
+    })
+  },
+  methods: {
+    ...mapActions({
+      getSettings: 'settings/getSettings',
+      getSetting: 'settings/getSetting',
+      updateSetting: 'settings/updateSetting'
+    }),
+    edit() {
+      this.getSetting({
+        id: this.selected[0].id
+      }).then((response) => {
+        this.dialog = true
+      })
+    },
+    update() {
+      this.$validator.validateAll().then((result) => {
+        if (result) {
+          this.updateSetting({
+            payload: {
+              key: this.setting.key,
+              description: this.setting.description,
+              value: this.setting.value
+            },
+            context: this,
+            id: this.setting.id
+          }).then(() => {
             this.loading = true
             this.getSettings()
             this.loading = false
-        },
-        computed: {
-            ...mapGetters({
-                items: 'settings/settings',
-                setting: 'settings/setting'
-            })
-        },
-        methods: {
-            ...mapActions({
-                    getSettings: 'settings/getSettings',
-                    getSetting: 'settings/getSetting',
-                    updateSetting: 'settings/updateSetting'
-                }),
-                edit() {
-                    this.getSetting({
-                        id: this.selected[0].id
-                    }).then((response) => {
-                        this.dialog = true
-                    })
-                },
-                update() {
-                    this.$validator.validateAll().then((result) => {
-                        if (result) {
-                            this.updateSetting({
-                                payload: {
-                                    key: this.setting.key,
-                                    description: this.setting.description,
-                                    value: this.setting.value
-                                },
-                                context: this,
-                                id: this.setting.id
-                            }).then(() => {
-                                this.loading = true
-                                this.getSettings()
-                                this.loading = false
-                                this.dialog = false
-                            }).catch((err) => {})
-                        }
-
-                        return
-                    });
-                },
-                clear() {
-                    this.$validator.reset()
-                    this.dialog = false
-                }
+            this.dialog = false
+          }).catch((err) => {})
         }
-}
 
+        return
+      });
+    },
+    clear() {
+      this.$validator.reset()
+      this.dialog = false
+    }
+  }
+}
 </script>

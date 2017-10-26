@@ -70,83 +70,82 @@
 </template>
 
 <script>
-
 import {
-    mapActions, mapGetters
+  mapActions,
+  mapGetters
 }
 from 'vuex'
 
 export default {
-    data() {
-            return {
-                search: '',
-                headers: [{
-                    text: 'Días',
-                    value: 'days',
-                    align: 'left'
-                }, {
-                    text: 'Inicio (Años)',
-                    value: 'start',
-                    align: 'left'
-                }, {
-                    text: 'Fin (Años)',
-                    value: 'end',
-                    align: 'left'
-                }, ],
-                selected: [],
-                dialog: false,
-                days: null,
-                start: null,
-                end: null
-            }
-        },
-        mounted() {
+  data() {
+    return {
+      search: '',
+      headers: [{
+        text: 'Días',
+        value: 'days',
+        align: 'left'
+      }, {
+        text: 'Inicio (Años)',
+        value: 'start',
+        align: 'left'
+      }, {
+        text: 'Fin (Años)',
+        value: 'end',
+        align: 'left'
+      }, ],
+      selected: [],
+      dialog: false,
+      days: null,
+      start: null,
+      end: null
+    }
+  },
+  mounted() {
+    this.getBonuses()
+  },
+  computed: {
+    ...mapGetters({
+      items: 'bonus/bonuses',
+      bonus: 'bonus/bonus'
+    })
+  },
+  methods: {
+    ...mapActions({
+      getBonuses: 'bonus/getBonuses',
+      getBonus: 'bonus/getBonus',
+      updateBonus: 'bonus/updateBonus'
+    }),
+    edit() {
+      this.getBonus({
+        id: this.selected[0].id
+      }).then((response) => {
+        this.dialog = true
+      })
+    },
+    update() {
+      this.$validator.validateAll().then((result) => {
+        if (result) {
+          this.updateBonus({
+            payload: {
+              days: this.bonus.days,
+              start: this.bonus.start,
+              end: this.bonus.end
+            },
+            context: this,
+            id: this.bonus.id
+          }).then(() => {
             this.getBonuses()
-        },
-        computed: {
-            ...mapGetters({
-                items: 'bonus/bonuses',
-                bonus: 'bonus/bonus'
-            })
-        },
-        methods: {
-            ...mapActions({
-                    getBonuses: 'bonus/getBonuses',
-                    getBonus: 'bonus/getBonus',
-                    updateBonus: 'bonus/updateBonus'
-                }),
-                edit() {
-                    this.getBonus({
-                        id: this.selected[0].id
-                    }).then((response) => {
-                        this.dialog = true
-                    })
-                },
-                update() {
-                    this.$validator.validateAll().then((result) => {
-                        if (result) {
-                            this.updateBonus({
-                                payload: {
-                                    days: this.bonus.days,
-                                    start: this.bonus.start,
-                                    end: this.bonus.end
-                                },
-                                context: this,
-                                id: this.bonus.id
-                            }).then(() => {
-                                this.getBonuses()
-                                this.dialog = false
-                            }).catch((err) => {})
-                        }
-
-                        return
-                    });
-                },
-                clear() {
-                    this.$validator.reset()
-                    this.dialog = false
-                }
+            this.dialog = false
+          }).catch((err) => {})
         }
-}
 
+        return
+      });
+    },
+    clear() {
+      this.$validator.reset()
+      this.dialog = false
+    }
+  }
+}
 </script>

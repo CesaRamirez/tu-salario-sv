@@ -34,59 +34,57 @@
 </template>
 
 <script>
-
 import {
-    mapActions
+  mapActions
 }
 from 'vuex'
 import localforage from 'localforage'
 import {
-    isEmpty
+  isEmpty
 }
 from 'lodash'
 
 export default {
-    data() {
-            return {
-                email: null,
-                password: null,
-                errors: [],
-                loading: false
-            }
+  data() {
+    return {
+      email: null,
+      password: null,
+      errors: [],
+      loading: false
+    }
+  },
+  methods: {
+    ...mapActions({
+      login: 'auth/login'
+    }),
+    submit() {
+      this.login({
+        payload: {
+          email: this.email,
+          password: this.password
         },
-        methods: {
-            ...mapActions({
-                    login: 'auth/login'
-                }),
-                submit() {
-                    this.login({
-                        payload: {
-                            email: this.email,
-                            password: this.password
-                        },
-                        context: this
-                    }).then(() => {
-                        this.loading = true
-                        localforage.getItem('intended').then((name) => {
-                            this.$emit('update:v-model', true)
-                            if (isEmpty(name)) {
-                                this.$router.replace({
-                                    name: 'home'
-                                })
-                                this.loading = false
-                                return
-                            }
-                            this.$router.replace({
-                                name: name
-                            })
-                            this.loading = false
-                        })
-                    }).catch((err) => {})
-                },
-                cleanFields(field) {
-                    return this.errors[field] = []
-                }
-        }
+        context: this
+      }).then(() => {
+        this.loading = true
+        localforage.getItem('intended').then((name) => {
+          this.$emit('update:v-model', true)
+          if (isEmpty(name)) {
+            this.$router.replace({
+              name: 'home'
+            })
+            this.loading = false
+            return
+          }
+          this.$router.replace({
+            name: name
+          })
+          this.loading = false
+        })
+      }).catch((err) => {})
+    },
+    cleanFields(field) {
+      return this.errors[field] = []
+    }
+  }
 }
-
 </script>

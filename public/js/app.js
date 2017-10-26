@@ -30255,51 +30255,50 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 
 
-
 /* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {
-            email: null,
-            password: null,
-            errors: [],
-            loading: false
-        };
-    },
+  data: function data() {
+    return {
+      email: null,
+      password: null,
+      errors: [],
+      loading: false
+    };
+  },
 
-    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])({
-        login: 'auth/login'
-    }), {
-        submit: function submit() {
-            var _this = this;
+  methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])({
+    login: 'auth/login'
+  }), {
+    submit: function submit() {
+      var _this = this;
 
-            this.login({
-                payload: {
-                    email: this.email,
-                    password: this.password
-                },
-                context: this
-            }).then(function () {
-                _this.loading = true;
-                __WEBPACK_IMPORTED_MODULE_1_localforage___default.a.getItem('intended').then(function (name) {
-                    _this.$emit('update:v-model', true);
-                    if (Object(__WEBPACK_IMPORTED_MODULE_2_lodash__["isEmpty"])(name)) {
-                        _this.$router.replace({
-                            name: 'home'
-                        });
-                        _this.loading = false;
-                        return;
-                    }
-                    _this.$router.replace({
-                        name: name
-                    });
-                    _this.loading = false;
-                });
-            }).catch(function (err) {});
+      this.login({
+        payload: {
+          email: this.email,
+          password: this.password
         },
-        cleanFields: function cleanFields(field) {
-            return this.errors[field] = [];
-        }
-    })
+        context: this
+      }).then(function () {
+        _this.loading = true;
+        __WEBPACK_IMPORTED_MODULE_1_localforage___default.a.getItem('intended').then(function (name) {
+          _this.$emit('update:v-model', true);
+          if (Object(__WEBPACK_IMPORTED_MODULE_2_lodash__["isEmpty"])(name)) {
+            _this.$router.replace({
+              name: 'home'
+            });
+            _this.loading = false;
+            return;
+          }
+          _this.$router.replace({
+            name: name
+          });
+          _this.loading = false;
+        });
+      }).catch(function (err) {});
+    },
+    cleanFields: function cleanFields(field) {
+      return this.errors[field] = [];
+    }
+  })
 });
 
 /***/ }),
@@ -30891,57 +30890,89 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {
-            search_mensual: '',
-            search_quincenal: '',
-            headers_x: [{
-                text: 'Tramo',
-                align: 'left',
-                sortable: false,
-                value: 'section'
-            }, {
-                text: 'Desde',
-                value: 'since'
-            }, {
-                text: 'Hasta',
-                value: 'until'
-            }, {
-                text: '% a Aplicar',
-                value: 'percentage'
-            }, {
-                text: 'Sobre el Exceso',
-                value: 'excess'
-            }, {
-                text: 'Mas Cuota Fija de',
-                value: 'fee'
-            }],
-            selected: []
-        };
-    },
-    mounted: function mounted() {
-        this.get(1);
-        this.get(2);
-    },
+  data: function data() {
+    return {
+      search_mensual: '',
+      search_quincenal: '',
+      headers_x: [{
+        text: 'Tramo',
+        align: 'left',
+        sortable: false,
+        value: 'section'
+      }, {
+        text: 'Desde',
+        value: 'since'
+      }, {
+        text: 'Hasta',
+        value: 'until'
+      }, {
+        text: '% a Aplicar',
+        value: 'percentage'
+      }, {
+        text: 'Sobre el Exceso',
+        value: 'excess'
+      }, {
+        text: 'Mas Cuota Fija de',
+        value: 'fee'
+      }],
+      selected: []
+    };
+  },
+  mounted: function mounted() {
+    this.get(1);
+    this.get(2);
+  },
 
-    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])({
-        items_quincenal: 'rent/rentQ',
-        items_mensual: 'rent/rentM'
-    })),
-    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])({
-        getRentTable: 'rent/getRentTable'
-    }), {
-        get: function get(_type) {
-            this.getRentTable({
-                type: _type
-            }).then(function (response) {});
-        },
-        edit: function edit() {}
-    })
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])({
+    items_quincenal: 'rent/rentQ',
+    items_mensual: 'rent/rentM'
+  })),
+  methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])({
+    getRentTable: 'rent/getRentTable'
+  }), {
+    get: function get(_type) {
+      this.getRentTable({
+        type: _type
+      }).then(function (response) {});
+    },
+    edit: function edit() {}
+  })
 });
 
 /***/ }),
@@ -31271,6 +31302,205 @@ var render = function() {
           )
         ],
         1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-layout",
+        { attrs: { row: "", "justify-center": "" } },
+        [
+          _c(
+            "v-dialog",
+            {
+              attrs: { persistent: "", "max-width": "500px" },
+              model: {
+                value: _vm.dialog,
+                callback: function($$v) {
+                  _vm.dialog = $$v
+                },
+                expression: "dialog"
+              }
+            },
+            [
+              _c(
+                "v-card",
+                [
+                  _c("v-card-title", [
+                    _c("span", { staticClass: "headline" }, [
+                      _vm._v("Editar Opciones de Tabla de Renta")
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "v-card-text",
+                    [
+                      _c(
+                        "v-container",
+                        { attrs: { "grid-list-md": "" } },
+                        [
+                          _c(
+                            "v-layout",
+                            { attrs: { wrap: "" } },
+                            [
+                              _c(
+                                "v-flex",
+                                { attrs: { xs12: "", sm6: "", md4: "" } },
+                                [
+                                  _c("v-text-field", {
+                                    directives: [
+                                      {
+                                        name: "validate",
+                                        rawName: "v-validate",
+                                        value: "required|numeric",
+                                        expression: "'required|numeric'"
+                                      }
+                                    ],
+                                    attrs: {
+                                      label: "Días",
+                                      required: "",
+                                      type: "number",
+                                      "error-messages": _vm._errors.collect(
+                                        "days"
+                                      ),
+                                      "data-vv-name": "days",
+                                      hint: "Días de Aguinaldo",
+                                      "persistent-hint": ""
+                                    },
+                                    model: {
+                                      value: _vm.bonus.days,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.bonus, "days", $$v)
+                                      },
+                                      expression: "bonus.days"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-flex",
+                                { attrs: { xs12: "", sm6: "", md4: "" } },
+                                [
+                                  _c("v-text-field", {
+                                    directives: [
+                                      {
+                                        name: "validate",
+                                        rawName: "v-validate",
+                                        value:
+                                          "required|numeric|max_value:" +
+                                          this.bonus.end,
+                                        expression:
+                                          "`required|numeric|max_value:${this.bonus.end}`"
+                                      }
+                                    ],
+                                    attrs: {
+                                      label: "Inicio (Años)",
+                                      required: "",
+                                      type: "number",
+                                      max: _vm.bonus.end,
+                                      "error-messages": _vm._errors.collect(
+                                        "start"
+                                      ),
+                                      "data-vv-name": "start",
+                                      hint: "Año de Inicio",
+                                      "persistent-hint": ""
+                                    },
+                                    model: {
+                                      value: _vm.bonus.start,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.bonus, "start", $$v)
+                                      },
+                                      expression: "bonus.start"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-flex",
+                                { attrs: { xs12: "", sm6: "", md4: "" } },
+                                [
+                                  _c("v-text-field", {
+                                    directives: [
+                                      {
+                                        name: "validate",
+                                        rawName: "v-validate",
+                                        value:
+                                          "required|numeric|min_value:" +
+                                          this.bonus.start,
+                                        expression:
+                                          "`required|numeric|min_value:${this.bonus.start}`"
+                                      }
+                                    ],
+                                    attrs: {
+                                      label: "Fin (Años)",
+                                      required: "",
+                                      type: "number",
+                                      min: _vm.bonus.start,
+                                      "error-messages": _vm._errors.collect(
+                                        "end"
+                                      ),
+                                      "data-vv-name": "end",
+                                      hint: "Año de Finalización",
+                                      "persistent-hint": ""
+                                    },
+                                    model: {
+                                      value: _vm.bonus.end,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.bonus, "end", $$v)
+                                      },
+                                      expression: "bonus.end"
+                                    }
+                                  })
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c("small", [_vm._v("*Indica campos obligatorios")])
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-card-actions",
+                    [
+                      _c("v-spacer"),
+                      _vm._v(" "),
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { color: "blue darken-1", flat: "" },
+                          on: { click: _vm.clear }
+                        },
+                        [_vm._v("Cerrar")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { color: "blue darken-1", flat: "" },
+                          on: { click: _vm.update }
+                        },
+                        [_vm._v("Guardar")]
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
       )
     ],
     1
@@ -31445,85 +31675,84 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 
 
-
 /* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {
-            search: '',
-            headers: [{
-                text: 'Llave',
-                value: 'key',
-                align: 'left',
-                tooltip: 'Llave identificadora'
-            }, {
-                text: 'Descripción',
-                value: 'description',
-                align: 'left',
-                tooltip: 'Descripción de Llave'
-            }, {
-                text: 'Valor',
-                value: 'value',
-                align: 'left',
-                tooltip: 'Valor de Llave'
-            }],
-            loading: true,
-            selected: [],
-            dialog: false
-        };
+  data: function data() {
+    return {
+      search: '',
+      headers: [{
+        text: 'Llave',
+        value: 'key',
+        align: 'left',
+        tooltip: 'Llave identificadora'
+      }, {
+        text: 'Descripción',
+        value: 'description',
+        align: 'left',
+        tooltip: 'Descripción de Llave'
+      }, {
+        text: 'Valor',
+        value: 'value',
+        align: 'left',
+        tooltip: 'Valor de Llave'
+      }],
+      loading: true,
+      selected: [],
+      dialog: false
+    };
+  },
+  mounted: function mounted() {
+    this.loading = true;
+    this.getSettings();
+    this.loading = false;
+  },
+
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])({
+    items: 'settings/settings',
+    setting: 'settings/setting'
+  })),
+  methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])({
+    getSettings: 'settings/getSettings',
+    getSetting: 'settings/getSetting',
+    updateSetting: 'settings/updateSetting'
+  }), {
+    edit: function edit() {
+      var _this = this;
+
+      this.getSetting({
+        id: this.selected[0].id
+      }).then(function (response) {
+        _this.dialog = true;
+      });
     },
-    mounted: function mounted() {
-        this.loading = true;
-        this.getSettings();
-        this.loading = false;
-    },
+    update: function update() {
+      var _this2 = this;
 
-    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])({
-        items: 'settings/settings',
-        setting: 'settings/setting'
-    })),
-    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])({
-        getSettings: 'settings/getSettings',
-        getSetting: 'settings/getSetting',
-        updateSetting: 'settings/updateSetting'
-    }), {
-        edit: function edit() {
-            var _this = this;
-
-            this.getSetting({
-                id: this.selected[0].id
-            }).then(function (response) {
-                _this.dialog = true;
-            });
-        },
-        update: function update() {
-            var _this2 = this;
-
-            this.$validator.validateAll().then(function (result) {
-                if (result) {
-                    _this2.updateSetting({
-                        payload: {
-                            key: _this2.setting.key,
-                            description: _this2.setting.description,
-                            value: _this2.setting.value
-                        },
-                        context: _this2,
-                        id: _this2.setting.id
-                    }).then(function () {
-                        _this2.loading = true;
-                        _this2.getSettings();
-                        _this2.loading = false;
-                        _this2.dialog = false;
-                    }).catch(function (err) {});
-                }
-
-                return;
-            });
-        },
-        clear: function clear() {
-            this.$validator.reset();
-            this.dialog = false;
+      this.$validator.validateAll().then(function (result) {
+        if (result) {
+          _this2.updateSetting({
+            payload: {
+              key: _this2.setting.key,
+              description: _this2.setting.description,
+              value: _this2.setting.value
+            },
+            context: _this2,
+            id: _this2.setting.id
+          }).then(function () {
+            _this2.loading = true;
+            _this2.getSettings();
+            _this2.loading = false;
+            _this2.dialog = false;
+          }).catch(function (err) {});
         }
-    })
+
+        return;
+      });
+    },
+    clear: function clear() {
+      this.$validator.reset();
+      this.dialog = false;
+    }
+  })
 });
 
 /***/ }),
@@ -32053,80 +32282,79 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 
 
-
 /* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {
-            search: '',
-            headers: [{
-                text: 'Días',
-                value: 'days',
-                align: 'left'
-            }, {
-                text: 'Inicio (Años)',
-                value: 'start',
-                align: 'left'
-            }, {
-                text: 'Fin (Años)',
-                value: 'end',
-                align: 'left'
-            }],
-            selected: [],
-            dialog: false,
-            days: null,
-            start: null,
-            end: null
-        };
+  data: function data() {
+    return {
+      search: '',
+      headers: [{
+        text: 'Días',
+        value: 'days',
+        align: 'left'
+      }, {
+        text: 'Inicio (Años)',
+        value: 'start',
+        align: 'left'
+      }, {
+        text: 'Fin (Años)',
+        value: 'end',
+        align: 'left'
+      }],
+      selected: [],
+      dialog: false,
+      days: null,
+      start: null,
+      end: null
+    };
+  },
+  mounted: function mounted() {
+    this.getBonuses();
+  },
+
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])({
+    items: 'bonus/bonuses',
+    bonus: 'bonus/bonus'
+  })),
+  methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])({
+    getBonuses: 'bonus/getBonuses',
+    getBonus: 'bonus/getBonus',
+    updateBonus: 'bonus/updateBonus'
+  }), {
+    edit: function edit() {
+      var _this = this;
+
+      this.getBonus({
+        id: this.selected[0].id
+      }).then(function (response) {
+        _this.dialog = true;
+      });
     },
-    mounted: function mounted() {
-        this.getBonuses();
-    },
+    update: function update() {
+      var _this2 = this;
 
-    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])({
-        items: 'bonus/bonuses',
-        bonus: 'bonus/bonus'
-    })),
-    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])({
-        getBonuses: 'bonus/getBonuses',
-        getBonus: 'bonus/getBonus',
-        updateBonus: 'bonus/updateBonus'
-    }), {
-        edit: function edit() {
-            var _this = this;
-
-            this.getBonus({
-                id: this.selected[0].id
-            }).then(function (response) {
-                _this.dialog = true;
-            });
-        },
-        update: function update() {
-            var _this2 = this;
-
-            this.$validator.validateAll().then(function (result) {
-                if (result) {
-                    _this2.updateBonus({
-                        payload: {
-                            days: _this2.bonus.days,
-                            start: _this2.bonus.start,
-                            end: _this2.bonus.end
-                        },
-                        context: _this2,
-                        id: _this2.bonus.id
-                    }).then(function () {
-                        _this2.getBonuses();
-                        _this2.dialog = false;
-                    }).catch(function (err) {});
-                }
-
-                return;
-            });
-        },
-        clear: function clear() {
-            this.$validator.reset();
-            this.dialog = false;
+      this.$validator.validateAll().then(function (result) {
+        if (result) {
+          _this2.updateBonus({
+            payload: {
+              days: _this2.bonus.days,
+              start: _this2.bonus.start,
+              end: _this2.bonus.end
+            },
+            context: _this2,
+            id: _this2.bonus.id
+          }).then(function () {
+            _this2.getBonuses();
+            _this2.dialog = false;
+          }).catch(function (err) {});
         }
-    })
+
+        return;
+      });
+    },
+    clear: function clear() {
+      this.$validator.reset();
+      this.dialog = false;
+    }
+  })
 });
 
 /***/ }),
@@ -33934,20 +34162,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-
 
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    components: {
-        notification: __WEBPACK_IMPORTED_MODULE_1__Notification___default.a
-    },
-    computed: Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])({
-        user: 'auth/user'
-    })
+  components: {
+    notification: __WEBPACK_IMPORTED_MODULE_1__Notification___default.a
+  },
+  computed: Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])({
+    user: 'auth/user'
+  })
 });
 
 /***/ }),
@@ -33972,11 +34197,10 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 
 
-
 /* harmony default export */ __webpack_exports__["default"] = ({
-    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])({
-        noti: 'noti'
-    }))
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])({
+    noti: 'noti'
+  }))
 });
 
 /***/ }),
@@ -34166,54 +34390,51 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
-
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {
-            drawer: null,
-            items: [{
-                title: 'Inicio',
-                icon: 'dashboard',
-                to: 'home'
-            }, {
-                title: 'Tablas de Renta',
-                icon: 'list',
-                to: 'browse-rent'
-            }, {
-                title: 'Configuraciones',
-                icon: 'build',
-                to: 'browse-settings'
-            }, {
-                title: 'Aguinaldo',
-                icon: 'event',
-                to: 'browse-bonus'
-            }],
-            mini: false,
-            right: null
-        };
-    },
+  data: function data() {
+    return {
+      drawer: null,
+      items: [{
+        title: 'Inicio',
+        icon: 'dashboard',
+        to: 'home'
+      }, {
+        title: 'Tablas de Renta',
+        icon: 'list',
+        to: 'browse-rent'
+      }, {
+        title: 'Configuraciones',
+        icon: 'build',
+        to: 'browse-settings'
+      }, {
+        title: 'Aguinaldo',
+        icon: 'event',
+        to: 'browse-bonus'
+      }],
+      mini: false,
+      right: null
+    };
+  },
 
-    computed: Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])({
-        user: 'auth/user'
-    }),
-    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])({
-        logout: 'auth/logout'
-    }), {
-        signout: function signout() {
-            var _this = this;
+  computed: Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])({
+    user: 'auth/user'
+  }),
+  methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])({
+    logout: 'auth/logout'
+  }), {
+    signout: function signout() {
+      var _this = this;
 
-            this.logout().then(function () {
-                _this.$router.replace({
-                    name: 'login'
-                });
-            });
-        }
-    })
+      this.logout().then(function () {
+        _this.$router.replace({
+          name: 'login'
+        });
+      });
+    }
+  })
 });
 
 /***/ }),
@@ -34359,11 +34580,7 @@ var render = function() {
               _vm._v(" "),
               _vm.user.authenticated
                 ? _c("v-btn", { attrs: { flat: "" } }, [
-                    _vm._v(
-                      "\n            " +
-                        _vm._s(_vm.user.data.name) +
-                        "\n        "
-                    )
+                    _vm._v("\n      " + _vm._s(_vm.user.data.name) + "\n    ")
                   ])
                 : _vm._e(),
               _vm._v(" "),
