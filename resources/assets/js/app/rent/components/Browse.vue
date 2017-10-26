@@ -78,17 +78,17 @@
                     <v-container grid-list-md>
                         <v-layout wrap>
                             <v-flex xs12 sm6 md4>
-                                <v-text-field label="Días" required v-model="bonus.days" type="number" :error-messages="_errors.collect('days')" v-validate="'required|numeric'" data-vv-name="days" hint="Días de Aguinaldo" persistent-hint>
+                                <v-text-field label="Sección" required v-model="rent.section" disabled hint="Sección" persistent-hint>
                                 </v-text-field>
                             </v-flex>
-                            <v-flex xs12 sm6 md4>
+                            <!-- <v-flex xs12 sm6 md4>
                                 <v-text-field label="Inicio (Años)" required type="number" :max="bonus.end" v-model="bonus.start" :error-messages="_errors.collect('start')" v-validate="`required|numeric|max_value:${this.bonus.end}`" data-vv-name="start" hint="Año de Inicio" persistent-hint>
                                 </v-text-field>
                             </v-flex>
                             <v-flex xs12 sm6 md4>
                                 <v-text-field label="Fin (Años)" required type="number" :min="bonus.start" v-model="bonus.end" :error-messages="_errors.collect('end')" v-validate="`required|numeric|min_value:${this.bonus.start}`" data-vv-name="end" hint="Año de Finalización" persistent-hint>
                                 </v-text-field>
-                            </v-flex>
+                            </v-flex> -->
                         </v-layout>
                     </v-container>
                     <small>*Indica campos obligatorios</small>
@@ -137,7 +137,8 @@ export default {
         text: 'Mas Cuota Fija de',
         value: 'fee'
       }, ],
-      selected: []
+      selected: [],
+      dialog: false
     }
   },
   mounted() {
@@ -147,12 +148,14 @@ export default {
   computed: {
     ...mapGetters({
       items_quincenal: 'rent/rentQ',
-      items_mensual: 'rent/rentM'
+      items_mensual: 'rent/rentM',
+      rent: 'rent/rent'
     })
   },
   methods: {
     ...mapActions({
-      getRentTable: 'rent/getRentTable'
+      getRentTable: 'rent/getRentTable',
+      getRent: 'rent/getRent',
     }),
     get(_type) {
       this.getRentTable({
@@ -160,7 +163,18 @@ export default {
       }).then((response) => {})
     },
     edit() {
+      this.getRent({
+        id: this.selected[0].id
+      }).then((response) => {
+        this.dialog = true
+      })
+    },
+    update() {
 
+    },
+    clear() {
+      this.$validator.reset()
+      this.dialog = false
     }
   }
 }

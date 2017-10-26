@@ -30951,7 +30951,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         text: 'Mas Cuota Fija de',
         value: 'fee'
       }],
-      selected: []
+      selected: [],
+      dialog: false
     };
   },
   mounted: function mounted() {
@@ -30961,17 +30962,32 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
   computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])({
     items_quincenal: 'rent/rentQ',
-    items_mensual: 'rent/rentM'
+    items_mensual: 'rent/rentM',
+    rent: 'rent/rent'
   })),
   methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])({
-    getRentTable: 'rent/getRentTable'
+    getRentTable: 'rent/getRentTable',
+    getRent: 'rent/getRent'
   }), {
     get: function get(_type) {
       this.getRentTable({
         type: _type
       }).then(function (response) {});
     },
-    edit: function edit() {}
+    edit: function edit() {
+      var _this = this;
+
+      this.getRent({
+        id: this.selected[0].id
+      }).then(function (response) {
+        _this.dialog = true;
+      });
+    },
+    update: function update() {},
+    clear: function clear() {
+      this.$validator.reset();
+      this.dialog = false;
+    }
   })
 });
 
@@ -31346,111 +31362,19 @@ var render = function() {
                                 { attrs: { xs12: "", sm6: "", md4: "" } },
                                 [
                                   _c("v-text-field", {
-                                    directives: [
-                                      {
-                                        name: "validate",
-                                        rawName: "v-validate",
-                                        value: "required|numeric",
-                                        expression: "'required|numeric'"
-                                      }
-                                    ],
                                     attrs: {
-                                      label: "Días",
+                                      label: "Sección",
                                       required: "",
-                                      type: "number",
-                                      "error-messages": _vm._errors.collect(
-                                        "days"
-                                      ),
-                                      "data-vv-name": "days",
-                                      hint: "Días de Aguinaldo",
+                                      disabled: "",
+                                      hint: "Sección",
                                       "persistent-hint": ""
                                     },
                                     model: {
-                                      value: _vm.bonus.days,
+                                      value: _vm.rent.section,
                                       callback: function($$v) {
-                                        _vm.$set(_vm.bonus, "days", $$v)
+                                        _vm.$set(_vm.rent, "section", $$v)
                                       },
-                                      expression: "bonus.days"
-                                    }
-                                  })
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "v-flex",
-                                { attrs: { xs12: "", sm6: "", md4: "" } },
-                                [
-                                  _c("v-text-field", {
-                                    directives: [
-                                      {
-                                        name: "validate",
-                                        rawName: "v-validate",
-                                        value:
-                                          "required|numeric|max_value:" +
-                                          this.bonus.end,
-                                        expression:
-                                          "`required|numeric|max_value:${this.bonus.end}`"
-                                      }
-                                    ],
-                                    attrs: {
-                                      label: "Inicio (Años)",
-                                      required: "",
-                                      type: "number",
-                                      max: _vm.bonus.end,
-                                      "error-messages": _vm._errors.collect(
-                                        "start"
-                                      ),
-                                      "data-vv-name": "start",
-                                      hint: "Año de Inicio",
-                                      "persistent-hint": ""
-                                    },
-                                    model: {
-                                      value: _vm.bonus.start,
-                                      callback: function($$v) {
-                                        _vm.$set(_vm.bonus, "start", $$v)
-                                      },
-                                      expression: "bonus.start"
-                                    }
-                                  })
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "v-flex",
-                                { attrs: { xs12: "", sm6: "", md4: "" } },
-                                [
-                                  _c("v-text-field", {
-                                    directives: [
-                                      {
-                                        name: "validate",
-                                        rawName: "v-validate",
-                                        value:
-                                          "required|numeric|min_value:" +
-                                          this.bonus.start,
-                                        expression:
-                                          "`required|numeric|min_value:${this.bonus.start}`"
-                                      }
-                                    ],
-                                    attrs: {
-                                      label: "Fin (Años)",
-                                      required: "",
-                                      type: "number",
-                                      min: _vm.bonus.start,
-                                      "error-messages": _vm._errors.collect(
-                                        "end"
-                                      ),
-                                      "data-vv-name": "end",
-                                      hint: "Año de Finalización",
-                                      "persistent-hint": ""
-                                    },
-                                    model: {
-                                      value: _vm.bonus.end,
-                                      callback: function($$v) {
-                                        _vm.$set(_vm.bonus, "end", $$v)
-                                      },
-                                      expression: "bonus.end"
+                                      expression: "rent.section"
                                     }
                                   })
                                 ],
@@ -32995,7 +32919,8 @@ var user = function user(state) {
 "use strict";
 /* harmony default export */ __webpack_exports__["a"] = ({
   rentM: [],
-  rentQ: []
+  rentQ: [],
+  rent: {}
 });
 
 /***/ }),
@@ -33006,11 +32931,15 @@ var user = function user(state) {
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setRentQ", function() { return setRentQ; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setRentM", function() { return setRentM; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setRent", function() { return setRent; });
 var setRentQ = function setRentQ(state, rentQ) {
   return state.rentQ = rentQ;
 };
 var setRentM = function setRentM(state, rentM) {
   return state.rentM = rentM;
+};
+var setRent = function setRent(state, rent) {
+  return state.rent = rent;
 };
 
 /***/ }),
@@ -33020,6 +32949,7 @@ var setRentM = function setRentM(state, rentM) {
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getRentTable", function() { return getRentTable; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getRent", function() { return getRent; });
 var getRentTable = function getRentTable(_ref, _ref2) {
   var commit = _ref.commit;
   var type = _ref2.type;
@@ -33032,6 +32962,14 @@ var getRentTable = function getRentTable(_ref, _ref2) {
   });
 };
 
+var getRent = function getRent(_ref3, _ref4) {
+  var commit = _ref3.commit;
+  var id = _ref4.id;
+  return axios.get('/api/v1/admin/rents/' + id).then(function (response) {
+    commit('setRent', response.data.data);
+  });
+};
+
 /***/ }),
 /* 68 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -33040,11 +32978,15 @@ var getRentTable = function getRentTable(_ref, _ref2) {
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "rentQ", function() { return rentQ; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "rentM", function() { return rentM; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "rent", function() { return rent; });
 var rentQ = function rentQ(state) {
   return state.rentQ;
 };
 var rentM = function rentM(state) {
   return state.rentM;
+};
+var rent = function rent(state) {
+  return state.rent;
 };
 
 /***/ }),

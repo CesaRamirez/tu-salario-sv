@@ -11,3 +11,13 @@ export const getRentTable = ({
       commit('setRentQ', response.data.data)
     }
   })
+
+export const getRent = ({
+    commit
+  }, {
+    id
+  }) => axios
+  .get('/api/v1/admin/rents/' + id)
+  .then((response) => {
+    commit('setRent', response.data.data)
+  })

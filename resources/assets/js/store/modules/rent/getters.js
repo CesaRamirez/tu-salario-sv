@@ -4,3 +4,6 @@ export const rentQ = (state) => {
 export const rentM = (state) => {
   return state.rentM;
 }
+export const rent = (state) => {
+  return state.rent;
+}
