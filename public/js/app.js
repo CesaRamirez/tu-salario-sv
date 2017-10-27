@@ -34230,7 +34230,12 @@ var dictionary = {
       end: 'fin',
       key: 'llave',
       description: 'descripción',
-      value: 'valor'
+      value: 'valor',
+      percentage: 'porcentaje',
+      since: 'desde',
+      until: 'hasta',
+      excess: 'exceso',
+      fee: 'cuota fija'
     }
   }
 };

@@ -10,6 +10,11 @@ const dictionary = {
       key: 'llave',
       description: 'descripción',
       value: 'valor',
+      percentage: 'porcentaje',
+      since: 'desde',
+      until: 'hasta',
+      excess: 'exceso',
+      fee: 'cuota fija'
     }
   }
 };
