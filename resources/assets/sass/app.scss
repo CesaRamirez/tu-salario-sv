@@ -11,3 +11,21 @@ html {
   font-family: 'Roboto', sans-serif;
   overflow-y: auto;
 }
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.h100 {
+  height: 100vh;
+}
+
+.card--flex-toolbar {
+  margin-top: -64px;
+}

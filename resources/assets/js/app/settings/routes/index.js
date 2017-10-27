@@ -3,7 +3,7 @@ import {
 } from '../components'
 
 export default [{
-  path: '/settings',
+  path: '/admin/settings',
   component: Browse,
   name: 'browse-settings',
   meta: {

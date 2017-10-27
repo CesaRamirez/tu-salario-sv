@@ -25,7 +25,7 @@
       </v-list-tile>
     </v-list>
   </v-navigation-drawer>
-  <v-toolbar dark app>
+  <v-toolbar dark app flat extended color="primary">
     <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
     <v-toolbar-title class="white--text">Tu Salario SV</v-toolbar-title>
     <v-spacer></v-spacer>

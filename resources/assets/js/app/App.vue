@@ -1,12 +1,12 @@
 <template>
 <v-app dark>
-  <navigation></navigation>
-  <main>
+  <v-card flat>
+    <navigation></navigation>
     <notification></notification>
     <v-content>
       <router-view></router-view>
     </v-content>
-  </main>
+  </v-card>
 </v-app>
 </template>
 
