@@ -30923,6 +30923,18 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -30951,7 +30963,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         text: 'Mas Cuota Fija de',
         value: 'fee'
       }],
-      selected: [],
+      selected_mensual: [],
+      selected_quincenal: [],
       dialog: false
     };
   },
@@ -30974,11 +30987,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         type: _type
       }).then(function (response) {});
     },
-    edit: function edit() {
+    edit: function edit(selected) {
       var _this = this;
 
       this.getRent({
-        id: this.selected[0].id
+        id: selected[0].id
       }).then(function (response) {
         _this.dialog = true;
       });
@@ -31009,7 +31022,7 @@ var render = function() {
             "v-card",
             { staticClass: "elevation-9" },
             [
-              _vm.selected.length === 0
+              _vm.selected_mensual.length === 0
                 ? _c(
                     "v-card-title",
                     [
@@ -31044,11 +31057,11 @@ var render = function() {
                       _c("span", { staticClass: "subheading ml-5 my-3" }, [
                         _vm._v(
                           "\n                  " +
-                            _vm._s(_vm.selected.length) +
+                            _vm._s(_vm.selected_mensual.length) +
                             " " +
                             _vm._s(
                               _vm._f("pluralize")(
-                                _vm.selected.length,
+                                _vm.selected_mensual.length,
                                 "Seleccionado"
                               )
                             ) +
@@ -31069,12 +31082,16 @@ var render = function() {
                                 {
                                   name: "show",
                                   rawName: "v-show",
-                                  value: _vm.selected.length === 1,
-                                  expression: "selected.length === 1"
+                                  value: _vm.selected_mensual.length === 1,
+                                  expression: "selected_mensual.length === 1"
                                 }
                               ],
                               attrs: { slot: "activator", icon: "" },
-                              on: { click: _vm.edit },
+                              on: {
+                                click: function($event) {
+                                  _vm.edit(_vm.selected_mensual)
+                                }
+                              },
                               slot: "activator"
                             },
                             [_c("v-icon", [_vm._v("create")])],
@@ -31150,11 +31167,11 @@ var render = function() {
                   }
                 ]),
                 model: {
-                  value: _vm.selected,
+                  value: _vm.selected_mensual,
                   callback: function($$v) {
-                    _vm.selected = $$v
+                    _vm.selected_mensual = $$v
                   },
-                  expression: "selected"
+                  expression: "selected_mensual"
                 }
               })
             ],
@@ -31165,7 +31182,7 @@ var render = function() {
             "v-card",
             { staticClass: "mt-4 elevation-9" },
             [
-              _vm.selected.length === 0
+              _vm.selected_quincenal.length === 0
                 ? _c(
                     "v-card-title",
                     [
@@ -31200,11 +31217,11 @@ var render = function() {
                       _c("span", { staticClass: "subheading ml-5 my-3" }, [
                         _vm._v(
                           "\n                  " +
-                            _vm._s(_vm.selected.length) +
+                            _vm._s(_vm.selected_quincenal.length) +
                             " " +
                             _vm._s(
                               _vm._f("pluralize")(
-                                _vm.selected.length,
+                                _vm.selected_quincenal.length,
                                 "Seleccionado"
                               )
                             ) +
@@ -31225,12 +31242,16 @@ var render = function() {
                                 {
                                   name: "show",
                                   rawName: "v-show",
-                                  value: _vm.selected.length === 1,
-                                  expression: "selected.length === 1"
+                                  value: _vm.selected_quincenal.length === 1,
+                                  expression: "selected_quincenal.length === 1"
                                 }
                               ],
                               attrs: { slot: "activator", icon: "" },
-                              on: { click: _vm.edit },
+                              on: {
+                                click: function($event) {
+                                  _vm.edit(_vm.selected_quincenal)
+                                }
+                              },
                               slot: "activator"
                             },
                             [_c("v-icon", [_vm._v("create")])],
@@ -31306,11 +31327,11 @@ var render = function() {
                   }
                 ]),
                 model: {
-                  value: _vm.selected,
+                  value: _vm.selected_quincenal,
                   callback: function($$v) {
-                    _vm.selected = $$v
+                    _vm.selected_quincenal = $$v
                   },
-                  expression: "selected"
+                  expression: "selected_quincenal"
                 }
               })
             ],
@@ -31370,11 +31391,198 @@ var render = function() {
                                       "persistent-hint": ""
                                     },
                                     model: {
-                                      value: _vm.rent.section,
+                                      value: _vm.rent.section_for_humans,
                                       callback: function($$v) {
-                                        _vm.$set(_vm.rent, "section", $$v)
+                                        _vm.$set(
+                                          _vm.rent,
+                                          "section_for_humans",
+                                          $$v
+                                        )
                                       },
-                                      expression: "rent.section"
+                                      expression: "rent.section_for_humans"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-flex",
+                                { attrs: { xs12: "", sm6: "", md4: "" } },
+                                [
+                                  _c("v-text-field", {
+                                    directives: [
+                                      {
+                                        name: "validate",
+                                        rawName: "v-validate",
+                                        value: "required|integer",
+                                        expression: "`required|integer`"
+                                      }
+                                    ],
+                                    attrs: {
+                                      label: "Desde",
+                                      required: "",
+                                      type: "number",
+                                      max: _vm.rent.since,
+                                      "error-messages": _vm._errors.collect(
+                                        "since"
+                                      ),
+                                      "data-vv-name": "since",
+                                      hint: "Desde Monto",
+                                      "persistent-hint": ""
+                                    },
+                                    model: {
+                                      value: _vm.rent.since,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.rent, "since", $$v)
+                                      },
+                                      expression: "rent.since"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-flex",
+                                { attrs: { xs12: "", sm6: "", md4: "" } },
+                                [
+                                  _c("v-text-field", {
+                                    directives: [
+                                      {
+                                        name: "validate",
+                                        rawName: "v-validate",
+                                        value: "required|integer",
+                                        expression: "`required|integer`"
+                                      }
+                                    ],
+                                    attrs: {
+                                      label: "Hasta",
+                                      required: "",
+                                      type: "number",
+                                      min: _vm.rent.until,
+                                      "error-messages": _vm._errors.collect(
+                                        "until"
+                                      ),
+                                      "data-vv-name": "until",
+                                      hint: "Hasta Monto",
+                                      "persistent-hint": ""
+                                    },
+                                    model: {
+                                      value: _vm.rent.until,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.rent, "until", $$v)
+                                      },
+                                      expression: "rent.until"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-flex",
+                                { attrs: { xs12: "", sm6: "", md4: "" } },
+                                [
+                                  _c("v-text-field", {
+                                    directives: [
+                                      {
+                                        name: "validate",
+                                        rawName: "v-validate",
+                                        value: "required|integer",
+                                        expression: "`required|integer`"
+                                      }
+                                    ],
+                                    attrs: {
+                                      label: "% a Aplicar",
+                                      required: "",
+                                      "error-messages": _vm._errors.collect(
+                                        "percentage"
+                                      ),
+                                      "data-vv-name": "percentage",
+                                      hint: "Porcentaje a Aplicar",
+                                      "persistent-hint": ""
+                                    },
+                                    model: {
+                                      value: _vm.rent.percentage,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.rent, "percentage", $$v)
+                                      },
+                                      expression: "rent.percentage"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-flex",
+                                { attrs: { xs12: "", sm6: "", md4: "" } },
+                                [
+                                  _c("v-text-field", {
+                                    directives: [
+                                      {
+                                        name: "validate",
+                                        rawName: "v-validate",
+                                        value: "required|integer",
+                                        expression: "`required|integer`"
+                                      }
+                                    ],
+                                    attrs: {
+                                      label: "Sobre el Exceso",
+                                      required: "",
+                                      type: "number",
+                                      max: _vm.rent.excess,
+                                      "error-messages": _vm._errors.collect(
+                                        "excess"
+                                      ),
+                                      "data-vv-name": "excess",
+                                      hint: "Sobre el Exceso",
+                                      "persistent-hint": ""
+                                    },
+                                    model: {
+                                      value: _vm.rent.excess,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.rent, "excess", $$v)
+                                      },
+                                      expression: "rent.excess"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-flex",
+                                { attrs: { xs12: "", sm6: "", md4: "" } },
+                                [
+                                  _c("v-text-field", {
+                                    directives: [
+                                      {
+                                        name: "validate",
+                                        rawName: "v-validate",
+                                        value: "required|integer",
+                                        expression: "`required|integer`"
+                                      }
+                                    ],
+                                    attrs: {
+                                      label: "Cuota Fija",
+                                      required: "",
+                                      type: "number",
+                                      min: _vm.rent.fee,
+                                      "error-messages": _vm._errors.collect(
+                                        "fee"
+                                      ),
+                                      "data-vv-name": "fee",
+                                      hint: "Cuota Fija",
+                                      "persistent-hint": ""
+                                    },
+                                    model: {
+                                      value: _vm.rent.fee,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.rent, "fee", $$v)
+                                      },
+                                      expression: "rent.fee"
                                     }
                                   })
                                 ],

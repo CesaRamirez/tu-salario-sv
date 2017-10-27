@@ -3,24 +3,24 @@
 <div>
     <v-container>
         <v-card class="elevation-9">
-            <v-card-title v-if="selected.length === 0">
+            <v-card-title v-if="selected_mensual.length === 0">
                 <p class="subheading ml-4">Tabla de Renta Mensual</p>
                 <v-spacer></v-spacer>
                 <v-text-field append-icon="search" label="Buscar" single-line hide-details v-model="search_mensual"></v-text-field>
             </v-card-title>
             <v-card-title v-else class="blue">
                 <span class="subheading ml-5 my-3">
-                  {{ selected.length }} {{ selected.length | pluralize('Seleccionado')}}
+                  {{ selected_mensual.length }} {{ selected_mensual.length | pluralize('Seleccionado')}}
               </span>
                 <v-spacer></v-spacer>
                 <v-tooltip top>
-                    <v-btn icon slot="activator" v-show="selected.length === 1" @click="edit">
+                    <v-btn icon slot="activator" v-show="selected_mensual.length === 1" @click="edit(selected_mensual)">
                         <v-icon>create</v-icon>
                     </v-btn>
                     <span>Editar</span>
                 </v-tooltip>
             </v-card-title>
-            <v-data-table :headers="headers_x" :items="items_mensual" :search="search_mensual" v-model="selected" selected-key="id" select-all rows-per-page-text="Registros por Página" no-data-text="No se encontraron resultados" class="elevation-2">
+            <v-data-table :headers="headers_x" :items="items_mensual" :search="search_mensual" v-model="selected_mensual" selected-key="id" select-all rows-per-page-text="Registros por Página" no-data-text="No se encontraron resultados" class="elevation-2">
                 <template slot="items" slot-scope="props">
                     <td>
                         <v-checkbox primary hide-details v-model="props.selected"></v-checkbox>
@@ -36,24 +36,24 @@
         </v-card>
 
         <v-card class="mt-4 elevation-9">
-            <v-card-title v-if="selected.length === 0">
+            <v-card-title v-if="selected_quincenal.length === 0">
                 <p class="subheading ml-4">Tabla de Renta Quincenal</p>
                 <v-spacer></v-spacer>
                 <v-text-field append-icon="search" label="Buscar" single-line hide-details v-model="search_quincenal"></v-text-field>
             </v-card-title>
             <v-card-title v-else class="blue">
                 <span class="subheading ml-5 my-3">
-                  {{ selected.length }} {{ selected.length | pluralize('Seleccionado')}}
+                  {{ selected_quincenal.length }} {{ selected_quincenal.length | pluralize('Seleccionado')}}
               </span>
                 <v-spacer></v-spacer>
                 <v-tooltip top>
-                    <v-btn icon slot="activator" v-show="selected.length === 1" @click="edit">
+                    <v-btn icon slot="activator" v-show="selected_quincenal.length === 1" @click="edit(selected_quincenal)">
                         <v-icon>create</v-icon>
                     </v-btn>
                     <span>Editar</span>
                 </v-tooltip>
             </v-card-title>
-            <v-data-table :headers="headers_x" :items="items_quincenal" :search="search_quincenal" v-model="selected" selected-key="id" select-all rows-per-page-text="Registros por Página" no-data-text="No se encontraron resultados" class="elevation-2">
+            <v-data-table :headers="headers_x" :items="items_quincenal" :search="search_quincenal" v-model="selected_quincenal" selected-key="id" select-all rows-per-page-text="Registros por Página" no-data-text="No se encontraron resultados" class="elevation-2">
                 <template slot="items" slot-scope="props">
                     <td>
                         <v-checkbox primary hide-details v-model="props.selected"></v-checkbox>
@@ -78,17 +78,29 @@
                     <v-container grid-list-md>
                         <v-layout wrap>
                             <v-flex xs12 sm6 md4>
-                                <v-text-field label="Sección" required v-model="rent.section" disabled hint="Sección" persistent-hint>
-                                </v-text-field>
-                            </v-flex>
-                            <!-- <v-flex xs12 sm6 md4>
-                                <v-text-field label="Inicio (Años)" required type="number" :max="bonus.end" v-model="bonus.start" :error-messages="_errors.collect('start')" v-validate="`required|numeric|max_value:${this.bonus.end}`" data-vv-name="start" hint="Año de Inicio" persistent-hint>
+                                <v-text-field label="Sección" required v-model="rent.section_for_humans" disabled hint="Sección" persistent-hint>
                                 </v-text-field>
                             </v-flex>
                             <v-flex xs12 sm6 md4>
-                                <v-text-field label="Fin (Años)" required type="number" :min="bonus.start" v-model="bonus.end" :error-messages="_errors.collect('end')" v-validate="`required|numeric|min_value:${this.bonus.start}`" data-vv-name="end" hint="Año de Finalización" persistent-hint>
+                                <v-text-field label="Desde" required type="number" :max="rent.since" v-model="rent.since" :error-messages="_errors.collect('since')" v-validate="`required|integer`" data-vv-name="since" hint="Desde Monto" persistent-hint>
                                 </v-text-field>
-                            </v-flex> -->
+                            </v-flex>
+                            <v-flex xs12 sm6 md4>
+                                <v-text-field label="Hasta" required type="number" :min="rent.until" v-model="rent.until" :error-messages="_errors.collect('until')" v-validate="`required|integer`" data-vv-name="until" hint="Hasta Monto" persistent-hint>
+                                </v-text-field>
+                            </v-flex>
+                            <v-flex xs12 sm6 md4>
+                                <v-text-field label="% a Aplicar" required v-model="rent.percentage" :error-messages="_errors.collect('percentage')" v-validate="`required|integer`" data-vv-name="percentage" hint="Porcentaje a Aplicar" persistent-hint>
+                                </v-text-field>
+                            </v-flex>
+                            <v-flex xs12 sm6 md4>
+                                <v-text-field label="Sobre el Exceso" required type="number" :max="rent.excess" v-model="rent.excess" :error-messages="_errors.collect('excess')" v-validate="`required|integer`" data-vv-name="excess" hint="Sobre el Exceso" persistent-hint>
+                                </v-text-field>
+                            </v-flex>
+                            <v-flex xs12 sm6 md4>
+                                <v-text-field label="Cuota Fija" required type="number" :min="rent.fee" v-model="rent.fee" :error-messages="_errors.collect('fee')" v-validate="`required|integer`" data-vv-name="fee" hint="Cuota Fija" persistent-hint>
+                                </v-text-field>
+                            </v-flex>
                         </v-layout>
                     </v-container>
                     <small>*Indica campos obligatorios</small>
@@ -137,7 +149,8 @@ export default {
         text: 'Mas Cuota Fija de',
         value: 'fee'
       }, ],
-      selected: [],
+      selected_mensual: [],
+      selected_quincenal: [],
       dialog: false
     }
   },
@@ -162,9 +175,9 @@ export default {
         type: _type
       }).then((response) => {})
     },
-    edit() {
+    edit(selected) {
       this.getRent({
-        id: this.selected[0].id
+        id: selected[0].id
       }).then((response) => {
         this.dialog = true
       })
