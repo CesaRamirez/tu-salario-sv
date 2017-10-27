@@ -3,7 +3,7 @@
 <div>
     <v-snackbar :timeout="6000" :color="noti.type" multi-line v-model="noti.show">
         {{ noti.message }}
-        <v-btn flat @click="noti = false">Cerrar</v-btn>
+        <v-btn flat @click="noti.show = false" dark>Cerrar</v-btn>
     </v-snackbar>
 </div>
 

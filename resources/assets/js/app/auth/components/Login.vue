@@ -1,7 +1,7 @@
 <template lang="html">
 
-<v-container fill-height>
-    <v-layout align-center justify-center>
+<v-container>
+    <v-layout align-center justify-center class="h100">
         <v-flex xs12 sm12 md4>
             <v-card light>
                 <v-card-media class="white--text" height="200px" src="../images/material.jpg">
@@ -21,7 +21,7 @@
                         </v-text-field>
                     </v-card-text>
                     <v-card-actions>
-                        <v-btn type="submit" color="purple darken-2" block :loading="loading" ripple>
+                        <v-btn type="submit" color="purple darken-2" block :loading="loading" ripple dark>
                             Iniciar
                         </v-btn>
                     </v-card-actions>

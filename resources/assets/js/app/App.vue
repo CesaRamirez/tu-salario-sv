@@ -1,6 +1,6 @@
 <template>
 <v-app>
-  <v-card flat>
+  <v-card flat height="100vh">
     <navigation></navigation>
     <notification></notification>
     <v-content>

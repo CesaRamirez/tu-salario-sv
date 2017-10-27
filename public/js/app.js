@@ -30354,11 +30354,13 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "v-container",
-    { attrs: { "fill-height": "" } },
     [
       _c(
         "v-layout",
-        { attrs: { "align-center": "", "justify-center": "" } },
+        {
+          staticClass: "h100",
+          attrs: { "align-center": "", "justify-center": "" }
+        },
         [
           _c(
             "v-flex",
@@ -30481,7 +30483,8 @@ var render = function() {
                                 color: "purple darken-2",
                                 block: "",
                                 loading: _vm.loading,
-                                ripple: ""
+                                ripple: "",
+                                dark: ""
                               }
                             },
                             [
@@ -33912,7 +33915,7 @@ var render = function() {
     [
       _c(
         "v-layout",
-        { staticClass: "h100", attrs: { "justify-center": "" } },
+        { attrs: { "justify-center": "" } },
         [
           _c(
             "v-flex",
@@ -36416,10 +36419,10 @@ var render = function() {
           _c(
             "v-btn",
             {
-              attrs: { flat: "" },
+              attrs: { flat: "", dark: "" },
               on: {
                 click: function($event) {
-                  _vm.noti = false
+                  _vm.noti.show = false
                 }
               }
             },
@@ -36455,7 +36458,7 @@ var render = function() {
     [
       _c(
         "v-card",
-        { attrs: { flat: "" } },
+        { attrs: { flat: "", height: "100vh" } },
         [
           _c("navigation"),
           _vm._v(" "),

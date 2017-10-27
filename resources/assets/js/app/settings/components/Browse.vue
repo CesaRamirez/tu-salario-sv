@@ -3,7 +3,7 @@
 <template lang="html">
 
 <div>
-    <v-layout justify-center class="h100">
+    <v-layout justify-center>
         <v-flex xs8 md8 lg8>
             <v-card class="card--flex-toolbar">
                 <v-toolbar card prominent color="light-blue" dark>
