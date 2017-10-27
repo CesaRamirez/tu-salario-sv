@@ -21,3 +21,27 @@ export const getRent = ({
   .then((response) => {
     commit('setRent', response.data.data)
   })
+
+export const updateRent = ({
+  dispatch
+}, {
+  payload,
+  context,
+  id
+}) => {
+  return new Promise((resolve, reject) => {
+    axios.put('/api/v1/admin/rents/' + id, payload)
+      .then((response) => {
+        resolve(response.data)
+        dispatch('noti', {
+          message: '¡Los Datos se han actualizado con Exito!',
+          type: 'success'
+        }, {
+          root: true
+        })
+      }).catch((error) => {
+        context.errors = error.response.data.errors;
+        reject(error.response.data.errors)
+      })
+  });
+};

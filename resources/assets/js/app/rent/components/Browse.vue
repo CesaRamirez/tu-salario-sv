@@ -82,23 +82,23 @@
                                 </v-text-field>
                             </v-flex>
                             <v-flex xs12 sm6 md4>
-                                <v-text-field label="Desde" required type="number" :max="rent.since" v-model="rent.since" :error-messages="_errors.collect('since')" v-validate="`required|integer`" data-vv-name="since" hint="Desde Monto" persistent-hint>
+                                <v-text-field label="Desde" required type="number" :max="rent.since" v-model="rent.since" :error-messages="_errors.collect('since')" v-validate="`required|decimal`" data-vv-name="since" hint="Desde Monto" persistent-hint>
                                 </v-text-field>
                             </v-flex>
                             <v-flex xs12 sm6 md4>
-                                <v-text-field label="Hasta" required type="number" :min="rent.until" v-model="rent.until" :error-messages="_errors.collect('until')" v-validate="`required|integer`" data-vv-name="until" hint="Hasta Monto" persistent-hint>
+                                <v-text-field label="Hasta" required type="number" :min="rent.until" v-model="rent.until" :error-messages="_errors.collect('until')" v-validate="`required|decimal`" data-vv-name="until" hint="Hasta Monto" persistent-hint>
                                 </v-text-field>
                             </v-flex>
                             <v-flex xs12 sm6 md4>
-                                <v-text-field label="% a Aplicar" required v-model="rent.percentage" :error-messages="_errors.collect('percentage')" v-validate="`required|integer`" data-vv-name="percentage" hint="Porcentaje a Aplicar" persistent-hint>
+                                <v-text-field label="% a Aplicar" required v-model="rent.percentage" :error-messages="_errors.collect('percentage')" v-validate="`required|decimal`" data-vv-name="percentage" hint="Porcentaje a Aplicar" persistent-hint>
                                 </v-text-field>
                             </v-flex>
                             <v-flex xs12 sm6 md4>
-                                <v-text-field label="Sobre el Exceso" required type="number" :max="rent.excess" v-model="rent.excess" :error-messages="_errors.collect('excess')" v-validate="`required|integer`" data-vv-name="excess" hint="Sobre el Exceso" persistent-hint>
+                                <v-text-field label="Sobre el Exceso" required type="number" :max="rent.excess" v-model="rent.excess" :error-messages="_errors.collect('excess')" v-validate="`required|decimal`" data-vv-name="excess" hint="Sobre el Exceso" persistent-hint>
                                 </v-text-field>
                             </v-flex>
                             <v-flex xs12 sm6 md4>
-                                <v-text-field label="Cuota Fija" required type="number" :min="rent.fee" v-model="rent.fee" :error-messages="_errors.collect('fee')" v-validate="`required|integer`" data-vv-name="fee" hint="Cuota Fija" persistent-hint>
+                                <v-text-field label="Cuota Fija" required type="number" :min="rent.fee" v-model="rent.fee" :error-messages="_errors.collect('fee')" v-validate="`required|decimal`" data-vv-name="fee" hint="Cuota Fija" persistent-hint>
                                 </v-text-field>
                             </v-flex>
                         </v-layout>
@@ -169,6 +169,7 @@ export default {
     ...mapActions({
       getRentTable: 'rent/getRentTable',
       getRent: 'rent/getRent',
+      updateRent: 'rent/updateRent'
     }),
     get(_type) {
       this.getRentTable({
@@ -183,7 +184,28 @@ export default {
       })
     },
     update() {
+      this.$validator.validateAll().then((result) => {
+        if (result) {
+          this.updateRent({
+            payload: {
+              since: this.rent.since,
+              until: this.rent.until,
+              percentage: this.rent.percentage,
+              excess: this.rent.excess,
+              fee: this.rent.fee,
+              type: this.rent.type
+            },
+            context: this,
+            id: this.rent.id
+          }).then(() => {
+            this.get(1)
+            this.get(2)
+            this.dialog = false
+          }).catch((err) => {})
+        }
 
+        return
+      });
     },
     clear() {
       this.$validator.reset()
