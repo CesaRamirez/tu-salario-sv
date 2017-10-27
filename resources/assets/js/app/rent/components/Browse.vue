@@ -82,11 +82,11 @@
                                 </v-text-field>
                             </v-flex>
                             <v-flex xs12 sm6 md4>
-                                <v-text-field label="Desde" required type="number" :max="rent.since" v-model="rent.since" :error-messages="_errors.collect('since')" v-validate="`required|decimal`" data-vv-name="since" hint="Desde Monto" persistent-hint>
+                                <v-text-field label="Desde" required type="number" :max="rent.since" v-model="rent.since" :error-messages="_errors.collect('since')" v-validate="`required|decimal|max_value:${this.rent.until}`" data-vv-name="since" hint="Desde Monto" persistent-hint>
                                 </v-text-field>
                             </v-flex>
                             <v-flex xs12 sm6 md4>
-                                <v-text-field label="Hasta" required type="number" :min="rent.until" v-model="rent.until" :error-messages="_errors.collect('until')" v-validate="`required|decimal`" data-vv-name="until" hint="Hasta Monto" persistent-hint>
+                                <v-text-field label="Hasta" required type="number" :min="rent.until" v-model="rent.until" :error-messages="_errors.collect('until')" v-validate="`required|decimal|min_value:${this.rent.since}|max_value:${this.next_rent.since}`" data-vv-name="until" hint="Hasta Monto" persistent-hint>
                                 </v-text-field>
                             </v-flex>
                             <v-flex xs12 sm6 md4>
@@ -123,6 +123,7 @@ import {
   mapGetters
 }
 from 'vuex'
+import collect from 'collect.js'
 export default {
   data() {
     return {
@@ -151,7 +152,8 @@ export default {
       }, ],
       selected_mensual: [],
       selected_quincenal: [],
-      dialog: false
+      dialog: false,
+      next_rent: {}
     }
   },
   mounted() {
@@ -180,6 +182,7 @@ export default {
       this.getRent({
         id: selected[0].id
       }).then((response) => {
+        this.next()
         this.dialog = true
       })
     },
@@ -210,6 +213,20 @@ export default {
     clear() {
       this.$validator.reset()
       this.dialog = false
+    },
+    next() {
+      if (this.rent.type == 1) {
+        var r = collect(this.items_mensual)
+      } else if (this.rent.type == 2) {
+        var r = collect(this.items_quincenal)
+      }
+      if (this.rent.section == 4) {
+        this.next_rent = {
+          since: "9999999999"
+        }
+      } else {
+        this.next_rent = r.where('section', parseInt(this.rent.section) + 1).first()
+      }
     }
   }
 }
