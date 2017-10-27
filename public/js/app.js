@@ -30707,9 +30707,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    computed: Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])({
-        user: 'auth/user'
-    })
+  computed: Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])({
+    user: 'auth/user'
+  })
 });
 
 /***/ }),
@@ -30726,9 +30726,11 @@ var render = function() {
       _c(
         "v-container",
         [
-          _c("v-layout", { attrs: { "align-content-start": "" } }, [
-            _vm._v("\n      Home\n    ")
-          ])
+          _c(
+            "v-layout",
+            { staticClass: "h100", attrs: { "align-content-start": "" } },
+            [_vm._v("\n      Home\n    ")]
+          )
         ],
         1
       )
@@ -33922,13 +33924,18 @@ var render = function() {
                 [
                   _c(
                     "v-toolbar",
-                    { attrs: { card: "", prominent: "", dark: "" } },
+                    {
+                      attrs: {
+                        card: "",
+                        prominent: "",
+                        color: "light-blue",
+                        dark: ""
+                      }
+                    },
                     [
-                      _c(
-                        "v-toolbar-title",
-                        { staticClass: "body-2 grey--text" },
-                        [_vm._v("Configuraciones")]
-                      ),
+                      _c("v-toolbar-title", { staticClass: "body-2" }, [
+                        _vm._v("Configuraciones")
+                      ]),
                       _vm._v(" "),
                       _c("v-spacer"),
                       _vm._v(" "),
@@ -33962,6 +33969,7 @@ var render = function() {
                       _vm._v(" "),
                       _c("v-text-field", {
                         attrs: {
+                          dark: "",
                           "append-icon": "search",
                           label: "Buscar",
                           "single-line": "",
@@ -36444,7 +36452,6 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "v-app",
-    { attrs: { dark: "" } },
     [
       _c(
         "v-card",
@@ -36633,7 +36640,6 @@ var render = function() {
               attrs: {
                 temporary: "",
                 "mini-variant": _vm.mini,
-                dark: "",
                 overflow: "",
                 absolute: "",
                 app: ""
@@ -36676,7 +36682,7 @@ var render = function() {
                           _c(
                             "v-btn",
                             {
-                              attrs: { icon: "", dark: "" },
+                              attrs: { icon: "" },
                               nativeOn: {
                                 click: function($event) {
                                   $event.stopPropagation()
@@ -36745,7 +36751,7 @@ var render = function() {
                 app: "",
                 flat: "",
                 extended: "",
-                color: "primary"
+                color: "deep-purple"
               }
             },
             [

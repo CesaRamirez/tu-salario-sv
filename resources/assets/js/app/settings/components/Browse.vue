@@ -6,8 +6,8 @@
     <v-layout justify-center class="h100">
         <v-flex xs8 md8 lg8>
             <v-card class="card--flex-toolbar">
-                <v-toolbar card prominent dark>
-                  <v-toolbar-title class="body-2 grey--text">Configuraciones</v-toolbar-title>
+                <v-toolbar card prominent color="light-blue" dark>
+                  <v-toolbar-title class="body-2">Configuraciones</v-toolbar-title>
                   <v-spacer></v-spacer>
                   <v-tooltip top>
                       <v-btn icon slot="activator" v-show="selected.length === 1" @click="edit">
@@ -15,7 +15,7 @@
                       </v-btn>
                       <span>Editar</span>
                   </v-tooltip>
-                  <v-text-field append-icon="search" label="Buscar" single-line hide-details v-model="search"></v-text-field>
+                  <v-text-field dark append-icon="search" label="Buscar" single-line hide-details v-model="search"></v-text-field>
                 </v-toolbar>
                 <v-divider></v-divider>
                 <v-data-table :headers="headers" :items="items" :search="search" :loading="loading" v-model="selected" selected-key="id" select-all rows-per-page-text="Registros por Página" no-data-text="No se encontraron resultados" class="elevation-2">

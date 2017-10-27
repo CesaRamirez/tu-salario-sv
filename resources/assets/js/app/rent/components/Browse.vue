@@ -1,7 +1,7 @@
 <template lang="html">
 
 <div>
-    <v-container>
+    <v-container >
         <v-card class="elevation-9">
             <v-card-title v-if="selected_mensual.length === 0">
                 <p class="subheading ml-4">Tabla de Renta Mensual</p>
