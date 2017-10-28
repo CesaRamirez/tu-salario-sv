@@ -1,4 +1,4 @@
-webpackJsonp([0],[
+webpackJsonp([1],[
 /* 0 */,
 /* 1 */,
 /* 2 */
@@ -3455,22 +3455,9 @@ module.exports = localforage_js;
 /* 8 */,
 /* 9 */,
 /* 10 */,
-/* 11 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function average(key) {
-  if (key === undefined) {
-    return this.sum() / this.items.length;
-  }
-
-  return new this.constructor(this.items).pluck(key).sum() / this.items.length;
-};
-
-/***/ }),
-/* 12 */
+/* 11 */,
+/* 12 */,
+/* 13 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3513,14 +3500,14 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex
 }));
 
 /***/ }),
-/* 13 */,
 /* 14 */,
 /* 15 */,
 /* 16 */,
 /* 17 */,
 /* 18 */,
 /* 19 */,
-/* 20 */
+/* 20 */,
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -3566,21 +3553,21 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(22);
+__webpack_require__(23);
 module.exports = __webpack_require__(202);
 
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__router__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__store__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__router__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__store__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__bootstrap__ = __webpack_require__(171);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components__ = __webpack_require__(193);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components__);
@@ -3607,14 +3594,14 @@ var app = new Vue({
 });
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_router__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_index__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_index__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__beforeEach__ = __webpack_require__(145);
 
 
@@ -3633,25 +3620,25 @@ router.beforeEach(__WEBPACK_IMPORTED_MODULE_3__beforeEach__["a" /* default */]);
 /* harmony default export */ __webpack_exports__["a"] = (router);
 
 /***/ }),
-/* 24 */,
 /* 25 */,
-/* 26 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__routes__ = __webpack_require__(27);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__routes__["a"]; });
-
-
-/***/ }),
+/* 26 */,
 /* 27 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__auth_routes__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__errors_routes__ = __webpack_require__(34);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_routes__ = __webpack_require__(38);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__rent_routes__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__routes__ = __webpack_require__(28);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__routes__["a"]; });
+
+
+/***/ }),
+/* 28 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__auth_routes__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__errors_routes__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_routes__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__rent_routes__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__settings_routes__ = __webpack_require__(135);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__bonus_routes__ = __webpack_require__(140);
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
@@ -3666,11 +3653,11 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 /* harmony default export */ __webpack_exports__["a"] = ([].concat(_toConsumableArray(__WEBPACK_IMPORTED_MODULE_0__auth_routes__["a" /* default */]), _toConsumableArray(__WEBPACK_IMPORTED_MODULE_1__errors_routes__["a" /* default */]), _toConsumableArray(__WEBPACK_IMPORTED_MODULE_2__home_routes__["a" /* default */]), _toConsumableArray(__WEBPACK_IMPORTED_MODULE_3__rent_routes__["a" /* default */]), _toConsumableArray(__WEBPACK_IMPORTED_MODULE_4__settings_routes__["a" /* default */]), _toConsumableArray(__WEBPACK_IMPORTED_MODULE_5__bonus_routes__["a" /* default */])));
 
 /***/ }),
-/* 28 */
+/* 29 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components__ = __webpack_require__(30);
 
 
 /* harmony default export */ __webpack_exports__["a"] = ([{
@@ -3684,7 +3671,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 }]);
 
 /***/ }),
-/* 29 */
+/* 30 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3693,18 +3680,18 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 
 
-var Login = __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('login', __webpack_require__(30));
+var Login = __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('login', __webpack_require__(31));
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(31)
+var __vue_script__ = __webpack_require__(32)
 /* template */
-var __vue_template__ = __webpack_require__(33)
+var __vue_template__ = __webpack_require__(34)
 /* styles */
 var __vue_styles__ = null
 /* scopeId */
@@ -3742,7 +3729,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3841,8 +3828,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 });
 
 /***/ }),
-/* 32 */,
-/* 33 */
+/* 33 */,
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -4020,11 +4007,11 @@ if (false) {
 }
 
 /***/ }),
-/* 34 */
+/* 35 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components__ = __webpack_require__(36);
 
 
 /* harmony default export */ __webpack_exports__["a"] = ([{
@@ -4033,7 +4020,7 @@ if (false) {
 }]);
 
 /***/ }),
-/* 35 */
+/* 36 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4042,10 +4029,10 @@ if (false) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 
 
-var NotFound = __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('not-found', __webpack_require__(36));
+var NotFound = __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('not-found', __webpack_require__(37));
 
 /***/ }),
-/* 36 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -4053,7 +4040,7 @@ var normalizeComponent = __webpack_require__(2)
 /* script */
 var __vue_script__ = null
 /* template */
-var __vue_template__ = __webpack_require__(37)
+var __vue_template__ = __webpack_require__(38)
 /* styles */
 var __vue_styles__ = null
 /* scopeId */
@@ -4091,7 +4078,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 37 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -4111,11 +4098,11 @@ if (false) {
 }
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components__ = __webpack_require__(40);
 
 
 /* harmony default export */ __webpack_exports__["a"] = ([{
@@ -4129,7 +4116,7 @@ if (false) {
 }]);
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4138,18 +4125,18 @@ if (false) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 
 
-var Home = __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('home', __webpack_require__(40));
+var Home = __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('home', __webpack_require__(41));
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(41)
+var __vue_script__ = __webpack_require__(42)
 /* template */
-var __vue_template__ = __webpack_require__(42)
+var __vue_template__ = __webpack_require__(43)
 /* styles */
 var __vue_styles__ = null
 /* scopeId */
@@ -4187,7 +4174,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 41 */
+/* 42 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4213,7 +4200,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 42 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -4249,11 +4236,11 @@ if (false) {
 }
 
 /***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components__ = __webpack_require__(45);
 
 
 /* harmony default export */ __webpack_exports__["a"] = ([{
@@ -4267,7 +4254,7 @@ if (false) {
 }]);
 
 /***/ }),
-/* 44 */
+/* 45 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4276,16 +4263,16 @@ if (false) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 
 
-var Browse = __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('browse-rent', __webpack_require__(45));
+var Browse = __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('browse-rent', __webpack_require__(46));
 
 /***/ }),
-/* 45 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(46)
+var __vue_script__ = __webpack_require__(47)
 /* template */
 var __vue_template__ = __webpack_require__(134)
 /* styles */
@@ -4325,13 +4312,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 46 */
+/* 47 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_collect_js__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_collect_js__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_collect_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_collect_js__);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -4567,1949 +4554,92 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 });
 
 /***/ }),
-/* 47 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-function Collection(collection) {
-  this.items = collection || [];
-}
-
-var SymbolIterator = __webpack_require__(48);
-
-if (typeof Symbol !== 'undefined') {
-  Collection.prototype[Symbol.iterator] = SymbolIterator;
-}
-
-Collection.prototype.all = __webpack_require__(49);
-Collection.prototype.average = __webpack_require__(11);
-Collection.prototype.avg = __webpack_require__(11);
-Collection.prototype.chunk = __webpack_require__(50);
-Collection.prototype.collapse = __webpack_require__(51);
-Collection.prototype.combine = __webpack_require__(52);
-Collection.prototype.concat = __webpack_require__(53);
-Collection.prototype.contains = __webpack_require__(54);
-Collection.prototype.count = __webpack_require__(55);
-Collection.prototype.crossJoin = __webpack_require__(56);
-Collection.prototype.dd = __webpack_require__(57);
-Collection.prototype.diff = __webpack_require__(58);
-Collection.prototype.diffAssoc = __webpack_require__(59);
-Collection.prototype.diffKeys = __webpack_require__(60);
-Collection.prototype.dump = __webpack_require__(61);
-Collection.prototype.each = __webpack_require__(62);
-Collection.prototype.every = __webpack_require__(63);
-Collection.prototype.except = __webpack_require__(64);
-Collection.prototype.filter = __webpack_require__(65);
-Collection.prototype.first = __webpack_require__(66);
-Collection.prototype.flatMap = __webpack_require__(67);
-Collection.prototype.flatten = __webpack_require__(68);
-Collection.prototype.flip = __webpack_require__(69);
-Collection.prototype.forPage = __webpack_require__(70);
-Collection.prototype.forget = __webpack_require__(71);
-Collection.prototype.get = __webpack_require__(72);
-Collection.prototype.groupBy = __webpack_require__(73);
-Collection.prototype.has = __webpack_require__(74);
-Collection.prototype.implode = __webpack_require__(75);
-Collection.prototype.intersect = __webpack_require__(76);
-Collection.prototype.intersectByKeys = __webpack_require__(77);
-Collection.prototype.isEmpty = __webpack_require__(78);
-Collection.prototype.isNotEmpty = __webpack_require__(79);
-Collection.prototype.keyBy = __webpack_require__(80);
-Collection.prototype.keys = __webpack_require__(81);
-Collection.prototype.last = __webpack_require__(82);
-Collection.prototype.macro = __webpack_require__(83);
-Collection.prototype.map = __webpack_require__(84);
-Collection.prototype.mapInto = __webpack_require__(85);
-Collection.prototype.mapToGroups = __webpack_require__(86);
-Collection.prototype.mapWithKeys = __webpack_require__(87);
-Collection.prototype.max = __webpack_require__(88);
-Collection.prototype.median = __webpack_require__(89);
-Collection.prototype.merge = __webpack_require__(90);
-Collection.prototype.min = __webpack_require__(91);
-Collection.prototype.mode = __webpack_require__(92);
-Collection.prototype.nth = __webpack_require__(93);
-Collection.prototype.only = __webpack_require__(94);
-Collection.prototype.partition = __webpack_require__(95);
-Collection.prototype.pipe = __webpack_require__(96);
-Collection.prototype.pluck = __webpack_require__(97);
-Collection.prototype.pop = __webpack_require__(98);
-Collection.prototype.prepend = __webpack_require__(99);
-Collection.prototype.pull = __webpack_require__(100);
-Collection.prototype.push = __webpack_require__(101);
-Collection.prototype.put = __webpack_require__(102);
-Collection.prototype.random = __webpack_require__(103);
-Collection.prototype.reduce = __webpack_require__(104);
-Collection.prototype.reject = __webpack_require__(105);
-Collection.prototype.reverse = __webpack_require__(106);
-Collection.prototype.search = __webpack_require__(107);
-Collection.prototype.shift = __webpack_require__(108);
-Collection.prototype.shuffle = __webpack_require__(109);
-Collection.prototype.slice = __webpack_require__(110);
-Collection.prototype.sort = __webpack_require__(111);
-Collection.prototype.sortBy = __webpack_require__(112);
-Collection.prototype.sortByDesc = __webpack_require__(113);
-Collection.prototype.splice = __webpack_require__(114);
-Collection.prototype.split = __webpack_require__(115);
-Collection.prototype.sum = __webpack_require__(116);
-Collection.prototype.take = __webpack_require__(117);
-Collection.prototype.tap = __webpack_require__(118);
-Collection.prototype.times = __webpack_require__(119);
-Collection.prototype.toArray = __webpack_require__(120);
-Collection.prototype.toJson = __webpack_require__(121);
-Collection.prototype.transform = __webpack_require__(122);
-Collection.prototype.unless = __webpack_require__(123);
-Collection.prototype.union = __webpack_require__(124);
-Collection.prototype.unique = __webpack_require__(125);
-Collection.prototype.unwrap = __webpack_require__(126);
-Collection.prototype.values = __webpack_require__(127);
-Collection.prototype.when = __webpack_require__(128);
-Collection.prototype.where = __webpack_require__(129);
-Collection.prototype.whereIn = __webpack_require__(130);
-Collection.prototype.whereNotIn = __webpack_require__(131);
-Collection.prototype.wrap = __webpack_require__(132);
-Collection.prototype.zip = __webpack_require__(133);
-
-module.exports = function (collection) {
-  return new Collection(collection);
-};
-module.exports.default = function (collection) {
-  return new Collection(collection);
-};
-
-/***/ }),
-/* 48 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function SymbolIterator() {
-  var _this = this;
-
-  var index = -1;
-
-  return {
-    next: function next() {
-      index += 1;
-
-      return {
-        value: _this.items[index],
-        done: index >= _this.items.length
-      };
-    }
-  };
-};
-
-/***/ }),
-/* 49 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function all() {
-  return this.items;
-};
-
-/***/ }),
-/* 50 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function chunk(size) {
-  var chunks = [];
-  var index = 0;
-
-  do {
-    chunks.push(this.items.slice(index, index + size));
-    index += size;
-  } while (index < this.items.length);
-
-  return new this.constructor(chunks);
-};
-
-/***/ }),
-/* 51 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-
-module.exports = function collapse() {
-  var _ref;
-
-  return new this.constructor((_ref = []).concat.apply(_ref, _toConsumableArray(this.items)));
-};
-
-/***/ }),
-/* 52 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function combine(array) {
-  var collection = {};
-
-  this.items.forEach(function (key, iterator) {
-    collection[key] = array[iterator];
-  });
-
-  return new this.constructor(collection);
-};
-
-/***/ }),
-/* 53 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-module.exports = function concat(collectionOrArrayOrObject) {
-  var _this = this;
-
-  var list = collectionOrArrayOrObject;
-
-  if (collectionOrArrayOrObject instanceof this.constructor) {
-    list = collectionOrArrayOrObject.all();
-  } else if ((typeof collectionOrArrayOrObject === 'undefined' ? 'undefined' : _typeof(collectionOrArrayOrObject)) === 'object') {
-    list = [];
-    Object.keys(collectionOrArrayOrObject).forEach(function (property) {
-      list.push(collectionOrArrayOrObject[property]);
-    });
-  }
-
-  list.forEach(function (item) {
-    if ((typeof item === 'undefined' ? 'undefined' : _typeof(item)) === 'object') {
-      Object.keys(item).forEach(function (key) {
-        return _this.items.push(item[key]);
-      });
-    } else {
-      _this.items.push(item);
-    }
-  });
-
-  return this;
-};
-
-/***/ }),
-/* 54 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function contains(key, value) {
-  if (value !== undefined) {
-    return this.items[key] !== undefined && this.items[key] === value;
-  }
-
-  if (typeof key === 'function') {
-    return this.items.filter(function (item, index) {
-      return key(item, index);
-    }).length > 0;
-  }
-
-  if (Array.isArray(this.items)) {
-    return this.items.indexOf(key) !== -1;
-  }
-
-  return this.items[key] !== undefined;
-};
-
-/***/ }),
-/* 55 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function count() {
-  return this.items.length;
-};
-
-/***/ }),
-/* 56 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function crossJoin() {
-  function join(collection, constructor, args) {
-    var current = args[0];
-
-    if (current instanceof constructor) {
-      current = current.all();
-    }
-
-    var rest = args.slice(1);
-    var last = !rest.length;
-    var result = [];
-
-    for (var i = 0; i < current.length; i += 1) {
-      var collectionCopy = collection.slice();
-      collectionCopy.push(current[i]);
-
-      if (last) {
-        result.push(collectionCopy);
-      } else {
-        result = result.concat(join(collectionCopy, constructor, rest));
-      }
-    }
-
-    return result;
-  }
-
-  for (var _len = arguments.length, values = Array(_len), _key = 0; _key < _len; _key++) {
-    values[_key] = arguments[_key];
-  }
-
-  return new this.constructor(join([], this.constructor, [].concat([this.items], values)));
-};
-
-/***/ }),
-/* 57 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {
-
-module.exports = function dd() {
-  console.log(this.all());
-
-  if (typeof process !== 'undefined') {
-    process.exit(1);
-  }
-};
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)))
-
-/***/ }),
-/* 58 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function diff(values) {
-  var valuesToDiff = void 0;
-
-  if (values instanceof this.constructor) {
-    valuesToDiff = values.all();
-  } else {
-    valuesToDiff = values;
-  }
-
-  var collection = this.items.filter(function (item) {
-    return valuesToDiff.indexOf(item) === -1;
-  });
-
-  return new this.constructor(collection);
-};
-
-/***/ }),
-/* 59 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function diffAssoc(values) {
-  var _this = this;
-
-  var diffValues = values;
-
-  if (values instanceof this.constructor) {
-    diffValues = values.all();
-  }
-
-  var collection = {};
-
-  Object.keys(this.items).forEach(function (key) {
-    if (diffValues[key] === undefined || diffValues[key] !== _this.items[key]) {
-      collection[key] = _this.items[key];
-    }
-  });
-
-  return new this.constructor(collection);
-};
-
-/***/ }),
-/* 60 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function diffKeys(object) {
-  var objectToDiff = void 0;
-
-  if (object instanceof this.constructor) {
-    objectToDiff = object.all();
-  } else {
-    objectToDiff = object;
-  }
-
-  var objectKeys = Object.keys(objectToDiff);
-
-  var remainingKeys = Object.keys(this.items).filter(function (item) {
-    return objectKeys.indexOf(item) === -1;
-  });
-
-  return new this.constructor(this.items).only(remainingKeys);
-};
-
-/***/ }),
-/* 61 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function dump() {
-  console.log(this.items);
-  return this;
-};
-
-/***/ }),
-/* 62 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function each(fn) {
-  var _this = this;
-
-  if (Array.isArray(this.items)) {
-    this.items.forEach(fn);
-  } else {
-    Object.keys(this.items).forEach(function (key) {
-      fn(_this.items[key], key, _this.items);
-    });
-  }
-
-  return this;
-};
-
-/***/ }),
-/* 63 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function every(fn) {
-  return this.items.map(function (item, index) {
-    return fn(item, index);
-  }).indexOf(false) === -1;
-};
-
-/***/ }),
-/* 64 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function except(properties) {
-  var _this = this;
-
-  if (Array.isArray(this.items)) {
-    var _collection = this.items.filter(function (item) {
-      return properties.indexOf(item);
-    });
-
-    return new this.constructor(_collection);
-  }
-
-  var collection = {};
-
-  Object.keys(this.items).forEach(function (property) {
-    if (properties.indexOf(property) === -1) {
-      collection[property] = _this.items[property];
-    }
-  });
-
-  return new this.constructor(collection);
-};
-
-/***/ }),
-/* 65 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-function falsyValue(item) {
-  if (Array.isArray(item)) {
-    if (item.length) {
-      return false;
-    }
-  } else if (item !== undefined && item !== null && (typeof item === 'undefined' ? 'undefined' : _typeof(item)) === 'object') {
-    if (Object.keys(item).length) {
-      return false;
-    }
-  } else if (item) {
-    return false;
-  }
-
-  return true;
-}
-
-function filterObject(func, items) {
-  var result = {};
-  Object.keys(items).forEach(function (key) {
-    if (func) {
-      if (func(items[key], key)) {
-        result[key] = items[key];
-      }
-    } else if (!falsyValue(items[key])) {
-      result[key] = items[key];
-    }
-  });
-  return result;
-}
-
-function filterArray(func, items) {
-  if (func) {
-    return items.filter(func);
-  }
-  var result = [];
-  for (var i = 0; i < items.length; i += 1) {
-    var item = items[i];
-    if (!falsyValue(item)) {
-      result.push(item);
-    }
-  }
-  return result;
-}
-
-module.exports = function filter(fn) {
-  var func = fn || false;
-  var filteredItems = null;
-  if (Array.isArray(this.items)) {
-    filteredItems = filterArray(func, this.items);
-  } else {
-    filteredItems = filterObject(func, this.items);
-  }
-
-  return new this.constructor(filteredItems);
-};
-
-/***/ }),
-/* 66 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function first(fn) {
-  if (typeof fn === 'function') {
-    for (var i = 0, length = this.items.length; i < length; i += 1) {
-      var item = this.items[i];
-      if (fn(item)) {
-        return item;
-      }
-    }
-  }
-
-  return this.items[0];
-};
-
-/***/ }),
-/* 67 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function flatMap(fn) {
-  var _this = this;
-
-  var values = [];
-
-  Object.keys(this.items).forEach(function (property) {
-    values.push(_this.items[property]);
-  });
-
-  var newValues = fn(values);
-
-  var collection = {};
-
-  Object.keys(this.items).forEach(function (value, index) {
-    collection[value] = newValues[index];
-  });
-
-  return new this.constructor(collection);
-};
-
-/***/ }),
-/* 68 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-module.exports = function flatten(depth) {
-  var flattenDepth = depth || Infinity;
-
-  var fullyFlattened = false;
-  var collection = [];
-
-  var flat = function flat(items) {
-    collection = [];
-
-    if (Array.isArray(items)) {
-      items.forEach(function (item) {
-        if (typeof item === 'string') {
-          collection.push(item);
-        } else if (Array.isArray(item)) {
-          collection = collection.concat(item);
-        } else {
-          Object.keys(item).forEach(function (property) {
-            collection = collection.concat(item[property]);
-          });
-        }
-      });
-    } else {
-      Object.keys(items).forEach(function (property) {
-        if (typeof items[property] === 'string') {
-          collection.push(items[property]);
-        } else if (Array.isArray(items[property])) {
-          collection = collection.concat(items[property]);
-        } else {
-          Object.keys(items).forEach(function (prop) {
-            collection = collection.concat(items[prop]);
-          });
-        }
-      });
-    }
-
-    fullyFlattened = collection.filter(function (item) {
-      return (typeof item === 'undefined' ? 'undefined' : _typeof(item)) === 'object';
-    });
-    fullyFlattened = fullyFlattened.length === 0;
-
-    flattenDepth -= 1;
-  };
-
-  flat(this.items);
-
-  while (!fullyFlattened && flattenDepth > 0) {
-    flat(collection);
-  }
-
-  return new this.constructor(collection);
-};
-
-/***/ }),
-/* 69 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function flip() {
-  var _this = this;
-
-  var collection = {};
-
-  Object.keys(this.items).forEach(function (key) {
-    collection[_this.items[key]] = key;
-  });
-
-  return new this.constructor(collection);
-};
-
-/***/ }),
-/* 70 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function forPage(page, chunk) {
-  var collection = this.items.slice(page * chunk - chunk, page * chunk);
-
-  return new this.constructor(collection);
-};
-
-/***/ }),
-/* 71 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function forget(key) {
-  delete this.items[key];
-  return this;
-};
-
-/***/ }),
-/* 72 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function get(key) {
-  var defaultValue = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
-
-  if (this.items[key] !== undefined) {
-    return this.items[key];
-  }
-
-  if (typeof defaultValue === 'function') {
-    return defaultValue();
-  }
-
-  if (defaultValue !== null) {
-    return defaultValue;
-  }
-
-  return null;
-};
-
-/***/ }),
-/* 73 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function groupBy(key) {
-  var collection = {};
-
-  this.items.forEach(function (item, index) {
-    var resolvedKey = void 0;
-
-    if (typeof key === 'function') {
-      resolvedKey = key(item, index);
-    } else {
-      resolvedKey = item[key];
-    }
-
-    if (collection[resolvedKey] === undefined) {
-      collection[resolvedKey] = [];
-    }
-
-    collection[resolvedKey].push(item);
-  });
-
-  return new this.constructor(collection);
-};
-
-/***/ }),
-/* 74 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function has(key) {
-  if (Array.isArray(this.items)) {
-    for (var i = 0, length = this.items.length; i < length; i += 1) {
-      if (this.items[i][key] !== undefined) {
-        return true;
-      }
-    }
-    return false;
-  }
-
-  return this.items[key] !== undefined;
-};
-
-/***/ }),
-/* 75 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function implode(key, glue) {
-  if (glue === undefined) {
-    return this.items.join(key);
-  }
-
-  return new this.constructor(this.items).pluck(key).all().join(glue);
-};
-
-/***/ }),
-/* 76 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function intersect(values) {
-  var intersectValues = values;
-
-  if (values instanceof this.constructor) {
-    intersectValues = values.all();
-  }
-
-  var collection = this.items.filter(function (item) {
-    return intersectValues.indexOf(item) !== -1;
-  });
-
-  return new this.constructor(collection);
-};
-
-/***/ }),
-/* 77 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function intersectByKeys(values) {
-  var _this = this;
-
-  var intersectKeys = Object.keys(values);
-
-  if (values instanceof this.constructor) {
-    intersectKeys = Object.keys(values.all());
-  }
-
-  var collection = {};
-
-  Object.keys(this.items).forEach(function (key) {
-    if (intersectKeys.indexOf(key) !== -1) {
-      collection[key] = _this.items[key];
-    }
-  });
-
-  return new this.constructor(collection);
-};
-
-/***/ }),
-/* 78 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function isEmpty() {
-  return !this.items.length;
-};
-
-/***/ }),
-/* 79 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function isNotEmpty() {
-  return !!this.items.length;
-};
-
-/***/ }),
-/* 80 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function keyBy(key) {
-  var collection = {};
-
-  if (typeof key === 'function') {
-    this.items.forEach(function (item) {
-      collection[key(item)] = item;
-    });
-  } else {
-    this.items.forEach(function (item) {
-      collection[item[key]] = item;
-    });
-  }
-
-  return new this.constructor(collection);
-};
-
-/***/ }),
-/* 81 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function keys() {
-  if (Array.isArray(this.items)) {
-    var collection = [];
-
-    this.items.forEach(function (object) {
-      Object.keys(object).forEach(function (key) {
-        collection.push(key);
-      });
-    });
-
-    return new this.constructor(collection).unique();
-  }
-
-  return new this.constructor(Object.keys(this.items));
-};
-
-/***/ }),
-/* 82 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function last(fn) {
-  if (typeof fn === 'function') {
-    var collection = this.items.filter(fn);
-
-    return collection[collection.length - 1];
-  }
-
-  return this.items[this.items.length - 1];
-};
-
-/***/ }),
-/* 83 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function macro(name, fn) {
-  this.constructor.prototype[name] = fn;
-};
-
-/***/ }),
-/* 84 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function map(fn) {
-  var _this = this;
-
-  if (Array.isArray(this.items)) {
-    return new this.constructor(this.items.map(fn));
-  }
-
-  var collection = {};
-
-  Object.keys(this.items).forEach(function (key) {
-    collection[key] = fn(_this.items[key], key);
-  });
-
-  return new this.constructor(collection);
-};
-
-/***/ }),
-/* 85 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function mapInto(ClassName) {
-  return this.map(function (value, key) {
-    return new ClassName(value, key);
-  });
-};
-
-/***/ }),
-/* 86 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
-
-module.exports = function mapToGroups(fn) {
-  var collection = {};
-
-  this.items.forEach(function (item) {
-    var _fn = fn(item),
-        _fn2 = _slicedToArray(_fn, 2),
-        keyed = _fn2[0],
-        value = _fn2[1];
-
-    if (collection[keyed] === undefined) {
-      collection[keyed] = [value];
-    } else {
-      collection[keyed].push(value);
-    }
-  });
-
-  return new this.constructor(collection);
-};
-
-/***/ }),
-/* 87 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
-
-module.exports = function mapWithKeys(fn) {
-  var _this = this;
-
-  var collection = {};
-
-  if (Array.isArray(this.items)) {
-    this.items.forEach(function (item) {
-      var _fn = fn(item),
-          _fn2 = _slicedToArray(_fn, 2),
-          keyed = _fn2[0],
-          value = _fn2[1];
-
-      collection[keyed] = value;
-    });
-  } else {
-    Object.keys(this.items).forEach(function (key) {
-      var _fn3 = fn(_this.items[key]),
-          _fn4 = _slicedToArray(_fn3, 2),
-          keyed = _fn4[0],
-          value = _fn4[1];
-
-      collection[keyed] = value;
-    });
-  }
-
-  return new this.constructor(collection);
-};
-
-/***/ }),
-/* 88 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-
-module.exports = function max(key) {
-  if (typeof key === 'string') {
-    return Math.max.apply(Math, _toConsumableArray(this.pluck(key).all()));
-  }
-
-  return Math.max.apply(Math, _toConsumableArray(this.items));
-};
-
-/***/ }),
-/* 89 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function median(key) {
-  var length = this.items.length;
-
-  if (key === undefined) {
-    if (length % 2 === 0) {
-      return (this.items[length / 2 - 1] + this.items[length / 2]) / 2;
-    }
-
-    return this.items[Math.floor(length / 2)];
-  }
-
-  if (length % 2 === 0) {
-    return (this.items[length / 2 - 1][key] + this.items[length / 2][key]) / 2;
-  }
-
-  return this.items[Math.floor(length / 2)][key];
-};
-
-/***/ }),
-/* 90 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function merge(objectOrArray) {
-  if (Array.isArray(objectOrArray)) {
-    return new this.constructor(this.items.concat(objectOrArray));
-  }
-
-  var collection = JSON.parse(JSON.stringify(this.items));
-
-  Object.keys(objectOrArray).forEach(function (key) {
-    collection[key] = objectOrArray[key];
-  });
-
-  return new this.constructor(collection);
-};
-
-/***/ }),
-/* 91 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-
-module.exports = function min(key) {
-  if (key !== undefined) {
-    return Math.min.apply(Math, _toConsumableArray(this.pluck(key).all()));
-  }
-
-  return Math.min.apply(Math, _toConsumableArray(this.items));
-};
-
-/***/ }),
-/* 92 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function mode(key) {
-  var values = [];
-  var highestCount = 1;
-
-  if (!this.items.length) {
-    return null;
-  }
-
-  this.items.forEach(function (item) {
-    var tempValues = values.filter(function (value) {
-      if (key !== undefined) {
-        return value.key === item[key];
-      }
-
-      return value.key === item;
-    });
-
-    if (!tempValues.length) {
-      if (key !== undefined) {
-        values.push({ key: item[key], count: 1 });
-      } else {
-        values.push({ key: item, count: 1 });
-      }
-    } else {
-      tempValues[0].count += 1;
-      var count = tempValues[0].count;
-
-      if (count > highestCount) {
-        highestCount = count;
-      }
-    }
-  });
-
-  return values.filter(function (value) {
-    return value.count === highestCount;
-  }).map(function (value) {
-    return value.key;
-  });
-};
-
-/***/ }),
-/* 93 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function nth(n, offset) {
-  var ntnOffset = offset || 0;
-
-  var collection = this.items.slice(ntnOffset).filter(function (item, index) {
-    return index % n === 0;
-  });
-
-  return new this.constructor(collection);
-};
-
-/***/ }),
-/* 94 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function only(properties) {
-  var _this = this;
-
-  if (Array.isArray(this.items)) {
-    var _collection = this.items.filter(function (item) {
-      return !properties.indexOf(item);
-    });
-
-    return new this.constructor(_collection);
-  }
-
-  var collection = {};
-
-  Object.keys(this.items).forEach(function (prop) {
-    if (properties.indexOf(prop) !== -1) {
-      collection[prop] = _this.items[prop];
-    }
-  });
-
-  return new this.constructor(collection);
-};
-
-/***/ }),
-/* 95 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function partition(fn) {
-  var arrays = [[], []];
-
-  this.items.forEach(function (item) {
-    if (fn(item) === true) {
-      arrays[0].push(item);
-    } else {
-      arrays[1].push(item);
-    }
-  });
-
-  return arrays;
-};
-
-/***/ }),
-/* 96 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function pipe(fn) {
-  return fn(this);
-};
-
-/***/ }),
-/* 97 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function pluck(value, key) {
-  if (key !== undefined) {
-    var _collection = {};
-
-    this.items.forEach(function (item) {
-      _collection[item[key]] = item[value];
-    });
-
-    return new this.constructor(_collection);
-  }
-
-  var collection = this.items.filter(function (item) {
-    return item[value] !== undefined;
-  }).map(function (item) {
-    return item[value];
-  });
-
-  return new this.constructor(collection);
-};
-
-/***/ }),
-/* 98 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function pop() {
-  return this.items.pop();
-};
-
-/***/ }),
-/* 99 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function prepend(value, key) {
-  if (key !== undefined) {
-    return this.put(key, value);
-  }
-
-  this.items.unshift(value);
-
-  return this;
-};
-
-/***/ }),
-/* 100 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function pull(key) {
-  var value = this.items[key] || null;
-  delete this.items[key];
-  return value;
-};
-
-/***/ }),
-/* 101 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function push(item) {
-  this.items.push(item);
-
-  return this;
-};
-
-/***/ }),
-/* 102 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function put(key, value) {
-  this.items[key] = value;
-
-  return this;
-};
-
-/***/ }),
-/* 103 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function random(length) {
-  var randomLength = length || 1;
-
-  var randomCollection = this.slice().shuffle().take(randomLength);
-
-  if (randomLength === 1) {
-    return randomCollection.first();
-  }
-
-  return randomCollection;
-};
-
-/***/ }),
-/* 104 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function reduce(fn, carry) {
-  var result = null;
-  var reduceCarry = null;
-
-  if (carry !== undefined) {
-    reduceCarry = carry;
-  }
-
-  this.items.forEach(function (item) {
-    result = fn(reduceCarry, item);
-    reduceCarry = result;
-  });
-
-  return result;
-};
-
-/***/ }),
-/* 105 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function reject(fn) {
-  return new this.constructor(this.items.filter(function (item) {
-    return !fn(item);
-  }));
-};
-
-/***/ }),
-/* 106 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function reverse() {
-  var collection = [].concat(this.items).reverse();
-
-  return new this.constructor(collection);
-};
-
-/***/ }),
-/* 107 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function search(valueOrFunction, strict) {
-  var valueFn = valueOrFunction;
-
-  if (typeof valueOrFunction === 'function') {
-    valueFn = this.items.filter(function (value, key) {
-      return valueOrFunction(value, key);
-    })[0];
-  }
-
-  var itemKey = this.items.filter(function (item) {
-    if (strict === true) {
-      return item === valueFn;
-    }
-
-    return item === Number(valueFn) || item === valueFn.toString();
-  })[0];
-
-  var index = this.items.indexOf(itemKey);
-
-  if (index === -1) {
-    return false;
-  }
-
-  return index;
-};
-
-/***/ }),
-/* 108 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function shift() {
-  return this.items.shift();
-};
-
-/***/ }),
-/* 109 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function shuffle() {
-  var j = void 0;
-  var x = void 0;
-  var i = void 0;
-
-  for (i = this.items.length; i; i -= 1) {
-    j = Math.floor(Math.random() * i);
-    x = this.items[i - 1];
-    this.items[i - 1] = this.items[j];
-    this.items[j] = x;
-  }
-
-  return this;
-};
-
-/***/ }),
-/* 110 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function slice(remove, limit) {
-  var collection = this.items.slice(remove);
-
-  if (limit !== undefined) {
-    collection = collection.slice(0, limit);
-  }
-
-  return new this.constructor(collection);
-};
-
-/***/ }),
-/* 111 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function sort(fn) {
-  var collection = [].concat(this.items);
-
-  if (fn === undefined) {
-    if (this.every(function (item) {
-      return typeof item === 'number';
-    })) {
-      collection.sort(function (a, b) {
-        return a - b;
-      });
-    } else {
-      collection.sort();
-    }
-  } else {
-    collection.sort(fn);
-  }
-
-  return new this.constructor(collection);
-};
-
-/***/ }),
-/* 112 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function sortBy(valueOrFunction) {
-  var collection = [].concat(this.items);
-
-  if (typeof valueOrFunction === 'function') {
-    collection.sort(function (a, b) {
-      if (valueOrFunction(a) < valueOrFunction(b)) return -1;
-      if (valueOrFunction(a) > valueOrFunction(b)) return 1;
-      return 0;
-    });
-  } else {
-    collection.sort(function (a, b) {
-      if (a[valueOrFunction] < b[valueOrFunction]) return -1;
-      if (a[valueOrFunction] > b[valueOrFunction]) return 1;
-      return 0;
-    });
-  }
-
-  return new this.constructor(collection);
-};
-
-/***/ }),
-/* 113 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function sortByDesc(valueOrFunction) {
-  return this.sortBy(valueOrFunction).reverse();
-};
-
-/***/ }),
-/* 114 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function splice(index, limit, replace) {
-  var slicedCollection = this.slice(index, limit);
-
-  this.items = this.diff(slicedCollection.all()).all();
-
-  if (Array.isArray(replace)) {
-    for (var iterator = 0, length = replace.length; iterator < length; iterator += 1) {
-      this.items.splice(index + iterator, 0, replace[iterator]);
-    }
-  }
-
-  return slicedCollection;
-};
-
-/***/ }),
-/* 115 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function split(numberOfGroups) {
-  var itemsPerGroup = Math.round(this.items.length / numberOfGroups);
-
-  var items = JSON.parse(JSON.stringify(this.items));
-  var collection = [];
-
-  for (var iterator = 0; iterator < numberOfGroups; iterator += 1) {
-    collection.push(items.splice(0, itemsPerGroup));
-  }
-
-  return collection;
-};
-
-/***/ }),
-/* 116 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function sum(key) {
-  var total = 0;
-
-  if (key === undefined) {
-    for (var i = 0, length = this.items.length; i < length; i += 1) {
-      total += this.items[i];
-    }
-  } else if (typeof key === 'function') {
-    for (var _i = 0, _length = this.items.length; _i < _length; _i += 1) {
-      total += key(this.items[_i]);
-    }
-  } else {
-    for (var _i2 = 0, _length2 = this.items.length; _i2 < _length2; _i2 += 1) {
-      total += this.items[_i2][key];
-    }
-  }
-
-  return total;
-};
-
-/***/ }),
-/* 117 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function take(length) {
-  if (length < 0) {
-    return new this.constructor(this.items.slice(length));
-  }
-
-  return new this.constructor(this.items.slice(0, length));
-};
-
-/***/ }),
-/* 118 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function tap(fn) {
-  fn(this);
-  return this;
-};
-
-/***/ }),
-/* 119 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function times(n, fn) {
-  for (var iterator = 1; iterator <= n; iterator += 1) {
-    this.items.push(fn(iterator));
-  }
-
-  return this;
-};
-
-/***/ }),
-/* 120 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function toArray() {
-  if (Array.isArray(this.items)) {
-    return this.all();
-  }
-
-  return this.values().all();
-};
-
-/***/ }),
-/* 121 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function toJson() {
-  return JSON.stringify(this.items);
-};
-
-/***/ }),
-/* 122 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function transform(fn) {
-  var _this = this;
-
-  if (Array.isArray(this.items)) {
-    this.items = this.items.map(fn);
-  } else {
-    var collection = {};
-
-    Object.keys(this.items).forEach(function (key) {
-      collection[key] = fn(_this.items[key], key);
-    });
-
-    this.items = collection;
-  }
-
-  return this;
-};
-
-/***/ }),
-/* 123 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function when(value, fn, defaultFn) {
-  if (!value) {
-    fn(this);
-  } else {
-    defaultFn(this);
-  }
-};
-
-/***/ }),
-/* 124 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function union(object) {
-  var _this = this;
-
-  var collection = JSON.parse(JSON.stringify(this.items));
-
-  Object.keys(object).forEach(function (prop) {
-    if (_this.items[prop] === undefined) {
-      collection[prop] = object[prop];
-    }
-  });
-
-  return new this.constructor(collection);
-};
-
-/***/ }),
-/* 125 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function unique(key) {
-  var collection = void 0;
-
-  if (key === undefined) {
-    collection = this.items.filter(function (element, index, self) {
-      return self.indexOf(element) === index;
-    });
-  } else {
-    collection = [];
-
-    var usedKeys = [];
-
-    for (var iterator = 0, length = this.items.length; iterator < length; iterator += 1) {
-      var uniqueKey = void 0;
-      if (typeof key === 'function') {
-        uniqueKey = key(this.items[iterator]);
-      } else {
-        uniqueKey = this.items[iterator][key];
-      }
-
-      if (usedKeys.indexOf(uniqueKey) === -1) {
-        collection.push(this.items[iterator]);
-        usedKeys.push(uniqueKey);
-      }
-    }
-  }
-
-  return new this.constructor(collection);
-};
-
-/***/ }),
-/* 126 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function unwrap(value) {
-  if (value instanceof this.constructor) {
-    return value.all();
-  }
-
-  return value;
-};
-
-/***/ }),
-/* 127 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function values() {
-  var _this = this;
-
-  var collection = [];
-
-  Object.keys(this.items).forEach(function (property) {
-    collection.push(_this.items[property]);
-  });
-
-  return new this.constructor(collection);
-};
-
-/***/ }),
-/* 128 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function when(value, fn, defaultFn) {
-  if (value) {
-    fn(this);
-  } else {
-    defaultFn(this);
-  }
-};
-
-/***/ }),
-/* 129 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function where(key, operator, value) {
-  var comparisonOperator = operator;
-  var comparisonValue = value;
-
-  if (value === undefined) {
-    comparisonValue = operator;
-    comparisonOperator = '===';
-  }
-
-  var collection = this.items.filter(function (item) {
-    switch (comparisonOperator) {
-      case '==':
-        return item[key] === Number(comparisonValue) || item[key] === comparisonValue.toString();
-
-      default:
-      case '===':
-        return item[key] === comparisonValue;
-
-      case '!=':
-      case '<>':
-        return item[key] !== Number(comparisonValue) && item[key] !== comparisonValue.toString();
-
-      case '!==':
-        return item[key] !== comparisonValue;
-
-      case '<':
-        return item[key] < comparisonValue;
-
-      case '<=':
-        return item[key] <= comparisonValue;
-
-      case '>':
-        return item[key] > comparisonValue;
-
-      case '>=':
-        return item[key] >= comparisonValue;
-
-    }
-  });
-
-  return new this.constructor(collection);
-};
-
-/***/ }),
-/* 130 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function whereIn(key, values) {
-  var collection = this.items.filter(function (item) {
-    return values.indexOf(item[key]) !== -1;
-  });
-
-  return new this.constructor(collection);
-};
-
-/***/ }),
-/* 131 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function whereNotIn(key, values) {
-  var collection = this.items;
-
-  values.forEach(function (value) {
-    collection = collection.filter(function (item) {
-      return item[key] !== value;
-    });
-  });
-
-  return new this.constructor(collection);
-};
-
-/***/ }),
-/* 132 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function wrap(value) {
-  if (value instanceof this.constructor) {
-    return value;
-  }
-
-  if (Array.isArray(value)) {
-    return new this.constructor(value);
-  }
-
-  return new this.constructor([value]);
-};
-
-/***/ }),
-/* 133 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function zip(array) {
-  var collection = this.items.map(function (item, index) {
-    return [item, array[index]];
-  });
-
-  return new this.constructor(collection);
-};
-
-/***/ }),
+/* 48 */,
+/* 49 */,
+/* 50 */,
+/* 51 */,
+/* 52 */,
+/* 53 */,
+/* 54 */,
+/* 55 */,
+/* 56 */,
+/* 57 */,
+/* 58 */,
+/* 59 */,
+/* 60 */,
+/* 61 */,
+/* 62 */,
+/* 63 */,
+/* 64 */,
+/* 65 */,
+/* 66 */,
+/* 67 */,
+/* 68 */,
+/* 69 */,
+/* 70 */,
+/* 71 */,
+/* 72 */,
+/* 73 */,
+/* 74 */,
+/* 75 */,
+/* 76 */,
+/* 77 */,
+/* 78 */,
+/* 79 */,
+/* 80 */,
+/* 81 */,
+/* 82 */,
+/* 83 */,
+/* 84 */,
+/* 85 */,
+/* 86 */,
+/* 87 */,
+/* 88 */,
+/* 89 */,
+/* 90 */,
+/* 91 */,
+/* 92 */,
+/* 93 */,
+/* 94 */,
+/* 95 */,
+/* 96 */,
+/* 97 */,
+/* 98 */,
+/* 99 */,
+/* 100 */,
+/* 101 */,
+/* 102 */,
+/* 103 */,
+/* 104 */,
+/* 105 */,
+/* 106 */,
+/* 107 */,
+/* 108 */,
+/* 109 */,
+/* 110 */,
+/* 111 */,
+/* 112 */,
+/* 113 */,
+/* 114 */,
+/* 115 */,
+/* 116 */,
+/* 117 */,
+/* 118 */,
+/* 119 */,
+/* 120 */,
+/* 121 */,
+/* 122 */,
+/* 123 */,
+/* 124 */,
+/* 125 */,
+/* 126 */,
+/* 127 */,
+/* 128 */,
+/* 129 */,
+/* 130 */,
+/* 131 */,
+/* 132 */,
+/* 133 */,
 /* 134 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7918,6 +6048,19 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -8008,57 +6151,30 @@ var render = function() {
     "div",
     [
       _c(
-        "v-container",
+        "v-layout",
+        { attrs: { "justify-center": "" } },
         [
           _c(
-            "v-card",
-            { staticClass: "elevation-9" },
+            "v-flex",
+            { attrs: { xs8: "", md8: "", lg8: "" } },
             [
-              _vm.selected.length === 0
-                ? _c(
-                    "v-card-title",
+              _c(
+                "v-card",
+                { staticClass: "card--flex-toolbar" },
+                [
+                  _c(
+                    "v-toolbar",
+                    {
+                      attrs: {
+                        card: "",
+                        prominent: "",
+                        color: "light-blue",
+                        dark: ""
+                      }
+                    },
                     [
-                      _c("span", { staticClass: "subheading ml-5 my-3" }, [
+                      _c("v-toolbar-title", { staticClass: "body-2" }, [
                         _vm._v("Días de pago de Aguinaldo")
-                      ]),
-                      _vm._v(" "),
-                      _c("v-spacer"),
-                      _vm._v(" "),
-                      _c("v-text-field", {
-                        attrs: {
-                          "append-icon": "search",
-                          label: "Buscar",
-                          "single-line": "",
-                          "hide-details": ""
-                        },
-                        model: {
-                          value: _vm.search,
-                          callback: function($$v) {
-                            _vm.search = $$v
-                          },
-                          expression: "search"
-                        }
-                      })
-                    ],
-                    1
-                  )
-                : _c(
-                    "v-card-title",
-                    { staticClass: "blue" },
-                    [
-                      _c("span", { staticClass: "subheading ml-5 my-3" }, [
-                        _vm._v(
-                          "\n                  " +
-                            _vm._s(_vm.selected.length) +
-                            " " +
-                            _vm._s(
-                              _vm._f("pluralize")(
-                                _vm.selected.length,
-                                "Seleccionado"
-                              )
-                            ) +
-                            "\n              "
-                        )
                       ]),
                       _vm._v(" "),
                       _c("v-spacer"),
@@ -8089,258 +6205,279 @@ var render = function() {
                           _c("span", [_vm._v("Editar")])
                         ],
                         1
-                      )
+                      ),
+                      _vm._v(" "),
+                      _c("v-text-field", {
+                        attrs: {
+                          dark: "",
+                          "append-icon": "search",
+                          label: "Buscar",
+                          "single-line": "",
+                          "hide-details": ""
+                        },
+                        model: {
+                          value: _vm.search,
+                          callback: function($$v) {
+                            _vm.search = $$v
+                          },
+                          expression: "search"
+                        }
+                      })
                     ],
                     1
                   ),
-              _vm._v(" "),
-              _c("v-data-table", {
-                attrs: {
-                  headers: _vm.headers,
-                  items: _vm.items,
-                  search: _vm.search,
-                  "item-key": "id",
-                  "select-all": "",
-                  "rows-per-page-text": "Registros por Página",
-                  "no-data-text": "No se encontraron resultados"
-                },
-                scopedSlots: _vm._u([
-                  {
-                    key: "items",
-                    fn: function(props) {
-                      return [
-                        _c(
-                          "td",
-                          [
-                            _c("v-checkbox", {
-                              attrs: { "hide-details": "" },
-                              model: {
-                                value: props.selected,
-                                callback: function($$v) {
-                                  _vm.$set(props, "selected", $$v)
-                                },
-                                expression: "props.selected"
-                              }
-                            })
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c("td", { staticClass: "text-xs-left" }, [
-                          _vm._v(_vm._s(props.item.days))
-                        ]),
-                        _vm._v(" "),
-                        _c("td", { staticClass: "text-xs-left" }, [
-                          _vm._v(_vm._s(props.item.start))
-                        ]),
-                        _vm._v(" "),
-                        _c("td", { staticClass: "text-xs-left" }, [
-                          _vm._v(_vm._s(props.item.end))
-                        ])
-                      ]
+                  _vm._v(" "),
+                  _c("v-data-table", {
+                    attrs: {
+                      headers: _vm.headers,
+                      items: _vm.items,
+                      search: _vm.search,
+                      "item-key": "id",
+                      "select-all": "",
+                      "rows-per-page-text": "Registros por Página",
+                      "no-data-text": "No se encontraron resultados",
+                      "page-text": "de"
+                    },
+                    scopedSlots: _vm._u([
+                      {
+                        key: "items",
+                        fn: function(props) {
+                          return [
+                            _c(
+                              "td",
+                              [
+                                _c("v-checkbox", {
+                                  attrs: { "hide-details": "" },
+                                  model: {
+                                    value: props.selected,
+                                    callback: function($$v) {
+                                      _vm.$set(props, "selected", $$v)
+                                    },
+                                    expression: "props.selected"
+                                  }
+                                })
+                              ],
+                              1
+                            ),
+                            _vm._v(" "),
+                            _c("td", { staticClass: "text-xs-left" }, [
+                              _vm._v(_vm._s(props.item.days))
+                            ]),
+                            _vm._v(" "),
+                            _c("td", { staticClass: "text-xs-left" }, [
+                              _vm._v(_vm._s(props.item.start))
+                            ]),
+                            _vm._v(" "),
+                            _c("td", { staticClass: "text-xs-left" }, [
+                              _vm._v(_vm._s(props.item.end))
+                            ])
+                          ]
+                        }
+                      }
+                    ]),
+                    model: {
+                      value: _vm.selected,
+                      callback: function($$v) {
+                        _vm.selected = $$v
+                      },
+                      expression: "selected"
                     }
-                  }
-                ]),
-                model: {
-                  value: _vm.selected,
-                  callback: function($$v) {
-                    _vm.selected = $$v
-                  },
-                  expression: "selected"
-                }
-              })
+                  })
+                ],
+                1
+              )
             ],
             1
-          ),
-          _vm._v(" "),
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-layout",
+        { attrs: { row: "", "justify-center": "" } },
+        [
           _c(
-            "v-layout",
-            { attrs: { row: "", "justify-center": "" } },
+            "v-dialog",
+            {
+              attrs: { persistent: "", "max-width": "500px" },
+              model: {
+                value: _vm.dialog,
+                callback: function($$v) {
+                  _vm.dialog = $$v
+                },
+                expression: "dialog"
+              }
+            },
             [
               _c(
-                "v-dialog",
-                {
-                  attrs: { persistent: "", "max-width": "500px" },
-                  model: {
-                    value: _vm.dialog,
-                    callback: function($$v) {
-                      _vm.dialog = $$v
-                    },
-                    expression: "dialog"
-                  }
-                },
+                "v-card",
                 [
+                  _c("v-card-title", [
+                    _c("span", { staticClass: "headline" }, [
+                      _vm._v("Editar Opciones de Aguinaldo")
+                    ])
+                  ]),
+                  _vm._v(" "),
                   _c(
-                    "v-card",
+                    "v-card-text",
                     [
-                      _c("v-card-title", [
-                        _c("span", { staticClass: "headline" }, [
-                          _vm._v("Editar Opciones de Aguinaldo")
-                        ])
-                      ]),
-                      _vm._v(" "),
                       _c(
-                        "v-card-text",
+                        "v-container",
+                        { attrs: { "grid-list-md": "" } },
                         [
                           _c(
-                            "v-container",
-                            { attrs: { "grid-list-md": "" } },
+                            "v-layout",
+                            { attrs: { wrap: "" } },
                             [
                               _c(
-                                "v-layout",
-                                { attrs: { wrap: "" } },
+                                "v-flex",
+                                { attrs: { xs12: "", sm6: "", md4: "" } },
                                 [
-                                  _c(
-                                    "v-flex",
-                                    { attrs: { xs12: "", sm6: "", md4: "" } },
-                                    [
-                                      _c("v-text-field", {
-                                        directives: [
-                                          {
-                                            name: "validate",
-                                            rawName: "v-validate",
-                                            value: "required|numeric",
-                                            expression: "'required|numeric'"
-                                          }
-                                        ],
-                                        attrs: {
-                                          label: "Días",
-                                          required: "",
-                                          type: "number",
-                                          "error-messages": _vm._errors.collect(
-                                            "days"
-                                          ),
-                                          "data-vv-name": "days",
-                                          hint: "Días de Aguinaldo",
-                                          "persistent-hint": ""
-                                        },
-                                        model: {
-                                          value: _vm.bonus.days,
-                                          callback: function($$v) {
-                                            _vm.$set(_vm.bonus, "days", $$v)
-                                          },
-                                          expression: "bonus.days"
-                                        }
-                                      })
+                                  _c("v-text-field", {
+                                    directives: [
+                                      {
+                                        name: "validate",
+                                        rawName: "v-validate",
+                                        value: "required|numeric",
+                                        expression: "'required|numeric'"
+                                      }
                                     ],
-                                    1
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "v-flex",
-                                    { attrs: { xs12: "", sm6: "", md4: "" } },
-                                    [
-                                      _c("v-text-field", {
-                                        directives: [
-                                          {
-                                            name: "validate",
-                                            rawName: "v-validate",
-                                            value:
-                                              "required|numeric|max_value:" +
-                                              this.bonus.end,
-                                            expression:
-                                              "`required|numeric|max_value:${this.bonus.end}`"
-                                          }
-                                        ],
-                                        attrs: {
-                                          label: "Inicio (Años)",
-                                          required: "",
-                                          type: "number",
-                                          max: _vm.bonus.end,
-                                          "error-messages": _vm._errors.collect(
-                                            "start"
-                                          ),
-                                          "data-vv-name": "start",
-                                          hint: "Año de Inicio",
-                                          "persistent-hint": ""
-                                        },
-                                        model: {
-                                          value: _vm.bonus.start,
-                                          callback: function($$v) {
-                                            _vm.$set(_vm.bonus, "start", $$v)
-                                          },
-                                          expression: "bonus.start"
-                                        }
-                                      })
+                                    attrs: {
+                                      label: "Días",
+                                      required: "",
+                                      type: "number",
+                                      "error-messages": _vm._errors.collect(
+                                        "days"
+                                      ),
+                                      "data-vv-name": "days",
+                                      hint: "Días de Aguinaldo",
+                                      "persistent-hint": ""
+                                    },
+                                    model: {
+                                      value: _vm.bonus.days,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.bonus, "days", $$v)
+                                      },
+                                      expression: "bonus.days"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-flex",
+                                { attrs: { xs12: "", sm6: "", md4: "" } },
+                                [
+                                  _c("v-text-field", {
+                                    directives: [
+                                      {
+                                        name: "validate",
+                                        rawName: "v-validate",
+                                        value:
+                                          "required|numeric|max_value:" +
+                                          this.bonus.end,
+                                        expression:
+                                          "`required|numeric|max_value:${this.bonus.end}`"
+                                      }
                                     ],
-                                    1
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "v-flex",
-                                    { attrs: { xs12: "", sm6: "", md4: "" } },
-                                    [
-                                      _c("v-text-field", {
-                                        directives: [
-                                          {
-                                            name: "validate",
-                                            rawName: "v-validate",
-                                            value:
-                                              "required|numeric|min_value:" +
-                                              this.bonus.start,
-                                            expression:
-                                              "`required|numeric|min_value:${this.bonus.start}`"
-                                          }
-                                        ],
-                                        attrs: {
-                                          label: "Fin (Años)",
-                                          required: "",
-                                          type: "number",
-                                          min: _vm.bonus.start,
-                                          "error-messages": _vm._errors.collect(
-                                            "end"
-                                          ),
-                                          "data-vv-name": "end",
-                                          hint: "Año de Finalización",
-                                          "persistent-hint": ""
-                                        },
-                                        model: {
-                                          value: _vm.bonus.end,
-                                          callback: function($$v) {
-                                            _vm.$set(_vm.bonus, "end", $$v)
-                                          },
-                                          expression: "bonus.end"
-                                        }
-                                      })
+                                    attrs: {
+                                      label: "Inicio (Años)",
+                                      required: "",
+                                      type: "number",
+                                      max: _vm.bonus.end,
+                                      "error-messages": _vm._errors.collect(
+                                        "start"
+                                      ),
+                                      "data-vv-name": "start",
+                                      hint: "Año de Inicio",
+                                      "persistent-hint": ""
+                                    },
+                                    model: {
+                                      value: _vm.bonus.start,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.bonus, "start", $$v)
+                                      },
+                                      expression: "bonus.start"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-flex",
+                                { attrs: { xs12: "", sm6: "", md4: "" } },
+                                [
+                                  _c("v-text-field", {
+                                    directives: [
+                                      {
+                                        name: "validate",
+                                        rawName: "v-validate",
+                                        value:
+                                          "required|numeric|min_value:" +
+                                          this.bonus.start,
+                                        expression:
+                                          "`required|numeric|min_value:${this.bonus.start}`"
+                                      }
                                     ],
-                                    1
-                                  )
+                                    attrs: {
+                                      label: "Fin (Años)",
+                                      required: "",
+                                      type: "number",
+                                      min: _vm.bonus.start,
+                                      "error-messages": _vm._errors.collect(
+                                        "end"
+                                      ),
+                                      "data-vv-name": "end",
+                                      hint: "Año de Finalización",
+                                      "persistent-hint": ""
+                                    },
+                                    model: {
+                                      value: _vm.bonus.end,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.bonus, "end", $$v)
+                                      },
+                                      expression: "bonus.end"
+                                    }
+                                  })
                                 ],
                                 1
                               )
                             ],
                             1
-                          ),
-                          _vm._v(" "),
-                          _c("small", [_vm._v("*Indica campos obligatorios")])
+                          )
                         ],
                         1
                       ),
                       _vm._v(" "),
+                      _c("small", [_vm._v("*Indica campos obligatorios")])
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-card-actions",
+                    [
+                      _c("v-spacer"),
+                      _vm._v(" "),
                       _c(
-                        "v-card-actions",
-                        [
-                          _c("v-spacer"),
-                          _vm._v(" "),
-                          _c(
-                            "v-btn",
-                            {
-                              attrs: { color: "blue darken-1", flat: "" },
-                              on: { click: _vm.clear }
-                            },
-                            [_vm._v("Cerrar")]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "v-btn",
-                            {
-                              attrs: { color: "blue darken-1", flat: "" },
-                              on: { click: _vm.update }
-                            },
-                            [_vm._v("Guardar")]
-                          )
-                        ],
-                        1
+                        "v-btn",
+                        {
+                          attrs: { color: "blue darken-1", flat: "" },
+                          on: { click: _vm.clear }
+                        },
+                        [_vm._v("Cerrar")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { color: "blue darken-1", flat: "" },
+                          on: { click: _vm.update }
+                        },
+                        [_vm._v("Guardar")]
                       )
                     ],
                     1
@@ -8373,7 +6510,7 @@ if (false) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__store__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__store__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_localforage__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_localforage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_localforage__);
 
@@ -9002,9 +7139,9 @@ var noti = function noti(_ref, payload) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_lodash__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_axios__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vuetify__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vuetify__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vuetify___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_vuetify__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vue2_filters__ = __webpack_require__(190);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vue2_filters___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_vue2_filters__);
@@ -9778,7 +7915,7 @@ __WEBPACK_IMPORTED_MODULE_0_vee_validate__["Validator"].updateDictionary(diction
 
 Vue.component('app', __webpack_require__(194));
 Vue.component('navigation', __webpack_require__(199));
-Vue.component('notification', __webpack_require__(20));
+Vue.component('notification', __webpack_require__(21));
 
 /***/ }),
 /* 194 */
@@ -9833,7 +7970,7 @@ module.exports = Component.exports
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Notification__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Notification__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Notification___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__Notification__);
 //
 //
@@ -10319,4 +8456,4 @@ if (false) {
 // removed by extract-text-webpack-plugin
 
 /***/ })
-],[21]);
+],[22]);

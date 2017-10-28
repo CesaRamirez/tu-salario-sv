@@ -1,9 +1,10 @@
 <template lang="html">
 
 <div>
-    <v-container>
-        <v-card class="elevation-9">
-            <v-card-title v-if="selected.length === 0">
+  <v-layout justify-center>
+      <v-flex xs8 md8 lg8>
+        <v-card class="card--flex-toolbar">
+            <!-- <v-card-title v-if="selected.length === 0">
                 <span class="subheading ml-5 my-3">Días de pago de Aguinaldo</span>
                 <v-spacer></v-spacer>
                 <v-text-field append-icon="search" label="Buscar" single-line hide-details v-model="search"></v-text-field>
@@ -19,8 +20,19 @@
                     </v-btn>
                     <span>Editar</span>
                 </v-tooltip>
-            </v-card-title>
-            <v-data-table :headers="headers" :items="items" :search="search" v-model="selected" item-key="id" select-all rows-per-page-text="Registros por Página" no-data-text="No se encontraron resultados">
+            </v-card-title> -->
+            <v-toolbar card prominent color="light-blue" dark>
+              <v-toolbar-title class="body-2">Días de pago de Aguinaldo</v-toolbar-title>
+              <v-spacer></v-spacer>
+              <v-tooltip top>
+                  <v-btn icon slot="activator" v-show="selected.length === 1" @click="edit">
+                      <v-icon>create</v-icon>
+                  </v-btn>
+                  <span>Editar</span>
+              </v-tooltip>
+              <v-text-field dark append-icon="search" label="Buscar" single-line hide-details v-model="search"></v-text-field>
+            </v-toolbar>
+            <v-data-table :headers="headers" :items="items" :search="search" v-model="selected" item-key="id" select-all rows-per-page-text="Registros por Página" no-data-text="No se encontraron resultados" page-text="de">
                 <template slot="items" slot-scope="props">
                     <td>
                         <v-checkbox hide-details v-model="props.selected"></v-checkbox>
@@ -31,6 +43,8 @@
                 </template>
             </v-data-table>
         </v-card>
+      </v-flex>
+    </v-layout>
         <v-layout row justify-center>
             <v-dialog v-model="dialog" persistent max-width="500px">
                 <v-card>
@@ -64,7 +78,6 @@
                 </v-card>
             </v-dialog>
         </v-layout>
-    </v-container>
 </div>
 
 </template>
