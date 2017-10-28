@@ -12,7 +12,7 @@ require('dotenv').config();
  */
 
 mix.js('resources/assets/js/app.js', 'public/js')
-  .extract(['vue', 'axios', 'vuetify'])
+  .extract(['vue', 'axios', 'vuetify', 'vue-router', 'vee-validate', 'lodash', 'collect.js'])
   .sass('resources/assets/sass/app.scss', 'public/css');
 
 if (mix.inProduction()) {
