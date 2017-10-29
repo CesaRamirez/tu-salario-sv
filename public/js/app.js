@@ -1050,7 +1050,7 @@ var index_esm = {
 
 /* WEBPACK VAR INJECTION */(function(global) {var require;var require;/*!
     localForage -- Offline Storage, Improved
-    Version 1.5.2
+    Version 1.5.3
     https://localforage.github.io/localForage
     (c) 2013-2017 Mozilla, Apache License 2.0
 */
@@ -2863,6 +2863,28 @@ function isLocalStorageValid() {
     }
 }
 
+// Check if localStorage throws when saving an item
+function checkIfLocalStorageThrows() {
+    var localStorageTestKey = '_localforage_support_test';
+
+    try {
+        localStorage.setItem(localStorageTestKey, true);
+        localStorage.removeItem(localStorageTestKey);
+
+        return false;
+    } catch (e) {
+        return true;
+    }
+}
+
+// Check if localStorage is usable and allows to save an item
+// This method checks if localStorage is usable in Safari Private Browsing
+// mode, or in any other case where the available quota for localStorage
+// is 0 and there wasn't any saved items yet.
+function _isLocalStorageUsable() {
+    return !checkIfLocalStorageThrows() || localStorage.length > 0;
+}
+
 // Config the localStorage backend, using options set in the config.
 function _initStorage$2(options) {
     var self = this;
@@ -2877,6 +2899,10 @@ function _initStorage$2(options) {
 
     if (dbInfo.storeName !== self._defaultConfig.storeName) {
         dbInfo.keyPrefix += dbInfo.storeName + '/';
+    }
+
+    if (!_isLocalStorageUsable()) {
+        return Promise$1.reject();
     }
 
     self._dbInfo = dbInfo;
@@ -3009,8 +3035,9 @@ function keys$2(callback) {
         var keys = [];
 
         for (var i = 0; i < length; i++) {
-            if (localStorage.key(i).indexOf(dbInfo.keyPrefix) === 0) {
-                keys.push(localStorage.key(i).substring(dbInfo.keyPrefix.length));
+            var itemKey = localStorage.key(i);
+            if (itemKey.indexOf(dbInfo.keyPrefix) === 0) {
+                keys.push(itemKey.substring(dbInfo.keyPrefix.length));
             }
         }
 
@@ -4441,6 +4468,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
 
 
 
@@ -4797,6 +4827,25 @@ var render = function() {
                         _c("td", { staticClass: "text-xs-right" }, [
                           _vm._v(_vm._s(props.item.fee))
                         ])
+                      ]
+                    }
+                  },
+                  {
+                    key: "pageText",
+                    fn: function(ref) {
+                      var pageStart = ref.pageStart
+                      var pageStop = ref.pageStop
+                      var itemsLength = ref.itemsLength
+                      return [
+                        _vm._v(
+                          "\n                  " +
+                            _vm._s(pageStart) +
+                            " - " +
+                            _vm._s(pageStop) +
+                            " de " +
+                            _vm._s(itemsLength) +
+                            "\n                "
+                        )
                       ]
                     }
                   }
@@ -5446,6 +5495,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
 
 
 
@@ -5665,6 +5717,25 @@ var render = function() {
                             _c("td", { staticClass: "text-xs-left" }, [
                               _vm._v(_vm._s(props.item.value))
                             ])
+                          ]
+                        }
+                      },
+                      {
+                        key: "pageText",
+                        fn: function(ref) {
+                          var pageStart = ref.pageStart
+                          var pageStop = ref.pageStop
+                          var itemsLength = ref.itemsLength
+                          return [
+                            _vm._v(
+                              "\n                      " +
+                                _vm._s(pageStart) +
+                                " - " +
+                                _vm._s(pageStop) +
+                                " de " +
+                                _vm._s(itemsLength) +
+                                "\n                    "
+                            )
                           ]
                         }
                       }
@@ -6047,20 +6118,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -6234,7 +6291,6 @@ var render = function() {
                       search: _vm.search,
                       "item-key": "id",
                       "select-all": "",
-                      "rows-per-page-text": "Registros por Página",
                       "no-data-text": "No se encontraron resultados",
                       "page-text": "de"
                     },
@@ -6271,6 +6327,25 @@ var render = function() {
                             _c("td", { staticClass: "text-xs-left" }, [
                               _vm._v(_vm._s(props.item.end))
                             ])
+                          ]
+                        }
+                      },
+                      {
+                        key: "pageText",
+                        fn: function(ref) {
+                          var pageStart = ref.pageStart
+                          var pageStop = ref.pageStop
+                          var itemsLength = ref.itemsLength
+                          return [
+                            _vm._v(
+                              "\n                  " +
+                                _vm._s(pageStart) +
+                                " - " +
+                                _vm._s(pageStop) +
+                                " de " +
+                                _vm._s(itemsLength) +
+                                "\n                "
+                            )
                           ]
                         }
                       }

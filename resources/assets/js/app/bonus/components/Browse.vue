@@ -4,23 +4,6 @@
   <v-layout justify-center>
       <v-flex xs8 md8 lg8>
         <v-card class="card--flex-toolbar">
-            <!-- <v-card-title v-if="selected.length === 0">
-                <span class="subheading ml-5 my-3">Días de pago de Aguinaldo</span>
-                <v-spacer></v-spacer>
-                <v-text-field append-icon="search" label="Buscar" single-line hide-details v-model="search"></v-text-field>
-            </v-card-title>
-            <v-card-title v-else class="blue">
-                <span class="subheading ml-5 my-3">
-                  {{ selected.length }} {{ selected.length | pluralize('Seleccionado')}}
-              </span>
-                <v-spacer></v-spacer>
-                <v-tooltip top>
-                    <v-btn icon slot="activator" v-show="selected.length === 1" @click="edit">
-                        <v-icon>create</v-icon>
-                    </v-btn>
-                    <span>Editar</span>
-                </v-tooltip>
-            </v-card-title> -->
             <v-toolbar card prominent color="light-blue" dark>
               <v-toolbar-title class="body-2">Días de pago de Aguinaldo</v-toolbar-title>
               <v-spacer></v-spacer>
@@ -32,7 +15,7 @@
               </v-tooltip>
               <v-text-field dark append-icon="search" label="Buscar" single-line hide-details v-model="search"></v-text-field>
             </v-toolbar>
-            <v-data-table :headers="headers" :items="items" :search="search" v-model="selected" item-key="id" select-all rows-per-page-text="Registros por Página" no-data-text="No se encontraron resultados" page-text="de">
+            <v-data-table :headers="headers" :items="items" :search="search" v-model="selected" item-key="id" select-all no-data-text="No se encontraron resultados" page-text="de">
                 <template slot="items" slot-scope="props">
                     <td>
                         <v-checkbox hide-details v-model="props.selected"></v-checkbox>
@@ -40,6 +23,9 @@
                     <td class="text-xs-left">{{ props.item.days }}</td>
                     <td class="text-xs-left">{{ props.item.start }}</td>
                     <td class="text-xs-left">{{ props.item.end }}</td>
+                </template>
+                <template slot="pageText" slot-scope="{ pageStart, pageStop, itemsLength }">
+                  {{ pageStart }} - {{ pageStop }} de {{ itemsLength }}
                 </template>
             </v-data-table>
         </v-card>

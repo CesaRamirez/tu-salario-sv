@@ -27,6 +27,9 @@
                         <td class="text-xs-left">{{ props.item.description }}</td>
                         <td class="text-xs-left">{{ props.item.value }}</td>
                     </template>
+                    <template slot="pageText" slot-scope="{ pageStart, pageStop, itemsLength }">
+                      {{ pageStart }} - {{ pageStop }} de {{ itemsLength }}
+                    </template>
                 </v-data-table>
             </v-card>
         </v-flex>

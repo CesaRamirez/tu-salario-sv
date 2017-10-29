@@ -32,6 +32,9 @@
                     <td class="text-xs-right">{{ props.item.excess }}</td>
                     <td class="text-xs-right">{{ props.item.fee }}</td>
                 </template>
+                <template slot="pageText" slot-scope="{ pageStart, pageStop, itemsLength }">
+                  {{ pageStart }} - {{ pageStop }} de {{ itemsLength }}
+                </template>
             </v-data-table>
         </v-card>
 
