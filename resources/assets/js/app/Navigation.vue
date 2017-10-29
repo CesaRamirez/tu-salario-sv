@@ -1,16 +1,11 @@
 <template>
 <div v-if="user.authenticated">
-  <v-navigation-drawer temporary v-model="drawer" :mini-variant.sync="mini" overflow absolute app>
+  <v-navigation-drawer v-model="drawer" persistent clipped app>
     <v-list class="pa-0">
       <v-list-tile avatar tag="div">
         <v-list-tile-content>
           <v-list-tile-title>{{ user.data.name }}</v-list-tile-title>
         </v-list-tile-content>
-        <v-list-tile-action>
-          <v-btn icon @click.native.stop="mini = !mini">
-            <v-icon>chevron_left</v-icon>
-          </v-btn>
-        </v-list-tile-action>
       </v-list-tile>
     </v-list>
     <v-list class="pt-0" dense>
@@ -25,7 +20,7 @@
       </v-list-tile>
     </v-list>
   </v-navigation-drawer>
-  <v-toolbar dark app flat extended color="deep-purple">
+  <v-toolbar dark app flat fixed extended prominent clipped-left color="deep-purple">
     <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
     <v-toolbar-title class="white--text">Tu Salario SV</v-toolbar-title>
     <v-spacer></v-spacer>
@@ -49,7 +44,7 @@ from 'vuex'
 export default {
   data() {
     return {
-      drawer: null,
+      drawer: false,
       items: [{
         title: 'Inicio',
         icon: 'dashboard',

@@ -4472,172 +4472,117 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      search_mensual: '',
-      search_quincenal: '',
-      headers_x: [{
-        text: 'Tramo',
-        align: 'left',
-        sortable: false,
-        value: 'section'
-      }, {
-        text: 'Desde',
-        value: 'since'
-      }, {
-        text: 'Hasta',
-        value: 'until'
-      }, {
-        text: '% a Aplicar',
-        value: 'percentage'
-      }, {
-        text: 'Sobre el Exceso',
-        value: 'excess'
-      }, {
-        text: 'Mas Cuota Fija de',
-        value: 'fee'
-      }],
-      selected_mensual: [],
-      selected_quincenal: [],
-      dialog: false,
-      next_rent: {}
-    };
-  },
-  mounted: function mounted() {
-    this.get(1);
-    this.get(2);
-  },
-
-  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])({
-    items_quincenal: 'rent/rentQ',
-    items_mensual: 'rent/rentM',
-    rent: 'rent/rent'
-  })),
-  methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])({
-    getRentTable: 'rent/getRentTable',
-    getRent: 'rent/getRent',
-    updateRent: 'rent/updateRent'
-  }), {
-    get: function get(_type) {
-      this.getRentTable({
-        type: _type
-      }).then(function (response) {});
-    },
-    edit: function edit(selected) {
-      var _this = this;
-
-      this.getRent({
-        id: selected[0].id
-      }).then(function (response) {
-        _this.next();
-        _this.dialog = true;
-      });
-    },
-    update: function update() {
-      var _this2 = this;
-
-      this.$validator.validateAll().then(function (result) {
-        if (result) {
-          _this2.updateRent({
-            payload: {
-              since: _this2.rent.since,
-              until: _this2.rent.until,
-              percentage: _this2.rent.percentage,
-              excess: _this2.rent.excess,
-              fee: _this2.rent.fee,
-              type: _this2.rent.type
-            },
-            context: _this2,
-            id: _this2.rent.id
-          }).then(function () {
-            _this2.get(1);
-            _this2.get(2);
-            _this2.dialog = false;
-          }).catch(function (err) {});
-        }
-
-        return;
-      });
-    },
-    clear: function clear() {
-      this.$validator.reset();
-      this.dialog = false;
-    },
-    next: function next() {
-      if (this.rent.type == 1) {
-        var r = __WEBPACK_IMPORTED_MODULE_1_collect_js___default()(this.items_mensual);
-      } else if (this.rent.type == 2) {
-        var r = __WEBPACK_IMPORTED_MODULE_1_collect_js___default()(this.items_quincenal);
-      }
-      if (this.rent.section == 4) {
-        this.next_rent = {
-          since: "9999999999"
+    data: function data() {
+        return {
+            search_mensual: '',
+            search_quincenal: '',
+            headers_x: [{
+                text: 'Tramo',
+                align: 'left',
+                sortable: false,
+                value: 'section'
+            }, {
+                text: 'Desde',
+                value: 'since'
+            }, {
+                text: 'Hasta',
+                value: 'until'
+            }, {
+                text: '% a Aplicar',
+                value: 'percentage'
+            }, {
+                text: 'Sobre el Exceso',
+                value: 'excess'
+            }, {
+                text: 'Mas Cuota Fija de',
+                value: 'fee'
+            }],
+            selected_mensual: [],
+            selected_quincenal: [],
+            dialog: false,
+            next_rent: {}
         };
-      } else {
-        this.next_rent = r.where('section', parseInt(this.rent.section) + 1).first();
-      }
-    }
-  })
+    },
+    mounted: function mounted() {
+        this.get(1);
+        this.get(2);
+    },
+
+    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])({
+        items_quincenal: 'rent/rentQ',
+        items_mensual: 'rent/rentM',
+        rent: 'rent/rent'
+    })),
+    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])({
+        getRentTable: 'rent/getRentTable',
+        getRent: 'rent/getRent',
+        updateRent: 'rent/updateRent'
+    }), {
+        get: function get(_type) {
+            this.getRentTable({
+                type: _type
+            }).then(function (response) {});
+        },
+        edit: function edit(selected) {
+            var _this = this;
+
+            this.getRent({
+                id: selected[0].id
+            }).then(function (response) {
+                _this.next();
+                _this.dialog = true;
+            });
+        },
+        update: function update() {
+            var _this2 = this;
+
+            this.$validator.validateAll().then(function (result) {
+                if (result) {
+                    _this2.updateRent({
+                        payload: {
+                            since: _this2.rent.since,
+                            until: _this2.rent.until,
+                            percentage: _this2.rent.percentage,
+                            excess: _this2.rent.excess,
+                            fee: _this2.rent.fee,
+                            type: _this2.rent.type
+                        },
+                        context: _this2,
+                        id: _this2.rent.id
+                    }).then(function () {
+                        _this2.get(1);
+                        _this2.get(2);
+                        _this2.dialog = false;
+                    }).catch(function (err) {});
+                }
+
+                return;
+            });
+        },
+        clear: function clear() {
+            this.$validator.reset();
+            this.dialog = false;
+        },
+        next: function next() {
+            if (this.rent.type == 1) {
+                var r = __WEBPACK_IMPORTED_MODULE_1_collect_js___default()(this.items_mensual);
+            } else if (this.rent.type == 2) {
+                var r = __WEBPACK_IMPORTED_MODULE_1_collect_js___default()(this.items_quincenal);
+            }
+            if (this.rent.section == 4) {
+                this.next_rent = {
+                    since: "9999999999"
+                };
+            } else {
+                this.next_rent = r.where('section', parseInt(this.rent.section) + 1).first();
+            }
+        }
+    })
 });
 
 /***/ }),
@@ -4746,337 +4691,412 @@ var render = function() {
             { attrs: { xs8: "", md8: "", lg8: "" } },
             [
               _c(
-                "v-tabs-bar",
-                { staticClass: "deep-purple tabs--flex-toolbar" },
-                [
-                  _c("v-tabs-slider", { attrs: { color: "yellow" } }),
-                  _vm._v(" "),
-                  _vm._l(2, function(i) {
-                    return _c(
-                      "v-tabs-item",
-                      { key: i, attrs: { href: "#tab-" + i } },
-                      [
-                        _vm._v(
-                          "\n        Tabla de Renta " +
-                            _vm._s(i == 1 ? "Mensual" : "Quincenal") +
-                            "\n      "
-                        )
-                      ]
-                    )
-                  })
-                ],
-                2
-              ),
-              _vm._v(" "),
-              _c(
-                "v-tabs-items",
+                "v-card",
+                { staticClass: "tabs--flex-toolbar" },
                 [
                   _c(
-                    "v-tabs-content",
-                    { key: 1, attrs: { id: "tab-1" } },
+                    "v-tabs",
+                    { attrs: { dark: "", centered: "" } },
                     [
                       _c(
-                        "v-toolbar",
-                        { attrs: { card: "", prominent: "" } },
+                        "v-tabs-bar",
+                        { staticClass: "deep-purple" },
                         [
-                          _c("v-spacer"),
+                          _c("v-tabs-slider", { attrs: { color: "yellow" } }),
                           _vm._v(" "),
-                          _c(
-                            "v-tooltip",
-                            { attrs: { top: "" } },
-                            [
-                              _c(
-                                "v-btn",
-                                {
-                                  directives: [
-                                    {
-                                      name: "show",
-                                      rawName: "v-show",
-                                      value: _vm.selected_mensual.length === 1,
-                                      expression:
-                                        "selected_mensual.length === 1"
-                                    }
-                                  ],
-                                  attrs: {
-                                    slot: "activator",
-                                    card: "",
-                                    icon: ""
-                                  },
-                                  on: {
-                                    click: function($event) {
-                                      _vm.edit(_vm.selected_mensual)
-                                    }
-                                  },
-                                  slot: "activator"
-                                },
-                                [_c("v-icon", [_vm._v("create")])],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c("span", [_vm._v("Editar")])
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c("v-text-field", {
-                            attrs: {
-                              "append-icon": "search",
-                              label: "Buscar",
-                              "single-line": "",
-                              "hide-details": ""
-                            },
-                            model: {
-                              value: _vm.search_mensual,
-                              callback: function($$v) {
-                                _vm.search_mensual = $$v
-                              },
-                              expression: "search_mensual"
-                            }
-                          })
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c("v-data-table", {
-                        staticClass: "elevation-2",
-                        attrs: {
-                          headers: _vm.headers_x,
-                          items: _vm.items_mensual,
-                          search: _vm.search_mensual,
-                          "selected-key": "id",
-                          "select-all": "",
-                          "rows-per-page-text": "Registros por Página",
-                          "no-data-text": "No se encontraron resultados"
-                        },
-                        scopedSlots: _vm._u([
-                          {
-                            key: "items",
-                            fn: function(props) {
-                              return [
-                                _c(
-                                  "td",
-                                  [
-                                    _c("v-checkbox", {
-                                      attrs: {
-                                        primary: "",
-                                        "hide-details": ""
-                                      },
-                                      model: {
-                                        value: props.selected,
-                                        callback: function($$v) {
-                                          _vm.$set(props, "selected", $$v)
-                                        },
-                                        expression: "props.selected"
-                                      }
-                                    })
-                                  ],
-                                  1
-                                ),
-                                _vm._v(" "),
-                                _c("td", [
-                                  _vm._v(_vm._s(props.item.section_for_humans))
-                                ]),
-                                _vm._v(" "),
-                                _c("td", { staticClass: "text-xs-right" }, [
-                                  _vm._v(_vm._s(props.item.since))
-                                ]),
-                                _vm._v(" "),
-                                _c("td", { staticClass: "text-xs-right" }, [
-                                  _vm._v(_vm._s(props.item.until_for_humans))
-                                ]),
-                                _vm._v(" "),
-                                _c("td", { staticClass: "text-xs-right" }, [
-                                  _vm._v(
-                                    _vm._s(props.item.percentage_for_humans)
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                _c("td", { staticClass: "text-xs-right" }, [
-                                  _vm._v(_vm._s(props.item.excess))
-                                ]),
-                                _vm._v(" "),
-                                _c("td", { staticClass: "text-xs-right" }, [
-                                  _vm._v(_vm._s(props.item.fee))
-                                ])
-                              ]
-                            }
-                          },
-                          {
-                            key: "pageText",
-                            fn: function(ref) {
-                              var pageStart = ref.pageStart
-                              var pageStop = ref.pageStop
-                              var itemsLength = ref.itemsLength
-                              return [
+                          _vm._l(2, function(i) {
+                            return _c(
+                              "v-tabs-item",
+                              { key: i, attrs: { href: "#tab-" + i } },
+                              [
                                 _vm._v(
-                                  "\n                " +
-                                    _vm._s(pageStart) +
-                                    " - " +
-                                    _vm._s(pageStop) +
-                                    " de " +
-                                    _vm._s(itemsLength) +
-                                    "\n              "
+                                  "\n                            Tabla de Renta " +
+                                    _vm._s(i == 1 ? "Mensual" : "Quincenal") +
+                                    "\n                        "
                                 )
                               ]
-                            }
-                          }
-                        ]),
-                        model: {
-                          value: _vm.selected_mensual,
-                          callback: function($$v) {
-                            _vm.selected_mensual = $$v
-                          },
-                          expression: "selected_mensual"
-                        }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-tabs-content",
-                    { key: 2, attrs: { id: "tab-2" } },
-                    [
+                            )
+                          })
+                        ],
+                        2
+                      ),
+                      _vm._v(" "),
                       _c(
-                        "v-toolbar",
-                        { attrs: { card: "", prominent: "" } },
+                        "v-tabs-items",
                         [
-                          _c("v-spacer"),
-                          _vm._v(" "),
                           _c(
-                            "v-tooltip",
-                            { attrs: { top: "" } },
+                            "v-tabs-content",
+                            { key: 1, attrs: { id: "tab-1" } },
                             [
                               _c(
-                                "v-btn",
-                                {
-                                  directives: [
-                                    {
-                                      name: "show",
-                                      rawName: "v-show",
-                                      value:
-                                        _vm.selected_quincenal.length === 1,
-                                      expression:
-                                        "selected_quincenal.length === 1"
+                                "v-toolbar",
+                                { attrs: { card: "", prominent: "" } },
+                                [
+                                  _c("v-spacer"),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-tooltip",
+                                    { attrs: { top: "" } },
+                                    [
+                                      _c(
+                                        "v-btn",
+                                        {
+                                          directives: [
+                                            {
+                                              name: "show",
+                                              rawName: "v-show",
+                                              value:
+                                                _vm.selected_mensual.length ===
+                                                1,
+                                              expression:
+                                                "selected_mensual.length === 1"
+                                            }
+                                          ],
+                                          attrs: {
+                                            slot: "activator",
+                                            card: "",
+                                            icon: ""
+                                          },
+                                          on: {
+                                            click: function($event) {
+                                              _vm.edit(_vm.selected_mensual)
+                                            }
+                                          },
+                                          slot: "activator"
+                                        },
+                                        [_c("v-icon", [_vm._v("create")])],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c("span", [_vm._v("Editar")])
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c("v-text-field", {
+                                    attrs: {
+                                      "append-icon": "search",
+                                      label: "Buscar",
+                                      "single-line": "",
+                                      "hide-details": "",
+                                      color: "purple darken-2"
+                                    },
+                                    model: {
+                                      value: _vm.search_mensual,
+                                      callback: function($$v) {
+                                        _vm.search_mensual = $$v
+                                      },
+                                      expression: "search_mensual"
                                     }
-                                  ],
-                                  attrs: { slot: "activator", icon: "" },
-                                  on: {
-                                    click: function($event) {
-                                      _vm.edit(_vm.selected_quincenal)
-                                    }
-                                  },
-                                  slot: "activator"
-                                },
-                                [_c("v-icon", [_vm._v("create")])],
+                                  })
+                                ],
                                 1
                               ),
                               _vm._v(" "),
-                              _c("span", [_vm._v("Editar")])
+                              _c("v-data-table", {
+                                staticClass: "elevation-2",
+                                attrs: {
+                                  headers: _vm.headers_x,
+                                  items: _vm.items_mensual,
+                                  search: _vm.search_mensual,
+                                  "selected-key": "id",
+                                  "select-all": "",
+                                  "rows-per-page-text": "Registros por Página",
+                                  "no-data-text": "No se encontraron resultados"
+                                },
+                                scopedSlots: _vm._u([
+                                  {
+                                    key: "items",
+                                    fn: function(props) {
+                                      return [
+                                        _c(
+                                          "td",
+                                          [
+                                            _c("v-checkbox", {
+                                              attrs: {
+                                                color: "purple darken-2",
+                                                "hide-details": ""
+                                              },
+                                              model: {
+                                                value: props.selected,
+                                                callback: function($$v) {
+                                                  _vm.$set(
+                                                    props,
+                                                    "selected",
+                                                    $$v
+                                                  )
+                                                },
+                                                expression: "props.selected"
+                                              }
+                                            })
+                                          ],
+                                          1
+                                        ),
+                                        _vm._v(" "),
+                                        _c("td", [
+                                          _vm._v(
+                                            _vm._s(
+                                              props.item.section_for_humans
+                                            )
+                                          )
+                                        ]),
+                                        _vm._v(" "),
+                                        _c(
+                                          "td",
+                                          { staticClass: "text-xs-right" },
+                                          [_vm._v(_vm._s(props.item.since))]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "td",
+                                          { staticClass: "text-xs-right" },
+                                          [
+                                            _vm._v(
+                                              _vm._s(
+                                                props.item.until_for_humans
+                                              )
+                                            )
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "td",
+                                          { staticClass: "text-xs-right" },
+                                          [
+                                            _vm._v(
+                                              _vm._s(
+                                                props.item.percentage_for_humans
+                                              )
+                                            )
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "td",
+                                          { staticClass: "text-xs-right" },
+                                          [_vm._v(_vm._s(props.item.excess))]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "td",
+                                          { staticClass: "text-xs-right" },
+                                          [_vm._v(_vm._s(props.item.fee))]
+                                        )
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    key: "pageText",
+                                    fn: function(ref) {
+                                      var pageStart = ref.pageStart
+                                      var pageStop = ref.pageStop
+                                      var itemsLength = ref.itemsLength
+                                      return [
+                                        _vm._v(
+                                          "\n                                    " +
+                                            _vm._s(pageStart) +
+                                            " - " +
+                                            _vm._s(pageStop) +
+                                            " de " +
+                                            _vm._s(itemsLength) +
+                                            "\n                                "
+                                        )
+                                      ]
+                                    }
+                                  }
+                                ]),
+                                model: {
+                                  value: _vm.selected_mensual,
+                                  callback: function($$v) {
+                                    _vm.selected_mensual = $$v
+                                  },
+                                  expression: "selected_mensual"
+                                }
+                              })
                             ],
                             1
                           ),
                           _vm._v(" "),
-                          _c("v-text-field", {
-                            attrs: {
-                              "append-icon": "search",
-                              label: "Buscar",
-                              "single-line": "",
-                              "hide-details": ""
-                            },
-                            model: {
-                              value: _vm.search_quincenal,
-                              callback: function($$v) {
-                                _vm.search_quincenal = $$v
-                              },
-                              expression: "search_quincenal"
-                            }
-                          })
+                          _c(
+                            "v-tabs-content",
+                            { key: 2, attrs: { id: "tab-2" } },
+                            [
+                              _c(
+                                "v-toolbar",
+                                { attrs: { card: "", prominent: "" } },
+                                [
+                                  _c("v-spacer"),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-tooltip",
+                                    { attrs: { top: "" } },
+                                    [
+                                      _c(
+                                        "v-btn",
+                                        {
+                                          directives: [
+                                            {
+                                              name: "show",
+                                              rawName: "v-show",
+                                              value:
+                                                _vm.selected_quincenal
+                                                  .length === 1,
+                                              expression:
+                                                "selected_quincenal.length === 1"
+                                            }
+                                          ],
+                                          attrs: {
+                                            slot: "activator",
+                                            icon: ""
+                                          },
+                                          on: {
+                                            click: function($event) {
+                                              _vm.edit(_vm.selected_quincenal)
+                                            }
+                                          },
+                                          slot: "activator"
+                                        },
+                                        [_c("v-icon", [_vm._v("create")])],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c("span", [_vm._v("Editar")])
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c("v-text-field", {
+                                    attrs: {
+                                      "append-icon": "search",
+                                      label: "Buscar",
+                                      "single-line": "",
+                                      "hide-details": ""
+                                    },
+                                    model: {
+                                      value: _vm.search_quincenal,
+                                      callback: function($$v) {
+                                        _vm.search_quincenal = $$v
+                                      },
+                                      expression: "search_quincenal"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c("v-data-table", {
+                                staticClass: "elevation-9",
+                                attrs: {
+                                  headers: _vm.headers_x,
+                                  items: _vm.items_quincenal,
+                                  search: _vm.search_quincenal,
+                                  "selected-key": "id",
+                                  "select-all": "",
+                                  "rows-per-page-text": "Registros por Página",
+                                  "no-data-text": "No se encontraron resultados"
+                                },
+                                scopedSlots: _vm._u([
+                                  {
+                                    key: "items",
+                                    fn: function(props) {
+                                      return [
+                                        _c(
+                                          "td",
+                                          [
+                                            _c("v-checkbox", {
+                                              attrs: {
+                                                primary: "",
+                                                "hide-details": ""
+                                              },
+                                              model: {
+                                                value: props.selected,
+                                                callback: function($$v) {
+                                                  _vm.$set(
+                                                    props,
+                                                    "selected",
+                                                    $$v
+                                                  )
+                                                },
+                                                expression: "props.selected"
+                                              }
+                                            })
+                                          ],
+                                          1
+                                        ),
+                                        _vm._v(" "),
+                                        _c("td", [
+                                          _vm._v(
+                                            _vm._s(
+                                              props.item.section_for_humans
+                                            )
+                                          )
+                                        ]),
+                                        _vm._v(" "),
+                                        _c(
+                                          "td",
+                                          { staticClass: "text-xs-right" },
+                                          [_vm._v(_vm._s(props.item.since))]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "td",
+                                          { staticClass: "text-xs-right" },
+                                          [
+                                            _vm._v(
+                                              _vm._s(
+                                                props.item.until_for_humans
+                                              )
+                                            )
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "td",
+                                          { staticClass: "text-xs-right" },
+                                          [
+                                            _vm._v(
+                                              _vm._s(
+                                                props.item.percentage_for_humans
+                                              )
+                                            )
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "td",
+                                          { staticClass: "text-xs-right" },
+                                          [_vm._v(_vm._s(props.item.excess))]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "td",
+                                          { staticClass: "text-xs-right" },
+                                          [_vm._v(_vm._s(props.item.fee))]
+                                        )
+                                      ]
+                                    }
+                                  }
+                                ]),
+                                model: {
+                                  value: _vm.selected_quincenal,
+                                  callback: function($$v) {
+                                    _vm.selected_quincenal = $$v
+                                  },
+                                  expression: "selected_quincenal"
+                                }
+                              })
+                            ],
+                            1
+                          )
                         ],
                         1
-                      ),
-                      _vm._v(" "),
-                      _c("v-data-table", {
-                        staticClass: "elevation-9",
-                        attrs: {
-                          headers: _vm.headers_x,
-                          items: _vm.items_quincenal,
-                          search: _vm.search_quincenal,
-                          "selected-key": "id",
-                          "select-all": "",
-                          "rows-per-page-text": "Registros por Página",
-                          "no-data-text": "No se encontraron resultados"
-                        },
-                        scopedSlots: _vm._u([
-                          {
-                            key: "items",
-                            fn: function(props) {
-                              return [
-                                _c(
-                                  "td",
-                                  [
-                                    _c("v-checkbox", {
-                                      attrs: {
-                                        primary: "",
-                                        "hide-details": ""
-                                      },
-                                      model: {
-                                        value: props.selected,
-                                        callback: function($$v) {
-                                          _vm.$set(props, "selected", $$v)
-                                        },
-                                        expression: "props.selected"
-                                      }
-                                    })
-                                  ],
-                                  1
-                                ),
-                                _vm._v(" "),
-                                _c("td", [
-                                  _vm._v(_vm._s(props.item.section_for_humans))
-                                ]),
-                                _vm._v(" "),
-                                _c("td", { staticClass: "text-xs-right" }, [
-                                  _vm._v(_vm._s(props.item.since))
-                                ]),
-                                _vm._v(" "),
-                                _c("td", { staticClass: "text-xs-right" }, [
-                                  _vm._v(_vm._s(props.item.until_for_humans))
-                                ]),
-                                _vm._v(" "),
-                                _c("td", { staticClass: "text-xs-right" }, [
-                                  _vm._v(
-                                    _vm._s(props.item.percentage_for_humans)
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                _c("td", { staticClass: "text-xs-right" }, [
-                                  _vm._v(_vm._s(props.item.excess))
-                                ]),
-                                _vm._v(" "),
-                                _c("td", { staticClass: "text-xs-right" }, [
-                                  _vm._v(_vm._s(props.item.fee))
-                                ])
-                              ]
-                            }
-                          }
-                        ]),
-                        model: {
-                          value: _vm.selected_quincenal,
-                          callback: function($$v) {
-                            _vm.selected_quincenal = $$v
-                          },
-                          expression: "selected_quincenal"
-                        }
-                      })
+                      )
                     ],
                     1
                   )
                 ],
                 1
-              ),
-              _vm._v(" "),
-              _c("v-card", { staticClass: "mt-4" })
+              )
             ],
             1
           )
@@ -5669,7 +5689,7 @@ var render = function() {
                       attrs: {
                         card: "",
                         prominent: "",
-                        color: "light-blue",
+                        color: "deep-purple",
                         dark: ""
                       }
                     },
@@ -5714,7 +5734,8 @@ var render = function() {
                           "append-icon": "search",
                           label: "Buscar",
                           "single-line": "",
-                          "hide-details": ""
+                          "hide-details": "",
+                          color: "cyan"
                         },
                         model: {
                           value: _vm.search,
@@ -6180,79 +6201,80 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      search: '',
-      headers: [{
-        text: 'Días',
-        value: 'days',
-        align: 'left'
-      }, {
-        text: 'Inicio (Años)',
-        value: 'start',
-        align: 'left'
-      }, {
-        text: 'Fin (Años)',
-        value: 'end',
-        align: 'left'
-      }],
-      selected: [],
-      dialog: false,
-      days: null,
-      start: null,
-      end: null
-    };
-  },
-  mounted: function mounted() {
-    this.getBonuses();
-  },
-
-  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])({
-    items: 'bonus/bonuses',
-    bonus: 'bonus/bonus'
-  })),
-  methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])({
-    getBonuses: 'bonus/getBonuses',
-    getBonus: 'bonus/getBonus',
-    updateBonus: 'bonus/updateBonus'
-  }), {
-    edit: function edit() {
-      var _this = this;
-
-      this.getBonus({
-        id: this.selected[0].id
-      }).then(function (response) {
-        _this.dialog = true;
-      });
+    data: function data() {
+        return {
+            search: '',
+            headers: [{
+                text: 'Días',
+                value: 'days',
+                align: 'left'
+            }, {
+                text: 'Inicio (Años)',
+                value: 'start',
+                align: 'left'
+            }, {
+                text: 'Fin (Años)',
+                value: 'end',
+                align: 'left'
+            }],
+            selected: [],
+            dialog: false,
+            days: null,
+            start: null,
+            end: null
+        };
     },
-    update: function update() {
-      var _this2 = this;
+    mounted: function mounted() {
+        this.getBonuses();
+    },
 
-      this.$validator.validateAll().then(function (result) {
-        if (result) {
-          _this2.updateBonus({
-            payload: {
-              days: _this2.bonus.days,
-              start: _this2.bonus.start,
-              end: _this2.bonus.end
-            },
-            context: _this2,
-            id: _this2.bonus.id
-          }).then(function () {
-            _this2.getBonuses();
-            _this2.dialog = false;
-          }).catch(function (err) {});
+    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])({
+        items: 'bonus/bonuses',
+        bonus: 'bonus/bonus'
+    })),
+    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])({
+        getBonuses: 'bonus/getBonuses',
+        getBonus: 'bonus/getBonus',
+        updateBonus: 'bonus/updateBonus'
+    }), {
+        edit: function edit() {
+            var _this = this;
+
+            this.getBonus({
+                id: this.selected[0].id
+            }).then(function (response) {
+                _this.dialog = true;
+            });
+        },
+        update: function update() {
+            var _this2 = this;
+
+            this.$validator.validateAll().then(function (result) {
+                if (result) {
+                    _this2.updateBonus({
+                        payload: {
+                            days: _this2.bonus.days,
+                            start: _this2.bonus.start,
+                            end: _this2.bonus.end
+                        },
+                        context: _this2,
+                        id: _this2.bonus.id
+                    }).then(function () {
+                        _this2.getBonuses();
+                        _this2.dialog = false;
+                    }).catch(function (err) {});
+                }
+
+                return;
+            });
+        },
+        clear: function clear() {
+            this.$validator.reset();
+            this.dialog = false;
         }
-
-        return;
-      });
-    },
-    clear: function clear() {
-      this.$validator.reset();
-      this.dialog = false;
-    }
-  })
+    })
 });
 
 /***/ }),
@@ -6284,7 +6306,7 @@ var render = function() {
                       attrs: {
                         card: "",
                         prominent: "",
-                        color: "light-blue",
+                        color: "deep-purple",
                         dark: ""
                       }
                     },
@@ -6329,7 +6351,8 @@ var render = function() {
                           "append-icon": "search",
                           label: "Buscar",
                           "single-line": "",
-                          "hide-details": ""
+                          "hide-details": "",
+                          color: "cyan"
                         },
                         model: {
                           value: _vm.search,
@@ -6397,13 +6420,13 @@ var render = function() {
                           var itemsLength = ref.itemsLength
                           return [
                             _vm._v(
-                              "\n                  " +
+                              "\n                        " +
                                 _vm._s(pageStart) +
                                 " - " +
                                 _vm._s(pageStop) +
                                 " de " +
                                 _vm._s(itemsLength) +
-                                "\n                "
+                                "\n                    "
                             )
                           ]
                         }
@@ -8125,17 +8148,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+
 
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  components: {
-    notification: __WEBPACK_IMPORTED_MODULE_1__Notification___default.a
-  },
-  computed: Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])({
-    user: 'auth/user'
-  })
+    components: {
+        notification: __WEBPACK_IMPORTED_MODULE_1__Notification___default.a
+    },
+    computed: Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])({
+        user: 'auth/user'
+    })
 });
 
 /***/ }),
@@ -8231,31 +8257,18 @@ var render = function() {
   return _c(
     "v-app",
     [
-      this.$route.name == "browse-rent"
-        ? _c(
-            "v-tabs",
-            { attrs: { dark: "", fixed: "", centered: "" } },
-            [
-              _c("navigation"),
-              _vm._v(" "),
-              _c("notification"),
-              _vm._v(" "),
-              _c("v-content", [_c("router-view")], 1)
-            ],
-            1
-          )
-        : _c(
-            "v-card",
-            { attrs: { flat: "", height: "100vh" } },
-            [
-              _c("navigation"),
-              _vm._v(" "),
-              _c("notification"),
-              _vm._v(" "),
-              _c("v-content", [_c("router-view")], 1)
-            ],
-            1
-          )
+      _c(
+        "v-card",
+        { attrs: { flat: "", height: "100vh" } },
+        [
+          _c("navigation"),
+          _vm._v(" "),
+          _c("notification"),
+          _vm._v(" "),
+          _c("v-content", [_c("router-view")], 1)
+        ],
+        1
+      )
     ],
     1
   )
@@ -8361,18 +8374,13 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
-//
-//
-//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      drawer: null,
+      drawer: false,
       items: [{
         title: 'Inicio',
         icon: 'dashboard',
@@ -8428,18 +8436,7 @@ var render = function() {
           _c(
             "v-navigation-drawer",
             {
-              attrs: {
-                temporary: "",
-                "mini-variant": _vm.mini,
-                overflow: "",
-                absolute: "",
-                app: ""
-              },
-              on: {
-                "update:miniVariant": function($event) {
-                  _vm.mini = $event
-                }
-              },
+              attrs: { persistent: "", clipped: "", app: "" },
               model: {
                 value: _vm.drawer,
                 callback: function($$v) {
@@ -8463,27 +8460,6 @@ var render = function() {
                           _c("v-list-tile-title", [
                             _vm._v(_vm._s(_vm.user.data.name))
                           ])
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-list-tile-action",
-                        [
-                          _c(
-                            "v-btn",
-                            {
-                              attrs: { icon: "" },
-                              nativeOn: {
-                                click: function($event) {
-                                  $event.stopPropagation()
-                                  _vm.mini = !_vm.mini
-                                }
-                              }
-                            },
-                            [_c("v-icon", [_vm._v("chevron_left")])],
-                            1
-                          )
                         ],
                         1
                       )
@@ -8541,7 +8517,10 @@ var render = function() {
                 dark: "",
                 app: "",
                 flat: "",
+                fixed: "",
                 extended: "",
+                prominent: "",
+                "clipped-left": "",
                 color: "deep-purple"
               }
             },
