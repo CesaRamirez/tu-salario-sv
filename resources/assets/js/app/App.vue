@@ -1,13 +1,6 @@
 <template>
 
 <v-app>
-    <!-- <v-tabs class="h100" dark fixed centered v-if="this.$route.name == 'browse-rent'">
-        <navigation></navigation>
-        <notification></notification>
-        <v-content>
-            <router-view></router-view>
-        </v-content>
-    </v-tabs> -->
     <v-card flat height="100vh">
         <navigation></navigation>
         <notification></notification>
