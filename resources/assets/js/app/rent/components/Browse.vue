@@ -1,25 +1,20 @@
 <template lang="html">
 
 <div>
-    <v-container >
-        <v-card class="elevation-9">
-            <v-card-title v-if="selected_mensual.length === 0">
-                <p class="subheading ml-4">Tabla de Renta Mensual</p>
-                <v-spacer></v-spacer>
-                <v-text-field append-icon="search" label="Buscar" single-line hide-details v-model="search_mensual"></v-text-field>
-            </v-card-title>
-            <v-card-title v-else class="blue">
-                <span class="subheading ml-5 my-3">
-                  {{ selected_mensual.length }} {{ selected_mensual.length | pluralize('Seleccionado')}}
-              </span>
-                <v-spacer></v-spacer>
-                <v-tooltip top>
-                    <v-btn icon slot="activator" v-show="selected_mensual.length === 1" @click="edit(selected_mensual)">
-                        <v-icon>create</v-icon>
-                    </v-btn>
-                    <span>Editar</span>
-                </v-tooltip>
-            </v-card-title>
+  <v-layout justify-center>
+      <v-flex xs8 md8 lg8>
+        <v-card class="card--flex-toolbar">
+            <v-toolbar card prominent color="light-blue" dark>
+              <v-toolbar-title class="body-2">Tabla de Renta Mensual</v-toolbar-title>
+              <v-spacer></v-spacer>
+              <v-tooltip top>
+                  <v-btn icon slot="activator" v-show="selected_mensual.length === 1" @click="edit(selected_mensual)">
+                      <v-icon>create</v-icon>
+                  </v-btn>
+                  <span>Editar</span>
+              </v-tooltip>
+              <v-text-field dark append-icon="search" label="Buscar" single-line hide-details v-model="search_mensual"></v-text-field>
+            </v-toolbar>
             <v-data-table :headers="headers_x" :items="items_mensual" :search="search_mensual" v-model="selected_mensual" selected-key="id" select-all rows-per-page-text="Registros por Página" no-data-text="No se encontraron resultados" class="elevation-2">
                 <template slot="items" slot-scope="props">
                     <td>
@@ -37,25 +32,18 @@
                 </template>
             </v-data-table>
         </v-card>
-
         <v-card class="mt-4 elevation-9">
-            <v-card-title v-if="selected_quincenal.length === 0">
-                <p class="subheading ml-4">Tabla de Renta Quincenal</p>
-                <v-spacer></v-spacer>
-                <v-text-field append-icon="search" label="Buscar" single-line hide-details v-model="search_quincenal"></v-text-field>
-            </v-card-title>
-            <v-card-title v-else class="blue">
-                <span class="subheading ml-5 my-3">
-                  {{ selected_quincenal.length }} {{ selected_quincenal.length | pluralize('Seleccionado')}}
-              </span>
-                <v-spacer></v-spacer>
-                <v-tooltip top>
-                    <v-btn icon slot="activator" v-show="selected_quincenal.length === 1" @click="edit(selected_quincenal)">
-                        <v-icon>create</v-icon>
-                    </v-btn>
-                    <span>Editar</span>
-                </v-tooltip>
-            </v-card-title>
+            <v-toolbar card prominent color="light-blue" dark>
+              <v-toolbar-title class="body-2">Tabla de Renta Quincenal</v-toolbar-title>
+              <v-spacer></v-spacer>
+              <v-tooltip top>
+                  <v-btn icon slot="activator" v-show="selected_quincenal.length === 1" @click="edit(selected_quincenal)">
+                      <v-icon>create</v-icon>
+                  </v-btn>
+                  <span>Editar</span>
+              </v-tooltip>
+              <v-text-field dark append-icon="search" label="Buscar" single-line hide-details v-model="search_quincenal"></v-text-field>
+            </v-toolbar>
             <v-data-table :headers="headers_x" :items="items_quincenal" :search="search_quincenal" v-model="selected_quincenal" selected-key="id" select-all rows-per-page-text="Registros por Página" no-data-text="No se encontraron resultados" class="elevation-2">
                 <template slot="items" slot-scope="props">
                     <td>
@@ -70,7 +58,8 @@
                 </template>
             </v-data-table>
         </v-card>
-    </v-container>
+    </v-flex>
+    </v-layout>
     <v-layout row justify-center>
         <v-dialog v-model="dialog" persistent max-width="500px">
             <v-card>
