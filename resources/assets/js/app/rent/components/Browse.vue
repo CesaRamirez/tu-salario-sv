@@ -3,8 +3,76 @@
 <div>
   <v-layout justify-center>
       <v-flex xs8 md8 lg8>
-        <v-card class="card--flex-toolbar">
-            <v-toolbar card prominent color="light-blue" dark>
+          <v-tabs-bar class="deep-purple tabs--flex-toolbar">
+      <v-tabs-slider color="yellow"></v-tabs-slider>
+      <v-tabs-item
+        v-for="i in 2"
+        :key="i"
+        :href="'#tab-' + i"
+      >
+        Tabla de Renta {{ i == 1 ? 'Mensual' : 'Quincenal' }}
+      </v-tabs-item>
+    </v-tabs-bar>
+    <v-tabs-items>
+      <v-tabs-content
+        :key="1"
+        :id="'tab-1'">
+          <v-toolbar card prominent>
+            <v-spacer></v-spacer>
+            <v-tooltip top>
+                <v-btn card icon slot="activator" v-show="selected_mensual.length === 1" @click="edit(selected_mensual)">
+                    <v-icon>create</v-icon>
+                </v-btn>
+                <span>Editar</span>
+            </v-tooltip>
+            <v-text-field append-icon="search" label="Buscar" single-line hide-details v-model="search_mensual"></v-text-field>
+          </v-toolbar>
+          <v-data-table :headers="headers_x" :items="items_mensual" :search="search_mensual" v-model="selected_mensual" selected-key="id" select-all rows-per-page-text="Registros por Página" no-data-text="No se encontraron resultados" class="elevation-2">
+              <template slot="items" slot-scope="props">
+                  <td>
+                      <v-checkbox primary hide-details v-model="props.selected"></v-checkbox>
+                  </td>
+                  <td>{{ props.item.section_for_humans }}</td>
+                  <td class="text-xs-right">{{ props.item.since }}</td>
+                  <td class="text-xs-right">{{ props.item.until_for_humans }}</td>
+                  <td class="text-xs-right">{{ props.item.percentage_for_humans }}</td>
+                  <td class="text-xs-right">{{ props.item.excess }}</td>
+                  <td class="text-xs-right">{{ props.item.fee }}</td>
+              </template>
+              <template slot="pageText" slot-scope="{ pageStart, pageStop, itemsLength }">
+                {{ pageStart }} - {{ pageStop }} de {{ itemsLength }}
+              </template>
+          </v-data-table></v-card-text>
+      </v-tabs-content>
+      <v-tabs-content
+        :key="2"
+        :id="'tab-2'">
+        <v-toolbar card prominent>
+          <v-spacer></v-spacer>
+          <v-tooltip top>
+              <v-btn icon slot="activator" v-show="selected_quincenal.length === 1" @click="edit(selected_quincenal)">
+                  <v-icon>create</v-icon>
+              </v-btn>
+              <span>Editar</span>
+          </v-tooltip>
+          <v-text-field append-icon="search" label="Buscar" single-line hide-details v-model="search_quincenal"></v-text-field>
+        </v-toolbar>
+        <v-data-table :headers="headers_x" :items="items_quincenal" :search="search_quincenal" v-model="selected_quincenal" selected-key="id" select-all rows-per-page-text="Registros por Página" no-data-text="No se encontraron resultados" class="elevation-9">
+            <template slot="items" slot-scope="props">
+                <td>
+                    <v-checkbox primary hide-details v-model="props.selected"></v-checkbox>
+                </td>
+                <td>{{ props.item.section_for_humans }}</td>
+                <td class="text-xs-right">{{ props.item.since }}</td>
+                <td class="text-xs-right">{{ props.item.until_for_humans }}</td>
+                <td class="text-xs-right">{{ props.item.percentage_for_humans }}</td>
+                <td class="text-xs-right">{{ props.item.excess }}</td>
+                <td class="text-xs-right">{{ props.item.fee }}</td>
+            </template>
+        </v-data-table>
+      </v-tabs-content>
+    </v-tabs-items>
+            <!-- <v-toolbar card prominent color="light-blue" dark>
               <v-toolbar-title class="body-2">Tabla de Renta Mensual</v-toolbar-title>
               <v-spacer></v-spacer>
               <v-tooltip top>
@@ -31,9 +99,9 @@
                   {{ pageStart }} - {{ pageStop }} de {{ itemsLength }}
                 </template>
             </v-data-table>
-        </v-card>
-        <v-card class="mt-4 elevation-9">
-            <v-toolbar card prominent color="light-blue" dark>
+        </v-card> -->
+        <v-card class="mt-4">
+            <!-- <v-toolbar card prominent color="light-blue" dark>
               <v-toolbar-title class="body-2">Tabla de Renta Quincenal</v-toolbar-title>
               <v-spacer></v-spacer>
               <v-tooltip top>
@@ -56,7 +124,7 @@
                     <td class="text-xs-right">{{ props.item.excess }}</td>
                     <td class="text-xs-right">{{ props.item.fee }}</td>
                 </template>
-            </v-data-table>
+            </v-data-table> -->
         </v-card>
     </v-flex>
     </v-layout>
