@@ -20,7 +20,7 @@
       </v-list-tile>
     </v-list>
   </v-navigation-drawer>
-  <v-toolbar dark app flat fixed extended prominent clipped-left color="deep-purple">
+  <v-toolbar dark app flat fixed extended prominent clipped-left color="deep-purple" style="z-index: 0">
     <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
     <v-toolbar-title class="white--text">Tu Salario SV</v-toolbar-title>
     <v-spacer></v-spacer>

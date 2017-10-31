@@ -4688,7 +4688,7 @@ var render = function() {
         [
           _c(
             "v-flex",
-            { attrs: { xs8: "", md8: "", lg8: "" } },
+            { attrs: { xs12: "", md10: "", lg10: "" } },
             [
               _c(
                 "v-card",
@@ -4985,7 +4985,7 @@ var render = function() {
                               ),
                               _vm._v(" "),
                               _c("v-data-table", {
-                                staticClass: "elevation-9",
+                                staticClass: "elevation-2",
                                 attrs: {
                                   headers: _vm.headers_x,
                                   items: _vm.items_quincenal,
@@ -5575,8 +5575,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
 
 
 
@@ -5677,7 +5675,7 @@ var render = function() {
         [
           _c(
             "v-flex",
-            { attrs: { xs8: "", md8: "", lg8: "" } },
+            { attrs: { xs12: "", md10: "", lg10: "" } },
             [
               _c(
                 "v-card",
@@ -8506,6 +8504,7 @@ var render = function() {
           _c(
             "v-toolbar",
             {
+              staticStyle: { "z-index": "0" },
               attrs: {
                 dark: "",
                 app: "",

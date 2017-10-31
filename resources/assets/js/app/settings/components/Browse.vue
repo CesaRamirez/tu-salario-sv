@@ -1,10 +1,8 @@
-
-
 <template lang="html">
 
 <div>
     <v-layout justify-center>
-        <v-flex xs8 md8 lg8>
+        <v-flex xs12 md10 lg10>
             <v-card class="card--flex-toolbar">
                 <v-toolbar card prominent color="deep-purple" dark>
                   <v-toolbar-title class="body-2">Configuraciones</v-toolbar-title>

@@ -2,7 +2,7 @@
 
 <div>
     <v-layout justify-center>
-        <v-flex xs8 md8 lg8>
+        <v-flex xs12 md10 lg10>
             <v-card class="tabs--flex-toolbar">
                 <v-tabs dark centered>
                     <v-tabs-bar class="deep-purple">
@@ -52,7 +52,7 @@
                                 </v-tooltip>
                                 <v-text-field append-icon="search" label="Buscar" single-line hide-details v-model="search_quincenal"></v-text-field>
                             </v-toolbar>
-                            <v-data-table :headers="headers_x" :items="items_quincenal" :search="search_quincenal" v-model="selected_quincenal" selected-key="id" select-all rows-per-page-text="Registros por Página" no-data-text="No se encontraron resultados" class="elevation-9">
+                            <v-data-table :headers="headers_x" :items="items_quincenal" :search="search_quincenal" v-model="selected_quincenal" selected-key="id" select-all rows-per-page-text="Registros por Página" no-data-text="No se encontraron resultados" class="elevation-2">
                                 <template slot="items" slot-scope="props">
                                     <td>
                                         <v-checkbox primary hide-details v-model="props.selected"></v-checkbox>
