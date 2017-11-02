@@ -3885,7 +3885,10 @@ var render = function() {
                     "v-card-media",
                     {
                       staticClass: "white--text",
-                      attrs: { height: "200px", src: "../images/material.jpg" }
+                      attrs: {
+                        height: "200px",
+                        src: "../storage/images/material.jpg"
+                      }
                     },
                     [
                       _c(
@@ -5888,7 +5891,7 @@ var render = function() {
                                     ],
                                     attrs: {
                                       label: "Llave",
-                                      required: "",
+                                      disabled: "",
                                       "error-messages": _vm._errors.collect(
                                         "key"
                                       ),
@@ -8141,6 +8144,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 
@@ -8256,7 +8261,18 @@ var render = function() {
           _vm._v(" "),
           _c("notification"),
           _vm._v(" "),
-          _c("v-content", [_c("router-view")], 1)
+          _c(
+            "v-content",
+            [
+              _c(
+                "transition",
+                { attrs: { name: "fade" } },
+                [_c("router-view")],
+                1
+              )
+            ],
+            1
+          )
         ],
         1
       )

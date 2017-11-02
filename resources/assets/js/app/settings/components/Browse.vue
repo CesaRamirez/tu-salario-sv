@@ -42,7 +42,7 @@
                     <v-container grid-list-md>
                         <v-layout wrap>
                             <v-flex xs12 sm12 md12>
-                                <v-text-field label="Llave" required v-model="setting.key" :error-messages="_errors.collect('key')" v-validate="'required'" data-vv-name="key" hint="Llave de Configuración" persistent-hint>
+                                <v-text-field label="Llave" v-model="setting.key" disabled :error-messages="_errors.collect('key')" v-validate="'required'" data-vv-name="key" hint="Llave de Configuración" persistent-hint>
                                 </v-text-field>
                             </v-flex>
                             <v-flex xs12 sm12 md12>

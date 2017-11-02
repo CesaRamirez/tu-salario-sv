@@ -15,12 +15,19 @@ html {
 
 .fade-enter-active,
 .fade-leave-active {
-  -webkit-transition: opacity 0.5s;
-  transition: opacity 0.5s;
+  -webkit-transition-property: opacity;
+  transition-property: opacity;
+  -webkit-transition-duration: 0.25s;
+          transition-duration: 0.25s;
+}
+
+.fade-enter-active {
+  -webkit-transition-delay: 0.25s;
+          transition-delay: 0.25s;
 }
 
 .fade-enter,
-.fade-leave-to {
+.fade-leave-active {
   opacity: 0;
 }
 

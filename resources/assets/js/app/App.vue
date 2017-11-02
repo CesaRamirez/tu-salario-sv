@@ -5,7 +5,9 @@
         <navigation></navigation>
         <notification></notification>
         <v-content>
+          <transition name="fade">
             <router-view></router-view>
+          </transition>
         </v-content>
     </v-card>
 </v-app>
