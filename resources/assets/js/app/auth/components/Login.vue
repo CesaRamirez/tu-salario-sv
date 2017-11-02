@@ -4,7 +4,7 @@
     <v-layout align-center justify-center class="h100">
         <v-flex xs12 sm12 md4>
             <v-card light>
-                <v-card-media class="white--text" height="200px" src="../images/material.jpg">
+                <v-card-media class="white--text" height="200px" src="../storage/images/material.jpg">
                     <v-container fill-height fluid>
                         <v-layout fill-height>
                             <v-flex xs12 align-end flexbox>
