@@ -1,10 +1,10 @@
 import {
-  Login
+  LoginComponent
 } from '../components'
 
 export default [{
   path: '/login',
-  component: Login,
+  component: LoginComponent,
   name: 'login',
   meta: {
     guest: true,
