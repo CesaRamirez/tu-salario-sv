@@ -1,13 +1,13 @@
 import {
-  Browse
+  BrowseComponent
 } from '../components'
 
-export default [{
+export default [ {
   path: '/admin/bonus',
-  component: Browse,
+  component: BrowseComponent,
   name: 'browse-bonus',
   meta: {
     guest: false,
     needsAuth: true
   }
-}]
+} ]

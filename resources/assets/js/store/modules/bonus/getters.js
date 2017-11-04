@@ -1,6 +1,3 @@
-export const bonuses = (state) => {
-  return state.bonuses;
-}
-export const bonus = (state) => {
-  return state.bonus;
-}
+export const bonuses = ( state ) => state.bonuses
+
+export const bonus = ( state ) => state.bonus
