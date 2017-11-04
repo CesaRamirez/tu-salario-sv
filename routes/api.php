@@ -8,10 +8,13 @@
 $router->namespace('Auth')
         ->prefix('v1')
         ->group(function ($router) {
-            $router->post('login', 'AuthController@login')->name('login');
-            $router->post('logout', 'AuthController@logout')->name('logout');
+            $router->post('login', 'AuthController@login')
+                   ->name('login');
+            $router->post('logout', 'AuthController@logout')
+                   ->name('logout');
             $router->middleware('jwt.auth')->group(function ($router) {
-                $router->get('me', 'AuthController@user')->name('me');
+                $router->get('me', 'AuthController@user')
+                       ->name('me');
             });
         });
 
@@ -23,9 +26,12 @@ $router->namespace('API\V1\Admin')
        ->prefix('v1/admin')
        ->group(function ($router) {
            $router->middleware('jwt.auth')->group(function ($router) {
-               $router->get('rents/{type}/type', 'RentsController@index')->name('rents.index');
-               $router->put('rents/{rent}', 'RentsController@update')->name('rents.update');
-               $router->get('rents/{rent}', 'RentsController@show')->name('rents.show');
+               $router->get('rents/{type}/type', 'RentsController@index')
+                      ->name('rents.index');
+               $router->put('rents/{rent}', 'RentsController@update')
+                      ->name('rents.update');
+               $router->get('rents/{rent}', 'RentsController@show')
+                      ->name('rents.show');
 
 
                $router->resource('settings', 'SettingsController')
