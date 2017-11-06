@@ -1,7 +1,7 @@
 <template>
 <v-app>
 	<v-card flat height="100vh">
-		<navigation></navigation>
+		<navigation-component></navigation-component>
 		<notification></notification>
 		<v-content>
 			<transition name="fade">
