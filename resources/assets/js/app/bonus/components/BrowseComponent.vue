@@ -5,24 +5,24 @@
         <v-flex xs12 md10 lg10>
             <v-card class="card--flex-toolbar">
                 <v-toolbar card prominent color="deep-purple" dark>
-                  <v-layout wrap>
-                    <v-toolbar-title class="body-2">Días de pago de Aguinaldo</v-toolbar-title>
-                    <v-spacer></v-spacer>
-                      <v-text-field dark
-                                    append-icon="search"
-                                    label="Buscar"
-                                    single-line
-                                    hide-details
-                                    color="cyan"
-                                    v-model="search">
-                      </v-text-field>
-                  </v-layout>
+                  <v-toolbar-title class="body-2">Días de pago de Aguinaldo</v-toolbar-title>
+                  <v-spacer></v-spacer>
+                    <v-text-field dark
+                                  append-icon="search"
+                                  label="Buscar"
+                                  single-line
+                                  hide-details
+                                  color="cyan"
+                                  v-model="search">
+                    </v-text-field>
                 </v-toolbar>
                 <v-data-table :headers="headers"
                               :items="items"
                               :search="search"
                               v-model="selected"
                               item-key="id"
+                              rows-per-page-text="Registros por Página"
+                              :rows-per-page-items='[5, 15, 25, { text: "Todos", value: -1 }]'
                               no-data-text="No se encontraron resultados">
                     <template slot="items" slot-scope="props">
                         <td class="text-xs-center">{{ props.item.days }}</td>
@@ -139,6 +139,8 @@ export default {
 				align: 'center'
                 }, {
 				text: 'Herramientas',
+				value: 'id',
+				sortable: false,
 				align: 'center'
                 }, ],
 			selected: [],

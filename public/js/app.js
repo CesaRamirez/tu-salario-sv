@@ -5606,7 +5606,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
 
 
 
@@ -5617,18 +5616,19 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 			headers: [{
 				text: 'Llave',
 				value: 'key',
-				align: 'left',
-				tooltip: 'Llave identificadora'
+				align: 'center'
 			}, {
 				text: 'Descripción',
 				value: 'description',
-				align: 'left',
-				tooltip: 'Descripción de Llave'
+				align: 'center'
 			}, {
 				text: 'Valor',
 				value: 'value',
-				align: 'left',
-				tooltip: 'Valor de Llave'
+				align: 'center'
+			}, {
+				text: 'Herramientas',
+				align: 'center',
+				sortable: false
 			}],
 			loading: true,
 			selected: [],
@@ -5650,11 +5650,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		getSetting: 'settings/getSetting',
 		updateSetting: 'settings/updateSetting'
 	}), {
-		edit: function edit() {
+		edit: function edit(id) {
 			var _this = this;
 
 			this.getSetting({
-				id: this.selected[0].id
+				id: id
 			}).then(function (response) {
 				_this.dialog = true;
 			});
@@ -5730,34 +5730,6 @@ var render = function() {
                       _vm._v(" "),
                       _c("v-spacer"),
                       _vm._v(" "),
-                      _c(
-                        "v-tooltip",
-                        { attrs: { top: "" } },
-                        [
-                          _c(
-                            "v-btn",
-                            {
-                              directives: [
-                                {
-                                  name: "show",
-                                  rawName: "v-show",
-                                  value: _vm.selected.length === 1,
-                                  expression: "selected.length === 1"
-                                }
-                              ],
-                              attrs: { slot: "activator", icon: "" },
-                              on: { click: _vm.edit },
-                              slot: "activator"
-                            },
-                            [_c("v-icon", [_vm._v("create")])],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c("span", [_vm._v("Editar")])
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
                       _c("v-text-field", {
                         attrs: {
                           dark: "",
@@ -5788,34 +5760,20 @@ var render = function() {
                       items: _vm.items,
                       search: _vm.search,
                       loading: _vm.loading,
-                      "selected-key": "id",
-                      "select-all": "",
                       "rows-per-page-text": "Registros por Página",
-                      "no-data-text": "No se encontraron resultados"
+                      "rows-per-page-items": [
+                        5,
+                        15,
+                        25,
+                        { text: "Todos", value: -1 }
+                      ],
+                      "no-datxa-text": "No se encontraron resultados"
                     },
                     scopedSlots: _vm._u([
                       {
                         key: "items",
                         fn: function(props) {
                           return [
-                            _c(
-                              "td",
-                              [
-                                _c("v-checkbox", {
-                                  staticClass: "text-left",
-                                  attrs: { primary: "", "hide-details": "" },
-                                  model: {
-                                    value: props.selected,
-                                    callback: function($$v) {
-                                      _vm.$set(props, "selected", $$v)
-                                    },
-                                    expression: "props.selected"
-                                  }
-                                })
-                              ],
-                              1
-                            ),
-                            _vm._v(" "),
                             _c("td", { staticClass: "text-xs-center" }, [
                               _vm._v(_vm._s(props.item.key))
                             ]),
@@ -6316,6 +6274,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 				align: 'center'
 			}, {
 				text: 'Herramientas',
+				value: 'id',
+				sortable: false,
 				align: 'center'
 			}],
 			selected: [],
@@ -6410,36 +6370,29 @@ var render = function() {
                       }
                     },
                     [
-                      _c(
-                        "v-layout",
-                        { attrs: { wrap: "" } },
-                        [
-                          _c("v-toolbar-title", { staticClass: "body-2" }, [
-                            _vm._v("Días de pago de Aguinaldo")
-                          ]),
-                          _vm._v(" "),
-                          _c("v-spacer"),
-                          _vm._v(" "),
-                          _c("v-text-field", {
-                            attrs: {
-                              dark: "",
-                              "append-icon": "search",
-                              label: "Buscar",
-                              "single-line": "",
-                              "hide-details": "",
-                              color: "cyan"
-                            },
-                            model: {
-                              value: _vm.search,
-                              callback: function($$v) {
-                                _vm.search = $$v
-                              },
-                              expression: "search"
-                            }
-                          })
-                        ],
-                        1
-                      )
+                      _c("v-toolbar-title", { staticClass: "body-2" }, [
+                        _vm._v("Días de pago de Aguinaldo")
+                      ]),
+                      _vm._v(" "),
+                      _c("v-spacer"),
+                      _vm._v(" "),
+                      _c("v-text-field", {
+                        attrs: {
+                          dark: "",
+                          "append-icon": "search",
+                          label: "Buscar",
+                          "single-line": "",
+                          "hide-details": "",
+                          color: "cyan"
+                        },
+                        model: {
+                          value: _vm.search,
+                          callback: function($$v) {
+                            _vm.search = $$v
+                          },
+                          expression: "search"
+                        }
+                      })
                     ],
                     1
                   ),
@@ -6450,6 +6403,13 @@ var render = function() {
                       items: _vm.items,
                       search: _vm.search,
                       "item-key": "id",
+                      "rows-per-page-text": "Registros por Página",
+                      "rows-per-page-items": [
+                        5,
+                        15,
+                        25,
+                        { text: "Todos", value: -1 }
+                      ],
                       "no-data-text": "No se encontraron resultados"
                     },
                     scopedSlots: _vm._u([

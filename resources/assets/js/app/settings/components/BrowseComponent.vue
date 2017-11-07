@@ -7,20 +7,19 @@
                 <v-toolbar card prominent color="deep-purple" dark>
                   <v-toolbar-title class="body-2">Configuraciones</v-toolbar-title>
                   <v-spacer></v-spacer>
-                  <v-tooltip top>
-                      <v-btn icon slot="activator" v-show="selected.length === 1" @click="edit">
-                          <v-icon>create</v-icon>
-                      </v-btn>
-                      <span>Editar</span>
-                  </v-tooltip>
                   <v-text-field dark append-icon="search" label="Buscar" single-line hide-details color="cyan" v-model="search"></v-text-field>
                 </v-toolbar>
                 <v-divider></v-divider>
-                <v-data-table :headers="headers" :items="items" :search="search" :loading="loading" v-model="selected" selected-key="id" select-all rows-per-page-text="Registros por Página" no-data-text="No se encontraron resultados" class="elevation-2">
+                <v-data-table :headers="headers"
+                              :items="items"
+                              :search="search"
+                              :loading="loading"
+                              v-model="selected"
+                              rows-per-page-text="Registros por Página"
+                              :rows-per-page-items='[5, 15, 25, { text: "Todos", value: -1 }]'
+                              no-datxa-text="No se encontraron resultados"
+                              class="elevation-2">
                     <template slot="items" slot-scope="props">
-                        <td>
-                            <v-checkbox class="text-left" primary hide-details v-model="props.selected"></v-checkbox>
-                        </td>
                         <td class="text-xs-center">{{ props.item.key }}</td>
                         <td class="text-xs-center">{{ props.item.description }}</td>
                         <td class="text-xs-center">{{ props.item.value }}</td>
@@ -88,21 +87,24 @@ export default {
 		return {
 			search: '',
 			headers: [ {
-				text: 'Llave',
-				value: 'key',
-				align: 'left',
-				tooltip: 'Llave identificadora'
+					text: 'Llave',
+					value: 'key',
+					align: 'center',
       }, {
-				text: 'Descripción',
-				value: 'description',
-				align: 'left',
-				tooltip: 'Descripción de Llave'
+					text: 'Descripción',
+					value: 'description',
+					align: 'center',
       }, {
-				text: 'Valor',
-				value: 'value',
-				align: 'left',
-				tooltip: 'Valor de Llave'
-      }, ],
+					text: 'Valor',
+					value: 'value',
+					align: 'center',
+      },
+				{
+					text: 'Herramientas',
+					align: 'center',
+					sortable: false,
+			},
+			],
 			loading: true,
 			selected: [],
 			dialog: false
@@ -125,9 +127,9 @@ export default {
 			getSetting: 'settings/getSetting',
 			updateSetting: 'settings/updateSetting'
 		} ),
-		edit() {
+		edit( id ) {
 			this.getSetting( {
-					id: this.selected[ 0 ].id
+					id: id
 				} )
 				.then( ( response ) => {
 					this.dialog = true
