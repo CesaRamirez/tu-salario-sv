@@ -1,3 +1,3 @@
 import Vue from 'vue'
 
-export const NotFound = Vue.component('not-found', require('./NotFound.vue'))
+export const NotFoundComponent = Vue.component('NotFoundComponent', require('./NotFoundComponent.vue'))

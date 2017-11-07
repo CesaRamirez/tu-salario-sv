@@ -1,6 +1,6 @@
 <template>
 <div v-if="user.authenticated">
-	<v-navigation-drawer v-model="drawer" persistent clipped app enable-resize-watcher>
+	<v-navigation-drawer v-model="drawer" temporary clipped app enable-resize-watcher>
 		<v-list class="pa-0">
 			<v-list-tile avatar tag="div">
 				<v-list-tile-content>

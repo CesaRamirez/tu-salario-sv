@@ -1,10 +1,10 @@
 import {
-  Home
+  HomeComponent
 } from '../components'
 
 export default [{
   path: '/',
-  component: Home,
+  component: HomeComponent,
   name: 'home',
   meta: {
     guest: false,

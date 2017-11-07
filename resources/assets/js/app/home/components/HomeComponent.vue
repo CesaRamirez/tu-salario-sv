@@ -2,7 +2,7 @@
   <div>
     <v-container>
       <v-layout align-content-start class="h100">
-        Home
+        <h3>Welcome to panel admin!</h3>
       </v-layout>
     </v-container>
   </div>
@@ -10,13 +10,13 @@
 
 <script>
 import {
-  mapGetters,
-  mapActions
+	mapGetters,
+	mapActions
 } from 'vuex'
 
 export default {
-  computed: mapGetters({
-    user: 'auth/user'
-  }),
+	computed: mapGetters( {
+		user: 'auth/user'
+	} ),
 }
 </script>

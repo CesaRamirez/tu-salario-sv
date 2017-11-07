@@ -1,8 +1,8 @@
 import {
-  NotFound
+  NotFoundComponent
 } from '../components'
 
 export default [{
   path: '*',
-  component: NotFound
+  component: NotFoundComponent
 }]

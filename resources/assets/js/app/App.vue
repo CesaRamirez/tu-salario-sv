@@ -2,7 +2,7 @@
 <v-app>
 	<v-card flat height="100vh">
 		<navigation-component></navigation-component>
-		<notification></notification>
+		<notification-component></notification-component>
 		<v-content>
 			<transition name="fade">
 				<router-view></router-view>
@@ -18,11 +18,11 @@ import {
 	mapActions
 }
 from 'vuex'
-import notification from './Notification'
+import NotificationComponent from './NotificationComponent'
 
 export default {
 	components: {
-		notification
+		NotificationComponent
 	},
 	computed: mapGetters( {
 		user: 'auth/user'
