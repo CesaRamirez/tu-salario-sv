@@ -2,17 +2,13 @@
 
 <div>
     <v-layout justify-center>
-        <v-flex xs8 md8 lg8>
+        <v-flex xs12 md10 lg10>
             <v-card class="card--flex-toolbar">
                 <v-toolbar card prominent color="deep-purple" dark>
                   <v-layout wrap>
-                    <v-flex xs10 md6 lg6>
-                      <v-toolbar-title class="body-2">Días de pago de Aguinaldo</v-toolbar-title>
-                    </v-flex>
+                    <v-toolbar-title class="body-2">Días de pago de Aguinaldo</v-toolbar-title>
                     <v-spacer></v-spacer>
-                    <v-flex xs12 md4 lg4>
                       <v-text-field dark
-
                                     append-icon="search"
                                     label="Buscar"
                                     single-line
@@ -20,7 +16,6 @@
                                     color="cyan"
                                     v-model="search">
                       </v-text-field>
-                    </v-flex>
                   </v-layout>
                 </v-toolbar>
                 <v-data-table :headers="headers"
@@ -71,15 +66,36 @@
                     <v-container grid-list-md>
                         <v-layout wrap>
                             <v-flex xs12 sm6 md4>
-                                <v-text-field label="Días" required v-model="bonus.days" type="number" :error-messages="_errors.collect('days')" v-validate="'required|numeric'" data-vv-name="days" hint="Días de Aguinaldo" persistent-hint>
+                                <v-text-field label="Días"
+                                              required
+                                              v-model="bonus.days"
+                                              type="number"
+                                              :error-messages="_errors.collect('days')"
+                                              v-validate="'required|numeric'"
+                                              data-vv-name="days"
+                                              hint="Días de Aguinaldo"
+                                              persistent-hint>
                                 </v-text-field>
                             </v-flex>
                             <v-flex xs12 sm6 md4>
-                                <v-text-field label="Inicio (Años)" required type="number" :max="bonus.end" v-model="bonus.start" :error-messages="_errors.collect('start')" v-validate="`required|numeric|max_value:${this.bonus.end}`" data-vv-name="start" hint="Año de Inicio" persistent-hint>
+                                <v-text-field label="Inicio (Años)"
+                                              required type="number"
+                                              :max="bonus.end"
+                                              v-model="bonus.start"
+                                              :error-messages="_errors.collect('start')" v-validate="`required|numeric|max_value:${this.bonus.end}`" data-vv-name="start"
+                                              hint="Año de Inicio"
+                                              persistent-hint>
                                 </v-text-field>
                             </v-flex>
                             <v-flex xs12 sm6 md4>
-                                <v-text-field label="Fin (Años)" required type="number" :min="bonus.start" v-model="bonus.end" :error-messages="_errors.collect('end')" v-validate="`required|numeric|min_value:${this.bonus.start}`" data-vv-name="end" hint="Año de Finalización" persistent-hint>
+                                <v-text-field label="Fin (Años)"
+                                              required
+                                              type="number"
+                                              :min="bonus.start"
+                                              v-model="bonus.end"
+                                              :error-messages="_errors.collect('end')" v-validate="`required|numeric|min_value:${this.bonus.start}`" data-vv-name="end"
+                                              hint="Año de Finalización"
+                                              persistent-hint>
                                 </v-text-field>
                             </v-flex>
                         </v-layout>

@@ -3707,13 +3707,358 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 
 
-var LoginComponent = __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('login-component', __webpack_require__(209));
+var LoginComponent = __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('login-component', __webpack_require__(31));
 
 /***/ }),
-/* 31 */,
-/* 32 */,
+/* 31 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(2)
+/* script */
+var __vue_script__ = __webpack_require__(32)
+/* template */
+var __vue_template__ = __webpack_require__(34)
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/app/auth/components/LoginComponent.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] LoginComponent.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-96753fe4", Component.options)
+  } else {
+    hotAPI.reload("data-v-96753fe4", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 32 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_localforage__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_localforage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_localforage__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_lodash__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_lodash__);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+	data: function data() {
+		return {
+			email: null,
+			password: null,
+			errors: [],
+			loading: false
+		};
+	},
+
+	methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])({
+		login: 'auth/login'
+	}), {
+		submit: function submit() {
+			var _this = this;
+
+			this.login({
+				payload: {
+					email: this.email,
+					password: this.password
+				},
+				context: this
+			}).then(function () {
+				_this.redirect();
+			}).catch(function (err) {});
+		},
+		redirect: function redirect() {
+			var _this2 = this;
+
+			this.loading = true;
+			__WEBPACK_IMPORTED_MODULE_1_localforage___default.a.getItem('intended').then(function (name) {
+				if (Object(__WEBPACK_IMPORTED_MODULE_2_lodash__["isEmpty"])(name)) {
+					_this2.$router.replace({
+						name: 'home'
+					});
+					_this2.loading = false;
+					return;
+				}
+				_this2.$router.replace({
+					name: name
+				});
+				_this2.loading = false;
+			});
+		},
+		cleanFields: function cleanFields(field) {
+			return this.errors[field] = [];
+		}
+	})
+});
+
+/***/ }),
 /* 33 */,
-/* 34 */,
+/* 34 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "v-container",
+    [
+      _c(
+        "v-layout",
+        {
+          staticClass: "h100",
+          attrs: { "align-center": "", "justify-center": "" }
+        },
+        [
+          _c(
+            "v-flex",
+            { attrs: { xs12: "", sm12: "", md4: "" } },
+            [
+              _c(
+                "v-card",
+                { attrs: { light: "" } },
+                [
+                  _c(
+                    "v-card-media",
+                    {
+                      staticClass: "white--text",
+                      attrs: {
+                        height: "200px",
+                        src: "../storage/images/material.jpg"
+                      }
+                    },
+                    [
+                      _c(
+                        "v-container",
+                        { attrs: { "fill-height": "", fluid: "" } },
+                        [
+                          _c(
+                            "v-layout",
+                            { attrs: { "fill-height": "" } },
+                            [
+                              _c(
+                                "v-flex",
+                                {
+                                  attrs: {
+                                    xs12: "",
+                                    "align-end": "",
+                                    flexbox: ""
+                                  }
+                                },
+                                [
+                                  _c("span", { staticClass: "headline" }, [
+                                    _vm._v("Iniciar Sesión")
+                                  ])
+                                ]
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "form",
+                    {
+                      on: {
+                        submit: function($event) {
+                          $event.preventDefault()
+                          _vm.submit($event)
+                        }
+                      }
+                    },
+                    [
+                      _c(
+                        "v-card-text",
+                        [
+                          _c("v-text-field", {
+                            attrs: {
+                              label: "Correo Electronico",
+                              light: "",
+                              color: "purple darken-2",
+                              "error-messages": _vm.errors.email,
+                              "prepend-icon": "mail"
+                            },
+                            nativeOn: {
+                              keyup: function($event) {
+                                _vm.cleanFields("email")
+                              }
+                            },
+                            model: {
+                              value: _vm.email,
+                              callback: function($$v) {
+                                _vm.email = $$v
+                              },
+                              expression: "email"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("v-text-field", {
+                            attrs: {
+                              label: "Contraseña",
+                              light: "",
+                              color: "purple darken-2",
+                              "error-messages": _vm.errors.password,
+                              type: "password",
+                              "prepend-icon": "vpn_key"
+                            },
+                            nativeOn: {
+                              keyup: function($event) {
+                                _vm.cleanFields("password")
+                              }
+                            },
+                            model: {
+                              value: _vm.password,
+                              callback: function($$v) {
+                                _vm.password = $$v
+                              },
+                              expression: "password"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-card-actions",
+                        [
+                          _c(
+                            "v-btn",
+                            {
+                              attrs: {
+                                type: "submit",
+                                color: "purple darken-2",
+                                block: "",
+                                loading: _vm.loading,
+                                ripple: "",
+                                dark: ""
+                              }
+                            },
+                            [
+                              _vm._v(
+                                "\n                            Iniciar\n                        "
+                              )
+                            ]
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-96753fe4", module.exports)
+  }
+}
+
+/***/ }),
 /* 35 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -5109,7 +5454,7 @@ if (false) {
 
 /* harmony default export */ __webpack_exports__["a"] = ([{
   path: '/admin/settings',
-  component: __WEBPACK_IMPORTED_MODULE_0__components__["a" /* Browse */],
+  component: __WEBPACK_IMPORTED_MODULE_0__components__["a" /* BrowseComponent */],
   name: 'browse-settings',
   meta: {
     guest: false,
@@ -5122,12 +5467,12 @@ if (false) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Browse; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BrowseComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 
 
-var Browse = __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('browse-rent', __webpack_require__(137));
+var BrowseComponent = __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('BrowseComponent', __webpack_require__(137));
 
 /***/ }),
 /* 137 */
@@ -5152,9 +5497,9 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/app/settings/components/Browse.vue"
+Component.options.__file = "resources/assets/js/app/settings/components/BrowseComponent.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] Browse.vue: functional components are not supported with templates, they should use render functions.")}
+if (Component.options.functional) {console.error("[vue-loader] BrowseComponent.vue: functional components are not supported with templates, they should use render functions.")}
 
 /* hot reload */
 if (false) {(function () {
@@ -5163,9 +5508,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-01853b82", Component.options)
+    hotAPI.createRecord("data-v-5dc995a4", Component.options)
   } else {
-    hotAPI.reload("data-v-01853b82", Component.options)
+    hotAPI.reload("data-v-5dc995a4", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -5184,6 +5529,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(3);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -5464,17 +5816,38 @@ var render = function() {
                               1
                             ),
                             _vm._v(" "),
-                            _c("td", { staticClass: "text-xs-left" }, [
+                            _c("td", { staticClass: "text-xs-center" }, [
                               _vm._v(_vm._s(props.item.key))
                             ]),
                             _vm._v(" "),
-                            _c("td", { staticClass: "text-xs-left" }, [
+                            _c("td", { staticClass: "text-xs-center" }, [
                               _vm._v(_vm._s(props.item.description))
                             ]),
                             _vm._v(" "),
-                            _c("td", { staticClass: "text-xs-left" }, [
+                            _c("td", { staticClass: "text-xs-center" }, [
                               _vm._v(_vm._s(props.item.value))
-                            ])
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "td",
+                              { staticClass: "text-xs-center" },
+                              [
+                                _c(
+                                  "v-btn",
+                                  {
+                                    attrs: { icon: "", light: "" },
+                                    on: {
+                                      click: function($event) {
+                                        _vm.edit(props.item.id)
+                                      }
+                                    }
+                                  },
+                                  [_c("v-icon", [_vm._v("create")])],
+                                  1
+                                )
+                              ],
+                              1
+                            )
                           ]
                         }
                       },
@@ -5717,7 +6090,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-01853b82", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-5dc995a4", module.exports)
   }
 }
 
@@ -5749,12 +6122,658 @@ if (false) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 
 
-var BrowseComponent = __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('browse-component', __webpack_require__(212));
+var BrowseComponent = __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('browse-component', __webpack_require__(142));
 
 /***/ }),
-/* 142 */,
-/* 143 */,
-/* 144 */,
+/* 142 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(2)
+/* script */
+var __vue_script__ = __webpack_require__(143)
+/* template */
+var __vue_template__ = __webpack_require__(144)
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/app/bonus/components/BrowseComponent.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] BrowseComponent.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-7fe8df5c", Component.options)
+  } else {
+    hotAPI.reload("data-v-7fe8df5c", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 143 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(3);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+	data: function data() {
+		return {
+			search: '',
+			headers: [{
+				text: 'Días',
+				value: 'days',
+				align: 'center'
+			}, {
+				text: 'Inicio (Años)',
+				value: 'start',
+				align: 'center'
+			}, {
+				text: 'Fin (Años)',
+				value: 'end',
+				align: 'center'
+			}, {
+				text: 'Herramientas',
+				align: 'center'
+			}],
+			selected: [],
+			dialog: false,
+			days: null,
+			start: null,
+			end: null
+		};
+	},
+	mounted: function mounted() {
+		this.getBonuses();
+	},
+
+	computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])({
+		items: 'bonus/bonuses',
+		bonus: 'bonus/bonus'
+	})),
+	methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])({
+		getBonuses: 'bonus/getBonuses',
+		getBonus: 'bonus/getBonus',
+		updateBonus: 'bonus/updateBonus'
+	}), {
+		edit: function edit(id) {
+			var _this = this;
+
+			this.getBonus({
+				id: id
+			}).then(function (response) {
+				_this.dialog = true;
+			});
+		},
+		update: function update() {
+			var _this2 = this;
+
+			this.$validator.validateAll().then(function (result) {
+				if (result) {
+					_this2.updateBonus({
+						payload: {
+							days: _this2.bonus.days,
+							start: _this2.bonus.start,
+							end: _this2.bonus.end
+						},
+						context: _this2,
+						id: _this2.bonus.id
+					}).then(function () {
+						_this2.getBonuses();
+						_this2.dialog = false;
+					}).catch(function (err) {});
+				}
+
+				return;
+			});
+		},
+		clear: function clear() {
+			this.$validator.reset();
+			this.dialog = false;
+		}
+	})
+});
+
+/***/ }),
+/* 144 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c(
+        "v-layout",
+        { attrs: { "justify-center": "" } },
+        [
+          _c(
+            "v-flex",
+            { attrs: { xs12: "", md10: "", lg10: "" } },
+            [
+              _c(
+                "v-card",
+                { staticClass: "card--flex-toolbar" },
+                [
+                  _c(
+                    "v-toolbar",
+                    {
+                      attrs: {
+                        card: "",
+                        prominent: "",
+                        color: "deep-purple",
+                        dark: ""
+                      }
+                    },
+                    [
+                      _c(
+                        "v-layout",
+                        { attrs: { wrap: "" } },
+                        [
+                          _c("v-toolbar-title", { staticClass: "body-2" }, [
+                            _vm._v("Días de pago de Aguinaldo")
+                          ]),
+                          _vm._v(" "),
+                          _c("v-spacer"),
+                          _vm._v(" "),
+                          _c("v-text-field", {
+                            attrs: {
+                              dark: "",
+                              "append-icon": "search",
+                              label: "Buscar",
+                              "single-line": "",
+                              "hide-details": "",
+                              color: "cyan"
+                            },
+                            model: {
+                              value: _vm.search,
+                              callback: function($$v) {
+                                _vm.search = $$v
+                              },
+                              expression: "search"
+                            }
+                          })
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c("v-data-table", {
+                    attrs: {
+                      headers: _vm.headers,
+                      items: _vm.items,
+                      search: _vm.search,
+                      "item-key": "id",
+                      "no-data-text": "No se encontraron resultados"
+                    },
+                    scopedSlots: _vm._u([
+                      {
+                        key: "items",
+                        fn: function(props) {
+                          return [
+                            _c("td", { staticClass: "text-xs-center" }, [
+                              _vm._v(_vm._s(props.item.days))
+                            ]),
+                            _vm._v(" "),
+                            _c("td", { staticClass: "text-xs-center" }, [
+                              _vm._v(_vm._s(props.item.start))
+                            ]),
+                            _vm._v(" "),
+                            _c("td", { staticClass: "text-xs-center" }, [
+                              _vm._v(_vm._s(props.item.end))
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "td",
+                              { staticClass: "text-xs-center" },
+                              [
+                                _c(
+                                  "v-btn",
+                                  {
+                                    attrs: { icon: "", light: "" },
+                                    on: {
+                                      click: function($event) {
+                                        _vm.edit(props.item.id)
+                                      }
+                                    }
+                                  },
+                                  [_c("v-icon", [_vm._v("create")])],
+                                  1
+                                )
+                              ],
+                              1
+                            )
+                          ]
+                        }
+                      },
+                      {
+                        key: "pageText",
+                        fn: function(ref) {
+                          var pageStart = ref.pageStart
+                          var pageStop = ref.pageStop
+                          var itemsLength = ref.itemsLength
+                          return [
+                            _vm._v(
+                              "\n                        " +
+                                _vm._s(pageStart) +
+                                " - " +
+                                _vm._s(pageStop) +
+                                " de " +
+                                _vm._s(itemsLength) +
+                                "\n                    "
+                            )
+                          ]
+                        }
+                      }
+                    ]),
+                    model: {
+                      value: _vm.selected,
+                      callback: function($$v) {
+                        _vm.selected = $$v
+                      },
+                      expression: "selected"
+                    }
+                  })
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-fab-transition",
+        [
+          _c(
+            "v-btn",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.selected.length === 1,
+                  expression: "selected.length === 1"
+                }
+              ],
+              attrs: {
+                color: "red",
+                dark: "",
+                fab: "",
+                fixed: "",
+                bottom: "",
+                right: ""
+              },
+              on: { click: _vm.edit }
+            },
+            [_c("v-icon", [_vm._v("create")])],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-layout",
+        { attrs: { row: "", "justify-center": "" } },
+        [
+          _c(
+            "v-dialog",
+            {
+              attrs: { persistent: "", "max-width": "500px" },
+              model: {
+                value: _vm.dialog,
+                callback: function($$v) {
+                  _vm.dialog = $$v
+                },
+                expression: "dialog"
+              }
+            },
+            [
+              _c(
+                "v-card",
+                [
+                  _c("v-card-title", [
+                    _c("span", { staticClass: "headline" }, [
+                      _vm._v("Editar Opciones de Aguinaldo")
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "v-card-text",
+                    [
+                      _c(
+                        "v-container",
+                        { attrs: { "grid-list-md": "" } },
+                        [
+                          _c(
+                            "v-layout",
+                            { attrs: { wrap: "" } },
+                            [
+                              _c(
+                                "v-flex",
+                                { attrs: { xs12: "", sm6: "", md4: "" } },
+                                [
+                                  _c("v-text-field", {
+                                    directives: [
+                                      {
+                                        name: "validate",
+                                        rawName: "v-validate",
+                                        value: "required|numeric",
+                                        expression: "'required|numeric'"
+                                      }
+                                    ],
+                                    attrs: {
+                                      label: "Días",
+                                      required: "",
+                                      type: "number",
+                                      "error-messages": _vm._errors.collect(
+                                        "days"
+                                      ),
+                                      "data-vv-name": "days",
+                                      hint: "Días de Aguinaldo",
+                                      "persistent-hint": ""
+                                    },
+                                    model: {
+                                      value: _vm.bonus.days,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.bonus, "days", $$v)
+                                      },
+                                      expression: "bonus.days"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-flex",
+                                { attrs: { xs12: "", sm6: "", md4: "" } },
+                                [
+                                  _c("v-text-field", {
+                                    directives: [
+                                      {
+                                        name: "validate",
+                                        rawName: "v-validate",
+                                        value:
+                                          "required|numeric|max_value:" +
+                                          this.bonus.end,
+                                        expression:
+                                          "`required|numeric|max_value:${this.bonus.end}`"
+                                      }
+                                    ],
+                                    attrs: {
+                                      label: "Inicio (Años)",
+                                      required: "",
+                                      type: "number",
+                                      max: _vm.bonus.end,
+                                      "error-messages": _vm._errors.collect(
+                                        "start"
+                                      ),
+                                      "data-vv-name": "start",
+                                      hint: "Año de Inicio",
+                                      "persistent-hint": ""
+                                    },
+                                    model: {
+                                      value: _vm.bonus.start,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.bonus, "start", $$v)
+                                      },
+                                      expression: "bonus.start"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-flex",
+                                { attrs: { xs12: "", sm6: "", md4: "" } },
+                                [
+                                  _c("v-text-field", {
+                                    directives: [
+                                      {
+                                        name: "validate",
+                                        rawName: "v-validate",
+                                        value:
+                                          "required|numeric|min_value:" +
+                                          this.bonus.start,
+                                        expression:
+                                          "`required|numeric|min_value:${this.bonus.start}`"
+                                      }
+                                    ],
+                                    attrs: {
+                                      label: "Fin (Años)",
+                                      required: "",
+                                      type: "number",
+                                      min: _vm.bonus.start,
+                                      "error-messages": _vm._errors.collect(
+                                        "end"
+                                      ),
+                                      "data-vv-name": "end",
+                                      hint: "Año de Finalización",
+                                      "persistent-hint": ""
+                                    },
+                                    model: {
+                                      value: _vm.bonus.end,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.bonus, "end", $$v)
+                                      },
+                                      expression: "bonus.end"
+                                    }
+                                  })
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c("small", [_vm._v("*Indica campos obligatorios")])
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-card-actions",
+                    [
+                      _c("v-spacer"),
+                      _vm._v(" "),
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { color: "blue darken-1", flat: "" },
+                          on: { click: _vm.clear }
+                        },
+                        [_vm._v("Cerrar")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { color: "blue darken-1", flat: "" },
+                          on: { click: _vm.update }
+                        },
+                        [_vm._v("Guardar")]
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-7fe8df5c", module.exports)
+  }
+}
+
+/***/ }),
 /* 145 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -7165,7 +8184,7 @@ __WEBPACK_IMPORTED_MODULE_0_vee_validate__["Validator"].updateDictionary(diction
 /***/ (function(module, exports, __webpack_require__) {
 
 Vue.component('app', __webpack_require__(194));
-Vue.component('navigation-component', __webpack_require__(215));
+Vue.component('navigation-component', __webpack_require__(199));
 Vue.component('notification', __webpack_require__(21));
 
 /***/ }),
@@ -7381,1025 +8400,15 @@ if (false) {
 }
 
 /***/ }),
-/* 199 */,
-/* 200 */,
-/* 201 */,
-/* 202 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 203 */,
-/* 204 */,
-/* 205 */,
-/* 206 */,
-/* 207 */,
-/* 208 */,
-/* 209 */
+/* 199 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(210)
+var __vue_script__ = __webpack_require__(200)
 /* template */
-var __vue_template__ = __webpack_require__(211)
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/assets/js/app/auth/components/LoginComponent.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] LoginComponent.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-96753fe4", Component.options)
-  } else {
-    hotAPI.reload("data-v-96753fe4", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 210 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_localforage__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_localforage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_localforage__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_lodash__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_lodash__);
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-	data: function data() {
-		return {
-			email: null,
-			password: null,
-			errors: [],
-			loading: false
-		};
-	},
-
-	methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])({
-		login: 'auth/login'
-	}), {
-		submit: function submit() {
-			var _this = this;
-
-			this.login({
-				payload: {
-					email: this.email,
-					password: this.password
-				},
-				context: this
-			}).then(function () {
-				_this.redirect();
-			}).catch(function (err) {});
-		},
-		redirect: function redirect() {
-			var _this2 = this;
-
-			this.loading = true;
-			__WEBPACK_IMPORTED_MODULE_1_localforage___default.a.getItem('intended').then(function (name) {
-				if (Object(__WEBPACK_IMPORTED_MODULE_2_lodash__["isEmpty"])(name)) {
-					_this2.$router.replace({
-						name: 'home'
-					});
-					_this2.loading = false;
-					return;
-				}
-				_this2.$router.replace({
-					name: name
-				});
-				_this2.loading = false;
-			});
-		},
-		cleanFields: function cleanFields(field) {
-			return this.errors[field] = [];
-		}
-	})
-});
-
-/***/ }),
-/* 211 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "v-container",
-    [
-      _c(
-        "v-layout",
-        {
-          staticClass: "h100",
-          attrs: { "align-center": "", "justify-center": "" }
-        },
-        [
-          _c(
-            "v-flex",
-            { attrs: { xs12: "", sm12: "", md4: "" } },
-            [
-              _c(
-                "v-card",
-                { attrs: { light: "" } },
-                [
-                  _c(
-                    "v-card-media",
-                    {
-                      staticClass: "white--text",
-                      attrs: {
-                        height: "200px",
-                        src: "../storage/images/material.jpg"
-                      }
-                    },
-                    [
-                      _c(
-                        "v-container",
-                        { attrs: { "fill-height": "", fluid: "" } },
-                        [
-                          _c(
-                            "v-layout",
-                            { attrs: { "fill-height": "" } },
-                            [
-                              _c(
-                                "v-flex",
-                                {
-                                  attrs: {
-                                    xs12: "",
-                                    "align-end": "",
-                                    flexbox: ""
-                                  }
-                                },
-                                [
-                                  _c("span", { staticClass: "headline" }, [
-                                    _vm._v("Iniciar Sesión")
-                                  ])
-                                ]
-                              )
-                            ],
-                            1
-                          )
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "form",
-                    {
-                      on: {
-                        submit: function($event) {
-                          $event.preventDefault()
-                          _vm.submit($event)
-                        }
-                      }
-                    },
-                    [
-                      _c(
-                        "v-card-text",
-                        [
-                          _c("v-text-field", {
-                            attrs: {
-                              label: "Correo Electronico",
-                              light: "",
-                              color: "purple darken-2",
-                              "error-messages": _vm.errors.email,
-                              "prepend-icon": "mail"
-                            },
-                            nativeOn: {
-                              keyup: function($event) {
-                                _vm.cleanFields("email")
-                              }
-                            },
-                            model: {
-                              value: _vm.email,
-                              callback: function($$v) {
-                                _vm.email = $$v
-                              },
-                              expression: "email"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("v-text-field", {
-                            attrs: {
-                              label: "Contraseña",
-                              light: "",
-                              color: "purple darken-2",
-                              "error-messages": _vm.errors.password,
-                              type: "password",
-                              "prepend-icon": "vpn_key"
-                            },
-                            nativeOn: {
-                              keyup: function($event) {
-                                _vm.cleanFields("password")
-                              }
-                            },
-                            model: {
-                              value: _vm.password,
-                              callback: function($$v) {
-                                _vm.password = $$v
-                              },
-                              expression: "password"
-                            }
-                          })
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-card-actions",
-                        [
-                          _c(
-                            "v-btn",
-                            {
-                              attrs: {
-                                type: "submit",
-                                color: "purple darken-2",
-                                block: "",
-                                loading: _vm.loading,
-                                ripple: "",
-                                dark: ""
-                              }
-                            },
-                            [
-                              _vm._v(
-                                "\n                            Iniciar\n                        "
-                              )
-                            ]
-                          )
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  )
-                ],
-                1
-              )
-            ],
-            1
-          )
-        ],
-        1
-      )
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-96753fe4", module.exports)
-  }
-}
-
-/***/ }),
-/* 212 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(2)
-/* script */
-var __vue_script__ = __webpack_require__(213)
-/* template */
-var __vue_template__ = __webpack_require__(214)
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/assets/js/app/bonus/components/BrowseComponent.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] BrowseComponent.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-7fe8df5c", Component.options)
-  } else {
-    hotAPI.reload("data-v-7fe8df5c", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 213 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(3);
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-	data: function data() {
-		return {
-			search: '',
-			headers: [{
-				text: 'Días',
-				value: 'days',
-				align: 'center'
-			}, {
-				text: 'Inicio (Años)',
-				value: 'start',
-				align: 'center'
-			}, {
-				text: 'Fin (Años)',
-				value: 'end',
-				align: 'center'
-			}, {
-				text: 'Herramientas',
-				align: 'center'
-			}],
-			selected: [],
-			dialog: false,
-			days: null,
-			start: null,
-			end: null
-		};
-	},
-	mounted: function mounted() {
-		this.getBonuses();
-	},
-
-	computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])({
-		items: 'bonus/bonuses',
-		bonus: 'bonus/bonus'
-	})),
-	methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])({
-		getBonuses: 'bonus/getBonuses',
-		getBonus: 'bonus/getBonus',
-		updateBonus: 'bonus/updateBonus'
-	}), {
-		edit: function edit(id) {
-			var _this = this;
-
-			this.getBonus({
-				id: id
-			}).then(function (response) {
-				_this.dialog = true;
-			});
-		},
-		update: function update() {
-			var _this2 = this;
-
-			this.$validator.validateAll().then(function (result) {
-				if (result) {
-					_this2.updateBonus({
-						payload: {
-							days: _this2.bonus.days,
-							start: _this2.bonus.start,
-							end: _this2.bonus.end
-						},
-						context: _this2,
-						id: _this2.bonus.id
-					}).then(function () {
-						_this2.getBonuses();
-						_this2.dialog = false;
-					}).catch(function (err) {});
-				}
-
-				return;
-			});
-		},
-		clear: function clear() {
-			this.$validator.reset();
-			this.dialog = false;
-		}
-	})
-});
-
-/***/ }),
-/* 214 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c(
-        "v-layout",
-        { attrs: { "justify-center": "" } },
-        [
-          _c(
-            "v-flex",
-            { attrs: { xs8: "", md8: "", lg8: "" } },
-            [
-              _c(
-                "v-card",
-                { staticClass: "card--flex-toolbar" },
-                [
-                  _c(
-                    "v-toolbar",
-                    {
-                      attrs: {
-                        card: "",
-                        prominent: "",
-                        color: "deep-purple",
-                        dark: ""
-                      }
-                    },
-                    [
-                      _c(
-                        "v-layout",
-                        { attrs: { wrap: "" } },
-                        [
-                          _c(
-                            "v-flex",
-                            { attrs: { xs10: "", md6: "", lg6: "" } },
-                            [
-                              _c("v-toolbar-title", { staticClass: "body-2" }, [
-                                _vm._v("Días de pago de Aguinaldo")
-                              ])
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c("v-spacer"),
-                          _vm._v(" "),
-                          _c(
-                            "v-flex",
-                            { attrs: { xs12: "", md4: "", lg4: "" } },
-                            [
-                              _c("v-text-field", {
-                                attrs: {
-                                  dark: "",
-                                  "append-icon": "search",
-                                  label: "Buscar",
-                                  "single-line": "",
-                                  "hide-details": "",
-                                  color: "cyan"
-                                },
-                                model: {
-                                  value: _vm.search,
-                                  callback: function($$v) {
-                                    _vm.search = $$v
-                                  },
-                                  expression: "search"
-                                }
-                              })
-                            ],
-                            1
-                          )
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c("v-data-table", {
-                    attrs: {
-                      headers: _vm.headers,
-                      items: _vm.items,
-                      search: _vm.search,
-                      "item-key": "id",
-                      "no-data-text": "No se encontraron resultados"
-                    },
-                    scopedSlots: _vm._u([
-                      {
-                        key: "items",
-                        fn: function(props) {
-                          return [
-                            _c("td", { staticClass: "text-xs-center" }, [
-                              _vm._v(_vm._s(props.item.days))
-                            ]),
-                            _vm._v(" "),
-                            _c("td", { staticClass: "text-xs-center" }, [
-                              _vm._v(_vm._s(props.item.start))
-                            ]),
-                            _vm._v(" "),
-                            _c("td", { staticClass: "text-xs-center" }, [
-                              _vm._v(_vm._s(props.item.end))
-                            ]),
-                            _vm._v(" "),
-                            _c(
-                              "td",
-                              { staticClass: "text-xs-center" },
-                              [
-                                _c(
-                                  "v-btn",
-                                  {
-                                    attrs: { icon: "", light: "" },
-                                    on: {
-                                      click: function($event) {
-                                        _vm.edit(props.item.id)
-                                      }
-                                    }
-                                  },
-                                  [_c("v-icon", [_vm._v("create")])],
-                                  1
-                                )
-                              ],
-                              1
-                            )
-                          ]
-                        }
-                      },
-                      {
-                        key: "pageText",
-                        fn: function(ref) {
-                          var pageStart = ref.pageStart
-                          var pageStop = ref.pageStop
-                          var itemsLength = ref.itemsLength
-                          return [
-                            _vm._v(
-                              "\n                        " +
-                                _vm._s(pageStart) +
-                                " - " +
-                                _vm._s(pageStop) +
-                                " de " +
-                                _vm._s(itemsLength) +
-                                "\n                    "
-                            )
-                          ]
-                        }
-                      }
-                    ]),
-                    model: {
-                      value: _vm.selected,
-                      callback: function($$v) {
-                        _vm.selected = $$v
-                      },
-                      expression: "selected"
-                    }
-                  })
-                ],
-                1
-              )
-            ],
-            1
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "v-fab-transition",
-        [
-          _c(
-            "v-btn",
-            {
-              directives: [
-                {
-                  name: "show",
-                  rawName: "v-show",
-                  value: _vm.selected.length === 1,
-                  expression: "selected.length === 1"
-                }
-              ],
-              attrs: {
-                color: "red",
-                dark: "",
-                fab: "",
-                fixed: "",
-                bottom: "",
-                right: ""
-              },
-              on: { click: _vm.edit }
-            },
-            [_c("v-icon", [_vm._v("create")])],
-            1
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "v-layout",
-        { attrs: { row: "", "justify-center": "" } },
-        [
-          _c(
-            "v-dialog",
-            {
-              attrs: { persistent: "", "max-width": "500px" },
-              model: {
-                value: _vm.dialog,
-                callback: function($$v) {
-                  _vm.dialog = $$v
-                },
-                expression: "dialog"
-              }
-            },
-            [
-              _c(
-                "v-card",
-                [
-                  _c("v-card-title", [
-                    _c("span", { staticClass: "headline" }, [
-                      _vm._v("Editar Opciones de Aguinaldo")
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "v-card-text",
-                    [
-                      _c(
-                        "v-container",
-                        { attrs: { "grid-list-md": "" } },
-                        [
-                          _c(
-                            "v-layout",
-                            { attrs: { wrap: "" } },
-                            [
-                              _c(
-                                "v-flex",
-                                { attrs: { xs12: "", sm6: "", md4: "" } },
-                                [
-                                  _c("v-text-field", {
-                                    directives: [
-                                      {
-                                        name: "validate",
-                                        rawName: "v-validate",
-                                        value: "required|numeric",
-                                        expression: "'required|numeric'"
-                                      }
-                                    ],
-                                    attrs: {
-                                      label: "Días",
-                                      required: "",
-                                      type: "number",
-                                      "error-messages": _vm._errors.collect(
-                                        "days"
-                                      ),
-                                      "data-vv-name": "days",
-                                      hint: "Días de Aguinaldo",
-                                      "persistent-hint": ""
-                                    },
-                                    model: {
-                                      value: _vm.bonus.days,
-                                      callback: function($$v) {
-                                        _vm.$set(_vm.bonus, "days", $$v)
-                                      },
-                                      expression: "bonus.days"
-                                    }
-                                  })
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "v-flex",
-                                { attrs: { xs12: "", sm6: "", md4: "" } },
-                                [
-                                  _c("v-text-field", {
-                                    directives: [
-                                      {
-                                        name: "validate",
-                                        rawName: "v-validate",
-                                        value:
-                                          "required|numeric|max_value:" +
-                                          this.bonus.end,
-                                        expression:
-                                          "`required|numeric|max_value:${this.bonus.end}`"
-                                      }
-                                    ],
-                                    attrs: {
-                                      label: "Inicio (Años)",
-                                      required: "",
-                                      type: "number",
-                                      max: _vm.bonus.end,
-                                      "error-messages": _vm._errors.collect(
-                                        "start"
-                                      ),
-                                      "data-vv-name": "start",
-                                      hint: "Año de Inicio",
-                                      "persistent-hint": ""
-                                    },
-                                    model: {
-                                      value: _vm.bonus.start,
-                                      callback: function($$v) {
-                                        _vm.$set(_vm.bonus, "start", $$v)
-                                      },
-                                      expression: "bonus.start"
-                                    }
-                                  })
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "v-flex",
-                                { attrs: { xs12: "", sm6: "", md4: "" } },
-                                [
-                                  _c("v-text-field", {
-                                    directives: [
-                                      {
-                                        name: "validate",
-                                        rawName: "v-validate",
-                                        value:
-                                          "required|numeric|min_value:" +
-                                          this.bonus.start,
-                                        expression:
-                                          "`required|numeric|min_value:${this.bonus.start}`"
-                                      }
-                                    ],
-                                    attrs: {
-                                      label: "Fin (Años)",
-                                      required: "",
-                                      type: "number",
-                                      min: _vm.bonus.start,
-                                      "error-messages": _vm._errors.collect(
-                                        "end"
-                                      ),
-                                      "data-vv-name": "end",
-                                      hint: "Año de Finalización",
-                                      "persistent-hint": ""
-                                    },
-                                    model: {
-                                      value: _vm.bonus.end,
-                                      callback: function($$v) {
-                                        _vm.$set(_vm.bonus, "end", $$v)
-                                      },
-                                      expression: "bonus.end"
-                                    }
-                                  })
-                                ],
-                                1
-                              )
-                            ],
-                            1
-                          )
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c("small", [_vm._v("*Indica campos obligatorios")])
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-card-actions",
-                    [
-                      _c("v-spacer"),
-                      _vm._v(" "),
-                      _c(
-                        "v-btn",
-                        {
-                          attrs: { color: "blue darken-1", flat: "" },
-                          on: { click: _vm.clear }
-                        },
-                        [_vm._v("Cerrar")]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-btn",
-                        {
-                          attrs: { color: "blue darken-1", flat: "" },
-                          on: { click: _vm.update }
-                        },
-                        [_vm._v("Guardar")]
-                      )
-                    ],
-                    1
-                  )
-                ],
-                1
-              )
-            ],
-            1
-          )
-        ],
-        1
-      )
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-7fe8df5c", module.exports)
-  }
-}
-
-/***/ }),
-/* 215 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(2)
-/* script */
-var __vue_script__ = __webpack_require__(216)
-/* template */
-var __vue_template__ = __webpack_require__(217)
+var __vue_template__ = __webpack_require__(201)
 /* styles */
 var __vue_styles__ = null
 /* scopeId */
@@ -8437,7 +8446,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 216 */
+/* 200 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8529,7 +8538,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 });
 
 /***/ }),
-/* 217 */
+/* 201 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -8694,6 +8703,12 @@ if (false) {
      require("vue-hot-reload-api").rerender("data-v-775516f1", module.exports)
   }
 }
+
+/***/ }),
+/* 202 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 ],[22]);

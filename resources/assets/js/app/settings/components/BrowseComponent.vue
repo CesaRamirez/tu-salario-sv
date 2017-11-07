@@ -21,9 +21,16 @@
                         <td>
                             <v-checkbox class="text-left" primary hide-details v-model="props.selected"></v-checkbox>
                         </td>
-                        <td class="text-xs-left">{{ props.item.key }}</td>
-                        <td class="text-xs-left">{{ props.item.description }}</td>
-                        <td class="text-xs-left">{{ props.item.value }}</td>
+                        <td class="text-xs-center">{{ props.item.key }}</td>
+                        <td class="text-xs-center">{{ props.item.description }}</td>
+                        <td class="text-xs-center">{{ props.item.value }}</td>
+                        <td class="text-xs-center">
+                          <v-btn icon
+                                 light
+                                 @click="edit(props.item.id)">
+                                 <v-icon>create</v-icon>
+                          </v-btn>
+                        </td>
                     </template>
                     <template slot="pageText" slot-scope="{ pageStart, pageStop, itemsLength }">
                       {{ pageStart }} - {{ pageStop }} de {{ itemsLength }}

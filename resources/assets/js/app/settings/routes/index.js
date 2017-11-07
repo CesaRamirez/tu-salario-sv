@@ -1,10 +1,10 @@
 import {
-  Browse
+  BrowseComponent
 } from '../components'
 
 export default [{
   path: '/admin/settings',
-  component: Browse,
+  component: BrowseComponent,
   name: 'browse-settings',
   meta: {
     guest: false,
