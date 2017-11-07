@@ -43,19 +43,6 @@
             </v-card>
         </v-flex>
     </v-layout>
-    <v-fab-transition>
-        <v-btn
-          color="red"
-          dark
-          fab
-          fixed
-          bottom
-          right
-          v-show="selected.length === 1"
-          @click="edit">
-          <v-icon>create</v-icon>
-        </v-btn>
-    </v-fab-transition>
     <v-layout row justify-center>
         <v-dialog v-model="dialog" persistent max-width="500px">
             <v-card>

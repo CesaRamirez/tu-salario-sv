@@ -17,7 +17,7 @@
                               v-model="selected"
                               rows-per-page-text="Registros por Página"
                               :rows-per-page-items='[5, 15, 25, { text: "Todos", value: -1 }]'
-                              no-datxa-text="No se encontraron resultados"
+                              no-data-text="No se encontraron resultados"
                               class="elevation-2">
                     <template slot="items" slot-scope="props">
                         <td class="text-xs-center">{{ props.item.key }}</td>

@@ -1,10 +1,10 @@
 import {
-  Browse
+  BrowseComponent
 } from '../components'
 
 export default [{
   path: '/admin/rent',
-  component: Browse,
+  component: BrowseComponent,
   name: 'browse-rent',
   meta: {
     guest: false,
