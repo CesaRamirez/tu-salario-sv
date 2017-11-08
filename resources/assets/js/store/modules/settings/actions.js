@@ -1,7 +1,7 @@
 export const getSettings = ({
     commit
   }) => axios
-  .get('/api/v1/admin/settings')
+  .get(route('settings.index'))
   .then((response) => {
     commit('setSettings', response.data.data)
   })
@@ -11,7 +11,7 @@ export const getSetting = ({
   }, {
     id
   }) => axios
-  .get('/api/v1/admin/settings/' + id)
+  .get(route('settings.show', id))
   .then((response) => {
     commit('setSetting', response.data.data)
   })
@@ -24,7 +24,7 @@ export const updateSetting = ({
   id
 }) => {
   return new Promise((resolve, reject) => {
-    axios.put('/api/v1/admin/settings/' + id, payload)
+    axios.put(route('settings.update', id), payload)
       .then((response) => {
         resolve(response.data)
         dispatch('noti', {

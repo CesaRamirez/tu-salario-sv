@@ -35,7 +35,7 @@ $router->namespace('API\V1\Admin')
 
 
                $router->resource('settings', 'SettingsController')
-                      ->except('create', 'edit', 'destroy');
+                      ->only('index', 'update', 'show');
                $router->resource('bonus', 'BonusController')
                       ->only('index', 'update', 'show');
            });

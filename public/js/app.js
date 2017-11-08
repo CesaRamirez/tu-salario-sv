@@ -3534,7 +3534,52 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex
 /* 18 */,
 /* 19 */,
 /* 20 */,
-/* 21 */,
+/* 21 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(2)
+/* script */
+var __vue_script__ = __webpack_require__(196)
+/* template */
+var __vue_template__ = __webpack_require__(197)
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/app/NotificationComponent.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] NotificationComponent.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-0673ed0c", Component.options)
+  } else {
+    hotAPI.reload("data-v-0673ed0c", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
 /* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -4036,11 +4081,115 @@ if (false) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 
 
-var NotFoundComponent = __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('NotFoundComponent', __webpack_require__(215));
+var NotFoundComponent = __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('NotFoundComponent', __webpack_require__(37));
 
 /***/ }),
-/* 37 */,
-/* 38 */,
+/* 37 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(2)
+/* script */
+var __vue_script__ = null
+/* template */
+var __vue_template__ = __webpack_require__(38)
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/app/errors/components/NotFoundComponent.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] NotFoundComponent.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-2a71073e", Component.options)
+  } else {
+    hotAPI.reload("data-v-2a71073e", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 38 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "v-container",
+    [
+      _c(
+        "v-layout",
+        {
+          attrs: {
+            "justify-center": "",
+            "align-center": "",
+            "align-content-center": "",
+            "fill-height": ""
+          }
+        },
+        [
+          _c("v-flex", { attrs: { x12: "", md12: "", lg12: "" } }, [
+            _c(
+              "div",
+              { staticClass: "text-xs-center" },
+              [
+                _c("h1", [_vm._v("404")]),
+                _vm._v(" "),
+                _c("h1", [_vm._v("Not Found")]),
+                _vm._v(" "),
+                _c(
+                  "v-icon",
+                  {
+                    staticStyle: { "font-size": "8rem" },
+                    attrs: { color: "black" }
+                  },
+                  [_vm._v("sentiment_very_dissatisfied")]
+                )
+              ],
+              1
+            )
+          ])
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-2a71073e", module.exports)
+  }
+}
+
+/***/ }),
 /* 39 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -4068,12 +4217,117 @@ var NotFoundComponent = __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('N
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 
 
-var HomeComponent = __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('home-component', __webpack_require__(217));
+var HomeComponent = __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('home-component', __webpack_require__(41));
 
 /***/ }),
-/* 41 */,
-/* 42 */,
-/* 43 */,
+/* 41 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(2)
+/* script */
+var __vue_script__ = __webpack_require__(42)
+/* template */
+var __vue_template__ = __webpack_require__(43)
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/app/home/components/HomeComponent.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] HomeComponent.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-ec00f306", Component.options)
+  } else {
+    hotAPI.reload("data-v-ec00f306", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 42 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(3);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+	computed: Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])({
+		user: 'auth/user'
+	})
+});
+
+/***/ }),
+/* 43 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c(
+        "v-container",
+        [
+          _c(
+            "v-layout",
+            { staticClass: "h100", attrs: { "align-content-start": "" } },
+            [_c("h3", [_vm._v("Welcome to panel admin!")])]
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-ec00f306", module.exports)
+  }
+}
+
+/***/ }),
 /* 44 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -4101,11 +4355,323 @@ var HomeComponent = __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('home-
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 
 
-var BrowseComponent = __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('browse-component', __webpack_require__(209));
+var BrowseComponent = __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('browse-component', __webpack_require__(46));
 
 /***/ }),
-/* 46 */,
-/* 47 */,
+/* 46 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(2)
+/* script */
+var __vue_script__ = __webpack_require__(47)
+/* template */
+var __vue_template__ = __webpack_require__(134)
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/app/rent/components/BrowseComponent.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] BrowseComponent.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-54b4e950", Component.options)
+  } else {
+    hotAPI.reload("data-v-54b4e950", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 47 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_collect_js__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_collect_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_collect_js__);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+	data: function data() {
+		return {
+			search_mensual: '',
+			search_quincenal: '',
+			headers_x: [_defineProperty({
+				text: 'Tramo',
+				align: 'left',
+				sortable: false,
+				value: 'section'
+			}, 'align', 'center'), {
+				text: 'Desde',
+				value: 'since',
+				align: 'center'
+			}, {
+				text: 'Hasta',
+				value: 'until',
+				align: 'center'
+			}, {
+				text: '% a Aplicar',
+				value: 'percentage',
+				align: 'center'
+			}, {
+				text: 'Sobre el Exceso',
+				value: 'excess',
+				align: 'center'
+			}, {
+				text: 'Mas Cuota Fija de',
+				value: 'fee',
+				align: 'center'
+			}, {
+				text: 'Herramientas',
+				value: 'fee',
+				sortable: false,
+				align: 'center'
+			}],
+			selected_mensual: [],
+			selected_quincenal: [],
+			dialog: false,
+			next_rent: {}
+		};
+	},
+	mounted: function mounted() {
+		this.get(1);
+		this.get(2);
+	},
+
+	computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])({
+		items_quincenal: 'rent/rentQ',
+		items_mensual: 'rent/rentM',
+		rent: 'rent/rent'
+	})),
+	methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])({
+		getRentTable: 'rent/getRentTable',
+		getRent: 'rent/getRent',
+		updateRent: 'rent/updateRent'
+	}), {
+		get: function get(_type) {
+			this.getRentTable({
+				type: _type
+			}).then(function (response) {});
+		},
+		edit: function edit(id) {
+			var _this = this;
+
+			this.getRent({
+				id: id
+			}).then(function (response) {
+				_this.next();
+				_this.dialog = true;
+			});
+		},
+		update: function update() {
+			var _this2 = this;
+
+			this.$validator.validateAll().then(function (result) {
+				if (result) {
+					_this2.updateRent({
+						payload: {
+							since: _this2.rent.since,
+							until: _this2.rent.until,
+							percentage: _this2.rent.percentage,
+							excess: _this2.rent.excess,
+							fee: _this2.rent.fee,
+							type: _this2.rent.type
+						},
+						context: _this2,
+						id: _this2.rent.id
+					}).then(function () {
+						_this2.get(1);
+						_this2.get(2);
+						_this2.dialog = false;
+					}).catch(function (err) {});
+				}
+
+				return;
+			});
+		},
+		clear: function clear() {
+			this.$validator.reset();
+			this.dialog = false;
+		},
+		next: function next() {
+			if (this.rent.type == 1) {
+				var r = __WEBPACK_IMPORTED_MODULE_1_collect_js___default()(this.items_mensual);
+			} else if (this.rent.type == 2) {
+				var r = __WEBPACK_IMPORTED_MODULE_1_collect_js___default()(this.items_quincenal);
+			}
+			if (this.rent.section == 4) {
+				this.next_rent = {
+					since: "9999999999"
+				};
+			} else {
+				this.next_rent = r.where('section', parseInt(this.rent.section) + 1).first();
+			}
+		}
+	})
+});
+
+/***/ }),
 /* 48 */,
 /* 49 */,
 /* 50 */,
@@ -4192,7 +4758,687 @@ var BrowseComponent = __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('bro
 /* 131 */,
 /* 132 */,
 /* 133 */,
-/* 134 */,
+/* 134 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c(
+        "v-layout",
+        { attrs: { "justify-center": "" } },
+        [
+          _c(
+            "v-flex",
+            { attrs: { xs12: "", md10: "", lg10: "" } },
+            [
+              _c(
+                "v-card",
+                { staticClass: "tabs--flex-toolbar" },
+                [
+                  _c(
+                    "v-tabs",
+                    { attrs: { dark: "", centered: "" } },
+                    [
+                      _c(
+                        "v-tabs-bar",
+                        { staticClass: "deep-purple" },
+                        [
+                          _c("v-tabs-slider", { attrs: { color: "yellow" } }),
+                          _vm._v(" "),
+                          _vm._l(2, function(i) {
+                            return _c(
+                              "v-tabs-item",
+                              { key: i, attrs: { href: "#tab-" + i } },
+                              [
+                                _vm._v(
+                                  "\n                            Tabla de Renta " +
+                                    _vm._s(i == 1 ? "Mensual" : "Quincenal") +
+                                    "\n                        "
+                                )
+                              ]
+                            )
+                          })
+                        ],
+                        2
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-tabs-items",
+                        [
+                          _c(
+                            "v-tabs-content",
+                            { key: 1, attrs: { id: "tab-1" } },
+                            [
+                              _c(
+                                "v-toolbar",
+                                { attrs: { card: "", prominent: "" } },
+                                [
+                                  _c("v-spacer"),
+                                  _vm._v(" "),
+                                  _c("v-text-field", {
+                                    attrs: {
+                                      "append-icon": "search",
+                                      label: "Buscar",
+                                      "single-line": "",
+                                      "hide-details": "",
+                                      color: "purple darken-2"
+                                    },
+                                    model: {
+                                      value: _vm.search_mensual,
+                                      callback: function($$v) {
+                                        _vm.search_mensual = $$v
+                                      },
+                                      expression: "search_mensual"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c("v-data-table", {
+                                staticClass: "elevation-2",
+                                attrs: {
+                                  headers: _vm.headers_x,
+                                  items: _vm.items_mensual,
+                                  search: _vm.search_mensual,
+                                  "rows-per-page-text": "Registros por Página",
+                                  "rows-per-page-items": [
+                                    5,
+                                    15,
+                                    25,
+                                    { text: "Todos", value: -1 }
+                                  ],
+                                  "no-data-text": "No se encontraron resultados"
+                                },
+                                scopedSlots: _vm._u([
+                                  {
+                                    key: "items",
+                                    fn: function(props) {
+                                      return [
+                                        _c("td", [
+                                          _vm._v(
+                                            _vm._s(
+                                              props.item.section_for_humans
+                                            )
+                                          )
+                                        ]),
+                                        _vm._v(" "),
+                                        _c(
+                                          "td",
+                                          { staticClass: "text-xs-center" },
+                                          [_vm._v(_vm._s(props.item.since))]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "td",
+                                          { staticClass: "text-xs-center" },
+                                          [
+                                            _vm._v(
+                                              _vm._s(
+                                                props.item.until_for_humans
+                                              )
+                                            )
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "td",
+                                          { staticClass: "text-xs-center" },
+                                          [
+                                            _vm._v(
+                                              _vm._s(
+                                                props.item.percentage_for_humans
+                                              )
+                                            )
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "td",
+                                          { staticClass: "text-xs-center" },
+                                          [_vm._v(_vm._s(props.item.excess))]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "td",
+                                          { staticClass: "text-xs-center" },
+                                          [_vm._v(_vm._s(props.item.fee))]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "td",
+                                          { staticClass: "text-xs-center" },
+                                          [
+                                            _c(
+                                              "v-btn",
+                                              {
+                                                attrs: { icon: "", light: "" },
+                                                on: {
+                                                  click: function($event) {
+                                                    _vm.edit(props.item.id)
+                                                  }
+                                                }
+                                              },
+                                              [
+                                                _c("v-icon", [_vm._v("create")])
+                                              ],
+                                              1
+                                            )
+                                          ],
+                                          1
+                                        )
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    key: "pageText",
+                                    fn: function(ref) {
+                                      var pageStart = ref.pageStart
+                                      var pageStop = ref.pageStop
+                                      var itemsLength = ref.itemsLength
+                                      return [
+                                        _vm._v(
+                                          "\n                                    " +
+                                            _vm._s(pageStart) +
+                                            " - " +
+                                            _vm._s(pageStop) +
+                                            " de " +
+                                            _vm._s(itemsLength) +
+                                            "\n                                "
+                                        )
+                                      ]
+                                    }
+                                  }
+                                ]),
+                                model: {
+                                  value: _vm.selected_mensual,
+                                  callback: function($$v) {
+                                    _vm.selected_mensual = $$v
+                                  },
+                                  expression: "selected_mensual"
+                                }
+                              })
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-tabs-content",
+                            { key: 2, attrs: { id: "tab-2" } },
+                            [
+                              _c(
+                                "v-toolbar",
+                                { attrs: { card: "", prominent: "" } },
+                                [
+                                  _c("v-spacer"),
+                                  _vm._v(" "),
+                                  _c("v-text-field", {
+                                    attrs: {
+                                      "append-icon": "search",
+                                      label: "Buscar",
+                                      "single-line": "",
+                                      "hide-details": ""
+                                    },
+                                    model: {
+                                      value: _vm.search_quincenal,
+                                      callback: function($$v) {
+                                        _vm.search_quincenal = $$v
+                                      },
+                                      expression: "search_quincenal"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c("v-data-table", {
+                                staticClass: "elevation-2",
+                                attrs: {
+                                  headers: _vm.headers_x,
+                                  items: _vm.items_quincenal,
+                                  search: _vm.search_quincenal,
+                                  "rows-per-page-text": "Registros por Página",
+                                  "rows-per-page-items": [
+                                    5,
+                                    15,
+                                    25,
+                                    { text: "Todos", value: -1 }
+                                  ],
+                                  "no-data-text": "No se encontraron resultados"
+                                },
+                                scopedSlots: _vm._u([
+                                  {
+                                    key: "items",
+                                    fn: function(props) {
+                                      return [
+                                        _c(
+                                          "td",
+                                          { staticClass: "text-xs-center" },
+                                          [
+                                            _vm._v(
+                                              _vm._s(
+                                                props.item.section_for_humans
+                                              )
+                                            )
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "td",
+                                          { staticClass: "text-xs-center" },
+                                          [_vm._v(_vm._s(props.item.since))]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "td",
+                                          { staticClass: "text-xs-center" },
+                                          [
+                                            _vm._v(
+                                              _vm._s(
+                                                props.item.until_for_humans
+                                              )
+                                            )
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "td",
+                                          { staticClass: "text-xs-center" },
+                                          [
+                                            _vm._v(
+                                              _vm._s(
+                                                props.item.percentage_for_humans
+                                              )
+                                            )
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "td",
+                                          { staticClass: "text-xs-center" },
+                                          [_vm._v(_vm._s(props.item.excess))]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "td",
+                                          { staticClass: "text-xs-center" },
+                                          [_vm._v(_vm._s(props.item.fee))]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "td",
+                                          { staticClass: "text-xs-center" },
+                                          [
+                                            _c(
+                                              "v-btn",
+                                              {
+                                                attrs: { icon: "", light: "" },
+                                                on: {
+                                                  click: function($event) {
+                                                    _vm.edit(props.item.id)
+                                                  }
+                                                }
+                                              },
+                                              [
+                                                _c("v-icon", [_vm._v("create")])
+                                              ],
+                                              1
+                                            )
+                                          ],
+                                          1
+                                        )
+                                      ]
+                                    }
+                                  }
+                                ]),
+                                model: {
+                                  value: _vm.selected_quincenal,
+                                  callback: function($$v) {
+                                    _vm.selected_quincenal = $$v
+                                  },
+                                  expression: "selected_quincenal"
+                                }
+                              })
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-layout",
+        { attrs: { row: "", "justify-center": "" } },
+        [
+          _c(
+            "v-dialog",
+            {
+              attrs: { persistent: "", "max-width": "500px" },
+              model: {
+                value: _vm.dialog,
+                callback: function($$v) {
+                  _vm.dialog = $$v
+                },
+                expression: "dialog"
+              }
+            },
+            [
+              _c(
+                "v-card",
+                [
+                  _c("v-card-title", [
+                    _c("span", { staticClass: "headline" }, [
+                      _vm._v("Editar Opciones de Tabla de Renta")
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "v-card-text",
+                    [
+                      _c(
+                        "v-container",
+                        { attrs: { "grid-list-md": "" } },
+                        [
+                          _c(
+                            "v-layout",
+                            { attrs: { wrap: "" } },
+                            [
+                              _c(
+                                "v-flex",
+                                { attrs: { xs12: "", sm6: "", md4: "" } },
+                                [
+                                  _c("v-text-field", {
+                                    attrs: {
+                                      label: "Sección",
+                                      required: "",
+                                      disabled: "",
+                                      hint: "Sección",
+                                      "persistent-hint": ""
+                                    },
+                                    model: {
+                                      value: _vm.rent.section_for_humans,
+                                      callback: function($$v) {
+                                        _vm.$set(
+                                          _vm.rent,
+                                          "section_for_humans",
+                                          $$v
+                                        )
+                                      },
+                                      expression: "rent.section_for_humans"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-flex",
+                                { attrs: { xs12: "", sm6: "", md4: "" } },
+                                [
+                                  _c("v-text-field", {
+                                    directives: [
+                                      {
+                                        name: "validate",
+                                        rawName: "v-validate",
+                                        value:
+                                          "required|decimal|max_value:" +
+                                          this.rent.until,
+                                        expression:
+                                          "`required|decimal|max_value:${this.rent.until}`"
+                                      }
+                                    ],
+                                    attrs: {
+                                      label: "Desde",
+                                      required: "",
+                                      type: "number",
+                                      max: _vm.rent.since,
+                                      "error-messages": _vm._errors.collect(
+                                        "since"
+                                      ),
+                                      "data-vv-name": "since",
+                                      hint: "Desde Monto",
+                                      "persistent-hint": ""
+                                    },
+                                    model: {
+                                      value: _vm.rent.since,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.rent, "since", $$v)
+                                      },
+                                      expression: "rent.since"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-flex",
+                                { attrs: { xs12: "", sm6: "", md4: "" } },
+                                [
+                                  _c("v-text-field", {
+                                    directives: [
+                                      {
+                                        name: "validate",
+                                        rawName: "v-validate",
+                                        value:
+                                          "required|decimal|min_value:" +
+                                          this.rent.since +
+                                          "|max_value:" +
+                                          this.next_rent.since,
+                                        expression:
+                                          "`required|decimal|min_value:${this.rent.since}|max_value:${this.next_rent.since}`"
+                                      }
+                                    ],
+                                    attrs: {
+                                      label: "Hasta",
+                                      required: "",
+                                      type: "number",
+                                      min: _vm.rent.until,
+                                      "error-messages": _vm._errors.collect(
+                                        "until"
+                                      ),
+                                      "data-vv-name": "until",
+                                      hint: "Hasta Monto",
+                                      "persistent-hint": ""
+                                    },
+                                    model: {
+                                      value: _vm.rent.until,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.rent, "until", $$v)
+                                      },
+                                      expression: "rent.until"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-flex",
+                                { attrs: { xs12: "", sm6: "", md4: "" } },
+                                [
+                                  _c("v-text-field", {
+                                    directives: [
+                                      {
+                                        name: "validate",
+                                        rawName: "v-validate",
+                                        value: "required|decimal",
+                                        expression: "`required|decimal`"
+                                      }
+                                    ],
+                                    attrs: {
+                                      label: "% a Aplicar",
+                                      required: "",
+                                      "error-messages": _vm._errors.collect(
+                                        "percentage"
+                                      ),
+                                      "data-vv-name": "percentage",
+                                      hint: "Porcentaje a Aplicar",
+                                      "persistent-hint": ""
+                                    },
+                                    model: {
+                                      value: _vm.rent.percentage,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.rent, "percentage", $$v)
+                                      },
+                                      expression: "rent.percentage"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-flex",
+                                { attrs: { xs12: "", sm6: "", md4: "" } },
+                                [
+                                  _c("v-text-field", {
+                                    directives: [
+                                      {
+                                        name: "validate",
+                                        rawName: "v-validate",
+                                        value: "required|decimal",
+                                        expression: "`required|decimal`"
+                                      }
+                                    ],
+                                    attrs: {
+                                      label: "Sobre el Exceso",
+                                      required: "",
+                                      type: "number",
+                                      max: _vm.rent.excess,
+                                      "error-messages": _vm._errors.collect(
+                                        "excess"
+                                      ),
+                                      "data-vv-name": "excess",
+                                      hint: "Sobre el Exceso",
+                                      "persistent-hint": ""
+                                    },
+                                    model: {
+                                      value: _vm.rent.excess,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.rent, "excess", $$v)
+                                      },
+                                      expression: "rent.excess"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-flex",
+                                { attrs: { xs12: "", sm6: "", md4: "" } },
+                                [
+                                  _c("v-text-field", {
+                                    directives: [
+                                      {
+                                        name: "validate",
+                                        rawName: "v-validate",
+                                        value: "required|decimal",
+                                        expression: "`required|decimal`"
+                                      }
+                                    ],
+                                    attrs: {
+                                      label: "Cuota Fija",
+                                      required: "",
+                                      type: "number",
+                                      min: _vm.rent.fee,
+                                      "error-messages": _vm._errors.collect(
+                                        "fee"
+                                      ),
+                                      "data-vv-name": "fee",
+                                      hint: "Cuota Fija",
+                                      "persistent-hint": ""
+                                    },
+                                    model: {
+                                      value: _vm.rent.fee,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.rent, "fee", $$v)
+                                      },
+                                      expression: "rent.fee"
+                                    }
+                                  })
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c("small", [_vm._v("*Indica campos obligatorios")])
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-card-actions",
+                    [
+                      _c("v-spacer"),
+                      _vm._v(" "),
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { color: "blue darken-1", flat: "" },
+                          on: { click: _vm.clear }
+                        },
+                        [_vm._v("Cerrar")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { color: "blue darken-1", flat: "" },
+                          on: { click: _vm.update }
+                        },
+                        [_vm._v("Guardar")]
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-54b4e950", module.exports)
+  }
+}
+
+/***/ }),
 /* 135 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -5854,7 +7100,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateSetting", function() { return updateSetting; });
 var getSettings = function getSettings(_ref) {
   var commit = _ref.commit;
-  return axios.get('/api/v1/admin/settings').then(function (response) {
+  return axios.get(route('settings.index')).then(function (response) {
     commit('setSettings', response.data.data);
   });
 };
@@ -5862,7 +7108,7 @@ var getSettings = function getSettings(_ref) {
 var getSetting = function getSetting(_ref2, _ref3) {
   var commit = _ref2.commit;
   var id = _ref3.id;
-  return axios.get('/api/v1/admin/settings/' + id).then(function (response) {
+  return axios.get(route('settings.show', id)).then(function (response) {
     commit('setSetting', response.data.data);
   });
 };
@@ -5874,7 +7120,7 @@ var updateSetting = function updateSetting(_ref4, _ref5) {
       id = _ref5.id;
 
   return new Promise(function (resolve, reject) {
-    axios.put('/api/v1/admin/settings/' + id, payload).then(function (response) {
+    axios.put(route('settings.update', id), payload).then(function (response) {
       resolve(response.data);
       dispatch('noti', {
         message: '¡Los Datos se han actualizado con Exito!',
@@ -6849,7 +8095,7 @@ __WEBPACK_IMPORTED_MODULE_0_vee_validate__["Validator"].updateDictionary(diction
 
 Vue.component('app', __webpack_require__(194));
 Vue.component('navigation-component', __webpack_require__(199));
-Vue.component('notification-component', __webpack_require__(212));
+Vue.component('notification-component', __webpack_require__(21));
 
 /***/ }),
 /* 194 */
@@ -6904,7 +8150,7 @@ module.exports = Component.exports
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__NotificationComponent__ = __webpack_require__(212);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__NotificationComponent__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__NotificationComponent___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__NotificationComponent__);
 //
 //
@@ -6934,8 +8180,88 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 196 */,
-/* 197 */,
+/* 196 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(3);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+	computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])({
+		noti: 'noti'
+	}))
+});
+
+/***/ }),
+/* 197 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c(
+        "v-snackbar",
+        {
+          attrs: { timeout: 6000, color: _vm.noti.type, "multi-line": "" },
+          model: {
+            value: _vm.noti.show,
+            callback: function($$v) {
+              _vm.$set(_vm.noti, "show", $$v)
+            },
+            expression: "noti.show"
+          }
+        },
+        [
+          _vm._v("\n        " + _vm._s(_vm.noti.message) + "\n        "),
+          _c(
+            "v-btn",
+            {
+              attrs: { flat: "", dark: "" },
+              on: {
+                click: function($event) {
+                  _vm.noti.show = false
+                }
+              }
+            },
+            [_vm._v("Cerrar")]
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-0673ed0c", module.exports)
+  }
+}
+
+/***/ }),
 /* 198 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7293,1349 +8619,6 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 203 */,
-/* 204 */,
-/* 205 */,
-/* 206 */,
-/* 207 */,
-/* 208 */,
-/* 209 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(2)
-/* script */
-var __vue_script__ = __webpack_require__(210)
-/* template */
-var __vue_template__ = __webpack_require__(211)
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/assets/js/app/rent/components/BrowseComponent.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] BrowseComponent.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-54b4e950", Component.options)
-  } else {
-    hotAPI.reload("data-v-54b4e950", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 210 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_collect_js__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_collect_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_collect_js__);
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-	data: function data() {
-		return {
-			search_mensual: '',
-			search_quincenal: '',
-			headers_x: [_defineProperty({
-				text: 'Tramo',
-				align: 'left',
-				sortable: false,
-				value: 'section'
-			}, 'align', 'center'), {
-				text: 'Desde',
-				value: 'since',
-				align: 'center'
-			}, {
-				text: 'Hasta',
-				value: 'until',
-				align: 'center'
-			}, {
-				text: '% a Aplicar',
-				value: 'percentage',
-				align: 'center'
-			}, {
-				text: 'Sobre el Exceso',
-				value: 'excess',
-				align: 'center'
-			}, {
-				text: 'Mas Cuota Fija de',
-				value: 'fee',
-				align: 'center'
-			}, {
-				text: 'Herramientas',
-				value: 'fee',
-				sortable: false,
-				align: 'center'
-			}],
-			selected_mensual: [],
-			selected_quincenal: [],
-			dialog: false,
-			next_rent: {}
-		};
-	},
-	mounted: function mounted() {
-		this.get(1);
-		this.get(2);
-	},
-
-	computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])({
-		items_quincenal: 'rent/rentQ',
-		items_mensual: 'rent/rentM',
-		rent: 'rent/rent'
-	})),
-	methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])({
-		getRentTable: 'rent/getRentTable',
-		getRent: 'rent/getRent',
-		updateRent: 'rent/updateRent'
-	}), {
-		get: function get(_type) {
-			this.getRentTable({
-				type: _type
-			}).then(function (response) {});
-		},
-		edit: function edit(id) {
-			var _this = this;
-
-			this.getRent({
-				id: id
-			}).then(function (response) {
-				_this.next();
-				_this.dialog = true;
-			});
-		},
-		update: function update() {
-			var _this2 = this;
-
-			this.$validator.validateAll().then(function (result) {
-				if (result) {
-					_this2.updateRent({
-						payload: {
-							since: _this2.rent.since,
-							until: _this2.rent.until,
-							percentage: _this2.rent.percentage,
-							excess: _this2.rent.excess,
-							fee: _this2.rent.fee,
-							type: _this2.rent.type
-						},
-						context: _this2,
-						id: _this2.rent.id
-					}).then(function () {
-						_this2.get(1);
-						_this2.get(2);
-						_this2.dialog = false;
-					}).catch(function (err) {});
-				}
-
-				return;
-			});
-		},
-		clear: function clear() {
-			this.$validator.reset();
-			this.dialog = false;
-		},
-		next: function next() {
-			if (this.rent.type == 1) {
-				var r = __WEBPACK_IMPORTED_MODULE_1_collect_js___default()(this.items_mensual);
-			} else if (this.rent.type == 2) {
-				var r = __WEBPACK_IMPORTED_MODULE_1_collect_js___default()(this.items_quincenal);
-			}
-			if (this.rent.section == 4) {
-				this.next_rent = {
-					since: "9999999999"
-				};
-			} else {
-				this.next_rent = r.where('section', parseInt(this.rent.section) + 1).first();
-			}
-		}
-	})
-});
-
-/***/ }),
-/* 211 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c(
-        "v-layout",
-        { attrs: { "justify-center": "" } },
-        [
-          _c(
-            "v-flex",
-            { attrs: { xs12: "", md10: "", lg10: "" } },
-            [
-              _c(
-                "v-card",
-                { staticClass: "tabs--flex-toolbar" },
-                [
-                  _c(
-                    "v-tabs",
-                    { attrs: { dark: "", centered: "" } },
-                    [
-                      _c(
-                        "v-tabs-bar",
-                        { staticClass: "deep-purple" },
-                        [
-                          _c("v-tabs-slider", { attrs: { color: "yellow" } }),
-                          _vm._v(" "),
-                          _vm._l(2, function(i) {
-                            return _c(
-                              "v-tabs-item",
-                              { key: i, attrs: { href: "#tab-" + i } },
-                              [
-                                _vm._v(
-                                  "\n                            Tabla de Renta " +
-                                    _vm._s(i == 1 ? "Mensual" : "Quincenal") +
-                                    "\n                        "
-                                )
-                              ]
-                            )
-                          })
-                        ],
-                        2
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-tabs-items",
-                        [
-                          _c(
-                            "v-tabs-content",
-                            { key: 1, attrs: { id: "tab-1" } },
-                            [
-                              _c(
-                                "v-toolbar",
-                                { attrs: { card: "", prominent: "" } },
-                                [
-                                  _c("v-spacer"),
-                                  _vm._v(" "),
-                                  _c("v-text-field", {
-                                    attrs: {
-                                      "append-icon": "search",
-                                      label: "Buscar",
-                                      "single-line": "",
-                                      "hide-details": "",
-                                      color: "purple darken-2"
-                                    },
-                                    model: {
-                                      value: _vm.search_mensual,
-                                      callback: function($$v) {
-                                        _vm.search_mensual = $$v
-                                      },
-                                      expression: "search_mensual"
-                                    }
-                                  })
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c("v-data-table", {
-                                staticClass: "elevation-2",
-                                attrs: {
-                                  headers: _vm.headers_x,
-                                  items: _vm.items_mensual,
-                                  search: _vm.search_mensual,
-                                  "rows-per-page-text": "Registros por Página",
-                                  "rows-per-page-items": [
-                                    5,
-                                    15,
-                                    25,
-                                    { text: "Todos", value: -1 }
-                                  ],
-                                  "no-data-text": "No se encontraron resultados"
-                                },
-                                scopedSlots: _vm._u([
-                                  {
-                                    key: "items",
-                                    fn: function(props) {
-                                      return [
-                                        _c("td", [
-                                          _vm._v(
-                                            _vm._s(
-                                              props.item.section_for_humans
-                                            )
-                                          )
-                                        ]),
-                                        _vm._v(" "),
-                                        _c(
-                                          "td",
-                                          { staticClass: "text-xs-center" },
-                                          [_vm._v(_vm._s(props.item.since))]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "td",
-                                          { staticClass: "text-xs-center" },
-                                          [
-                                            _vm._v(
-                                              _vm._s(
-                                                props.item.until_for_humans
-                                              )
-                                            )
-                                          ]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "td",
-                                          { staticClass: "text-xs-center" },
-                                          [
-                                            _vm._v(
-                                              _vm._s(
-                                                props.item.percentage_for_humans
-                                              )
-                                            )
-                                          ]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "td",
-                                          { staticClass: "text-xs-center" },
-                                          [_vm._v(_vm._s(props.item.excess))]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "td",
-                                          { staticClass: "text-xs-center" },
-                                          [_vm._v(_vm._s(props.item.fee))]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "td",
-                                          { staticClass: "text-xs-center" },
-                                          [
-                                            _c(
-                                              "v-btn",
-                                              {
-                                                attrs: { icon: "", light: "" },
-                                                on: {
-                                                  click: function($event) {
-                                                    _vm.edit(props.item.id)
-                                                  }
-                                                }
-                                              },
-                                              [
-                                                _c("v-icon", [_vm._v("create")])
-                                              ],
-                                              1
-                                            )
-                                          ],
-                                          1
-                                        )
-                                      ]
-                                    }
-                                  },
-                                  {
-                                    key: "pageText",
-                                    fn: function(ref) {
-                                      var pageStart = ref.pageStart
-                                      var pageStop = ref.pageStop
-                                      var itemsLength = ref.itemsLength
-                                      return [
-                                        _vm._v(
-                                          "\n                                    " +
-                                            _vm._s(pageStart) +
-                                            " - " +
-                                            _vm._s(pageStop) +
-                                            " de " +
-                                            _vm._s(itemsLength) +
-                                            "\n                                "
-                                        )
-                                      ]
-                                    }
-                                  }
-                                ]),
-                                model: {
-                                  value: _vm.selected_mensual,
-                                  callback: function($$v) {
-                                    _vm.selected_mensual = $$v
-                                  },
-                                  expression: "selected_mensual"
-                                }
-                              })
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "v-tabs-content",
-                            { key: 2, attrs: { id: "tab-2" } },
-                            [
-                              _c(
-                                "v-toolbar",
-                                { attrs: { card: "", prominent: "" } },
-                                [
-                                  _c("v-spacer"),
-                                  _vm._v(" "),
-                                  _c("v-text-field", {
-                                    attrs: {
-                                      "append-icon": "search",
-                                      label: "Buscar",
-                                      "single-line": "",
-                                      "hide-details": ""
-                                    },
-                                    model: {
-                                      value: _vm.search_quincenal,
-                                      callback: function($$v) {
-                                        _vm.search_quincenal = $$v
-                                      },
-                                      expression: "search_quincenal"
-                                    }
-                                  })
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c("v-data-table", {
-                                staticClass: "elevation-2",
-                                attrs: {
-                                  headers: _vm.headers_x,
-                                  items: _vm.items_quincenal,
-                                  search: _vm.search_quincenal,
-                                  "rows-per-page-text": "Registros por Página",
-                                  "rows-per-page-items": [
-                                    5,
-                                    15,
-                                    25,
-                                    { text: "Todos", value: -1 }
-                                  ],
-                                  "no-data-text": "No se encontraron resultados"
-                                },
-                                scopedSlots: _vm._u([
-                                  {
-                                    key: "items",
-                                    fn: function(props) {
-                                      return [
-                                        _c(
-                                          "td",
-                                          { staticClass: "text-xs-center" },
-                                          [
-                                            _vm._v(
-                                              _vm._s(
-                                                props.item.section_for_humans
-                                              )
-                                            )
-                                          ]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "td",
-                                          { staticClass: "text-xs-center" },
-                                          [_vm._v(_vm._s(props.item.since))]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "td",
-                                          { staticClass: "text-xs-center" },
-                                          [
-                                            _vm._v(
-                                              _vm._s(
-                                                props.item.until_for_humans
-                                              )
-                                            )
-                                          ]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "td",
-                                          { staticClass: "text-xs-center" },
-                                          [
-                                            _vm._v(
-                                              _vm._s(
-                                                props.item.percentage_for_humans
-                                              )
-                                            )
-                                          ]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "td",
-                                          { staticClass: "text-xs-center" },
-                                          [_vm._v(_vm._s(props.item.excess))]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "td",
-                                          { staticClass: "text-xs-center" },
-                                          [_vm._v(_vm._s(props.item.fee))]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "td",
-                                          { staticClass: "text-xs-center" },
-                                          [
-                                            _c(
-                                              "v-btn",
-                                              {
-                                                attrs: { icon: "", light: "" },
-                                                on: {
-                                                  click: function($event) {
-                                                    _vm.edit(props.item.id)
-                                                  }
-                                                }
-                                              },
-                                              [
-                                                _c("v-icon", [_vm._v("create")])
-                                              ],
-                                              1
-                                            )
-                                          ],
-                                          1
-                                        )
-                                      ]
-                                    }
-                                  }
-                                ]),
-                                model: {
-                                  value: _vm.selected_quincenal,
-                                  callback: function($$v) {
-                                    _vm.selected_quincenal = $$v
-                                  },
-                                  expression: "selected_quincenal"
-                                }
-                              })
-                            ],
-                            1
-                          )
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  )
-                ],
-                1
-              )
-            ],
-            1
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "v-layout",
-        { attrs: { row: "", "justify-center": "" } },
-        [
-          _c(
-            "v-dialog",
-            {
-              attrs: { persistent: "", "max-width": "500px" },
-              model: {
-                value: _vm.dialog,
-                callback: function($$v) {
-                  _vm.dialog = $$v
-                },
-                expression: "dialog"
-              }
-            },
-            [
-              _c(
-                "v-card",
-                [
-                  _c("v-card-title", [
-                    _c("span", { staticClass: "headline" }, [
-                      _vm._v("Editar Opciones de Tabla de Renta")
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "v-card-text",
-                    [
-                      _c(
-                        "v-container",
-                        { attrs: { "grid-list-md": "" } },
-                        [
-                          _c(
-                            "v-layout",
-                            { attrs: { wrap: "" } },
-                            [
-                              _c(
-                                "v-flex",
-                                { attrs: { xs12: "", sm6: "", md4: "" } },
-                                [
-                                  _c("v-text-field", {
-                                    attrs: {
-                                      label: "Sección",
-                                      required: "",
-                                      disabled: "",
-                                      hint: "Sección",
-                                      "persistent-hint": ""
-                                    },
-                                    model: {
-                                      value: _vm.rent.section_for_humans,
-                                      callback: function($$v) {
-                                        _vm.$set(
-                                          _vm.rent,
-                                          "section_for_humans",
-                                          $$v
-                                        )
-                                      },
-                                      expression: "rent.section_for_humans"
-                                    }
-                                  })
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "v-flex",
-                                { attrs: { xs12: "", sm6: "", md4: "" } },
-                                [
-                                  _c("v-text-field", {
-                                    directives: [
-                                      {
-                                        name: "validate",
-                                        rawName: "v-validate",
-                                        value:
-                                          "required|decimal|max_value:" +
-                                          this.rent.until,
-                                        expression:
-                                          "`required|decimal|max_value:${this.rent.until}`"
-                                      }
-                                    ],
-                                    attrs: {
-                                      label: "Desde",
-                                      required: "",
-                                      type: "number",
-                                      max: _vm.rent.since,
-                                      "error-messages": _vm._errors.collect(
-                                        "since"
-                                      ),
-                                      "data-vv-name": "since",
-                                      hint: "Desde Monto",
-                                      "persistent-hint": ""
-                                    },
-                                    model: {
-                                      value: _vm.rent.since,
-                                      callback: function($$v) {
-                                        _vm.$set(_vm.rent, "since", $$v)
-                                      },
-                                      expression: "rent.since"
-                                    }
-                                  })
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "v-flex",
-                                { attrs: { xs12: "", sm6: "", md4: "" } },
-                                [
-                                  _c("v-text-field", {
-                                    directives: [
-                                      {
-                                        name: "validate",
-                                        rawName: "v-validate",
-                                        value:
-                                          "required|decimal|min_value:" +
-                                          this.rent.since +
-                                          "|max_value:" +
-                                          this.next_rent.since,
-                                        expression:
-                                          "`required|decimal|min_value:${this.rent.since}|max_value:${this.next_rent.since}`"
-                                      }
-                                    ],
-                                    attrs: {
-                                      label: "Hasta",
-                                      required: "",
-                                      type: "number",
-                                      min: _vm.rent.until,
-                                      "error-messages": _vm._errors.collect(
-                                        "until"
-                                      ),
-                                      "data-vv-name": "until",
-                                      hint: "Hasta Monto",
-                                      "persistent-hint": ""
-                                    },
-                                    model: {
-                                      value: _vm.rent.until,
-                                      callback: function($$v) {
-                                        _vm.$set(_vm.rent, "until", $$v)
-                                      },
-                                      expression: "rent.until"
-                                    }
-                                  })
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "v-flex",
-                                { attrs: { xs12: "", sm6: "", md4: "" } },
-                                [
-                                  _c("v-text-field", {
-                                    directives: [
-                                      {
-                                        name: "validate",
-                                        rawName: "v-validate",
-                                        value: "required|decimal",
-                                        expression: "`required|decimal`"
-                                      }
-                                    ],
-                                    attrs: {
-                                      label: "% a Aplicar",
-                                      required: "",
-                                      "error-messages": _vm._errors.collect(
-                                        "percentage"
-                                      ),
-                                      "data-vv-name": "percentage",
-                                      hint: "Porcentaje a Aplicar",
-                                      "persistent-hint": ""
-                                    },
-                                    model: {
-                                      value: _vm.rent.percentage,
-                                      callback: function($$v) {
-                                        _vm.$set(_vm.rent, "percentage", $$v)
-                                      },
-                                      expression: "rent.percentage"
-                                    }
-                                  })
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "v-flex",
-                                { attrs: { xs12: "", sm6: "", md4: "" } },
-                                [
-                                  _c("v-text-field", {
-                                    directives: [
-                                      {
-                                        name: "validate",
-                                        rawName: "v-validate",
-                                        value: "required|decimal",
-                                        expression: "`required|decimal`"
-                                      }
-                                    ],
-                                    attrs: {
-                                      label: "Sobre el Exceso",
-                                      required: "",
-                                      type: "number",
-                                      max: _vm.rent.excess,
-                                      "error-messages": _vm._errors.collect(
-                                        "excess"
-                                      ),
-                                      "data-vv-name": "excess",
-                                      hint: "Sobre el Exceso",
-                                      "persistent-hint": ""
-                                    },
-                                    model: {
-                                      value: _vm.rent.excess,
-                                      callback: function($$v) {
-                                        _vm.$set(_vm.rent, "excess", $$v)
-                                      },
-                                      expression: "rent.excess"
-                                    }
-                                  })
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "v-flex",
-                                { attrs: { xs12: "", sm6: "", md4: "" } },
-                                [
-                                  _c("v-text-field", {
-                                    directives: [
-                                      {
-                                        name: "validate",
-                                        rawName: "v-validate",
-                                        value: "required|decimal",
-                                        expression: "`required|decimal`"
-                                      }
-                                    ],
-                                    attrs: {
-                                      label: "Cuota Fija",
-                                      required: "",
-                                      type: "number",
-                                      min: _vm.rent.fee,
-                                      "error-messages": _vm._errors.collect(
-                                        "fee"
-                                      ),
-                                      "data-vv-name": "fee",
-                                      hint: "Cuota Fija",
-                                      "persistent-hint": ""
-                                    },
-                                    model: {
-                                      value: _vm.rent.fee,
-                                      callback: function($$v) {
-                                        _vm.$set(_vm.rent, "fee", $$v)
-                                      },
-                                      expression: "rent.fee"
-                                    }
-                                  })
-                                ],
-                                1
-                              )
-                            ],
-                            1
-                          )
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c("small", [_vm._v("*Indica campos obligatorios")])
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-card-actions",
-                    [
-                      _c("v-spacer"),
-                      _vm._v(" "),
-                      _c(
-                        "v-btn",
-                        {
-                          attrs: { color: "blue darken-1", flat: "" },
-                          on: { click: _vm.clear }
-                        },
-                        [_vm._v("Cerrar")]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-btn",
-                        {
-                          attrs: { color: "blue darken-1", flat: "" },
-                          on: { click: _vm.update }
-                        },
-                        [_vm._v("Guardar")]
-                      )
-                    ],
-                    1
-                  )
-                ],
-                1
-              )
-            ],
-            1
-          )
-        ],
-        1
-      )
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-54b4e950", module.exports)
-  }
-}
-
-/***/ }),
-/* 212 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(2)
-/* script */
-var __vue_script__ = __webpack_require__(213)
-/* template */
-var __vue_template__ = __webpack_require__(214)
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/assets/js/app/NotificationComponent.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] NotificationComponent.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-0673ed0c", Component.options)
-  } else {
-    hotAPI.reload("data-v-0673ed0c", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 213 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(3);
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-	computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])({
-		noti: 'noti'
-	}))
-});
-
-/***/ }),
-/* 214 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c(
-        "v-snackbar",
-        {
-          attrs: { timeout: 6000, color: _vm.noti.type, "multi-line": "" },
-          model: {
-            value: _vm.noti.show,
-            callback: function($$v) {
-              _vm.$set(_vm.noti, "show", $$v)
-            },
-            expression: "noti.show"
-          }
-        },
-        [
-          _vm._v("\n        " + _vm._s(_vm.noti.message) + "\n        "),
-          _c(
-            "v-btn",
-            {
-              attrs: { flat: "", dark: "" },
-              on: {
-                click: function($event) {
-                  _vm.noti.show = false
-                }
-              }
-            },
-            [_vm._v("Cerrar")]
-          )
-        ],
-        1
-      )
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-0673ed0c", module.exports)
-  }
-}
-
-/***/ }),
-/* 215 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(2)
-/* script */
-var __vue_script__ = null
-/* template */
-var __vue_template__ = __webpack_require__(216)
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/assets/js/app/errors/components/NotFoundComponent.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] NotFoundComponent.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-2a71073e", Component.options)
-  } else {
-    hotAPI.reload("data-v-2a71073e", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 216 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "v-container",
-    [
-      _c(
-        "v-layout",
-        {
-          attrs: {
-            "justify-center": "",
-            "align-center": "",
-            "align-content-center": "",
-            "fill-height": ""
-          }
-        },
-        [
-          _c("v-flex", { attrs: { x12: "", md12: "", lg12: "" } }, [
-            _c(
-              "div",
-              { staticClass: "text-xs-center" },
-              [
-                _c("h1", [_vm._v("404")]),
-                _vm._v(" "),
-                _c("h1", [_vm._v("Not Found")]),
-                _vm._v(" "),
-                _c(
-                  "v-icon",
-                  {
-                    staticStyle: { "font-size": "8rem" },
-                    attrs: { color: "black" }
-                  },
-                  [_vm._v("sentiment_very_dissatisfied")]
-                )
-              ],
-              1
-            )
-          ])
-        ],
-        1
-      )
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-2a71073e", module.exports)
-  }
-}
-
-/***/ }),
-/* 217 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(2)
-/* script */
-var __vue_script__ = __webpack_require__(218)
-/* template */
-var __vue_template__ = __webpack_require__(219)
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/assets/js/app/home/components/HomeComponent.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] HomeComponent.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-ec00f306", Component.options)
-  } else {
-    hotAPI.reload("data-v-ec00f306", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 218 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(3);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-	computed: Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])({
-		user: 'auth/user'
-	})
-});
-
-/***/ }),
-/* 219 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c(
-        "v-container",
-        [
-          _c(
-            "v-layout",
-            { staticClass: "h100", attrs: { "align-content-start": "" } },
-            [_c("h3", [_vm._v("Welcome to panel admin!")])]
-          )
-        ],
-        1
-      )
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-ec00f306", module.exports)
-  }
-}
 
 /***/ })
 ],[22]);
