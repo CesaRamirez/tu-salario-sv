@@ -6807,88 +6807,88 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 var login = function login(_ref, _ref2) {
-  var dispatch = _ref.dispatch;
-  var payload = _ref2.payload,
-      context = _ref2.context;
+	var dispatch = _ref.dispatch;
+	var payload = _ref2.payload,
+	    context = _ref2.context;
 
-  return new Promise(function (resolve, reject) {
-    axios.post('/api/v1/login', payload).then(function (response) {
-      dispatch('setToken', response.data.meta.token).then(function () {
-        dispatch('fetchUser');
-        resolve(response.data);
-        dispatch('noti', {
-          message: 'Bienvenido a Tu Salario SV',
-          type: 'success'
-        }, {
-          root: true
-        });
-      });
-    }).catch(function (error) {
-      context.errors = error.response.data.errors;
-      if (context.errors.root) {
-        dispatch('noti', {
-          message: 'Credenciales Invalidas',
-          type: 'error'
-        }, {
-          root: true
-        });
-      }
-      reject(error.response.data.errors);
-    });
-  });
+	return new Promise(function (resolve, reject) {
+		axios.post(route('login'), payload).then(function (response) {
+			dispatch('setToken', response.data.meta.token).then(function () {
+				dispatch('fetchUser');
+				resolve(response.data);
+				dispatch('noti', {
+					message: 'Bienvenido a Tu Salario SV',
+					type: 'success'
+				}, {
+					root: true
+				});
+			});
+		}).catch(function (error) {
+			context.errors = error.response.data.errors;
+			if (context.errors.root) {
+				dispatch('noti', {
+					message: 'Credenciales Invalidas',
+					type: 'error'
+				}, {
+					root: true
+				});
+			}
+			reject(error.response.data.errors);
+		});
+	});
 };
 
 var logout = function logout(_ref3) {
-  var dispatch = _ref3.dispatch;
+	var dispatch = _ref3.dispatch;
 
-  return axios.post('/api/v1/logout').then(function () {
-    dispatch('clearAuth');
-  });
+	return axios.post(route('logout')).then(function () {
+		dispatch('clearAuth');
+	});
 };
 
 var fetchUser = function fetchUser(_ref4) {
-  var commit = _ref4.commit;
+	var commit = _ref4.commit;
 
-  return axios.get('/api/v1/me').then(function (response) {
-    commit('setAuthenticated', true);
-    commit('setUserData', response.data.data);
-  });
+	return axios.get(route('me')).then(function (response) {
+		commit('setAuthenticated', true);
+		commit('setUserData', response.data.data);
+	});
 };
 
 var setToken = function setToken(_ref5, token) {
-  var commit = _ref5.commit,
-      dispatch = _ref5.dispatch;
+	var commit = _ref5.commit,
+	    dispatch = _ref5.dispatch;
 
-  if (Object(__WEBPACK_IMPORTED_MODULE_0_lodash__["isEmpty"])(token)) {
-    return dispatch('checkTokenExists').then(function (token) {
-      Object(__WEBPACK_IMPORTED_MODULE_1__helpers__["a" /* setHttpToken */])(token);
-    });
-  }
+	if (Object(__WEBPACK_IMPORTED_MODULE_0_lodash__["isEmpty"])(token)) {
+		return dispatch('checkTokenExists').then(function (token) {
+			Object(__WEBPACK_IMPORTED_MODULE_1__helpers__["a" /* setHttpToken */])(token);
+		});
+	}
 
-  commit('setToken', token);
-  Object(__WEBPACK_IMPORTED_MODULE_1__helpers__["a" /* setHttpToken */])(token);
+	commit('setToken', token);
+	Object(__WEBPACK_IMPORTED_MODULE_1__helpers__["a" /* setHttpToken */])(token);
 };
 
 var checkTokenExists = function checkTokenExists(_ref6, token) {
-  var commit = _ref6.commit,
-      dispatch = _ref6.dispatch;
+	var commit = _ref6.commit,
+	    dispatch = _ref6.dispatch;
 
-  return __WEBPACK_IMPORTED_MODULE_2_localforage___default.a.getItem('authtoken').then(function (token) {
-    if (Object(__WEBPACK_IMPORTED_MODULE_0_lodash__["isEmpty"])(token)) {
-      return Promise.reject('NO_STORAGE_TOKEN');
-    }
+	return __WEBPACK_IMPORTED_MODULE_2_localforage___default.a.getItem('authtoken').then(function (token) {
+		if (Object(__WEBPACK_IMPORTED_MODULE_0_lodash__["isEmpty"])(token)) {
+			return Promise.reject('NO_STORAGE_TOKEN');
+		}
 
-    return Promise.resolve(token);
-  });
+		return Promise.resolve(token);
+	});
 };
 
 var clearAuth = function clearAuth(_ref7, token) {
-  var commit = _ref7.commit;
+	var commit = _ref7.commit;
 
-  commit('setAuthenticated', false);
-  commit('setUserData', null);
-  commit('setToken', null);
-  Object(__WEBPACK_IMPORTED_MODULE_1__helpers__["a" /* setHttpToken */])(null);
+	commit('setAuthenticated', false);
+	commit('setUserData', null);
+	commit('setToken', null);
+	Object(__WEBPACK_IMPORTED_MODULE_1__helpers__["a" /* setHttpToken */])(null);
 };
 
 /***/ }),
@@ -6982,45 +6982,45 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getRent", function() { return getRent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateRent", function() { return updateRent; });
 var getRentTable = function getRentTable(_ref, _ref2) {
-  var commit = _ref.commit;
-  var type = _ref2.type;
-  return axios.get('/api/v1/admin/rents/' + type + '/type').then(function (response) {
-    if (type == 1) {
-      commit('setRentM', response.data.data);
-    } else if (type === 2) {
-      commit('setRentQ', response.data.data);
-    }
-  });
+	var commit = _ref.commit;
+	var type = _ref2.type;
+	return axios.get(route('rents.index.type', type)).then(function (response) {
+		if (type == 1) {
+			commit('setRentM', response.data.data);
+		} else if (type === 2) {
+			commit('setRentQ', response.data.data);
+		}
+	});
 };
 
 var getRent = function getRent(_ref3, _ref4) {
-  var commit = _ref3.commit;
-  var id = _ref4.id;
-  return axios.get('/api/v1/admin/rents/' + id).then(function (response) {
-    commit('setRent', response.data.data);
-  });
+	var commit = _ref3.commit;
+	var id = _ref4.id;
+	return axios.get(route('rents.show', id)).then(function (response) {
+		commit('setRent', response.data.data);
+	});
 };
 
 var updateRent = function updateRent(_ref5, _ref6) {
-  var dispatch = _ref5.dispatch;
-  var payload = _ref6.payload,
-      context = _ref6.context,
-      id = _ref6.id;
+	var dispatch = _ref5.dispatch;
+	var payload = _ref6.payload,
+	    context = _ref6.context,
+	    id = _ref6.id;
 
-  return new Promise(function (resolve, reject) {
-    axios.put('/api/v1/admin/rents/' + id, payload).then(function (response) {
-      resolve(response.data);
-      dispatch('noti', {
-        message: '¡Los Datos se han actualizado con Exito!',
-        type: 'success'
-      }, {
-        root: true
-      });
-    }).catch(function (error) {
-      context.errors = error.response.data.errors;
-      reject(error.response.data.errors);
-    });
-  });
+	return new Promise(function (resolve, reject) {
+		axios.put(route('rents.update', id), payload).then(function (response) {
+			resolve(response.data);
+			dispatch('noti', {
+				message: '¡Los Datos se han actualizado con Exito!',
+				type: 'success'
+			}, {
+				root: true
+			});
+		}).catch(function (error) {
+			context.errors = error.response.data.errors;
+			reject(error.response.data.errors);
+		});
+	});
 };
 
 /***/ }),
@@ -7208,40 +7208,40 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getBonus", function() { return getBonus; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateBonus", function() { return updateBonus; });
 var getBonuses = function getBonuses(_ref) {
-  var commit = _ref.commit;
-  return axios.get('/api/v1/admin/bonus').then(function (response) {
-    commit('setBonuses', response.data.data);
-  });
+	var commit = _ref.commit;
+	return axios.get(route('bonus.index')).then(function (response) {
+		commit('setBonuses', response.data.data);
+	});
 };
 
 var getBonus = function getBonus(_ref2, _ref3) {
-  var commit = _ref2.commit;
-  var id = _ref3.id;
-  return axios.get('/api/v1/admin/bonus/' + id).then(function (response) {
-    commit('setBonus', response.data.data);
-  });
+	var commit = _ref2.commit;
+	var id = _ref3.id;
+	return axios.get(route('bonus.show', id)).then(function (response) {
+		commit('setBonus', response.data.data);
+	});
 };
 
 var updateBonus = function updateBonus(_ref4, _ref5) {
-  var dispatch = _ref4.dispatch;
-  var payload = _ref5.payload,
-      context = _ref5.context,
-      id = _ref5.id;
+	var dispatch = _ref4.dispatch;
+	var payload = _ref5.payload,
+	    context = _ref5.context,
+	    id = _ref5.id;
 
-  return new Promise(function (resolve, reject) {
-    axios.put('/api/v1/admin/bonus/' + id, payload).then(function (response) {
-      resolve(response.data);
-      dispatch('noti', {
-        message: '¡Los Datos se han actualizado con Exito!',
-        type: 'success'
-      }, {
-        root: true
-      });
-    }).catch(function (error) {
-      context.errors = error.response.data.errors;
-      reject(error.response.data.errors);
-    });
-  });
+	return new Promise(function (resolve, reject) {
+		axios.put(route('bonus.update', id), payload).then(function (response) {
+			resolve(response.data);
+			dispatch('noti', {
+				message: '¡Los Datos se han actualizado con Exito!',
+				type: 'success'
+			}, {
+				root: true
+			});
+		}).catch(function (error) {
+			context.errors = error.response.data.errors;
+			reject(error.response.data.errors);
+		});
+	});
 };
 
 /***/ }),

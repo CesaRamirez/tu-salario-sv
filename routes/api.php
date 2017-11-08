@@ -27,13 +27,9 @@ $router->namespace('API\V1\Admin')
        ->group(function ($router) {
            $router->middleware('jwt.auth')->group(function ($router) {
                $router->get('rents/{type}/type', 'RentsController@index')
-                      ->name('rents.index');
-               $router->put('rents/{rent}', 'RentsController@update')
-                      ->name('rents.update');
-               $router->get('rents/{rent}', 'RentsController@show')
-                      ->name('rents.show');
-
-
+                      ->name('rents.index.type');
+               $router->resource('rents', 'RentsController')
+                      ->only('update', 'show');
                $router->resource('settings', 'SettingsController')
                       ->only('index', 'update', 'show');
                $router->resource('bonus', 'BonusController')
