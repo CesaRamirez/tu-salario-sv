@@ -16,18 +16,18 @@ class RentResource extends Resource
     public function toArray($request)
     {
         return [
-            'id'                   => $this->id,
-            'section'              => $this->section,
-            'since'                => $this->since,
-            'until'                => $this->until,
-            'percentage'           => $this->percentage,
-            'excess'               => $this->excess,
-            'fee'                  => $this->fee,
-            'type'                 => $this->type,
-            'until_for_humans'     => $this->until_string,
-            'percentage_for_humans'=> $this->percentage_string,
-            'type_for_humans'      => $this->type_rent,
-            'section_for_humans'   => $this->section_name,
+            'id'                    => $this->id,
+            'section'               => $this->section,
+            'since'                 => $this->since,
+            'until'                 => $this->until,
+            'percentage'            => $this->percentage,
+            'excess'                => $this->excess,
+            'fee'                   => $this->fee,
+            'type'                  => $this->type,
+            'until_for_humans'      => $this->until_string,
+            'percentage_for_humans' => $this->percentage_string,
+            'type_for_humans'       => $this->type_rent,
+            'section_for_humans'    => $this->section_name,
         ];
     }
 }

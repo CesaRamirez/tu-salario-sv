@@ -24,9 +24,9 @@ class BonusRequest extends FormRequest
     public function rules()
     {
         return [
-            'days'   => 'required',
-            'start'  => 'required',
-            'end'    => 'required',
+            'days'  => 'required',
+            'start' => 'required',
+            'end'   => 'required',
         ];
     }
 }

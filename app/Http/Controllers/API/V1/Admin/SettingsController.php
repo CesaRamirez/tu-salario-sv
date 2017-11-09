@@ -23,7 +23,7 @@ class SettingsController extends Controller
      */
     public function __construct(Setting $setting)
     {
-        $this->setting            = $setting;
+        $this->setting = $setting;
     }
 
     /**

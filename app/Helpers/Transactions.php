@@ -39,8 +39,8 @@ class Transactions
     public function __construct(Setting $setting, Rent $rent, Bonus $bonus)
     {
         $this->setting = $setting;
-        $this->rent    = $rent;
-        $this->bonus   = $bonus;
+        $this->rent = $rent;
+        $this->bonus = $bonus;
     }
 
     /**
@@ -53,23 +53,23 @@ class Transactions
      */
     public function salary(float $mount, int $type): array
     {
-        $salary      = $type == 1 ? $mount : $mount / 2;
-        $AFP         = $this->deduction('AFP', $salary);
-        $ISSS        = $this->deduction('ISSS', $salary);
-        $deductions  = $this->sum($AFP, $ISSS);
-        $neto        = $this->substraction($salary, $deductions);
-        $rent        = $this->rent->calculation($neto, $type);
-        $neto_total  = $this->substraction($neto, $rent);
+        $salary = $type == 1 ? $mount : $mount / 2;
+        $AFP = $this->deduction('AFP', $salary);
+        $ISSS = $this->deduction('ISSS', $salary);
+        $deductions = $this->sum($AFP, $ISSS);
+        $neto = $this->substraction($salary, $deductions);
+        $rent = $this->rent->calculation($neto, $type);
+        $neto_total = $this->substraction($neto, $rent);
 
         return [
-            'mount'       => floatval($mount),
-            'salary'      => floatval($salary),
-            'AFP'         => $AFP,
-            'ISSS'        => $ISSS,
-            'deductions'  => $deductions,
-            'rent'        => $rent,
-            'neto'        => $neto,
-            'total'       => $neto_total,
+            'mount'      => floatval($mount),
+            'salary'     => floatval($salary),
+            'AFP'        => $AFP,
+            'ISSS'       => $ISSS,
+            'deductions' => $deductions,
+            'rent'       => $rent,
+            'neto'       => $neto,
+            'total'      => $neto_total,
         ];
     }
 
@@ -82,26 +82,26 @@ class Transactions
      */
     public function vacation(float $mount): array
     {
-        $days        = ($mount / 30) * $this->setting->value('DIAS_VACACION');
-        $vacation    = $this->deduction('VACACION', $days);
-        $salary      = $this->sum($vacation, $days);
-        $AFP         = $this->deduction('AFP', $salary);
-        $ISSS        = $this->deduction('ISSS', $salary);
-        $deductions  = $this->sum($AFP, $ISSS);
-        $neto        = $this->substraction($salary, $deductions);
-        $rent        = $this->rent->calculation($neto, 2);
-        $neto_total  = $this->substraction($neto, $rent);
+        $days = ($mount / 30) * $this->setting->value('DIAS_VACACION');
+        $vacation = $this->deduction('VACACION', $days);
+        $salary = $this->sum($vacation, $days);
+        $AFP = $this->deduction('AFP', $salary);
+        $ISSS = $this->deduction('ISSS', $salary);
+        $deductions = $this->sum($AFP, $ISSS);
+        $neto = $this->substraction($salary, $deductions);
+        $rent = $this->rent->calculation($neto, 2);
+        $neto_total = $this->substraction($neto, $rent);
 
         return [
-            'mount'       => floatval($mount),
-            'salary'      => floatval($salary),
-            'AFP'         => $AFP,
-            'ISSS'        => $ISSS,
-            'deductions'  => $deductions,
-            'rent'        => $rent,
-            'neto'        => $neto,
-            'total'       => $neto_total,
-            'vacation'    => $vacation,
+            'mount'      => floatval($mount),
+            'salary'     => floatval($salary),
+            'AFP'        => $AFP,
+            'ISSS'       => $ISSS,
+            'deductions' => $deductions,
+            'rent'       => $rent,
+            'neto'       => $neto,
+            'total'      => $neto_total,
+            'vacation'   => $vacation,
         ];
     }
 
@@ -115,9 +115,9 @@ class Transactions
      */
     public function bonus(float $mount, int $type): array
     {
-        $days       = $this->bonus->days($type);
-        $bonus      = round(($mount / 30) * $days, 2);
-        $limmit     = $this->setting->value('SALARIO_MINIMO') * 2;
+        $days = $this->bonus->days($type);
+        $bonus = round(($mount / 30) * $days, 2);
+        $limmit = $this->setting->value('SALARIO_MINIMO') * 2;
         if ($bonus > $limmit) {
             $bonus = $bonus - $this->substraction($bonus, $limmit);
         }
