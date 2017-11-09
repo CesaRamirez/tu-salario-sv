@@ -63,6 +63,11 @@ class Rent extends Model
         }
     }
 
+    /**
+     * Get human description for until attribute.
+     *
+     * @return mixed
+     */
     public function getUntilStringAttribute()
     {
         $fee = $this->attributes['until'];
@@ -70,6 +75,11 @@ class Rent extends Model
         return $fee > 99999 ? 'En Adelante' : $fee;
     }
 
+    /**
+     * Add human description for percentage attribute.
+     *
+     * @return string
+     */
     public function getPercentageStringAttribute()
     {
         $percentage = $this->attributes['percentage'];
@@ -89,10 +99,12 @@ class Rent extends Model
     {
         $rent = $this->where('since', '<=', $mount)
                      ->where('until', '>=', $mount)
-                     ->where('type', $type)->first();
-        $excess = $mount - $rent->excess;
+                     ->where('type', $type)
+                     ->first();
+
+        $excess     = $mount - $rent->excess;
         $percentage = $excess * $rent->percentage / 100;
-        $total = $percentage + $rent->fee;
+        $total      = $percentage + $rent->fee;
 
         return round($total, 2, PHP_ROUND_HALF_DOWN);
     }
