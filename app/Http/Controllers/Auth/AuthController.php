@@ -37,8 +37,9 @@ class AuthController extends Controller
     public function login(LoginRequest $request)
     {
         $credentials = $request->only('email', 'password');
+
         try {
-            if (! $token = $this->auth->attempt($credentials)) {
+            if (!$token = $this->auth->attempt($credentials)) {
                 return response()->json([
                     'errors' => [
                         'root' => 'Could not sign you in with those details.',

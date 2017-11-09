@@ -16,10 +16,10 @@ class BonusResource extends Resource
     public function toArray($request)
     {
         return [
-            'id'   => $this->id,
-            'days' => $this->days,
-            'start'=> $this->start,
-            'end'  => $this->end,
+            'id'    => $this->id,
+            'days'  => $this->days,
+            'start' => $this->start,
+            'end'   => $this->end,
         ];
     }
 }
