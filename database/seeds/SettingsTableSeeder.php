@@ -9,11 +9,15 @@ class SettingsTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('settings')->insert($this->setting('AFP', 'Porcentaje de AFP', 7.25));
-        DB::table('settings')->insert($this->setting('ISSS', 'Porcentaje de Seguro Social', 3.0));
-        DB::table('settings')->insert($this->setting('SALARIO_MINIMO', 'Valor de Salario Minimo', 300.00));
-        DB::table('settings')->insert($this->setting('VACACION', 'Porcentaje de pago de Vacación', 30));
-        DB::table('settings')->insert($this->setting('DIAS_VACACION', 'Dias de pago de Vacación', 15));
+        $settings = [
+          $this->setting('AFP', 'Porcentaje de AFP', 7.25),
+          $this->setting('ISSS', 'Porcentaje de Seguro Social', 3.0),
+          $this->setting('SALARIO_MINIMO', 'Valor de Salario Minimo', 300.00),
+          $this->setting('VACACION', 'Porcentaje de pago de Vacación', 30),
+          $this->setting('DIAS_VACACION', 'Dias de pago de Vacación', 15),
+        ];
+
+        DB::table('settings')->insert($settings);
     }
 
     /**
@@ -25,8 +29,11 @@ class SettingsTableSeeder extends Seeder
      *
      * @return array
      */
-    protected function setting(string $key, string $description, float $value)
-    {
+    protected function setting(
+        string $key,
+        string $description,
+        float $value
+    ): array {
         return [
               'key'         => $key,
               'description' => $description,
