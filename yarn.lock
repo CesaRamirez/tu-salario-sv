@@ -1337,9 +1337,9 @@ code-point-at@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
 
-collect.js@^3.0.52:
-  version "3.0.52"
-  resolved "https://registry.yarnpkg.com/collect.js/-/collect.js-3.0.52.tgz#2cf1b7ed37646d354d2751fdd63337c1631fa31c"
+collect.js@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/collect.js/-/collect.js-3.1.0.tgz#47c62e7e01ac3e995b7a81e064ee96a6fae87f59"
 
 color-convert@^1.3.0, color-convert@^1.9.0:
   version "1.9.0"
