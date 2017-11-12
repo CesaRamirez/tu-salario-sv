@@ -20,7 +20,7 @@
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "browser-sync": "^2.18.13",
     "browser-sync-webpack-plugin": "^1.2.0",
-    "collect.js": "^3.0.52",
+    "collect.js": "^3.1.0",
     "dotenv": "^4.0.0",
     "localforage": "^1.5.0",
     "vee-validate": "^2.0.0-rc.19",
