@@ -2,7 +2,7 @@ import {
   BrowseComponent
 } from '../components'
 
-export default [ {
+export default [{
   path: '/admin/bonus',
   component: BrowseComponent,
   name: 'browse-bonus',
@@ -10,4 +10,4 @@ export default [ {
     guest: false,
     needsAuth: true
   }
-} ]
+}]

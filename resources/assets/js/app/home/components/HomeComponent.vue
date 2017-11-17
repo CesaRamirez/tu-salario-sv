@@ -9,14 +9,11 @@
 </template>
 
 <script>
-import {
-	mapGetters,
-	mapActions
-} from 'vuex'
+import { mapGetters } from "vuex";
 
 export default {
-	computed: mapGetters( {
-		user: 'auth/user'
-	} ),
-}
+  computed: mapGetters({
+    user: "auth/user"
+  })
+};
 </script>

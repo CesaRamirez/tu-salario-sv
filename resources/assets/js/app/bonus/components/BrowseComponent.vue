@@ -102,91 +102,90 @@
 </template>
 
 <script>
-import {
-	mapActions,
-	mapGetters
-}
-from 'vuex'
+import { mapActions, mapGetters } from "vuex";
 
 export default {
-	data() {
-		return {
-			search: '',
-			headers: [ {
-				text: 'Días',
-				value: 'days',
-				align: 'center'
-                }, {
-				text: 'Inicio (Años)',
-				value: 'start',
-				align: 'center'
-                }, {
-				text: 'Fin (Años)',
-				value: 'end',
-				align: 'center'
-                }, {
-				text: 'Herramientas',
-				value: 'id',
-				sortable: false,
-				align: 'center'
-                }, ],
-			selected: [],
-			dialog: false,
-			days: null,
-			start: null,
-			end: null
-		}
-	},
-	mounted() {
-		this.getBonuses()
-	},
-	computed: {
-		...mapGetters( {
-			items: 'bonus/bonuses',
-			bonus: 'bonus/bonus'
-		} )
-	},
-	methods: {
-		...mapActions( {
-			getBonuses: 'bonus/getBonuses',
-			getBonus: 'bonus/getBonus',
-			updateBonus: 'bonus/updateBonus'
-		} ),
-		edit( id ) {
-			this.getBonus( {
-					id: id
-				} )
-				.then( ( response ) => {
-					this.dialog = true
-				} )
-		},
-		update() {
-			this.$validator.validateAll()
-				.then( ( result ) => {
-					if ( result ) {
-						this.updateBonus( {
-								payload: {
-									days: this.bonus.days,
-									start: this.bonus.start,
-									end: this.bonus.end
-								},
-								context: this,
-								id: this.bonus.id
-							} )
-							.then( () => {
-								this.getBonuses()
-								this.dialog = false
-							} )
-							.catch( ( err ) => {} )
-					}
+  data() {
+    return {
+      search: "",
+      headers: [
+        {
+          text: "Días",
+          value: "days",
+          align: "center"
+        },
+        {
+          text: "Inicio (Años)",
+          value: "start",
+          align: "center"
+        },
+        {
+          text: "Fin (Años)",
+          value: "end",
+          align: "center"
+        },
+        {
+          text: "Herramientas",
+          value: "id",
+          sortable: false,
+          align: "center"
+        }
+      ],
+      selected: [],
+      dialog: false,
+      days: null,
+      start: null,
+      end: null
+    };
+  },
+  mounted() {
+    this.getBonuses();
+  },
+  computed: {
+    ...mapGetters({
+      items: "bonus/bonuses",
+      bonus: "bonus/bonus"
+    })
+  },
+  methods: {
+    ...mapActions({
+      getBonuses: "bonus/getBonuses",
+      getBonus: "bonus/getBonus",
+      updateBonus: "bonus/updateBonus"
+    }),
+    edit(id) {
+      this.getBonus({
+        id: id
+      }).then(() => {
+        this.dialog = true;
+      });
+    },
+    update() {
+      this.$validator.validateAll().then(result => {
+        if (result) {
+          this.updateBonus({
+            payload: {
+              days: this.bonus.days,
+              start: this.bonus.start,
+              end: this.bonus.end
+            },
+            context: this,
+            id: this.bonus.id
+          })
+            .then(() => {
+              this.getBonuses();
+              this.dialog = false;
+            })
+            .catch(() => {});
+        }
 
-					return
-				} );
-		},
-		clear() {
-			this.$validator.reset()
-			this.dialog = false
-		}
-	}
-}
+        return;
+      });
+    },
+    clear() {
+      this.$validator.reset();
+      this.dialog = false;
+    }
+  }
+};
 </script>

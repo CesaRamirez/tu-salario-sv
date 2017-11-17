@@ -14,8 +14,7 @@
 
 <script>
 import {
-	mapGetters,
-	mapActions
+	mapGetters
 }
 from 'vuex'
 import NotificationComponent from './NotificationComponent'

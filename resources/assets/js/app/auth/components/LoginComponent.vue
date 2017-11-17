@@ -52,65 +52,58 @@
 </template>
 
 <script>
-import {
-	mapActions
-}
-from 'vuex'
-import localforage from 'localforage'
-import {
-	isEmpty
-}
-from 'lodash'
+import { mapActions } from "vuex";
+import localforage from "localforage";
+import { isEmpty } from "lodash";
 
 export default {
-	data() {
-		return {
-			email: null,
-			password: null,
-			errors: [],
-			loading: false
-		}
-	},
-	methods: {
-		...mapActions( {
-			login: 'auth/login'
-		} ),
+  data() {
+    return {
+      email: null,
+      password: null,
+      errors: [],
+      loading: false
+    };
+  },
+  methods: {
+    ...mapActions({
+      login: "auth/login"
+    }),
 
-		submit() {
-			this.login( {
-					payload: {
-						email: this.email,
-						password: this.password
-					},
-					context: this
-				} )
-				.then( () => {
-					this.redirect()
-				} )
-				.catch( ( err ) => {} )
-		},
+    submit() {
+      this.login({
+        payload: {
+          email: this.email,
+          password: this.password
+        },
+        context: this
+      })
+        .then(() => {
+          this.redirect();
+        })
+        .catch(() => {});
+    },
 
-		redirect() {
-			this.loading = true
-			localforage.getItem( 'intended' )
-				.then( ( name ) => {
-					if ( isEmpty( name ) ) {
-						this.$router.replace( {
-							name: 'home'
-						} )
-						this.loading = false
-						return
-					}
-					this.$router.replace( {
-						name: name
-					} )
-					this.loading = false
-				} )
-		},
+    redirect() {
+      this.loading = true;
+      localforage.getItem("intended").then(name => {
+        if (isEmpty(name)) {
+          this.$router.replace({
+            name: "home"
+          });
+          this.loading = false;
+          return;
+        }
+        this.$router.replace({
+          name: name
+        });
+        this.loading = false;
+      });
+    },
 
-		cleanFields( field ) {
-			return this.errors[ field ] = []
-		}
-	}
-}
+    cleanFields(field) {
+      return (this.errors[field] = []);
+    }
+  }
+};
 </script>

@@ -132,141 +132,136 @@
 </template>
 
 <script>
-import {
-	mapActions,
-	mapGetters
-}
-from 'vuex'
-import collect from 'collect.js'
+import { mapActions, mapGetters } from "vuex";
+import collect from "collect.js";
 export default {
-	data() {
-		return {
-			search_mensual: '',
-			search_quincenal: '',
-			headers_x: [
-				{
-					text: 'Tramo',
-					align: 'left',
-					sortable: false,
-					value: 'section',
-					align: 'center'
-                  },
-				{
-					text: 'Desde',
-					value: 'since',
-					align: 'center'
-                  },
-				{
-					text: 'Hasta',
-					value: 'until',
-					align: 'center'
-                  },
-				{
-					text: '% a Aplicar',
-					value: 'percentage',
-					align: 'center'
-                  },
-				{
-					text: 'Sobre el Exceso',
-					value: 'excess',
-					align: 'center'
-                  },
-				{
-					text: 'Mas Cuota Fija de',
-					value: 'fee',
-					align: 'center'
-                  },
-				{
-					text: 'Herramientas',
-					value: 'fee',
-					sortable: false,
-					align: 'center'
-                  },
-                ],
-			selected_mensual: [],
-			selected_quincenal: [],
-			dialog: false,
-			next_rent: {}
-		}
-	},
-	mounted() {
-		this.get( 1 )
-		this.get( 2 )
-	},
-	computed: {
-		...mapGetters( {
-			items_quincenal: 'rent/rentQ',
-			items_mensual: 'rent/rentM',
-			rent: 'rent/rent'
-		} )
-	},
-	methods: {
-		...mapActions( {
-			getRentTable: 'rent/getRentTable',
-			getRent: 'rent/getRent',
-			updateRent: 'rent/updateRent'
-		} ),
-		get( _type ) {
-			this.getRentTable( {
-					type: _type
-				} )
-				.then( ( response ) => {} )
-		},
-		edit( id ) {
-			this.getRent( {
-					id: id
-				} )
-				.then( ( response ) => {
-					this.next()
-					this.dialog = true
-				} )
-		},
-		update() {
-			this.$validator.validateAll()
-				.then( ( result ) => {
-					if ( result ) {
-						this.updateRent( {
-								payload: {
-									since: this.rent.since,
-									until: this.rent.until,
-									percentage: this.rent.percentage,
-									excess: this.rent.excess,
-									fee: this.rent.fee,
-									type: this.rent.type
-								},
-								context: this,
-								id: this.rent.id
-							} )
-							.then( () => {
-								this.get( 1 )
-								this.get( 2 )
-								this.dialog = false
-							} )
-							.catch( ( err ) => {} )
-					}
+  data() {
+    return {
+      search_mensual: "",
+      search_quincenal: "",
+      headers_x: [
+        {
+          text: "Tramo",
+          sortable: false,
+          value: "section",
+          align: "center"
+        },
+        {
+          text: "Desde",
+          value: "since",
+          align: "center"
+        },
+        {
+          text: "Hasta",
+          value: "until",
+          align: "center"
+        },
+        {
+          text: "% a Aplicar",
+          value: "percentage",
+          align: "center"
+        },
+        {
+          text: "Sobre el Exceso",
+          value: "excess",
+          align: "center"
+        },
+        {
+          text: "Mas Cuota Fija de",
+          value: "fee",
+          align: "center"
+        },
+        {
+          text: "Herramientas",
+          value: "fee",
+          sortable: false,
+          align: "center"
+        }
+      ],
+      selected_mensual: [],
+      selected_quincenal: [],
+      dialog: false,
+      next_rent: {}
+    };
+  },
+  mounted() {
+    this.get(1);
+    this.get(2);
+  },
+  computed: {
+    ...mapGetters({
+      items_quincenal: "rent/rentQ",
+      items_mensual: "rent/rentM",
+      rent: "rent/rent"
+    })
+  },
+  methods: {
+    ...mapActions({
+      getRentTable: "rent/getRentTable",
+      getRent: "rent/getRent",
+      updateRent: "rent/updateRent"
+    }),
+    get(_type) {
+      this.getRentTable({
+        type: _type
+      }).then(response => {response});
+    },
+    edit(id) {
+      this.getRent({
+        id: id
+      }).then(response => {
+          response
+        this.next();
+        this.dialog = true;
+      });
+    },
+    update() {
+      this.$validator.validateAll().then(result => {
+        if (result) {
+          this.updateRent({
+            payload: {
+              since: this.rent.since,
+              until: this.rent.until,
+              percentage: this.rent.percentage,
+              excess: this.rent.excess,
+              fee: this.rent.fee,
+              type: this.rent.type
+            },
+            context: this,
+            id: this.rent.id
+          })
+            .then(() => {
+              this.get(1);
+              this.get(2);
+              this.dialog = false;
+            })
+            .catch(err => {err});
+        }
 
-					return
-				} );
-		},
-		clear() {
-			this.$validator.reset()
-			this.dialog = false
-		},
-		next() {
-			if ( this.rent.type == 1 ) {
-				var r = collect( this.items_mensual )
-			} else if ( this.rent.type == 2 ) {
-				var r = collect( this.items_quincenal )
-			}
-			if ( this.rent.section == 4 ) {
-				this.next_rent = {
-					since: "9999999999"
-				}
-			} else {
-				this.next_rent = r.where( 'section', parseInt( this.rent.section ) + 1 )
-					.first()
-			}
-		}
-	}
-}
+        return;
+      });
+    },
+    clear() {
+      this.$validator.reset();
+      this.dialog = false;
+    },
+    next() {
+      var r;
+      if (this.rent.type == 1) {
+        r = collect(this.items_mensual);
+      } else if (this.rent.type == 2) {
+        r = collect(this.items_quincenal);
+      }
+      if (this.rent.section == 4) {
+        this.next_rent = {
+          since: "9999999999"
+        };
+      } else {
+        this.next_rent = r
+          .where("section", parseInt(this.rent.section) + 1)
+          .first();
+      }
+    }
+  }
+};
 </script>

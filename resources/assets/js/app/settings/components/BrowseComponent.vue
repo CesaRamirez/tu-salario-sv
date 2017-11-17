@@ -76,94 +76,92 @@
 </template>
 
 <script>
-import {
-	mapActions,
-	mapGetters
-}
-from 'vuex'
+import { mapActions, mapGetters } from "vuex";
 
 export default {
-	data() {
-		return {
-			search: '',
-			headers: [ {
-					text: 'Llave',
-					value: 'key',
-					align: 'center',
-      }, {
-					text: 'Descripción',
-					value: 'description',
-					align: 'center',
-      }, {
-					text: 'Valor',
-					value: 'value',
-					align: 'center',
-      },
-				{
-					text: 'Herramientas',
-					align: 'center',
-					sortable: false,
-			},
-			],
-			loading: true,
-			selected: [],
-			dialog: false
-		}
-	},
-	mounted() {
-		this.loading = true
-		this.getSettings()
-		this.loading = false
-	},
-	computed: {
-		...mapGetters( {
-			items: 'settings/settings',
-			setting: 'settings/setting'
-		} )
-	},
-	methods: {
-		...mapActions( {
-			getSettings: 'settings/getSettings',
-			getSetting: 'settings/getSetting',
-			updateSetting: 'settings/updateSetting'
-		} ),
-		edit( id ) {
-			this.getSetting( {
-					id: id
-				} )
-				.then( ( response ) => {
-					this.dialog = true
-				} )
-		},
-		update() {
-			this.$validator.validateAll()
-				.then( ( result ) => {
-					if ( result ) {
-						this.updateSetting( {
-								payload: {
-									key: this.setting.key,
-									description: this.setting.description,
-									value: this.setting.value
-								},
-								context: this,
-								id: this.setting.id
-							} )
-							.then( () => {
-								this.loading = true
-								this.getSettings()
-								this.loading = false
-								this.dialog = false
-							} )
-							.catch( ( err ) => {} )
-					}
+  data() {
+    return {
+      search: "",
+      headers: [
+        {
+          text: "Llave",
+          value: "key",
+          align: "center"
+        },
+        {
+          text: "Descripción",
+          value: "description",
+          align: "center"
+        },
+        {
+          text: "Valor",
+          value: "value",
+          align: "center"
+        },
+        {
+          text: "Herramientas",
+          align: "center",
+          sortable: false
+        }
+      ],
+      loading: true,
+      selected: [],
+      dialog: false
+    };
+  },
+  mounted() {
+    this.loading = true;
+    this.getSettings();
+    this.loading = false;
+  },
+  computed: {
+    ...mapGetters({
+      items: "settings/settings",
+      setting: "settings/setting"
+    })
+  },
+  methods: {
+    ...mapActions({
+      getSettings: "settings/getSettings",
+      getSetting: "settings/getSetting",
+      updateSetting: "settings/updateSetting"
+    }),
+    edit(id) {
+      this.getSetting({
+        id: id
+      }).then(response => {
+		response
+        this.dialog = true;
+      });
+    },
+    update() {
+      this.$validator.validateAll().then(result => {
+        if (result) {
+          this.updateSetting({
+            payload: {
+              key: this.setting.key,
+              description: this.setting.description,
+              value: this.setting.value
+            },
+            context: this,
+            id: this.setting.id
+          })
+            .then(() => {
+              this.loading = true;
+              this.getSettings();
+              this.loading = false;
+              this.dialog = false;
+            })
+            .catch(err => {err});
+        }
 
-					return
-				} );
-		},
-		clear() {
-			this.$validator.reset()
-			this.dialog = false
-		}
-	}
-}
+        return;
+      });
+    },
+    clear() {
+      this.$validator.reset();
+      this.dialog = false;
+    }
+  }
+};
 </script>
