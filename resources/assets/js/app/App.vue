@@ -1,5 +1,5 @@
 <template>
-<v-app>
+<v-app id="main">
 	<v-card flat height="100vh">
 		<navigation-component></navigation-component>
 		<notification-component></notification-component>
@@ -24,8 +24,8 @@ export default {
 	components: {
 		NotificationComponent
 	},
-	computed: mapGetters( {
+	computed: mapGetters({
 		user: 'auth/user'
-	} ),
+	}),
 }
 </script>

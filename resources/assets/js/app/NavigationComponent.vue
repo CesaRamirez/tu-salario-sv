@@ -45,7 +45,7 @@ export default {
 	data() {
 		return {
 			drawer: false,
-			items: [ {
+			items: [{
 				title: 'Inicio',
 				icon: 'dashboard',
 				to: 'home'
@@ -61,25 +61,25 @@ export default {
 				title: 'Aguinaldo',
 				icon: 'event',
 				to: 'browse-bonus'
-      } ],
+      }],
 			mini: false,
 			right: null
 		}
 	},
-	computed: mapGetters( {
+	computed: mapGetters({
 		user: 'auth/user'
-	} ),
+	}),
 	methods: {
-		...mapActions( {
+		...mapActions({
 			logout: 'auth/logout'
-		} ),
+		}),
 		signout() {
 			this.logout()
-				.then( () => {
-					this.$router.replace( {
+				.then(() => {
+					this.$router.replace({
 						name: 'login'
-					} )
-				} )
+					})
+				})
 		}
 	}
 }

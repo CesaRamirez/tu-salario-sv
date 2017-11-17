@@ -17,7 +17,6 @@
     "vue": "^2.5.4"
   },
   "dependencies": {
-    "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "browser-sync": "^2.18.13",
     "browser-sync-webpack-plugin": "^1.2.0",
     "collect.js": "^3.1.1",
