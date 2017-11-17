@@ -2,7 +2,7 @@
   <div>
     <v-container>
       <v-layout align-content-start class="h100">
-        <h3>Welcome to panel admin!</h3>
+      <h5>Welcome to panel admin!</h5>
       </v-layout>
     </v-container>
   </div>
