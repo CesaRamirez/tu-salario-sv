@@ -20,6 +20,7 @@
     "cross-env": "^5.0.1",
     "laravel-mix": "^1.6",
     "lodash": "^4.17.4",
+    "tailwindcss": "^0.2.0",
     "vue": "^2.5.4"
   },
   "dependencies": {
