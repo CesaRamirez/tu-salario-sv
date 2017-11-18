@@ -10,10 +10,9 @@ require('dotenv').config();
  | file for the application as well as bundling up all the JS files.
  |
  */
-
-mix.js('resources/assets/js/app.js', 'public/js')
-  .extract(['vue', 'axios', 'vuetify', 'vue-router', 'vee-validate', 'lodash', 'collect.js'])
-  .sass('resources/assets/sass/app.scss', 'public/css');
+if (process.env.section) {
+  require(`${__dirname}/webpack.mix.${process.env.section}.js`);
+}
 
 if (mix.inProduction()) {
   mix.version();

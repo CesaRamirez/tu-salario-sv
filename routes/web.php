@@ -1,7 +1,7 @@
 <?php
 
-$router->view('/', 'app');
+$router->view('/', 'site.home');
 
-$router->get('/{vue_capture?}', function () {
+$router->get('/admin/{vue_capture?}', function () {
     return view('app');
 })->where('vue_capture', '[\/\w\.-]*');

@@ -3,7 +3,7 @@ import {
 } from '../components'
 
 export default [{
-  path: '/',
+  path: '/admin',
   component: HomeComponent,
   name: 'home',
   meta: {

@@ -12,17 +12,17 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    <link href="{{ mix('css/admin/app.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ mix('css/site/app.css') }}" rel="stylesheet" type="text/css">
     @routes
 </head>
 <body>
-    <div id="app">
-        <app></app>
+    <div id="site">
+        @yield('content')
     </div>
 
     <!-- Scripts -->
-    <script src="{{ mix('js/admin/manifest.js') }}"></script>
-    <script src="{{ mix('js/admin/vendor.js') }}"></script>
-    <script src="{{ mix('js/admin/app.js') }}"></script>
+    <script src="{{ mix('js/site/manifest.js') }}"></script>
+    <script src="{{ mix('js/site/vendor.js') }}"></script>
+    <script src="{{ mix('js/site/app.js') }}"></script>
 </body>
 </html>

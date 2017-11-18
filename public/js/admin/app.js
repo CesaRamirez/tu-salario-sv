@@ -3556,7 +3556,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/app/NotificationComponent.vue"
+Component.options.__file = "resources/assets/js/admin/app/NotificationComponent.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] NotificationComponent.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -3567,9 +3567,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-0673ed0c", Component.options)
+    hotAPI.createRecord("data-v-fb5ae78c", Component.options)
   } else {
-    hotAPI.reload("data-v-0673ed0c", Component.options)
+    hotAPI.reload("data-v-fb5ae78c", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -3688,7 +3688,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 
 
 /* harmony default export */ __webpack_exports__["a"] = ([{
-  path: '/login',
+  path: '/admin/login',
   component: __WEBPACK_IMPORTED_MODULE_0__components__["a" /* LoginComponent */],
   name: 'login',
   meta: {
@@ -3732,7 +3732,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/app/auth/components/LoginComponent.vue"
+Component.options.__file = "resources/assets/js/admin/app/auth/components/LoginComponent.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] LoginComponent.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -3743,9 +3743,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-96753fe4", Component.options)
+    hotAPI.createRecord("data-v-2f3ff54e", Component.options)
   } else {
-    hotAPI.reload("data-v-96753fe4", Component.options)
+    hotAPI.reload("data-v-2f3ff54e", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -4054,7 +4054,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-96753fe4", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-2f3ff54e", module.exports)
   }
 }
 
@@ -4106,7 +4106,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/app/errors/components/NotFoundComponent.vue"
+Component.options.__file = "resources/assets/js/admin/app/errors/components/NotFoundComponent.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] NotFoundComponent.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -4117,9 +4117,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-2a71073e", Component.options)
+    hotAPI.createRecord("data-v-c84fa1be", Component.options)
   } else {
-    hotAPI.reload("data-v-2a71073e", Component.options)
+    hotAPI.reload("data-v-c84fa1be", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -4185,7 +4185,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-2a71073e", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-c84fa1be", module.exports)
   }
 }
 
@@ -4198,7 +4198,7 @@ if (false) {
 
 
 /* harmony default export */ __webpack_exports__["a"] = ([{
-  path: '/',
+  path: '/admin',
   component: __WEBPACK_IMPORTED_MODULE_0__components__["a" /* HomeComponent */],
   name: 'home',
   meta: {
@@ -4242,7 +4242,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/app/home/components/HomeComponent.vue"
+Component.options.__file = "resources/assets/js/admin/app/home/components/HomeComponent.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] HomeComponent.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -4253,9 +4253,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-ec00f306", Component.options)
+    hotAPI.createRecord("data-v-91856d86", Component.options)
   } else {
-    hotAPI.reload("data-v-ec00f306", Component.options)
+    hotAPI.reload("data-v-91856d86", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -4323,7 +4323,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-ec00f306", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-91856d86", module.exports)
   }
 }
 
@@ -4380,7 +4380,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/app/rent/components/BrowseComponent.vue"
+Component.options.__file = "resources/assets/js/admin/app/rent/components/BrowseComponent.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] BrowseComponent.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -4391,9 +4391,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-54b4e950", Component.options)
+    hotAPI.createRecord("data-v-ab04c3d0", Component.options)
   } else {
-    hotAPI.reload("data-v-54b4e950", Component.options)
+    hotAPI.reload("data-v-ab04c3d0", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -5438,7 +5438,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-54b4e950", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-ab04c3d0", module.exports)
   }
 }
 
@@ -5495,7 +5495,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/app/settings/components/BrowseComponent.vue"
+Component.options.__file = "resources/assets/js/admin/app/settings/components/BrowseComponent.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] BrowseComponent.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -5506,9 +5506,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-5dc995a4", Component.options)
+    hotAPI.createRecord("data-v-fba83024", Component.options)
   } else {
-    hotAPI.reload("data-v-5dc995a4", Component.options)
+    hotAPI.reload("data-v-fba83024", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -6049,7 +6049,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-5dc995a4", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-fba83024", module.exports)
   }
 }
 
@@ -6106,7 +6106,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/app/bonus/components/BrowseComponent.vue"
+Component.options.__file = "resources/assets/js/admin/app/bonus/components/BrowseComponent.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] BrowseComponent.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -6117,9 +6117,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-7fe8df5c", Component.options)
+    hotAPI.createRecord("data-v-f39454dc", Component.options)
   } else {
-    hotAPI.reload("data-v-7fe8df5c", Component.options)
+    hotAPI.reload("data-v-f39454dc", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -6686,7 +6686,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-7fe8df5c", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-f39454dc", module.exports)
   }
 }
 
@@ -8125,7 +8125,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/app/App.vue"
+Component.options.__file = "resources/assets/js/admin/app/App.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] App.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -8136,9 +8136,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-3c203bc9", Component.options)
+    hotAPI.createRecord("data-v-76abee89", Component.options)
   } else {
-    hotAPI.reload("data-v-3c203bc9", Component.options)
+    hotAPI.reload("data-v-76abee89", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -8262,7 +8262,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-0673ed0c", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-fb5ae78c", module.exports)
   }
 }
 
@@ -8311,7 +8311,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-3c203bc9", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-76abee89", module.exports)
   }
 }
 
@@ -8338,7 +8338,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/app/NavigationComponent.vue"
+Component.options.__file = "resources/assets/js/admin/app/NavigationComponent.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] NavigationComponent.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -8349,9 +8349,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-775516f1", Component.options)
+    hotAPI.createRecord("data-v-50b96c9e", Component.options)
   } else {
-    hotAPI.reload("data-v-775516f1", Component.options)
+    hotAPI.reload("data-v-50b96c9e", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -8616,7 +8616,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-775516f1", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-50b96c9e", module.exports)
   }
 }
 
