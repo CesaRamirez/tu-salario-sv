@@ -513,6 +513,9 @@ module.exports = {
     '32': '8rem',
     '48': '12rem',
     '64': '16rem',
+    '1/2': '50%',
+    '3/5': '60%',
+    '3/4': '75%',
     '5/6': '83%',
     'full': '100%',
     'screen': '100vh'
@@ -690,6 +693,7 @@ module.exports = {
     '4': '1rem',
     '6': '1.5rem',
     '8': '2rem',
+    '12': '4rem'
   },
 
 
@@ -710,7 +714,9 @@ module.exports = {
   */
 
   shadows: {
-    default: '0 2px 4px 0 rgba(0,0,0,0.10)',
+    default: '0 2px 4px 0 rgba(0,0,0,0.10)',    
+    '1': '5px 5px 10px rgba(196, 196, 196, 0.25)',
+    'sm': '0 0 1px rgba(255, 255, 255, 0.3)',
     'md': '0 4px 8px 0 rgba(0,0,0,0.12), 0 2px 4px 0 rgba(0,0,0,0.08)',
     'lg': '0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08)',
     'inner': 'inset 0 2px 4px 0 rgba(0,0,0,0.06)',
