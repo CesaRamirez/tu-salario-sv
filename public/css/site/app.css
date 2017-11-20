@@ -9372,8 +9372,6 @@ a {
 nav a {
   position: relative;
   text-decoration: none;
-  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
-          box-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
   font-family: 'Montserrat', sans-serif;
 }
 
