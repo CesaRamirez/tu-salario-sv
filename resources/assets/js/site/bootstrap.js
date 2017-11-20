@@ -1,9 +1,10 @@
 import Vue from 'vue'
 import lodash from 'lodash'
 import axios from 'axios'
+import moveTo from 'moveto'
 
 window.Vue = Vue
-
+window.moveTo = moveTo
 window._ = lodash
 
 window.axios = axios;
