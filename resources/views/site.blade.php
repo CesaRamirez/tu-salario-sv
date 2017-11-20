@@ -16,7 +16,7 @@
     @routes
 </head>
 <body>
-    <div id="site">
+    <div id="site" class="bg-blue">
         @yield('content')
     </div>
 

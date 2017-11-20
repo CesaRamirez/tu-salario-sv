@@ -441,7 +441,7 @@ module.exports = defaults;
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(global, setImmediate) {/*!
- * Vue.js v2.5.5
+ * Vue.js v2.5.6
  * (c) 2014-2017 Evan You
  * Released under the MIT License.
  */
@@ -5410,7 +5410,7 @@ Object.defineProperty(Vue$3.prototype, '$ssrContext', {
   }
 });
 
-Vue$3.version = '2.5.5';
+Vue$3.version = '2.5.6';
 
 /*  */
 
@@ -7117,7 +7117,6 @@ function model (
   var modifiers = dir.modifiers;
   var tag = el.tag;
   var type = el.attrsMap.type;
-  var attrsMap = el.attrsMap;
 
   if (true) {
     // inputs with type="file" are read only and setting the input's
@@ -7126,20 +7125,6 @@ function model (
       warn$1(
         "<" + (el.tag) + " v-model=\"" + value + "\" type=\"file\">:\n" +
         "File inputs are read only. Use a v-on:change listener instead."
-      );
-    }
-
-    // warn if v-bind:value conflicts with v-model
-    if (
-      (attrsMap['v-bind:value'] || attrsMap[':value']) &&
-      type !== 'checkbox' &&
-      type !== 'radio' &&
-      tag !== 'select'
-    ) {
-      var vBindValue = attrsMap['v-bind:value'] ? 'v-bind:value' : ':value';
-      warn$1(
-        vBindValue + " conflicts with v-model on the same element " +
-        'because the latter already expands to a value binding internally'
       );
     }
   }
@@ -7239,6 +7224,19 @@ function genDefaultModel (
   modifiers
 ) {
   var type = el.attrsMap.type;
+
+  // warn if v-bind:value conflicts with v-model
+  if (true) {
+    var value$1 = el.attrsMap['v-bind:value'] || el.attrsMap[':value'];
+    if (value$1) {
+      var binding = el.attrsMap['v-bind:value'] ? 'v-bind:value' : ':value';
+      warn$1(
+        binding + "=\"" + value$1 + "\" conflicts with v-model on the same element " +
+        'because the latter already expands to a value binding internally'
+      );
+    }
+  }
+
   var ref = modifiers || {};
   var lazy = ref.lazy;
   var number = ref.number;
