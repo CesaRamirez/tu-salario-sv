@@ -15,7 +15,10 @@ if (process.env.section) {
 }
 
 if (mix.inProduction()) {
-  mix.version();
+  mix.version()
+  .options({
+    purifyCss: false
+  });
 }
 
 mix.browserSync(process.env.APP_URL);

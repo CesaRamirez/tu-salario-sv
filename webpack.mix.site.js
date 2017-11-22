@@ -7,5 +7,5 @@ require('dotenv').config();
     .sass('resources/assets/sass/site/app.scss', 'public/css/site/')
     .options({
       processCssUrls: false,
-      postCss: [tailwindcss('tailwind.config.js')],
-    });  
+      postCss: [tailwindcss('tailwind.config.js')]
+    });
