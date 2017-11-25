@@ -1,24 +1,24 @@
 let mix = require('laravel-mix');
+var tailwindcss = require('tailwindcss');
 require('dotenv').config();
-/*
- |--------------------------------------------------------------------------
- | Mix Asset Management
- |--------------------------------------------------------------------------
- |
- | Mix provides a clean, fluent API for defining some Webpack build steps
- | for your Laravel application. By default, we are compiling the Sass
- | file for the application as well as bundling up all the JS files.
- |
- */
-if (process.env.section) {
-  require(`${__dirname}/webpack.mix.${process.env.section}.js`);
-}
+
+mix.js('resources/assets/js/site/app.js', 'public/js/site/')
+  .extract(['vue', 'axios', 'lodash'], 'js/site/vendor.js')
+  .sass('resources/assets/sass/site/app.scss', 'public/css/site/')
+  .options({
+    processCssUrls: false,
+    postCss: [tailwindcss('tailwind.config.js')]
+  });
+
+mix.js('resources/assets/js/admin/app.js', 'public/js/admin/')
+  .extract(['vue', 'axios', 'vuetify', 'vue-router', 'vee-validate', 'lodash', 'collect.js'], 'js/admin/vendor.js')
+  .sass('resources/assets/sass/admin/app.scss', 'public/css/admin/');
 
 if (mix.inProduction()) {
   mix.version()
-  .options({
-    purifyCss: false
-  });
+    .options({
+      purifyCss: false
+    });
 }
 
 mix.browserSync(process.env.APP_URL);
