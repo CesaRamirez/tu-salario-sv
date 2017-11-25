@@ -31,7 +31,7 @@
 			</div>
 		</div>
 	</header>
-	<section class="bg-white lg:h-1/2 py-8 flex flex-col items-center justify-center text-center border-b"
+	<section class="bg-white py-8 flex flex-col items-center justify-center text-center my-8"
 	 id="calculate">
 		<h4 class="text-3xl text-grey-dark mb-6">Comenzá a calcular tu</h4>
 		<div class="flex lg:flex-row md:flex-row flex-col justify-around w-3/4">
@@ -54,6 +54,17 @@
                 <h4 class="text-2xl font-normal text-blue">Aguinaldo</h4>
 			</div>
 		</div>
+	</section>
+	<section class="flex justify-center my-12">
+		<div class="flex justify-center items-center w-3/4">
+			<div class="w-3/5">
+				<img src="{{ asset('storage/assets/svg/illustrations/salario.svg') }}" alt="">
+			</div>
+			<div class="w-2/5">
+				<h3 class="text-6xl text-grey mb-6">Calculá tu Salario</h3>
+				<p class="text-grey leading-normal text-lg w-3/4">Morbi porttitor sapien laoreet, convallis lectus at, ultricies neque. Sed fermentum sed augue eget accumsan. Quisque at pellentesque lectus pretiumto.</p>
+			</div>
+		</div>
 	</section>	
 </div>
 @endsection @section('javascript')
@@ -63,6 +74,5 @@
         duration: 8000,
         easing: 'easeOutQuart'
     });
-
 </script>
 @endsection
