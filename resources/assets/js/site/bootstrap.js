@@ -6,7 +6,6 @@ import moveTo from 'moveto'
 window.Vue = Vue
 window.moveTo = moveTo
 window._ = lodash
-
 window.axios = axios;
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
