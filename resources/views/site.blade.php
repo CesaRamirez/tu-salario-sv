@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="Con SalarioSV podés calcular tu salario, vacaciones y aguinaldo de una manera fácil y rápida.">
    
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -14,10 +15,12 @@
     <meta name="application-name" content="SalarioSV">
     <meta name="theme-color" content="#2f80ed">
 
+    <link rel=”canonical” href=”http://www.salariosv.com” />
+
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Laravel') }} - Calculá tu Salario, Vacación ó Aguinaldo</title>
 
     <!-- Styles -->
     <link href="{{ mix('css/site/app.css') }}" rel="stylesheet" type="text/css">
