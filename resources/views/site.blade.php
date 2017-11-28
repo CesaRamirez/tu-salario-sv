@@ -15,6 +15,8 @@
     <meta name="application-name" content="SalarioSV">
     <meta name="theme-color" content="#2f80ed">
 
+    <meta name="google-site-verification" content="jFIi-8RxEyKuEwjMAJUqlGFNDnQ1GlMwQaGpnAcr2f8" />
+
     <link rel=”canonical” href=”http://salariosv.com” />
 
     <!-- CSRF Token -->
