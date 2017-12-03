@@ -4,9 +4,8 @@
 	 title="Patrón de Imagotipo" 
 	 class="absolute bg-cover h-screen w-screen" 
 	 style="object-fit: cover">  --}}
-	 <div class="absolute h-full w-full bg-cover">
 	<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-	viewBox="0 0 1366 768" preserveAspectRatio="none" class="absolute bg-cover h-screen lg:w-screen object-fit">
+	viewBox="0 0 1366 768" preserveAspectRatio="xMidYMax slice" class="absolute bg-cover h-screen w-screen object-fit">
 		<g id="Layer_2">
 			<rect fill="#2F80ED" />
 		</g>
@@ -2527,7 +2526,6 @@
 			</g>
 		</g>
 	</svg>
-</div>
 <div class="h-screen">
 	<header class="relative container mx-auto h-screen">
 		<nav class="flex items-center lg:justify-between justify-center pt-10">
