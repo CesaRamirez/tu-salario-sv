@@ -1,15 +1,14 @@
 @extends('site') @section('content')
-<!-- <img src="{{ asset('storage/assets/svg/pattern_bg.svg') }}" 
+{{--  <img src="{{ asset('storage/assets/svg/pattern_bg.svg') }}" 
 	 alt="Patrón de Imagotipo" 
 	 title="Patrón de Imagotipo" 
 	 class="absolute bg-cover h-screen w-screen" 
-	 style="object-fit: cover"> -->
-<div class="">
+	 style="object-fit: cover">  --}}
+	 <div class="absolute h-full w-full bg-cover">
 	<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-	x="0px" y="0px" width="1366px" height="768px" viewBox="0 0 1366 768" enable-background="new 0 0 1366 768"
-	xml:space="preserve" class="absolute h-screen w-screen">
+	viewBox="0 0 1366 768" preserveAspectRatio="none" class="absolute bg-cover h-screen lg:w-screen object-fit">
 		<g id="Layer_2">
-			<rect y="0" fill="#2F80ED" width="1366" height="768" />
+			<rect fill="#2F80ED" />
 		</g>
 		<g id="Layer_1">
 			<g id="Layer_1_1_">
@@ -2529,7 +2528,6 @@
 		</g>
 	</svg>
 </div>
-
 <div class="h-screen">
 	<header class="relative container mx-auto h-screen">
 		<nav class="flex items-center lg:justify-between justify-center pt-10">
@@ -2668,13 +2666,13 @@
 
 @section('javascript')
 <script>
-	anime({
+	window.anime({
       targets: ['line', 'circle', 'polygon', 'polyline', 'path', 'rect'],
-      strokeDashoffset: [anime.setDashoffset, 0],
+      strokeDashoffset: [window.anime.setDashoffset, 0],
       easing: 'easeInOutSine',
-      duration: 2500,
+      duration: 3000,
       direction: 'alternate',
-      loop: true
+      loop: false
     });
 </script>
 @endsection
