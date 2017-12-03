@@ -37,5 +37,7 @@
     <script src="{{ mix('js/admin/manifest.js') }}"></script>
     <script src="{{ mix('js/site/vendor.js') }}"></script>
     <script src="{{ mix('js/site/app.js') }}"></script>
+    
+    @yield('javascript')
 </body>
 </html>
