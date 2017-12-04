@@ -4317,11 +4317,7 @@ loader-utils@^1.0.0, loader-utils@^1.0.1, loader-utils@^1.0.2, loader-utils@^1.0
     emojis-list "^2.0.0"
     json5 "^0.5.0"
 
-<<<<<<< HEAD
-localforage@^1.5.0:
-=======
 localforage@^1.5.5:
->>>>>>> 49341f0867e853ebcc31539de2976975e3b713e7
   version "1.5.5"
   resolved "https://registry.yarnpkg.com/localforage/-/localforage-1.5.5.tgz#55fc1c3a88a47f67f5fac6f1231b25ff13556423"
   dependencies:
@@ -7226,9 +7222,9 @@ table@^4.0.1:
     slice-ansi "1.0.0"
     string-width "^2.1.1"
 
-tailwindcss@^0.2.0:
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-0.2.2.tgz#9277432d370de4800e3378ab5d637113125ed8c8"
+tailwindcss@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-0.3.0.tgz#79fe96e89b7df0a1ea6b63b322de52c0edad8f0f"
   dependencies:
     commander "^2.11.0"
     fs-extra "^4.0.2"
