@@ -1,9 +1,4 @@
 @extends('site') @section('content')
-{{--  <img src="{{ asset('storage/assets/svg/pattern_bg.svg') }}" 
-	 alt="Patrón de Imagotipo" 
-	 title="Patrón de Imagotipo" 
-	 class="absolute bg-cover h-screen w-screen" 
-	 style="object-fit: cover">  --}}
 	<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
 	viewBox="0 0 1366 768" preserveAspectRatio="xMidYMax slice" class="absolute bg-cover h-screen w-screen object-fit">
 		<g id="Layer_2">
@@ -2550,7 +2545,7 @@
 		<div class="flex justify-center items-center flex-col h-full text-center">
 			<img src="{{ asset('storage/assets/svg/isotipo.svg') }}" alt="Isotipo de SalarioSV"
 			 title="Isotipo de SalarioSV" class="h-12 w-12 mb-4 hidden lg:inline">
-			<h1 class="text-white lg:text-6xl text-4xl font-medium mb-4">Calculá tu salario</h1>
+			<h1 class="text-white lg:text-7xl text-4xl font-medium mb-4">Calculá tu salario</h1>
 			<p class="text-white lg:w-1/3 font-light lg:text-xl roman mb-12 leading-normal">Con SalarioSV podés calcular fácilmente tu salario, vacaciones y aguinaldo.</p>
 			<div id="scroll-down" class="mt-12 scroll">
 				<a href="#calculate" class="js-trigger">
