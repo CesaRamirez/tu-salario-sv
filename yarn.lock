@@ -4317,11 +4317,7 @@ loader-utils@^1.0.0, loader-utils@^1.0.1, loader-utils@^1.0.2, loader-utils@^1.0
     emojis-list "^2.0.0"
     json5 "^0.5.0"
 
-<<<<<<< HEAD
-localforage@^1.5.0:
-=======
 localforage@^1.5.5:
->>>>>>> 49341f0867e853ebcc31539de2976975e3b713e7
   version "1.5.5"
   resolved "https://registry.yarnpkg.com/localforage/-/localforage-1.5.5.tgz#55fc1c3a88a47f67f5fac6f1231b25ff13556423"
   dependencies:
@@ -7789,9 +7785,9 @@ vue@^2.5.9:
   version "2.5.9"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.5.9.tgz#b2380cd040915dca69881dafd121d760952e65f7"
 
-vuetify@^0.17.3:
-  version "0.17.3"
-  resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-0.17.3.tgz#66280c5532b12d80c0ce75f4574d1d5a8c2955b9"
+vuetify@^0.17.4:
+  version "0.17.4"
+  resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-0.17.4.tgz#6afc01e661f920be4ff58089f846b590cd0bdd29"
 
 vuex@^3.0.1:
   version "3.0.1"
