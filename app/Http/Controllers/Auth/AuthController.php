@@ -39,7 +39,7 @@ class AuthController extends Controller
         $credentials = $request->only('email', 'password');
 
         try {
-            if (!$token = $this->auth->attempt($credentials)) {
+            if (! $token = $this->auth->attempt($credentials)) {
                 return response()->json([
                     'errors' => [
                         'root' => 'Could not sign you in with those details.',
@@ -55,8 +55,9 @@ class AuthController extends Controller
         }
 
         return response()->json([
-            'data' => $request->user(),
-            'meta' => [
+            'data'  => $request->user(),
+            'token' => $token,
+            'meta'  => [
                 'token' => $token,
             ],
         ], 200);
@@ -71,7 +72,7 @@ class AuthController extends Controller
     {
         $this->auth->invalidate($this->auth->getToken());
 
-        return response(null, 200);
+        return response('success logout', 200);
     }
 
     /**
@@ -85,6 +86,7 @@ class AuthController extends Controller
     {
         return response()->json([
             'data' => $request->user(),
+            'user' => $request->user(),
         ]);
     }
 }
