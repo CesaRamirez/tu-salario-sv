@@ -1,6 +1,7 @@
 import {
   Validator
 } from 'vee-validate';
+
 const dictionary = {
   es: {
     attributes: {
@@ -19,4 +20,4 @@ const dictionary = {
   }
 };
 
-Validator.updateDictionary(dictionary);
+Validator.localize(dictionary);
