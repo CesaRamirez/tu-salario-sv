@@ -11,10 +11,8 @@
   },
   "devDependencies": {
     "axios": "^0.17.1",
-    "laravel-mix": "^1.7",
+    "laravel-mix": "^2.0",
     "lodash": "^4.17.4",
-    "purify-css": "^1.2.5",
-    "purifycss-webpack": "^0.7.0",
     "tailwindcss": "^0.3.0"
   },
   "dependencies": {
@@ -23,7 +21,7 @@
     "aos": "^2.2.0",
     "browser-sync": "^2.18.13",
     "browser-sync-webpack-plugin": "^1.2.0",
-    "collect.js": "^3.1.1",
+    "collect.js": "^4.0",
     "cross-env": "^5.0.1",
     "dotenv": "^4.0.0",
     "hover.css": "^2.2.1",
@@ -32,7 +30,7 @@
     "vee-validate": "^2.0.0-rc.19",
     "vue": "^2.5.11",
     "vue-router": "^3.0.1",
-    "vue2-filters": "^0.2.1",
+    "vue2-filters": "^0.3.0",
     "vuetify": "^0.17.4",
     "vuex": "^3.0.1",
     "wowjs": "^1.1.3"

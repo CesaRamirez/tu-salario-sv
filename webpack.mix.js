@@ -21,11 +21,5 @@ mix
     processCssUrls: false,
     postCss: [tailwindcss("tailwind.config.js")]
   });
-
-if (mix.inProduction()) {
-  mix.version().options({
-    purifyCss: true
-  });
-}
-
+  
 mix.browserSync(process.env.APP_URL);
