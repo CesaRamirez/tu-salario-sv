@@ -1,6 +1,6 @@
 <?php
 
-namespace App\TuSalarioSV;
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 

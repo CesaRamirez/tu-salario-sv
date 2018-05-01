@@ -1,6 +1,6 @@
 <?php
 
-namespace App\TuSalarioSV;
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -102,9 +102,9 @@ class Rent extends Model
                      ->where('type', $type)
                      ->first();
 
-        $excess = $mount - $rent->excess;
+        $excess     = $mount - $rent->excess;
         $percentage = $excess * $rent->percentage / 100;
-        $total = $percentage + $rent->fee;
+        $total      = $percentage + $rent->fee;
 
         return round($total, 2, PHP_ROUND_HALF_DOWN);
     }
