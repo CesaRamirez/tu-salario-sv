@@ -7,12 +7,13 @@
 
 $router->namespace('Auth')
         ->prefix('v1')
+        ->middleware('api')
         ->group(function ($router) {
             $router->post('login', 'AuthController@login')
                    ->name('login');
             $router->post('logout', 'AuthController@logout')
                    ->name('logout');
-            $router->middleware('jwt.auth')->group(function ($router) {
+            $router->middleware('auth:api')->group(function ($router) {
                 $router->get('me', 'AuthController@user')
                        ->name('me');
             });
