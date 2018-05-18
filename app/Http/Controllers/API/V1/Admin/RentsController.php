@@ -5,21 +5,21 @@ namespace App\Http\Controllers\API\V1\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\RentsRequest;
 use App\Http\Resources\RentResource;
-use App\TuSalarioSV\Rent;
+use App\Rent;
 
 class RentsController extends Controller
 {
     /**
      * rent variable.
      *
-     * @var \App\TuSalarioSV\Rent
+     * @var \App\Rent
      */
     protected $rent;
 
     /**
      * RentsController Constructor.
      *
-     * @param \App\TuSalarioSV\Rent $rent
+     * @param \App\Rent $rent
      */
     public function __construct(Rent $rent)
     {
@@ -43,7 +43,7 @@ class RentsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param \App\TuSalarioSV\Rent $rent
+     * @param \App\Rent $rent
      *
      * @return \Illuminate\Http\JsonResponse
      */
@@ -56,7 +56,7 @@ class RentsController extends Controller
      * Update the specified resource in storage.
      *
      * @param \App\Http\Requests\Admin\RentsRequest $request
-     * @param \App\TuSalarioSV\Rent                 $rent
+     * @param \App\Rent                             $rent
      *
      * @return \Illuminate\Http\JsonResponse
      */

@@ -5,21 +5,21 @@ namespace App\Http\Controllers\API\V1\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\SettingsRequest;
 use App\Http\Resources\SettingResource;
-use App\TuSalarioSV\Setting;
+use App\Setting;
 
 class SettingsController extends Controller
 {
     /**
      * setting variable.
      *
-     * @var \App\TuSalarioSV\Setting
+     * @var \App\Setting
      */
     protected $setting;
 
     /**
      * SettingsController constructor.
      *
-     * @param \App\TuSalarioSV\Setting $setting
+     * @param \App\Setting $setting
      */
     public function __construct(Setting $setting)
     {
@@ -59,7 +59,7 @@ class SettingsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param \App\TuSalarioSV\Setting $setting
+     * @param \App\Setting $setting
      *
      * @return \Illuminate\Http\JsonResponse
      */
@@ -72,7 +72,7 @@ class SettingsController extends Controller
      * Update the specified resource in storage.
      *
      * @param \App\Http\Requests\Admin\SettingsRequest $request
-     * @param \App\TuSalarioSV\Setting                 $setting
+     * @param \App\Setting                 $setting
      *
      * @return \Illuminate\Http\JsonResponse
      */

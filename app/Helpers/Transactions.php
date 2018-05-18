@@ -2,39 +2,39 @@
 
 namespace App\Helpers;
 
-use App\TuSalarioSV\Bonus;
-use App\TuSalarioSV\Rent;
-use App\TuSalarioSV\Setting;
+use App\Bonus;
+use App\Rent;
+use App\Setting;
 
 class Transactions
 {
     /**
      * Setting variable.
      *
-     * @var \App\TuSalarioSV\Setting
+     * @var \App\Setting
      */
     protected $setting;
 
     /**
      * Rent variable.
      *
-     * @var \App\TuSalarioSV\Rent
+     * @var \App\Rent
      */
     protected $rent;
 
     /**
      * Bonus variable.
      *
-     * @var \App\TuSalarioSV\Bonus
+     * @var \App\Bonus
      */
     protected $bonus;
 
     /**
      * Transaction helper constructor.
      *
-     * @param \App\TuSalarioSV\Setting $setting
-     * @param \App\TuSalarioSV\Rent    $rent
-     * @param \App\TuSalarioSV\Bonus   $bonus
+     * @param \App\Setting $setting
+     * @param \App\Rent    $rent
+     * @param \App\Bonus   $bonus
      */
     public function __construct(Setting $setting, Rent $rent, Bonus $bonus)
     {

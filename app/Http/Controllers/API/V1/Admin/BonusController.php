@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\API\V1\Admin;
 
+use App\Bonus;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\BonusRequest;
 use App\Http\Resources\BonusResource;
-use App\TuSalarioSV\Bonus;
 use Illuminate\Http\JsonResponse;
 
 class BonusController extends Controller
@@ -13,7 +13,7 @@ class BonusController extends Controller
     /**
      * bonus variable.
      *
-     * @var \App\TuSalarioSV\Bonus
+     * @var \App\Bonus
      */
     protected $bonus;
 
@@ -38,7 +38,7 @@ class BonusController extends Controller
      * Update the specified resource in storage.
      *
      * @param \App\Http\Requests\Admin\BonusRequest $request
-     * @param \App\TuSalarioSV\Bonus                $bonus
+     * @param \App\Bonus                            $bonus
      *
      * @return \Illuminate\Http\JsonResponse
      */
@@ -56,7 +56,7 @@ class BonusController extends Controller
     /**
      * Show Detail Bonus.
      *
-     * @param \App\TuSalarioSV\Bonus $bonus
+     * @param \App\Bonus $bonus
      *
      * @return JsonResponse
      */
