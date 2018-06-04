@@ -1,4 +1,6 @@
-@extends('site') @section('content')
+@extends('site')
+
+@section('content')
 	<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
 	viewBox="0 0 1366 768" preserveAspectRatio="xMidYMax slice" class="absolute bg-cover h-screen w-screen object-fit">
 		<g id="Layer_2">
@@ -2525,7 +2527,7 @@
 	<header class="relative container mx-auto h-screen">
 		<nav class="flex items-center lg:justify-between justify-center pt-10">
 			<div>
-				<img src="{{ asset('storage/assets/svg/logo_white.svg') }}" alt="Imagotipo de SalarioSV"
+				<img src="{{ asset('storage/assets/svg/logo-white.svg') }}" alt="Imagotipo de SalarioSV"
 				 title="Imagotipo de SalarioSV" class="h-11 w-40">
 			</div>
 			<div class="justify-end hidden lg:inline">
@@ -2543,7 +2545,7 @@
 			</div>
 		</nav>
 		<div class="flex justify-center items-center flex-col h-full text-center">
-			<img src="{{ asset('storage/assets/svg/isotipo.svg') }}" alt="Isotipo de SalarioSV"
+			<img src="{{ asset('storage/assets/svg/isotipo-white.svg') }}" alt="Isotipo de SalarioSV"
 			 title="Isotipo de SalarioSV" class="h-12 w-12 mb-4 hidden lg:inline">
 			<h1 class="text-white lg:text-7xl text-4xl font-medium mb-4">Calculá tu salario</h1>
 			<p class="text-white lg:w-1/3 font-light lg:text-xl roman mb-12 leading-normal">Con SalarioSV podés calcular fácilmente tu salario, vacaciones y aguinaldo.</p>
@@ -2554,38 +2556,43 @@
 			</div>
 		</div>
 	</header>
-	<section class="bg-white py-8 flex flex-col items-center justify-center text-center my-8"
+	<section class="bg-white py-8 flex flex-col items-center justify-center text-center my-8 container mx-auto"
 	 id="calculate">
 		<h4 class="text-3xl text-grey-dark mb-6">Comenzá a calcular tu</h4>
-		<div class="flex lg:flex-row md:flex-row flex-col justify-around w-3/4">
-			<div class="border rounded shadow-1 hvr-underline-from-left py-4">
+		<div class="flex md:flex-row flex-col justify-around w-full">
+			<div class="border rounded shadow-1 hvr-underline-from-left p-4">
 				<a href="#" class="no-underline">
-					<img src="{{ asset('storage/assets/svg/icons/ic_salario.svg') }}" alt="Manos sosteniendo dinero"
-					 title="El dinero en tus manos" class="w-3/4 -mb-6">
+					<img src="{{ asset('storage/assets/svg/icons/ic_salario.svg') }}"
+						 alt="Manos sosteniendo dinero"
+						 title="El dinero en tus manos" class="h-48 w-48">
+					<h4 class="text-2xl font-normal text-blue">Salario</h4>
 				</a>
-				<h4 class="text-2xl font-normal text-blue">Salario</h4>
 			</div>
-			<div class="border rounded shadow-1 hvr-underline-from-center py-4">
-				<a href="#">
-					<img src="{{ asset('storage/assets/svg/icons/ic_vacaciones.svg') }}" alt="Sombrilla bajo el sol."
-					 title="Vacación en la playa bajo el sol." class="w-3/4 -mb-6">
+			<div class="border rounded shadow-1 hvr-underline-from-left p-4">
+				<a href="#" class="no-underline">
+					<img src="{{ asset('storage/assets/svg/icons/ic_vacaciones.svg') }}"
+						 alt="Manos sosteniendo dinero"
+						 title="El dinero en tus manos" class="h-48 w-48">
+					<h4 class="text-2xl font-normal text-blue">Salario</h4>
 				</a>
-				<h4 class="text-2xl font-normal text-blue">Vacación</h4>
 			</div>
-			<div class="border rounded shadow-1 hvr-underline-from-right py-4">
-				<a href="#">
-					<img src="{{ asset('storage/assets/svg/icons/ic_aguinaldo.svg') }}" alt="Arbol de Navidad"
-					 title="En Navidad con tu aguinaldo." class="w-3/4 -mb-6">
+			<div class="border rounded shadow-1 hvr-underline-from-left p-4">
+				<a href="#" class="no-underline">
+					<img src="{{ asset('storage/assets/svg/icons/ic_aguinaldo.svg') }}"
+						 alt="Manos sosteniendo dinero"
+						 title="El dinero en tus manos" class="h-48 w-48">
+					<h4 class="text-2xl font-normal text-blue">Salario</h4>
 				</a>
-				<h4 class="text-2xl font-normal text-blue">Aguinaldo</h4>
 			</div>
 		</div>
 	</section>
 	<section class="flex flex-col lg:flex-row flex-wrap justify-center mt-20">
-		<div class="flex flex-col lg:flex-row justify-center items-center lg:w-3/4 lg:mb-20 mb-10 mx-8">
-			<div class="lg:w-3/5 hidden lg:inline wow slideInLeft">
-				<img src="{{ asset('storage/assets/svg/illustrations/salario.svg') }}" alt="Manos sosteniendo dinero"
-				 title="El dinero en tus manos">
+		<div class="flex flex-col lg:flex-row justify-center items-center lg:w-3/4 lg:mb-20 mb-10">
+			<div class="lg:w-3/5 hidden lg:inline wow slideInLeft mx-2">
+				<img src="{{ asset('storage/assets/svg/illustrations/salario.svg') }}"
+					 alt="Manos sosteniendo dinero"
+					 title="El dinero en tus manos"
+					 class="w-full">
 			</div>
 			<div class="lg:w-2/5">
 				<h2 class="lg:text-6xl text-4xl text-grey mb-6">Calculá tu Salario</h3>
@@ -2594,28 +2601,32 @@
 					<a href="" class="no-underline py-2 px-12 font-bold rounded-full text-blue-dark bg-transparent mb-12 hover:bg-blue-dark hover:text-white border-blue-dark border-2 lg:inline-block block text-center">Leer más</a>
 			</div>
 		</div>
-		<div class="flex flex-col lg:flex-row justify-center items-center lg:w-3/4 lg:mb-20 mb-10 mx-8">
+		<div class="flex flex-col lg:flex-row justify-center items-center lg:w-3/4 lg:mb-20 mb-10">
 			<div class="lg:w-2/5 lg:text-right lg:mr-10">
 				<h2 class="lg:text-6xl text-4xl text-grey mb-6">Calculá tu Vacaciones</h3>
 					<p class="text-grey leading-normal text-lg mb-8">Morbi porttitor sapien laoreet, convallis lectus at, ultricies neque. Sed fermentum
 						sed augue eget accumsan. Quisque at pellentesque lectus pretiumto.</p>
 					<a href="" class="no-underline py-2 px-12 font-bold rounded-full text-blue-dark bg-transparent mb-12 hover:bg-blue-dark hover:text-white border-blue-dark border-2 lg:inline-block block text-center">Leer más</a>
 			</div>
-			<div class="lg:w-3/5 hidden lg:inline">
-				<img src="{{ asset('storage/assets/svg/illustrations/vacaciones.svg') }}" alt="Sombrilla bajo el sol."
-				 title="Vacación en la playa bajo el sol.">
+			<div class="lg:w-3/5 hidden lg:inline mx-2">
+				<img src="{{ asset('storage/assets/svg/illustrations/vacaciones.svg') }}"
+					 alt="Sombrilla bajo el sol."
+					 title="Vacación en la playa bajo el sol."
+					 class="w-full">
 			</div>
 		</div>
-		<div class="flex justify-center items-center lg:w-3/4 lg:mb-20 mb-10 mx-8">
-			<div class="lg:w-3/5 hidden lg:inline">
-				<img src="{{ asset('storage/assets/svg/illustrations/aguinaldo.svg') }}" alt="Arbol de Navidad"
-				 title="En Navidad con tu aguinaldo.">
+		<div class="flex justify-center items-center lg:w-3/4 lg:mb-20 mb-10">
+			<div class="lg:w-3/5 hidden lg:inline mx-2">
+				<img src="{{ asset('storage/assets/svg/illustrations/aguinaldo.svg') }}"
+					 alt="Arbol de Navidad"
+					 title="En Navidad con tu aguinaldo."
+					 class="w-full">
 			</div>
 			<div class="lg:w-2/5">
 				<h2 class="lg:text-6xl text-4xl text-grey mb-6">Calculá tu Aguinaldo</h3>
-					<p class="text-grey leading-normal text-lg lg:w-5/6 mb-8">Morbi porttitor sapien laoreet, convallis lectus at, ultricies neque. Sed fermentum
-						sed augue eget accumsan. Quisque at pellentesque lectus pretiumto.</p>
-					<a href="" class="no-underline py-2 px-12 font-bold rounded-full text-blue-dark bg-transparent mb-12 hover:bg-blue-dark hover:text-white border-blue-dark border-2 lg:inline-block block text-center">Leer más</a>
+				<p class="text-grey leading-normal text-lg lg:w-5/6 mb-8">Morbi porttitor sapien laoreet, convallis lectus at, ultricies neque. Sed fermentum
+					sed augue eget accumsan. Quisque at pellentesque lectus pretiumto.</p>
+				<a href="" class="no-underline py-2 px-12 font-bold rounded-full text-blue-dark bg-transparent mb-12 hover:bg-blue-dark hover:text-white border-blue-dark border-2 lg:inline-block block text-center">Leer más</a>
 			</div>
 		</div>
 	</section>
@@ -2635,27 +2646,27 @@
 				</p>
 			</div>
 			<div class="lg:w-1/3 text-center mb-6">
-				<img src="{{ asset('storage/assets/svg/logo_white.svg') }}" alt="Logo SalarioSV"
+				<img src="{{ asset('storage/assets/svg/logo-white.svg') }}" alt="Logo SalarioSV"
 				 title="Logo SalarioSV" class="h-11 w-40">
 			</div>
 			<div class="lg:w-1/3 flex justify-end">
 				<a href="" class="no-underline">
-					<img src="{{ asset('storage/assets/svg/icons/ic_facebook.svg') }}" alt="Compartir por Facebook"
+					<img src="{{ asset('storage/assets/svg/icons/ic-facebook.svg') }}" alt="Compartir por Facebook"
 					 title="Icono de Facebook" class="h-8 w-12">
 				</a>
 				<a href="" class="no-underline">
-					<img src="{{ asset('storage/assets/svg/icons/ic_twitter.svg') }}" alt="Cokpartir por Twitter"
+					<img src="{{ asset('storage/assets/svg/icons/ic-twitter.svg') }}" alt="Cokpartir por Twitter"
 					 title="Icono de Twitter" class="h-8 w-12">
 				</a>
 			</div>
 		</div>
 		<a href="#" class="float flex justify-center items-center">
-			<img src="{{ asset('storage/assets/svg/icons/ic_arrow.svg') }}" alt="Regresar a Inicio"
+			<img src="{{ asset('storage/assets/svg/icons/ic-arrow.svg') }}" alt="Regresar a Inicio"
 			 title="Icono para Regresar a Inicio" class="h-4 w-8">
 		</a>
 	</footer>
 </div>
-@endsection 
+@endsection
 
 @section('javascript')
 <script>
