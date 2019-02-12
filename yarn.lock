@@ -142,9 +142,9 @@ anymatch@^2.0.0:
     micromatch "^3.1.4"
     normalize-path "^2.1.1"
 
-aos@^2.3.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/aos/-/aos-2.3.0.tgz#f56821f0508ca9f48210e25401ba8373ffdacda3"
+aos@^2.3.4:
+  version "2.3.4"
+  resolved "https://registry.yarnpkg.com/aos/-/aos-2.3.4.tgz#eb1c29f5c1806a197cf6323080747547edd3db8e"
   dependencies:
     classlist-polyfill "^1.0.3"
     lodash.debounce "^4.0.6"
