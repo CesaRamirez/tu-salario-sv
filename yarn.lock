@@ -1530,9 +1530,9 @@ code-point-at@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
 
-collect.js@^4.0.17:
-  version "4.0.19"
-  resolved "https://registry.yarnpkg.com/collect.js/-/collect.js-4.0.19.tgz#1ef14c51a48b3b9d28295a6a560954af092eee0d"
+collect.js@^4.6.4:
+  version "4.6.4"
+  resolved "https://registry.yarnpkg.com/collect.js/-/collect.js-4.6.4.tgz#1b0f6037488892ec8e08f2dad277d9d59f28680d"
 
 collection-visit@^1.0.0:
   version "1.0.0"
