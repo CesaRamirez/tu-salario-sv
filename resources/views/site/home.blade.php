@@ -2632,19 +2632,6 @@
 	</section>
 	<footer class="bg-blue py-10 flex justify-center relative">
 		<div class="flex lg:flex-row flex-col lg:w-3/4 items-center justify-center mx-8">
-			<div class="lg:w-1/3 mb-6">
-				<p class="text-white font-weight-normal leading-normal hidden lg:inline">Este sitio web está diseñado y construido
-					<br> por salvadoreños, para salvadoreños.
-					<br>Por
-					<a href="" class="no-underline text-teal-light">César</a> &
-					<a href="" class="no-underline text-teal-light">Kathe</a>
-				</p>
-				<p class="text-white font-weight-normal leading-normal lg:hidden inline">
-					Este sitio web está diseñado y construido por salvadoreños, para salvadoreños. Por
-					<a href="" class="no-underline text-teal-light">César</a> &
-					<a href="" class="no-underline text-teal-light">Kathe</a>
-				</p>
-			</div>
 			<div class="lg:w-1/3 text-center mb-6">
 				<img src="{{ asset('storage/assets/svg/logo-white.svg') }}" alt="Logo SalarioSV"
 				 title="Logo SalarioSV" class="h-11 w-40">
