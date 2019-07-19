@@ -16,6 +16,7 @@
                 <form @submit.prevent="submit">
                     <v-card-text>
                         <v-text-field label="Correo Electronico"
+                                      name="email"
                                       light
                                       color="purple darken-2"
                                       v-model="email"
@@ -30,6 +31,7 @@
                                       @keyup.native="cleanFields('password')"
                                       :error-messages="errors.password"
                                       type="password"
+                                      name="password"
                                       prepend-icon="vpn_key">
                         </v-text-field>
                     </v-card-text>

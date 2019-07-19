@@ -1332,9 +1332,15 @@ code-point-at@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
 
+<<<<<<< HEAD
 collect.js@^4.0.17:
   version "4.0.26"
   resolved "https://registry.yarnpkg.com/collect.js/-/collect.js-4.0.26.tgz#9cb24e284da3e5d2488ae5383949754700876562"
+=======
+collect.js@^4.6.4:
+  version "4.6.4"
+  resolved "https://registry.yarnpkg.com/collect.js/-/collect.js-4.6.4.tgz#1b0f6037488892ec8e08f2dad277d9d59f28680d"
+>>>>>>> d200b89a0e97e30a9341e647fb76475f7726d7a0
 
 collection-visit@^1.0.0:
   version "1.0.0"
@@ -3642,8 +3648,8 @@ lodash.memoize@^4.1.2:
   resolved "https://registry.yarnpkg.com/lodash.memoize/-/lodash.memoize-4.1.2.tgz#bcc6c49a42a2840ed997f323eada5ecd182e0bfe"
 
 lodash.mergewith@^4.6.0:
-  version "4.6.1"
-  resolved "https://registry.yarnpkg.com/lodash.mergewith/-/lodash.mergewith-4.6.1.tgz#639057e726c3afbdb3e7d42741caa8d6e4335927"
+  version "4.6.2"
+  resolved "https://registry.yarnpkg.com/lodash.mergewith/-/lodash.mergewith-4.6.2.tgz#617121f89ac55f59047c7aec1ccd6654c6590f55"
 
 lodash.restparam@^3.0.0:
   version "3.6.1"
@@ -3661,9 +3667,19 @@ lodash.uniq@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
 
+<<<<<<< HEAD
 lodash@^4, lodash@^4.0.0, lodash@^4.17.10, lodash@^4.17.2, lodash@^4.17.4, lodash@^4.17.5, lodash@~4.17.10:
   version "4.17.10"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.10.tgz#1b7793cf7259ea38fb3661d4d38b3260af8ae4e7"
+=======
+lodash@^3.10.1:
+  version "3.10.1"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
+
+lodash@^4, lodash@^4.0.0, lodash@^4.17.10, lodash@^4.17.13, lodash@^4.17.2, lodash@^4.17.4, lodash@^4.17.5, lodash@~4.17.10:
+  version "4.17.13"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.13.tgz#0bdc3a6adc873d2f4e0c4bac285df91b64fc7b93"
+>>>>>>> d200b89a0e97e30a9341e647fb76475f7726d7a0
 
 loglevel@^1.4.1:
   version "1.6.1"
@@ -6248,9 +6264,15 @@ vary@~1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/vary/-/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
 
+<<<<<<< HEAD
 vee-validate@^2.1.0-beta.1:
   version "2.1.0-beta.8"
   resolved "https://registry.yarnpkg.com/vee-validate/-/vee-validate-2.1.0-beta.8.tgz#57e3afa22dfd4b1507362e402be45d9c788a55d8"
+=======
+vee-validate@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/vee-validate/-/vee-validate-2.2.0.tgz#0dcb6251a50cde9a3a1e924c917cc3d0a543b661"
+>>>>>>> d200b89a0e97e30a9341e647fb76475f7726d7a0
 
 vendors@^1.0.0:
   version "1.0.2"

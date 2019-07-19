@@ -4211,6 +4211,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
 
 
 
@@ -4353,6 +4355,7 @@ var render = function() {
                           _c("v-text-field", {
                             attrs: {
                               label: "Correo Electronico",
+                              name: "email",
                               light: "",
                               color: "purple darken-2",
                               "error-messages": _vm.errors.email,
@@ -4379,6 +4382,7 @@ var render = function() {
                               color: "purple darken-2",
                               "error-messages": _vm.errors.password,
                               type: "password",
+                              name: "password",
                               "prepend-icon": "vpn_key"
                             },
                             nativeOn: {
